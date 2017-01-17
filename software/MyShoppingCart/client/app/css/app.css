@@ -1,0 +1,44 @@
+/* app css stylesheet */
+html, body {
+  width: auto !important;
+  overflow-x: hidden !important;
+}
+ul, li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu {
+  background: lightblue;
+  height: 30px;
+  padding: 0 10px;
+}
+
+.menu > li {
+  display: inline-block;
+  width: 100px;
+  line-height: 30px;
+}
+
+.sub-menu {
+  position: absolute;
+  display: none;
+    background-color: lightsalmon;
+  padding: 5px;
+}
+
+.sub-menu > li {
+  display: block;
+  cursor: pointer;
+}
+
+li:hover .sub-menu {
+  display: block;
+}
+.horizontal-collapse {
+  height: 70px;
+}
+.navbar-collapse.in {
+  overflow-y: hidden;
+}

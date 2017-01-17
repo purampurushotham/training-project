@@ -1,0 +1,169 @@
+[
+  {
+    "id": "ELEC_PRD_1",
+    "name": "SAMSUNG Galaxy 1",
+    "price": 5500,
+    "description": "SAMSUNG Galaxy 1 is a smart phone and blah blah",
+    "type": "electronics",
+    "subType": "mobile",
+    "brand": "Samsung",
+    "RAM": "1GB",
+    "modelName": "Galaxy 1",
+    "color": "Gold",
+    "battery": "2600 mAh Li-Ion Battery",
+    "camera": {
+      "front": "5MP",
+      "rear": "8MP"
+    },
+    "comments": [
+      {
+        "text": "Worst phone",
+        "rating": "1",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The phone does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating": "1",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 10
+      }
+    ]
+  },
+  {
+    "id": "ELEC_PRD_2",
+    "name": "SAMSUNG Galaxy 2",
+    "price": 7500,
+    "description": "SAMSUNG Galaxy 2 is a smart phone and blah blah",
+    "type": "electronics",
+    "subType": "mobile",
+    "brand": "Samsung",
+    "RAM": "1GB",
+    "modelName": "Galaxy 2",
+    "color": "Gold",
+    "battery": "2600 mAh Li-Ion Battery",
+    "camera": {
+      "front": "5MP",
+      "rear": "8MP"
+    },
+    "comments": [
+      {
+        "text": "Worst phone",
+        "rating": "1",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The phone does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating": "1",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 10
+      }
+    ]
+  },
+  {
+    "id": "ELEC_PRD_3",
+    "name": "SAMSUNG Galaxy On3",
+    "price": 15500,
+    "description": "SAMSUNG Galaxy On3 is a smart phone and blah blah",
+    "type": "electronics",
+    "subType": "mobile",
+    "brand": "Samsung",
+    "RAM": "1GB",
+    "modelName": "Galaxy On3",
+    "color": "Gold",
+    "battery": "2600 mAh Li-Ion Battery",
+    "camera": {
+      "front": "5MP",
+      "rear": "8MP"
+    },
+    "comments": [
+      {
+        "text": "Worst phone",
+        "rating": "1",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The phone does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating": "1",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 10
+      }
+    ]
+  },
+  {
+    "id":"ELEC_PRD_4",
+    "name": "SAMSUNG NOTEBOOK",
+    "price": 35500,
+    "description": "SAMSUNG NOTEBOOK is a smart phone and blah blah",
+    "type": "electronics",
+    "subType": "laptop",
+    "brand": "Samsung",
+    "RAM": "1GB",
+    "modelName": "Galaxy Note 3",
+    "color": "Gold",
+    "battery": "12600 mAh Li-Ion Battery",
+    "comments": [
+      {
+        "text": "Worst notebook",
+        "rating": "1",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome notebook",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The notebook does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating": "1",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "exchange",
+        "amount": 2000
+      }
+    ]
+  }]
