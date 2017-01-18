@@ -5,7 +5,10 @@
     angular.module("MSC", [
         "ui.router",
         "ui.bootstrap",
-        "MSC.home"
+        "ui.select",
+        "MSC.home",
+        "MSC.search",
+        "MSC.Electronics"
     ]);
     console.log("in module");
 }());

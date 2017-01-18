@@ -1,0 +1,13 @@
+<div class="container">
+    <br><br><br><br><br><br><br><br><br><br>
+    <div class="row">
+        <div ng:repeat="i in hc.products.data | orderBy:'rating'| limitTo:5" class="col-md-4">
+            <div class="container">
+                 <p>Name:{{i.name}}</p>
+                 <p>Price:{{i.price}}</p>
+                <p>Rating:{{i.rating}}</p>
+        </div>
+            <br><br>
+    </div>
+</div>
+</div>

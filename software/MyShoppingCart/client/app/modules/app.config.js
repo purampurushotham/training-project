@@ -9,15 +9,27 @@
 
    appConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
    function appConfig($stateProvider,$urlRouterProvider,$locationProvider) {
-       $urlRouterProvider.otherwise("/");
+       $urlRouterProvider.otherwise("Home");
        $stateProvider
+           .state("Home", {
+               url: "/Home",
+               templateUrl: "app/partials/home.html",
+               controller:"homeController",
+               controllerAs:"hc"
+           })
+          /* .state("Search", {
+               url: "/Search",
+               templateUrl: "app/partials/Search.html",
+               controller:"searchCtrl",
+               controllerAs:"sc"
+           })*/
            .state("Electronics", {
                url: "/Electronics",
                templateUrl: "app/partials/Electronics.html",
-               controller:"homeController",
+               controller:"ElectronicsCtrl",
                controllerAs:"EC"
-           })
-           .state('Electronics.Mobiles', {
+           });
+       /*.state('Electronics.Mobiles', {
                url: '/Mobiles',
                templateUrl: 'Electronics-Mobiles.html'
 
@@ -43,7 +55,7 @@
                url: "/Biographies",
                templateUrl: "Books-Biographies.html"
            });
-
+*/
        $locationProvider.html5Mode(true);
        console.log("in config");
    }

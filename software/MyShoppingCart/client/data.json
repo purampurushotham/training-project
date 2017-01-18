@@ -126,10 +126,55 @@
         "type": "discount",
         "percentage": 10
       }
-    ]
+    ],
+    "rating":5
   },
   {
-    "id":"ELEC_PRD_4",
+    "id": "ELEC_PRD_4",
+    "name": "SAMSUNG Galaxy On7 Pro",
+    "price": 9990,
+    "description": "Samsung Galaxy On7 Pro runs Android 6.0 Marshmallow",
+    "type": "electronics",
+    "subType": "mobile",
+    "brand": "Samsung",
+    "RAM": "2GB",
+    "modelName": "Galaxy On7 Pro",
+    "color": "Gold",
+    "battery": "3000 mAh Li-Ion Battery",
+    "camera": {
+      "front": "5MP",
+      "rear": "13MP"
+    },
+    "comments": [
+      {
+        "text": "Worst phone",
+        "rating": "1",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The phone does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating": "1",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 10
+      }
+    ],
+    "rating":4
+  },
+  {
+    "id":"ELEC_PRD_5",
     "name": "SAMSUNG NOTEBOOK",
     "price": 35500,
     "description": "SAMSUNG NOTEBOOK is a smart phone and blah blah",
@@ -165,5 +210,9 @@
         "type": "exchange",
         "amount": 2000
       }
-    ]
-  }]
+    ],
+    "rating":3
+  }
+
+
+]

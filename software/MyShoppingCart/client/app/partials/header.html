@@ -1,25 +1,45 @@
 <div>
     <header>
-    <nav class="navbar navbar-default"> <!--ng-controller="NavbarController"-->
         <div class="container-fluid">
-            <div class="navbar-collapse collapse in" collapse="isCollapsed" aria-expanded="true">
-                <ul class="nav navbar-nav">
-                        <li><a ui-sref="Electronics">Electronics<!--<span class="sr-only">(current)</span>--></a>
-                            <ul class="sub-menu">
-                                <li><a ui-sref="Laptops"><!--<span class="sr-only">(current)</span>--></a>Laptops</li>
-                                <li><a ui-sref="Mobiles"><!--<span class="sr-only">(current)</span>--></a>Mobiles</li>
+            <div class="navbar-header">
+                <nav class="navbar navbar-default navbar-fixed-top"> <!--ng-controller="NavbarController"-->
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" ui-sref="Home">MyShoppingCart</a>
+                        </div>
+
+                        <div class="navbar-collapse collapse in" collapse="isCollapsed" aria-expanded="true">
+                            <ul class="nav navbar-nav">
+                                <li><a ui-sref="Home">Home<!--<span class="sr-only">(current)</span>--></a></li>
+                                <li><a ui-sref="Electronics">Electronics<!--<span class="sr-only">(current)</span>--></a>
+                                    <ul class="sub-menu">
+                                        <li><a ui-sref="Laptops"><!--<span class="sr-only">(current)</span>--></a>Laptops</li>
+                                        <li><a ui-sref="Mobiles"><!--<span class="sr-only">(current)</span>--></a>Mobiles</li>
+                                    </ul>
+                                </li>
+                                <li><a ui-sref="Books">Books</a>
+                                    <ul class="sub-menu">
+                                        <li>Fiction</li>
+                                        <li>Comic</li>
+                                        <li>BioGraphy</li>
+                                    </ul>
+                                </li>
                             </ul>
-                        </li>
-                        <li><a ui-sref="Books">Books</a>
-                            <ul class="sub-menu">
-                                <li>Fiction</li>
-                                <li>Comic</li>
-                                <li>BioGraphy</li>
-                            </ul>
-                        </li>
-                </ul>
+
+                        </div>
+
+                    </div>
+                    <span class="container-fluid" ng-include="'app/partials/search.html'"></span>
+                </nav>
+
             </div>
         </div>
-    </nav>
-</header>
+
+    </header>
 </div>

@@ -1,0 +1,14 @@
+<div class="ui_select" ng-controller="searchCtrl as sc">
+    <p>Selected: </p>
+    <ui-select ng-model="product.selected"
+               theme="bootstrap"
+               ng-disabled="ctrl.disabled"
+               reset-search-input="false"
+               style="width: 600px;"
+               title="Choose an address">
+        <ui-select-match placeholder="Enter an product name...">{{$select.selected.name}}</ui-select-match>
+        <ui-select-choices repeat="e in sc.products.data | filter: $select.search">
+                           {{e.name}}
+          </ui-select-choices>
+    </ui-select>
+</div>

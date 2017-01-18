@@ -8,10 +8,18 @@
         .controller('homeController', homeController);
        homeController.$inject=['samData'];
     function homeController(samData) {
-        console.log("In controller");
-        var vm = this;
-        samData.get().then(function (msg) {
-            vm.msg = msg;
+      var vm=this;
+        vm.product=[];
+        vm.products=[];
+        samData.get().then (function (msg) {
+
+            vm.products=msg;
+            console.log("In Home controller"+vm.products);
         });
-    }
+
+    }   
+  /*  function getSelectedData(products) {
+
+
+    }*/
 }());
