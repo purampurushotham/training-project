@@ -67,3 +67,7 @@ li:hover .sub-menu {
   position: relative;
   z-index: 10000; /* The select2 dropdown has a z-index of 9999 */
 }
+.pics {
+  width: 250px;
+  height: 200px;
+}

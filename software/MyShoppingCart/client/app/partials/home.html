@@ -1,8 +1,10 @@
+<script src="../modules/search/search.module.js"></script>
 <div class="container">
     <br><br><br><br><br><br><br><br><br><br>
     <div class="row">
-        <div ng:repeat="i in hc.products.data | orderBy:'rating'| limitTo:5" class="col-md-4">
+        <div ng:repeat="i in products.data | orderBy:'-rating'| limitTo:'products.data.length()'" class="col-md-4">
             <div class="container">
+               <img src="{{i.pic}}" class="pics">
                  <p>Name:{{i.name}}</p>
                  <p>Price:{{i.price}}</p>
                 <p>Rating:{{i.rating}}</p>

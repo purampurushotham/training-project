@@ -5,17 +5,25 @@
     angular
         .module("MSC.search")
         .controller("searchCtrl",searchCtrl);
-    function searchCtrl(){}
     searchCtrl.$inject=['samData']
-    function searchCtrl(samData) {
+    function searchCtrl(samData,checkName) {
         var vm=this;
         vm.product={};
-        vm.products={};
+        //ssvm.products={};*/
         console.log("in Search controller");
-        samData.get().then (function (msg) {
+        vm.limitNameSearch = 500
 
-            vm.products=msg;
-        });
+        vm.checkName = function(lettersTyped)
+        {
 
+            if(lettersTyped.length > 2)
+            {
+                vm.limitNameSearch = 500;
+            }
+            else{
+                vm.limitNameSearch = 0;
+            }
+        }
     }
+
 }());

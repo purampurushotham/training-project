@@ -11,92 +11,7 @@
     "modelName": "Galaxy 1",
     "color": "Gold",
     "battery": "2600 mAh Li-Ion Battery",
-    "camera": {
-      "front": "5MP",
-      "rear": "8MP"
-    },
-    "comments": [
-      {
-        "text": "Worst phone",
-        "rating": "1",
-        "commentedOn": "13/01/2017",
-        "username": "Jhon Deo"
-      },
-      {
-        "text": "Awesome phone",
-        "rating": "5",
-        "commentedOn": "15/01/2017",
-        "username": "Jhon Deo brother"
-      },
-      {
-        "text": "Worth price. The phone does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
-        "rating": "1",
-        "commentedOn": "14/01/2017",
-        "username": "Jhon Deo Sister"
-      }
-    ],
-    "offers": [
-      {
-        "type": "discount",
-        "percentage": 10
-      }
-    ]
-  },
-  {
-    "id": "ELEC_PRD_2",
-    "name": "SAMSUNG Galaxy 2",
-    "price": 7500,
-    "description": "SAMSUNG Galaxy 2 is a smart phone and blah blah",
-    "type": "electronics",
-    "subType": "mobile",
-    "brand": "Samsung",
-    "RAM": "1GB",
-    "modelName": "Galaxy 2",
-    "color": "Gold",
-    "battery": "2600 mAh Li-Ion Battery",
-    "camera": {
-      "front": "5MP",
-      "rear": "8MP"
-    },
-    "comments": [
-      {
-        "text": "Worst phone",
-        "rating": "1",
-        "commentedOn": "13/01/2017",
-        "username": "Jhon Deo"
-      },
-      {
-        "text": "Awesome phone",
-        "rating": "5",
-        "commentedOn": "15/01/2017",
-        "username": "Jhon Deo brother"
-      },
-      {
-        "text": "Worth price. The phone does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
-        "rating": "1",
-        "commentedOn": "14/01/2017",
-        "username": "Jhon Deo Sister"
-      }
-    ],
-    "offers": [
-      {
-        "type": "discount",
-        "percentage": 10
-      }
-    ]
-  },
-  {
-    "id": "ELEC_PRD_3",
-    "name": "SAMSUNG Galaxy On3",
-    "price": 15500,
-    "description": "SAMSUNG Galaxy On3 is a smart phone and blah blah",
-    "type": "electronics",
-    "subType": "mobile",
-    "brand": "Samsung",
-    "RAM": "1GB",
-    "modelName": "Galaxy On3",
-    "color": "Gold",
-    "battery": "2600 mAh Li-Ion Battery",
+    "pic": "app/img/mobiles/samsung-galaxy-1.png",
     "camera": {
       "front": "5MP",
       "rear": "8MP"
@@ -130,20 +45,21 @@
     "rating":5
   },
   {
-    "id": "ELEC_PRD_4",
-    "name": "SAMSUNG Galaxy On7 Pro",
-    "price": 9990,
-    "description": "Samsung Galaxy On7 Pro runs Android 6.0 Marshmallow",
+    "id": "ELEC_PRD_2",
+    "name": "SAMSUNG Galaxy 2",
+    "price": 7500,
+    "description": "SAMSUNG Galaxy 2 is a smart phone and blah blah",
     "type": "electronics",
     "subType": "mobile",
     "brand": "Samsung",
-    "RAM": "2GB",
-    "modelName": "Galaxy On7 Pro",
+    "RAM": "1GB",
+    "modelName": "Galaxy 2",
     "color": "Gold",
-    "battery": "3000 mAh Li-Ion Battery",
+    "battery": "2600 mAh Li-Ion Battery",
+    "pic": "app/img/mobiles/samsung-galaxy-2.png",
     "camera": {
       "front": "5MP",
-      "rear": "13MP"
+      "rear": "8MP"
     },
     "comments": [
       {
@@ -174,6 +90,96 @@
     "rating":4
   },
   {
+    "id": "ELEC_PRD_3",
+    "name": "SAMSUNG Galaxy On3",
+    "price": 15500,
+    "description": "SAMSUNG Galaxy On3 is a smart phone and blah blah",
+    "type": "electronics",
+    "subType": "mobile",
+    "brand": "Samsung",
+    "RAM": "1GB",
+    "modelName": "Galaxy On3",
+    "color": "Gold",
+    "battery": "2600 mAh Li-Ion Battery",
+    "pic": "app/img/mobiles/samsung-galaxy-notebook.jpg",
+    "camera": {
+      "front": "5MP",
+      "rear": "8MP"
+    },
+    "comments": [
+      {
+        "text": "Worst phone",
+        "rating": "1",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The phone does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating": "1",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 10
+      }
+    ],
+    "rating":2
+  },
+  {
+    "id": "ELEC_PRD_4",
+    "name": "SAMSUNG Galaxy On7 Pro",
+    "price": 9990,
+    "description": "Samsung Galaxy On7 Pro runs Android 6.0 Marshmallow",
+    "type": "electronics",
+    "subType": "mobile",
+    "brand": "Samsung",
+    "RAM": "2GB",
+    "modelName": "Galaxy On7 Pro",
+    "color": "Gold",
+    "battery": "3000 mAh Li-Ion Battery",
+    "pic": "app/img/mobiles/samsung-galaxy-s3.jpg",
+    "camera": {
+      "front": "5MP",
+      "rear": "13MP"
+    },
+    "comments": [
+      {
+        "text": "Worst phone",
+        "rating": "1",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The phone does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating": "1",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 10
+      }
+    ],
+    "rating":1
+  },
+  {
     "id":"ELEC_PRD_5",
     "name": "SAMSUNG NOTEBOOK",
     "price": 35500,
@@ -185,6 +191,7 @@
     "modelName": "Galaxy Note 3",
     "color": "Gold",
     "battery": "12600 mAh Li-Ion Battery",
+    "pic": "app/img/mobiles/samsung-galaxy-s7-pro.jpg",
     "comments": [
       {
         "text": "Worst notebook",
@@ -212,7 +219,186 @@
       }
     ],
     "rating":3
+  },
+  {
+    "id": "ELEC_PRD_6",
+    "name": "Lenovo  g_5080",
+    "price": 45500,
+    "description": "Lenovo g series is new ",
+    "type": "electronics",
+    "subType": "laptop",
+    "brand": "Lenovo",
+    "RAM": "16GB",
+    "HD" : "1TB",
+    "modelName": "g_50_80",
+    "color": "Black",
+    "battery": "8000 mAh Li-Ion Battery",
+    "pic": "app/img/laptops/Lenovo-g-5080-1.png",
+    "camera": {
+      "webcam": "2MP"
+    },
+    "comments": [
+      {
+        "text": "Very aaffordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome Laptop",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The laptop does not look cheap from any angle. Some have even confused this with the Lenovo g6 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 10
+      }
+    ],
+    "rating":5
+  },
+  {
+    "id": "ELEC_PRD_7",
+    "name": "Hp_pavillion",
+    "price": 50000,
+    "description": "hp pavillion series ---------",
+    "type": "electronics",
+    "subType": "laptop",
+    "brand": "HP",
+    "RAM": "8GB",
+    "HD" : "500GB",
+    "modelName": "Pavillion series p1",
+    "color": "Silver",
+    "battery": "9300 mAh Li-Ion Battery",
+    "pic": "app/img/laptops/Hp_pavillion-1.png",
+    "camera": {
+      "webcam": "2.0MP"
+    },
+    "comments": [
+      {
+        "text": "Very aaffordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome Laptop",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The laptop does not look cheap from any angle. Some have even confused this with the Lenovo g6 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 10
+      }
+    ],
+    "rating":5
+  },
+
+  {
+    "id": "ELEC_PRD_8",
+    "name": "Dell Inspiron",
+    "price": 50000,
+    "description": "Dell Inspiron series ---------",
+    "type": "electronics",
+    "subType": "laptop",
+    "brand": "DELL",
+    "RAM": "8GB",
+    "HD" : "1TB",
+    "modelName": "Inspiron series D2",
+    "color": "Silver",
+    "battery": "9300 mAh Li-Ion Battery",
+    "pic": "app/img/laptops/Dell-Inspiron-1.png",
+    "camera": {
+      "webcam": "2.0MP"
+    },
+    "comments": [
+      {
+        "text": "Very aaffordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome Laptop",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The laptop does not look cheap from any angle. Some have even confused this with the Lenovo g6 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 10
+      }
+    ],
+    "rating":5
+  },
+  {
+    "id": "ELEC_PRD_9",
+    "name": "Sony Vivo",
+    "price": 75000,
+    "description": "Sony Vivo series ---------",
+    "type": "electronics",
+    "subType": "laptop",
+    "brand": "SONY",
+    "RAM": "8GB",
+    "HD" : "1TB",
+    "modelName": "Sony Vivo series v2",
+    "color": "Silver",
+    "battery": "9300 mAh Li-Ion Battery",
+    "pic": "app/img/laptops/Sony-Vivo-1.png",
+    "camera": {
+      "webcam": "2.0MP"
+    },
+    "comments": [
+      {
+        "text": "Very aaffordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome Laptop",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The laptop does not look cheap from any angle. Some have even confused this with the Lenovo g6 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 10
+      }
+    ],
+    "rating":5
   }
-
-
 ]
