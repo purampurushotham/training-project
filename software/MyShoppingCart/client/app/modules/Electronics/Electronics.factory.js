@@ -14,8 +14,8 @@
               function getData() {
                     var deffered=$q.defer();
 
-                    $http.get('data.json').then(function mySuccess(data) {
-                        deffered.resolve(data);
+                    $http.get('data.json').then(function mySuccess(response) {
+                        deffered.resolve(response.data);
 
                     }).then(function myError(error) {
                         deffered.reject("error in getting data");

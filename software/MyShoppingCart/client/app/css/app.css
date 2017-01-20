@@ -4,7 +4,9 @@ html, body {
   overflow-x: hidden !important;
 
 }
-body { padding-bottom: 70px; }
+body {
+  padding-top: 70px;
+}
 ul, li {
   list-style-type: none;
   margin: 0;
@@ -44,9 +46,6 @@ li:hover .sub-menu {
 .navbar-collapse.in {
   overflow-y: hidden;
 }
- {
-  padding: 15px;
-}
 
 .select2 > .select2-choice.ui-select-match {
   /* Because of the inclusion of Bootstrap */
@@ -70,4 +69,8 @@ li:hover .sub-menu {
 .pics {
   width: 250px;
   height: 200px;
+}
+.lg_pics{
+  width:350px;
+  height:300px;
 }

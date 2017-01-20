@@ -17,12 +17,12 @@
                controller:"homeController",
                controllerAs:"hc"
            })
-          /* .state("Search", {
-               url: "/Search",
-               templateUrl: "app/partials/Search.html",
-               controller:"searchCtrl",
-               controllerAs:"sc"
-           })*/
+          .state("view", {
+               url: "/view/{{id}}",
+               templateUrl: "app/partials/product_view.html",
+               controller:"viewCtrl",
+               controllerAs:"vc"
+           })
            .state("Electronics", {
                url: "/Electronics",
                templateUrl: "app/partials/Electronics.html",

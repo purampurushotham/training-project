@@ -1,5 +1,4 @@
 <div class="ui_select" ng-controller="searchCtrl as sc">
-    <p>Selected: </p>
     <ui-select ng-model="products.selected"
                theme="bootstrap"
                reset-search-input="true"
@@ -8,7 +7,7 @@
         <ui-select-match placeholder="Enter an product name...">{{$select.selected.name}}</ui-select-match>
         <ui-select-choices  refresh="sc.checkName($select.search)"
                             refresh-delay="0"
-                            repeat="e in products.data | filter: $select.search | limitTo: sc.limitNameSearch">
+                            repeat="e in products | filter: $select.search | limitTo: sc.limitNameSearch">
                            {{e.name}}
           </ui-select-choices>
     </ui-select>

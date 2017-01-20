@@ -8,6 +8,7 @@
         "ui.select",
         "MSC.home",
         "MSC.search",
+        "MSC.view",
         "MSC.Electronics"
     ]);
     console.log("in module");
