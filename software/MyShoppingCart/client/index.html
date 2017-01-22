@@ -9,9 +9,13 @@
     <title>My AngularJS App</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.5/angular-material.min.css" />
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.css">
-    <link rel="stylesheet" href="app/css/app.css">
+    <link rel="stylesheet" href="bower_components/angular-jk-rating-stars/dist/jk-rating-stars.min.css">
+        <link rel="stylesheet" href="app/css/app.css">
+
 
     <base href="/">
 
@@ -22,7 +26,7 @@
 
 <div ng-include="'app/partials/header.html'"></div>
 <div class="row" >
-    <div class="col-md-12" ui-view  ></div>
+    <div class="container" ui-view  ></div>
 </div>
 <div ng-include="'app/partials/footer.html'"></div>
 <!-- In production use:
@@ -33,10 +37,13 @@
 </body>
 <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 <script src="bower_components/angular/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.5/angular-material.min.js"></script>
+<script src="bower_components/angular-jk-rating-stars/dist/jk-rating-stars.min.js"></script>
 <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
 <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 <script src="bower_components/angular-ui-select/dist/select.js"></script>
+
 <script src="app/modules/app.module.js"></script>
 <script src="app/modules/app.config.js"></script>
 <script src="app/modules/app.run.js"></script>
