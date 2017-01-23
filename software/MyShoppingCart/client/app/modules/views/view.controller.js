@@ -17,25 +17,47 @@
         for (var i = 0; i < data; i++){
             var ele = vm.ele[i];
             console.log(ele);
-            for (var key in ele){
-                if(t === ele[key]){
-                    console.log("matchfound"+ele[key]);
-                    vm.vp=ele;
-                    break;
-                }
-
+            if(t === ele["id"]){
+                console.log("matchfound"+ele["id"]);
+                vm.vp=ele;
+                break;
             }
+
+
 
         }
         for(var i=0;i<data;i++){
             var s=vm.ele[i];
-                if(vm.vp.subType === s["subType"]){
-                    console.log("matchfound in similar"+s["subType"]);
-                    vm.similarProducts.push(s);
-                    console.log(vm.similarProducts);
+            if(vm.vp.brand === s["brand"] && vm.vp.subType === s["subType"] && vm.vp != s){
+                console.log("matchfound in similar"+s["brand"]);
+                vm.similarProducts.push(s);
+                console.log(vm.similarProducts);
 
             }
         }
+        /* slidee */
+        vm.slider = {
+            minValue:vm.ele[0].price,
+            maxValue: vm.ele[20].price,
+            options: {
+                floor: 0,
+                ceil:99999,
+                step: 2,
+                minRange: vm.ele[0].price,
+                maxRange: 99999 ,
+                translate: function(value, sliderId, label) {
+                    switch (label) {
+                        case 'model':
+                            return '<b>Min :</b> ₹' + value;
+                        case 'high':
+                            return '<b>Max :</b>₹'  + value;
+                        default:
+                            return '₹/' + value
+                    }
+                }
+            }
+        };
+        console.log(vm.slider.minValue)
     }
 
 

@@ -3,7 +3,8 @@
  */
 (function () {
     angular
-        .module('MSC.Electronics')
+        .module('MSC.Electronics')})();
+    /*
         .factory('samData', function ($http,$q) {
             var dataService={
                 products:[],
@@ -23,10 +24,11 @@
                     return deffered.promise;
 
                 }
+                console.log("in factory")
             });
 
 }());
-/*
+
 
 workflow.factory('getWorkflow', function($http, $q) {
     return {

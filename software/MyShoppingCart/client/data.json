@@ -400,5 +400,1612 @@
       }
     ],
     "rating":5
+  },
+  {
+    "id": "ELEC_PRD_10",
+    "name": "Micromax Vdeo 4",
+    "price": 6249,
+    "description":"The Vdeo 4 features a 5-inch HD IPS display and is powered by a 1.1GHz Quad-Core processor, along with 1GB of RAM, 8GB of internal storage. It come pre-loaded with the latest Android Marshmallow 6.0",
+    "type": "electronics",
+    "subType": "mobiles",
+    "brand": "micromax",
+    "RAM": "1GB",
+    "HD" : "8GB",
+    "modelName": "Micromax Vdeo 4 series",
+    "color": "Crown Gold",
+    "battery": "4000 mAh Li-Ion Battery",
+    "pic": "app/img/mobiles/Micromax-Vdeo-4-1.jpg",
+    "camera": {
+      "front": "2MP",
+      "rear" : "8MP"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome Mobile",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with this so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+  {
+    "id": "ELEC_PRD_11",
+    "name": "Micromax Vdeo 3",
+    "price": 5749,
+    "description":"he Vdeo 3 features a 5-inch FWVGA IPS display and is powered by a 1.3GHz Quad-Core processor, along with 1GB of RAM, 8GB of internal storage. It come pre-loaded with the latest Android Marshmallow 6.0.",
+    "type": "electronics",
+    "subType": "mobiles",
+    "brand": "micromax",
+    "RAM": "1GB",
+    "HD" : "8GB",
+    "modelName": "Micromax Vdeo 4 series",
+    "color": "Crown Gold",
+    "battery": "1800 mAh Li-Ion Battery",
+    "pic": "app/img/mobiles/Micromax-Vdeo-3-1.jpg",
+    "camera": {
+      "front": "2MP",
+      "rear" : "5MP"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome Laptop",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the Lenovo g6 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+  {
+    "id": "ELEC_PRD_12",
+    "name": "samsung galaxy c9 pro",
+    "price": 36900,
+    "description":"Samsung Galaxy C9 Pro has a 6 inch FHD Amoled display and runs on Android 6.0 Marshmallow operating system powered by octa core processor which is coupled with 6GB of RAM.",
+    "type": "electronics",
+    "subType": "mobiles",
+    "brand": "Samsung",
+    "RAM": "6GB",
+    "HD" : "8GB",
+    "modelName": "Samsung Galaxy C9  series",
+    "color": "Crown silver",
+    "battery": "4000 mAh Li-Ion Battery",
+    "pic": "app/img/mobiles/samsung-galaxy-c9-pro-1.jpg",
+    "camera": {
+      "front": "13MP",
+      "rear" : "16MP"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the Lenovo g6 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":5
+  },
+  {
+    "id": "ELEC_PRD_13",
+    "name": "samsung galaxy c9 pro",
+    "price": 8490,
+    "description":"The Galaxy J2 Ace comes with a 5-inch HD (720Ã—1280 pixels) Super AMOLED display. It is powered by a 1.5 GHz quad-core Spreadtrum SC8830 processor with Mali-400MP2 GPU, 1.5GB of RAM, 8GB of internal storage which can be further expanded to 32GB via a m",
+    "type": "electronics",
+    "subType": "mobiles",
+    "brand": "Samsung",
+    "RAM": "1.5GB",
+    "HD" : "8GB",
+    "modelName": "Samsung Galaxy C9  series",
+    "color": "Crown silver",
+    "battery": "2600 mAh Li-Ion Battery",
+    "pic": "app/img/mobiles/samsung-galaxy-j2-ace-1.jpg",
+    "camera": {
+      "front": "8MP",
+      "rear" : "5MP"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the mobile ace so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":2
+  },
+  {
+    "id": "ELEC_PRD_16",
+    "name": "Lenovo P2 4GB RAM",
+    "price": 17999,
+    "description":"A 5.5-inch dual sim smartphone powered 2 GHz octa-core Snapdragon 625 processor and Android 6.0 Marshmallow operating system.",
+    "type": "electronics",
+    "subType": "mobiles",
+    "brand": "Lenovo",
+    "RAM": "4GB",
+    "HD" : "  64GB",
+    "modelName": "Lenovo P2 4GB RAM",
+    "color": "white",
+    "battery": "5100 mAh Li-Ion Battery",
+    "pic": "app/img/mobiles/Lenovo P2 4GB RAM-1.jpg",
+    "camera": {
+      "front": "13MP",
+      "rear" : "5MP"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":5
+  },
+  {
+    "id": "ELEC_PRD_17",
+    "name": "Xiaomi Redmi Note 4",
+    "price": 9999,
+    "description":"Xiaomi Redmi Note 4 is a 5.5 inch smartphone powered by a Octa-Core processor, 13MP rear facing camera and 5MP front facing camera.",
+    "type": "electronics",
+    "subType": "mobiles",
+    "brand": "MI",
+    "RAM": "2GB",
+    "HD" : "32GB",
+    "modelName": "Redmi series",
+    "color": "silver",
+    "battery": "4100 mAh Li-Ion Battery",
+    "pic": "app/img/mobiles/Xiaomi Redmi Note 4-1.jpg",
+    "camera": {
+      "front": "13MP",
+      "rear" : "16MP"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":5
+  },
+  {
+    "id": "ELEC_PRD_18",
+    "name": "Lenovo P2 3GB RAM",
+    "price": 16999,
+    "description":"Xiaomi Redmi Note 4 is a 5.5 inch smartphone powered by a Octa-Core processor, 13MP rear facing camera and 5MP front facing camera.",
+    "type": "electronics",
+    "subType": "mobiles",
+    "brand": "Lenovo",
+    "RAM": "3GB",
+    "HD" : "32GB",
+    "modelName": "Lenovo P2 series",
+    "color": "silver",
+    "battery": "5100 mAh Li-Ion Battery",
+    "pic": "app/img/mobiles/Lenovo P2 3GB RAM-1.jpg",
+    "camera": {
+      "front": "13MP",
+      "rear" : "5MP"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+  {
+    "id": "ELEC_PRD_19",
+    "name": "Xolo Era 2X 3GB RAM",
+    "price": 7499,
+    "description":"Xiaomi Redmi Note 4 is a 5.5 inch smartphone powered by a Octa-Core processor, 13MP rear facing camera and 5MP front facing camera.",
+    "type": "electronics",
+    "subType": "mobiles",
+    "brand": "Xolo",
+    "RAM": "2GB",
+    "HD" : "32GB",
+    "modelName": "Redmi series",
+    "color": "black",
+    "battery": "2500 mAh Li-Ion Battery",
+    "pic": "app/img/mobiles/Xolo Era 2X 3GB RAM-1.jpg",
+    "camera": {
+      "front": "8MP",
+      "rear" : "5MP"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":2
+  },
+  {
+    "id": "ELEC_PRD_20",
+    "name": "LYF Water 7S",
+    "price": 7499,
+    "description":"LYF Water 7S offers a 5.5-inch FHD (1080 x 1920 pixels) display with Panda Glass protection. It is powered by a 1.3GHz octa-core MT6753 processor, along with 3GB RAM and Mali T720 MP1 600MHz graphics processor.",
+    "type": "electronics",
+    "subType": "mobiles",
+    "brand": "LYF",
+    "RAM": "3GB",
+    "HD" : "16GB",
+    "modelName": "LYF series",
+    "color": "gold",
+    "battery": "2800 mAh Li-Ion Battery",
+    "pic": "app/img/mobiles/LYF Water 7S-1.jpg",
+    "camera": {
+      "front": "13MP",
+      "rear" : "5MP"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+  {
+    "id": "ELEC_PRD_21",
+    "name": "Coolpad Cool1",
+    "price": 13999,
+    "description":"Cool1 has 5.5-inch full HD (1920x1080p) display. It is fuled by a 1.8GHz Octa-Core Snapdragon 652 processor , 4GB of RAM, 32 GB of internal storage, and Android Marshmallow OS.",
+    "type": "electronics",
+    "subType": "mobiles",
+    "brand": "LYF",
+    "RAM": "4GB",
+    "HD" : "32GB",
+    "modelName": "CoolPad cool series",
+    "color": "gold",
+    "battery": "4060 mAh Li-Ion Battery",
+      "pic": "app/img/mobiles/Coolpad Cool1-1.jpg",
+    "camera": {
+      "front": "13MP",
+      "rear" : "8MP"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+  {
+    "id": "ELEC_PRD_22",
+    "name": "LYF Water 3",
+    "price": 6599,
+    "description":"The Lyf Water 3 comes with 5 inch HD (1280 x 720p) IPS display and is powered by a 1.5 GHz Octa Core Qualcomm Snapdragon 615 MSM8939 processor.",
+    "type": "electronics",
+    "subType": "mobiles",
+    "brand": "LYF",
+    "RAM": "2GB",
+    "HD" : "16GB",
+    "modelName": "LYF Water 3 series",
+    "color": "white",
+    "battery": "3000 mAh Li-Ion Battery",
+    "pic": "app/img/mobiles/LYF Water 3-1.jpg",
+    "camera": {
+      "front": "13MP",
+      "rear" : "5MP"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+  {
+    "id": "ELEC_PRD_23",
+    "name": "Asus Zenfone Go 4.5 LTE",
+    "price": 6999,
+    "description":"Asus ZenFone Go with 1 GB of RAM, powered by a Quad-Core 1.2 GHz processor with Android Marshmallow operating system and 8 MP rear camera.",
+    "type": "electronics",
+    "subType": "mobiles",
+    "brand": "Asus",
+    "RAM": "2GB",
+    "HD" : "8GB",
+    "modelName": "Asus Zenfone  series",
+    "color": "white",
+    "battery": "2070 mAh Li-Ion Battery",
+    "pic": "app/img/mobiles/Asus Zenfone Go 4.5 LTE-1.jpg",
+    "camera": {
+      "front": "8MP",
+      "rear" : "2MP"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+  {
+    "id": "ELEC_PRD_24",
+    "name": "LYF F1s",
+    "price": 9599,
+    "description":"The smartphone features a 5.2-inch FHD (1080x1920 pixels) display and is powered by a 1.8GHz octa-core Snapdragon 652 MSM8976, along with 3GB of RAM.",
+    "type": "electronics",
+    "subType": "mobiles",
+    "brand": "LYF",
+    "RAM": "3GB",
+    "HD" : "32GB",
+    "modelName": "LYF F1s  series",
+    "color": "white",
+    "battery": "3000 mAh Li-Ion Battery",
+    "pic": "app/img/mobiles/Asus Zenfone Go 4.5 LTE-1.jpg",
+    "camera": {
+      "front": "16MP",
+      "rear" : "5MP"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+  {
+    "id": "ELEC_PRD_25",
+    "name": "Karbonn Aura Note 4G",
+    "price": 9000,
+    "description":"The smartphone features a 5.2-inch FHD (1080x1920 pixels) display and is powered by a 1.8GHz octa-core Snapdragon 652 MSM8976, along with 3GB of RAM.",
+    "type": "electronics",
+    "subType": "mobiles",
+    "brand": "Karbonn",
+    "RAM": "2 GB",
+    "HD" : "32GB",
+    "modelName": "Karbonn Aura series",
+    "color": "Gold",
+    "battery": "2800 mAh Li-Ion Battery",
+    "pic": "app/img/mobiles/Karbonn Aura Note 4G-1.jpg",
+    "camera": {
+      "front": "16MP",
+      "rear" : "5MP"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":2
+  },
+  {
+    "id": "ELEC_PRD_26",
+    "name": "mi-redmi-note-4",
+    "price": 10999  ,
+    "description":"Upgrade to the Redmi Note 4 and experience power like never before. The Redmi Note 4 offers high-speed performance along with a long battery life.",
+    "type": "electronics",
+    "subType": "mobiles",
+    "brand": "MI",
+    "RAM": "3 GB",
+    "HD" : "32GB",
+    "modelName": "mi-redmi-note-4 series",
+    "color": "Gold",
+    "battery": "2800 mAh Li-Ion Battery",
+    "pic": "app/img/mobiles/mi-redmi-note-4-1.jpg",
+    "camera": {
+      "front": "13MP",
+      "rear" : "5MP"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":2
+  },
+  {
+    "id": "ELEC_PRD_29",
+    "name": "Apple MacBook Pro MD101HNA",
+    "price": 50799,
+    "description":"The best price for Apple MacBook Pro MD101HNA Price is Rs. 46968 at TataCliQ. The price list was fetched from top online stores in India and was last refreshed on 23 Jan 2017",
+    "type": "electronics",
+    "subType": "laptop",
+    "brand": "Apple",
+    "RAM": "4GB",
+    "HD" : "500GB",
+    "modelName": "Apple MacBook Pro series",
+    "color": "white",
+    "battery": "60W MagSafe Power Adapter",
+    "pic": "app/img/laptops/Apple MacBook Pro MD101HNA-1.jpg",
+    "camera": {
+      "webcam": "720 p face time"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+  {
+    "id": "ELEC_PRD_30",
+    "name": "micromax-canvas-lt666w-laptab",
+    "price": 50799,
+    "description":"The best price for Apple MacBook Pro MD101HNA Price is Rs. 46968 at TataCliQ. The price list was fetched from top online stores in India and was last refreshed on 23 Jan 2017",
+    "type": "electronics",
+    "subType": "laptop",
+    "brand": "micromax",
+    "RAM": "4GB",
+    "HD" : "500GB",
+    "modelName": "micromax-canvas-lt666w-laptab series",
+    "color": "Black",
+    "battery": "60W MagSafe Power Adapter",
+    "pic": "app/img/laptops/micromax-canvas-lt666w-laptab-1.jpg",
+    "camera": {
+      "webcam": "2 Megapixel (Front Camera), 2 Megapixel (Rear Camera)"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+
+  {
+    "id": "ELEC_PRD_31",
+    "name": "lenovo-u41-70-80jv00hkin-notebook-side",
+    "price": 10075,
+    "description":"The best price for Micromax Canvas LT666W Laptab Price is Rs. 10075 at Amazon.in. The price list was fetched from top online stores in India and was last refreshed on 23 Jan 2017",
+    "type": "electronics",
+    "subType": "laptop",
+    "brand": "lenovo",
+    "RAM": "4GB",
+    "HD" : "500GB",
+    "modelName": "lenovo-u41-70-80jv00hkin-notebook-side series",
+    "color": "Black",
+    "battery": "45 W AC Adapter",
+    "pic": "app/img/laptops/lenovo-u41-70-80jv00hkin-notebook-side-1.jpg",
+    "camera": {
+      "webcam": "720p HD Webcam"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+  {
+    "id": "ELEC_PRD_32",
+    "name": "apple-macbook-air-mmgf2hna-front",
+    "price": 55698,
+    "description":"The best price for Apple MacBook Air MMGF2HNA Price is Rs. 55968 at TataCliQ. The price list was fetched from top online stores in India and was last refreshed on 23 Jan 2017",
+    "type": "electronics",
+    "subType": "laptop",
+    "brand": "Apple",
+    "RAM": "4GB",
+    "HD" : "500GB",
+    "modelName": "apple-macbook-air-mmgf2hna-front series",
+    "color": "Ash",
+    "battery": "45 W AC Adapter",
+    "pic": "app/img/laptops/apple-macbook-air-mmgf2hna-front-1.jpg",
+    "camera": {
+      "webcam": "FaceTime HD Webcam"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+  {
+    "id": "ELEC_PRD_33",
+    "name": "hp-15-ay019tu-notebook-large",
+    "price": 25900,
+    "description":"The best price for HP 15-AY019TU Notebook Price is Rs. 25990 at FlipKart. The price list was fetched from top online stores in India and was last refreshed on 23 Jan 2017",
+    "type": "electronics",
+    "subType": "laptop",
+    "brand": "hp",
+    "RAM": "4GB",
+    "HD" : "500GB",
+    "modelName": "hp-15-ay019tu-notebook-large",
+    "color": "Black",
+    "battery": "65 W EM AC power adapter",
+    "pic": "app/img/laptops/hp-15-ay019tu-notebook-large-1.jpg",
+    "camera": {
+      "webcam": "720p HD Webcam"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+  {
+    "id": "ELEC_PRD_34",
+    "name": "acer-aspire-es1-521-nx-g2ksi-010-notebook-large",
+    "price": 16999,
+    "description":"The best price for Acer Aspire ES1-521 (NX.G2KSI.010) Notebook Price is Rs. 16999 at SnapDeal. The price list was fetched from top online stores in India and was last refreshed on 23 Jan 2017",
+    "type": "electronics",
+    "subType": "laptop",
+    "brand": "Acer",
+    "RAM": "4GB",
+    "HD" : "500GB",
+    "modelName": "acer-aspire-es1-521-nx-g2ksi-010-notebook-large series",
+    "color": "Black",
+    "battery": "45 W AC Adapter",
+    "pic": "app/img/laptops/acer-aspire-es1-521-nx-g2ksi-010-notebook-large-side-1.jpg",
+    "camera": {
+      "webcam": "720p HD Webcam"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+  {
+    "id": "ELEC_PRD_35",
+    "name": "hp-notebook",
+    "price": 23990,
+    "description":"Storage space is not something you’ll ever have to worry about, with this HP APU Quad Core laptop. Download and save as many TV shows and movies you want to on ints 1 TB HDD storage drive. You’re also going to love its sleek 15.6 inch wide screen.",
+    "type": "electronics",
+    "subType": "laptop",
+    "brand": "hp",
+    "RAM": "4GB",
+    "HD" : "500GB",
+    "modelName": "hp-notebook series",
+    "color": "Turbo Silver",
+    "battery": "65 W AC Adapter",
+    "pic": "app/img/laptops/hp-notebook-side-1.jpg",
+    "camera": {
+      "webcam": "HP TrueVision HD Webcam"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+  {
+    "id": "ELEC_PRD_36",
+    "name": "hp-pavilion-2-in-1-laptop",
+    "price": 41990,
+    "description":"With a thin profile and 360 degree foldable design, this laptop from HP is portable and versatile. You can fold the laptop completely backwards and use it as a tablet while you are in the bus, fold it halfway backwards and set it on a table to watch a movie, set it like a tent on a desk while you enjoy playing a game and use it like a laptop to work. This makes the laptop ideal for students, working professionals, bachelors and even artists.",
+    "type": "electronics",
+    "subType": "laptop",
+    "brand": "hp",
+    "RAM": "4GB",
+    "HD" : "500GB",
+    "modelName": "hp-pavilion-2-in-1-laptop series",
+    "color": "Natural SIlver Colour",
+    "battery": "65 W AC Adapter",
+    "pic": "app/img/laptops/hp-pavilion-2-in-1-laptop-side-1.jpg",
+    "camera": {
+      "webcam": "HP TrueVision Full HD Webcam"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+  {
+    "id": "ELEC_PRD_37",
+    "name": "dell-inspiron-15-notebook",
+    "price": 25900,
+    "description":"With a thin profile and 360 degree foldable design, this laptop from HP is portable and versatile. You can fold the laptop completely backwards and use it as a tablet while you are in the bus, fold it halfway backwards and set it on a table to watch a movie, set it like a tent on a desk while you enjoy playing a game and use it like a laptop to work. This makes the laptop ideal for students, working professionals, bachelors and even artists.",
+    "type": "electronics",
+    "subType": "laptop",
+    "brand": "dell",
+    "RAM": "4GB",
+    "HD" : "500GB",
+    "modelName": "dell-inspiron-15-notebook series",
+    "color": "Black",
+    "battery": "65 W AC Adapter",
+    "pic": "app/img/laptops/dell-inspiron-15-notebook-side-1.jpg",
+    "camera": {
+      "webcam": "720p HD Webcam"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+  {
+    "id": "ELEC_PRD_38",
+    "name": "dell-inspiron-notebook",
+    "price": 18990,
+    "description":"Meet the Inspiron 15 — a 15.6-Inch laptop computer for your everyday needs. With an attractive, stylish design and mobile technology, this laptop features everything you want for everyday computing. The Inspiron 15 offers a modern black palmrest. Not to mention Intel Core 2 Duo processors, a Dell Dock and optional facial recognition software, all at a value within reach. *Based on Dell Lab testing. Battery life varies by configuration, operating conditions and other factors. Maximum battery capacity decreases with time and use.",
+    "type": "electronics",
+    "subType": "laptop",
+    "brand": "dell",
+    "RAM": "4GB",
+    "HD" : "500GB",
+    "modelName": "dell-inspiron-notebook series",
+    "color": "Black",
+    "battery": "65 W AC Adapter",
+    "pic": "app/img/laptops/dell-inspiron-notebook-side-1.jpg",
+    "camera": {
+      "webcam": "HD Webcam"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+  {
+    "id": "ELEC_PRD_39",
+    "name": "dell-inspiron-2-in-1-laptop",
+    "price": 70190,
+    "description":"Dell Inspiron 15 2-in-1 5578 7thGen Corei5,8GB,1TB,Windows 10,15.6 Touch Laptop",
+    "type": "electronics",
+    "subType": "laptop",
+    "brand": "dell",
+    "RAM": "4GB",
+    "HD" : "500GB",
+    "modelName": "dell-inspiron-2-in-1-laptop series",
+    "color": "gray",
+    "battery": "42 W AC Adapter",
+    "pic": "app/img/laptops/dell-inspiron-2-in-1-laptop-side-1.jpg",
+    "camera": {
+      "webcam": "720p HD Webcam"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+  {
+    "id": "ELEC_PRD_40",
+    "name": "acer-aspire-notebook",
+    "price": 14490,
+    "description":"If you plan to buy a user-friendly laptop that will help you carry out your daily tasks, then you can opt for the Acer E5-571 laptop. With a user-friendly interface and a slim design, this laptop is ideal one to be taken along while you are on the go for work or study purposes. The Acer E5-571 laptop is all that you need to make your work easier.Shop onlinefor the Acer AS E5-571 Laptop today from the comfort of your office or your home.",
+    "type": "electronics",
+    "subType": "laptop",
+    "brand": "acer",
+    "RAM": "4GB",
+    "HD" : "500GB",
+    "modelName": "acer-aspire-notebook series",
+    "color": "Diamond Black",
+    "battery": "45 W AC Adapter",
+    "pic": "app/img/laptops/acer-aspire-notebook-side-1.jpg",
+    "camera": {
+      "webcam": "720p HD Webcam"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+  {
+    "id": "ELEC_PRD_41",
+    "name": "acer-aspire-2-in-1-laptop",
+    "price": 53990,
+    "description":"Acer brings to you a smart device that’s as stylish as it is versatile - this is a 2-in-1 laptop that you can use as both a laptop and a tablet. Thanks to its long-lasting battery, you can expect uninterrupted use of it for hours on end.",
+    "type": "electronics",
+    "subType": "laptop",
+    "brand": "acer",
+    "RAM": "4GB",
+    "HD" : "500GB",
+    "modelName": "acer-aspire-2-in-1-laptop series",
+    "color": "skyblue",
+    "battery": "45 W AC Adapter",
+    "pic": "app/img/laptops/acer-aspire-2-in-1-laptop-side-1.jpg",
+    "camera": {
+      "webcam": "HD Webcam"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+  {
+    "id": "ELEC_PRD_42",
+    "name": "acer-one-10-netbook",
+    "price": 14990,
+    "description":"Why invest in a tablet and a laptop when you can have both in this Acer Intel Atom laptop cum tablet. This device comes with a latchless magnetic hinge that lets you separate the screen from the keyboard and use it as a tablet with ease. You can even fold the laptop completely backwards without any problem. With a crisp and clear display, the laptop lets you enjoy movies and games with an immersive experience.",
+    "type": "electronics",
+    "subType": "laptop",
+    "brand": "acer",
+    "RAM": "4GB",
+    "HD" : "500GB",
+    "modelName": "acer-one-10-netbook series",
+    "color": "Dark SIlver",
+    "battery": "10 W AC Adapter",
+    "pic": "app/img/laptops/acer-one-10-netbook-side-1.jpg",
+    "camera": {
+      "webcam": "Rear with 1600 x 1200 Resolution and VGA Audio / Video Recording, Front with 1600 x 1200 Resolution and 720p HD Audio / Video Recording"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+  {
+    "id": "ELEC_PRD_43",
+    "name": "acer-switch-notebook",
+    "price": 12990,
+    "description":"With the resolution to bring details to life and the resilience to battle wear and tear, the Aspire Switch 10 is a stunning device you will want to share. Full HD1 (1920 x 1200) display, Zero Air Gap, and IPS technology2 combine to provide vivid clarity and bright color from every angle.",
+    "type": "electronics",
+    "subType": "laptop",
+    "brand": "acer",
+    "RAM": "4GB",
+    "HD" : "500GB",
+    "modelName": "lenovo-u41-70-80jv00hkin-notebook-side series",
+    "color": "Shark Grey",
+    "battery": "45 W AC Adapter",
+    "pic": "app/img/laptops/lenovo-u41-70-80jv00hkin-notebook-side-1.jpg",
+    "camera": {
+      "webcam": "720p HD Webcam"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+  {
+    "id": "ELEC_PRD_44",
+    "name": "lenovo-thinkpad-notebook",
+    "price": 81000,
+    "description":"The best price for Lenovo U41-70 (80JV00HKIN) Notebook Price is Rs. 38399 at SnapDeal. The price list was fetched from top online stores in India and was last refreshed on 23 Jan 2017",
+    "type": "electronics",
+    "subType": "laptop",
+    "brand": "lenovo",
+    "RAM": "4GB",
+    "HD" : "500GB",
+    "modelName": "lenovo-u41-70-80jv00hkin-notebook-side series",
+    "color": "Black",
+    "battery": "45 W AC Adapter",
+    "pic": "app/img/laptops/lenovo-u41-70-80jv00hkin-notebook-side-1.jpg",
+    "camera": {
+      "webcam": "720p Camera"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":5
+  },
+
+  {
+    "id": "ELEC_PRD_44",
+    "name": "lenovo-ultrabook",
+    "price": 58000,
+    "description":"The IdeaPad U510 laptop is slim, smart, responsive and affordable. Combining a stylish metal shell with a long-life battery and smart technologies, this 15.6-inch laptop delivers optimized performance - all while boasting a contemporary, colorful design and quality craftsmanship.",
+    "type": "electronics",
+    "subType": "laptop",
+    "brand": "lenovo",
+    "RAM": "4GB",
+    "HD" : "500GB",
+    "modelName": "lenovo-ultrabook series",
+    "color": "gray",
+    "battery": "45 W AC Adapter",
+    "pic": "app/img/laptops/lenovo-ultrabook-side-1.jpg",
+    "camera": {
+      "webcam": "720p HD Webcam"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+  {
+    "id": "ELEC_PRD_45",
+    "name": "lenovo-laptop-thinkpad",
+    "price": 84150,
+    "description":"The best price for lenovo-laptop-thinkpad- Price is Rs. 75000 at SnapDeal. The price list was fetched from top online stores in India and was last refreshed on 23 Jan 2017",
+    "type": "electronics",
+    "subType": "laptop",
+    "brand": "lenovo",
+    "RAM": "4GB",
+    "HD" : "500GB",
+    "modelName": "lenovo-laptop-thinkpad series",
+    "color": "Black",
+    "battery": "45 W AC Adapter",
+    "pic": "app/img/laptops/lenovo-laptop-thinkpad-1.jpg",
+    "camera": {
+      "webcam": "720p HD Webcam"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+  {
+    "id": "ELEC_PRD_46",
+    "name": "lenovo-yoga-2-in-1-laptop",
+    "price": 38399,
+    "description":"Use it as a laptop when you need it or use it as a tablet when you are on the move, either way, the Lenovo Yoga 500 makes computing stylish and effortless. Featuring a 360-degree flip-and-fold design, an ultra-thin body and a powerful processor, this laptop is as hardworking as you.",
+    "type": "electronics",
+    "subType": "laptop",
+    "brand": "lenovo",
+    "RAM": "4GB",
+    "HD" : "500GB",
+    "modelName": "lenovo-yoga-2-in-1-laptop series",
+    "color": "Black",
+    "battery": "45 W AC Adapter",
+    "pic": "app/img/laptops/lenovo-yoga-2-in-1-laptop-side-1.jpg",
+    "camera": {
+      "webcam": "720p HD Webcam"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+  {
+    "id": "ELEC_PRD_47",
+    "name": "asus-notebook",
+    "price": 21990,
+    "description":"Sleek, fast and spacious, the ASUS X540YA notebook ticks all the right boxes. Compact and lightweight, this laptop is specially designed to complement your fast and active lifestyle. Store all your favourite movies, TV shows, games, software and important files, this laptop with its 1TB HDD has storage space for all that and more.",
+    "type": "electronics",
+    "subType": "laptop",
+    "brand": "lenovo",
+    "RAM": "4GB",
+    "HD" : "500GB",
+    "modelName": "asus-notebook series",
+    "color": "Black",
+    "battery": "45 W AC Adapter",
+    "pic": "app/img/laptops/asus-notebook-side-1.jpg",
+    "camera": {
+      "webcam": "720p HD Webcam"
+    },
+    "comments": [
+      {
+        "text": "Very affordable price",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The mobile does not look cheap from any angle. Some have even confused this with the vivo v5 so this says a lot!",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
   }
 ]

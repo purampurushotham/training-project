@@ -1,17 +1,14 @@
-<script src="../modules/search/search.module.js"></script>
 <div class="container">
-    <br><br><br><br><br><br><br><br><br><br>
     <div class="row">
         <div ng:repeat="i in products | orderBy:'-rating'| limitTo:'products.length()'" class="col-md-4">
-            <div class="container">
-                <a ui-sref="view({id:i.id})">
-               <img src="{{i.pic}}" class="pics"></a>
-                 <p>Name:{{i.name}}</p>
-                 <p>Price:{{i.price}}</p>
-                <p>Rating:{{i.rating}}</p>
-                <p><jk-rating-stars rating="i.rating" read-only="readOnly" ></jk-rating-stars></div></p>
-        </div>
-            <br><br>
+            <div class="container lead">
+                <a class="search_a" ui-sref="view({id:i.id})">
+               <img src="{{i.pic}}" class="pics">
+                 <p ng-bind="i.name"></p>
+                 <p ng-bind="i.price"></p>
+                <p><jk-rating-stars class="custom_rating" rating="i.rating" read-only="true" ></jk-rating-stars></p></a>
+            </div>
+        </di
     </div>
 </div>
 </div>

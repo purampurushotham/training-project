@@ -11,16 +11,16 @@
         var vm = this;
 
      //   vm.products=[];
-        vm.getData=function () {
+      /*  vm.getData=function () {
             samData.getData().then(function (data) {
                     $rootScope.products={};
                 $rootScope.products=data;
             },
             function (msg) {
                 console.log("error");
-            });
+            }); 
         };
-        vm.getData();
+        vm.getData();*/
         console.log("in home controller")
     }
 

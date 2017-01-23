@@ -6,6 +6,7 @@
         "ui.router",
         "ui.bootstrap",
         "ui.select",
+        "rzModule",
         "MSC.home",
         "MSC.search",
         "MSC.view",

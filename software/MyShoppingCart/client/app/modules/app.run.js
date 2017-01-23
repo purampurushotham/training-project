@@ -4,10 +4,43 @@
 (function(){
     angular
         .module("MSC")
-        .run(appRun);
+        .factory("samData",samData)
+    .run(appRun);
+    samData.$inject=['$http','$q'];
+    function samData($http,$q) {
+       /* var dataService={
+            products:[],
+            getData:getData
+        };
+        return dataService;
+*/
+        return {
+            getData:function () {
+            var products=[];
+            var deffered=$q.defer();
 
-    appRun.$inject = [];
-    function appRun() {
+            $http.get('data.json').then(function mySuccess(response) {
+                deffered.resolve(response.data);
+                console.log("in samData")
+
+            }).then(function myError(error) {
+                deffered.reject("error in getting data");
+            });
+            return deffered.promise;
+
+        }
+
+    };
+    }
+    appRun.$inject = ['samData','$rootScope'];
+    function appRun(samData,$rootScope) {
+        samData.getData().then(function (data) {
+                $rootScope.products={};
+                $rootScope.products=data;
+            },
+            function (msg) {
+                console.log("error");
+            });
         console.log("in Run");
     }
 }());
