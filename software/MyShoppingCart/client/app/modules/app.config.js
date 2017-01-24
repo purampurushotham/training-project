@@ -56,7 +56,6 @@
                templateUrl: "Books-Biographies.html"
            });
 */
-       $locationProvider.html5Mode(true);
        console.log("in config");
    }
 })();
