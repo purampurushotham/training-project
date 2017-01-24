@@ -22,10 +22,16 @@
                     <dt class="col-sm-3">Battery :</dt>
                     <dd class="col-sm-9" ng-bind="vc.vp.battery"></dd>
                 </dl>
-                <div class="col-xs-4"><rzslider class="custom-slider    " rz-slider-model="vc.slider.minValue"
-                          rz-slider-high="vc.slider.maxValue   "
-                          rz-slider-options="vc.slider.options"></rzslider></div>
+                <div class="col-xs-4"><rzslider class="custom-slider" rz-slider-model="vc.slider.minValue"
+                                                rz-slider-high="vc.slider.maxValue"
+                                                rz-slider-options="vc.slider.options"></rzslider>
+                    <p>Price: {{vc.slider.minValue}}</p>
+                    <p>Price: {{vc.slider.maxValue}}</p>
+                    <input type="number" ng-model="vc.slider.minValue"/>
+                    <input type="number" ng-model="vc.slider.maxValue"/>
+                </div>
             </div>
+
             <div class="col-sm-6">
                 <h4>Commments : <span class="glyphicon-comment"></span> </h4>
                 <div ng-repeat="i  in vc.vp.comments" class="well well-sm" >
@@ -38,9 +44,9 @@
                         <dd class="col-sm-9" ng-bind="i.username"></dd>
                     </dl>
 
-                     <!--   <p class=""><span ng-bind="i.text"></span></p>
-                    <p class=""><span ng-bind="i.rating"></span></p>
-                    <p class=""><span ng-bind="i.username"></span></p>-->
+                    <!--   <p class=""><span ng-bind="i.text"></span></p>
+                   <p class=""><span ng-bind="i.rating"></span></p>
+                   <p class=""><span ng-bind="i.username"></span></p>-->
                 </div>
             </div>
         </div>
@@ -63,7 +69,9 @@
         </div>
     </div>
 </div>
-
+<div class="container">
+    <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></ul>
+</div>
 <!--
 <div ng:repeat="i in products | orderBy:'-rating'| limitTo:'products.length()'" class="col-md-4">
     <div class="container">

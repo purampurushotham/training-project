@@ -5,12 +5,13 @@
             <div class="item">
                 <div class="content">
                     <div class="ui_select" ng-controller="searchCtrl as sc">
-                        <ui-select ng-model="products.selected"
+                        <ui-select ng-model="sc.selected"
                                    theme="bootstrap"
                                    reset-search-input="true"
                                    style="width: 600px;"
-                                   title="Choose an address">
-                            <ui-select-match placeholder="Enter an product name...">{{$select.selected.name}}</ui-select-match>
+                                   title="Choose an address"
+                                   on-select='sc.viewState(sc.selected.id)'>
+                            <ui-select-match placeholder="Enter an product name..." >{{$select.selected.name}}</ui-select-match>
                             <ui-select-choices  refresh="sc.checkName($select.search)"
                                                 refresh-delay="0"
                                                 repeat="e in products | filter: $select.search | limitTo: sc.limitNameSearch">

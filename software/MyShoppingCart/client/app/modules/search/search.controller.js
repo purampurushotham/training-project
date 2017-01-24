@@ -5,25 +5,26 @@
     angular
         .module("MSC.search")
         .controller("searchCtrl",searchCtrl);
-    searchCtrl.$inject=['samData']
-    function searchCtrl(samData,checkName) {
-        var vm=this;
-        vm.product={};
+    searchCtrl.$inject=['samData','$state']
+    function searchCtrl(samData,$state,checkName,viewState) {
+        var vm = this;
+        vm.product = {};
         //ssvm.products={};*/
         console.log("in Search controller");
         vm.limitNameSearch = 500
 
-        vm.checkName = function(lettersTyped)
-        {
+        vm.checkName = function (lettersTyped) {
 
-            if(lettersTyped.length > 2)
-            {
+            if (lettersTyped.length > 2) {
                 vm.limitNameSearch = 500;
             }
-            else{
+            else {
                 vm.limitNameSearch = 0;
             }
         }
-    }
+        vm.viewState = function (id) {
+            $state.go('view', {id:id});
 
+        }
+    }
 }());

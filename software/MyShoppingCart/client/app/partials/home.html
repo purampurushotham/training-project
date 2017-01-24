@@ -1,6 +1,7 @@
 <div class="container">
     <div class="row">
-        <div ng:repeat="i in products | orderBy:'-rating'| limitTo:'products.length()'" class="col-md-4">
+        <p class="lead">Mobiles</p>
+        <div ng:repeat="i in products |filter:'mobiles'| orderBy:'-rating'| limitTo:'5'" class="col-md-4">
             <div class="container lead">
                 <a class="search_a" ui-sref="view({id:i.id})">
                <img src="{{i.pic}}" class="pics">
@@ -11,4 +12,30 @@
         </di
     </div>
 </div>
+    <div class="row">
+        <p class="lead">Laptops</p>
+        <div ng:repeat="i in products |filter:'laptops'| orderBy:'-rating'| limitTo:'5'" class="col-md-4">
+            <div class="container lead">
+                <a class="search_a" ui-sref="view({id:i.id})">
+                    <img src="{{i.pic}}" class="pics">
+                    <p ng-bind="i.name"></p>
+                    <p ng-bind="i.price"></p>
+                    <p><jk-rating-stars class="custom_rating" rating="i.rating" read-only="true" ></jk-rating-stars></p></a>
+            </div>
+            </di
+        </div>
+    </div>
+    <div class="row">
+        <p class="lead">Books</p>
+        <div ng:repeat="i in products |filter:'Books'| orderBy:'-rating'| limitTo:'5'" class="col-md-4">
+            <div class="container lead">
+                <a class="search_a" ui-sref="view({id:i.id})">
+                    <img src="{{i.pic}}" class="pics">
+                    <p ng-bind="i.name"></p>
+                    <p ng-bind="i.price"></p>
+                    <p><jk-rating-stars class="custom_rating" rating="i.rating" read-only="true" ></jk-rating-stars></p></a>
+            </div>
+            </di
+        </div>
+    </div>
 </div>
