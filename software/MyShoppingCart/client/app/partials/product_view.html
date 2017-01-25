@@ -58,7 +58,7 @@
 <div class="container">
     <<h2 class="Display-2">Similar Products</h2>
     <div class="row">
-        <div ng:repeat="i in vc.similarProducts " class="col-md-4">
+        <div ng:repeat="i in vc.similarProducts |limitTo:vc.pageSize " class="col-md-4">
             <div class="container">
                 <a ui-sref="view({id:i.id})">
                     <img src="{{i.pic}}" class="pics"></a>
@@ -69,9 +69,21 @@
         </div>
     </div>
 </div>
+
+
 <div class="container">
-    <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></ul>
+    <div>
+        <ul>
+            <li ng-repeat="customer in vc.similarProducts | limitTo:vc.pageSize">
+            </li>
+        </ul>
+        <button ng-disabled="vc.pageButtonDisabled(-1)" ng-click="vc.paginate(-1)">Previous</button>&nbsp;&nbsp;
+        <button ng-disabled="vc.pageButtonDisabled(1)" ng-click="vc.paginate(1)">Next</button>
+        <br /><br />
+        Page {{vc.currentPage+1}} of {{vc.totalPages}}
+    </div>
 </div>
+<!--
 <!--
 <div ng:repeat="i in products | orderBy:'-rating'| limitTo:'products.length()'" class="col-md-4">
     <div class="container">
@@ -80,5 +92,5 @@
         <p>Name:{{i.name}}</p>
         <p>Price:{{i.price}}</p>
         <p>Rating:{{i.rating}}</p>
-    </div>-->
-
+    </div>&ndash;&gt;
+-->
