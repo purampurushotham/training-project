@@ -15,26 +15,21 @@
     <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.css">
     <link rel="stylesheet" href="bower_components/angular-jk-rating-stars/dist/jk-rating-stars.min.css">
     <link rel="stylesheet" href="bower_components/angularjs-slider/dist/rzslider.css">
-        <link rel="stylesheet" href="app/css/app.css">
-
-
-    <base href="/">
-
-
+    <link rel="stylesheet" href="app/css/app.css">
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css">
+    <!--<base href="/">-->
 
 </head>
 <body>
 
-<div ng-include="'app/partials/header.html'"></div>
+<div header-directive></div>
 <div class="row" >
-    <div class="container" ui-view  ></div>
+    <div class="container" ui-view >
+
+    </div>
 </div>
-<div ng-include="'app/partials/footer.html'"></div>
-<!-- In production use:
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
--->
-
-
+<div footer-directive></div>
+</div>
 </body>
 <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 <script src="bower_components/angular/angular.js"></script>
@@ -48,6 +43,10 @@
 <script src="app/modules/app.module.js"></script>
 <script src="app/modules/app.config.js"></script>
 <script src="app/modules/app.run.js"></script>
+<script src="app/modules/header/header.module.js"></script>
+<script src="app/modules/header/header.controller.js"></script>
+<script src="app/modules/footer/footer.module.js"></script>
+<script src="app/modules/footer/footer.controller.js"></script>
 <script src="app/modules/home/home.module.js"></script>
 <script src="app/modules/home/home.controller.js"></script>
 <script src="app/modules/home/home.factory.js"></script>

@@ -17,9 +17,6 @@
                                                 repeat="e in products | filter: $select.search | limitTo: sc.limitNameSearch">
                                 <div class="container">
                                     <div class="row">
-                                        <!--   <div class="col-lg-6">
-                                           <a ui-sref="view({id:i.id})">
-                                               <img src="{{i.pic}}" class="search_pic"></a></div>-->
                                         <div class="col-md-3"><a ui-sref="view({id:e.id})"><p ng-bind="e.name"></p></a></div>
                                         <div class="col-md-3"><p ng-bind="e.price"></p></div></div>
                                     <div class="row">

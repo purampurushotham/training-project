@@ -7,6 +7,8 @@
         "ui.bootstrap",
         "ui.select",
         "rzModule",
+        "MSC.header",
+        "MSC.footer",
         "MSC.home",
         "MSC.search",
         "MSC.view",

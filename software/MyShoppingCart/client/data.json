@@ -2007,6 +2007,2005 @@
       }
     ],
     "rating":4
+  },
+  {
+    "id": "BOOK_PRD_1",
+    "name": "The Hunger Games ",
+    "price": 600,
+    "description":"Winning will make you famous. Losing means certain death.",
+    "type": "book",
+    "subType": "fiction",
+    "language": "english",
+    "author" :" Suzanne Collins",
+    "pic": "app/img/Books/hungergames-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie" ,
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+
+  {
+    "id": "BOOK_PRD_2",
+    "name": "Teach Me to Forget ",
+    "price": 200,
+    "description":"The best price for Apple MacBook Pro MD101HNA Price is Rs. 46968 at TataCliQ. The price list was fetched from top online stores in India and was last refreshed on 23 Jan 2017",
+    "type": "book",
+    "subType": "fiction",
+    "language": "english",
+    "author" : "Erica M. Chapman",
+    "pic": "app/img/Books/teachmetoforget-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+  {
+    "id": "BOOK_PRD_3",
+    "name": "Small Admissions",
+    "price": 199,
+    "description":"The best price for Apple MacBook Pro MD101HNA Price is Rs. 46968 at TataCliQ. The price list was fetched from top online stores in India and was last refreshed on 23 Jan 2017",
+    "type": "book",
+    "subType": "fiction",
+    "language": "english",
+    "author" :"Amy Poeppel",
+    "pic": "app/img/Books/smalladmissions-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+
+  {
+    "id": "BOOK_PRD_4",
+    "name": "The Burning Page",
+    "price": 50799,
+    "description":"The third title in Genevieve Cogman's clever and exciting The Invisible Library series, The Burning Page is an action-packed literary adventure!",
+    "type": "book",
+    "subType": "fiction",
+    "language": "english",
+    "author" :"Genevieve Cogman",
+    "pic": "app/img/Books/burning-page-1.jpg",
+    "comments": [
+      {
+        "text": "Loving this series and excited to see there will be a 4th and 5th book.",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Kimberly"
+      },
+      {
+        "text": "Absolutely can't wait for this! So glad we get a 2016 release even if it's in December",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Annika "
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+  {
+    "id": "BOOK_PRD_5",
+    "name": "The Marriage Lie",
+    "price": 300,
+    "description":"Iris and Will's marriage is as close to perfect as it can be: a large house in a nice Atlanta neighborhood, rewarding careers and the excitement of trying for their first baby. But on the morning Will leaves for a business trip to Orlando, Iris's happy world comes to an abrupt halt",
+    "type": "book",
+    "subType": "fiction",
+    "language": "english",
+    "author" :"Kimberly Belle",
+    "pic": "app/img/Books/marriage-lie-1.jpg",
+    "comments": [
+      {
+        "text": "Wow! This was one rollercoaster ride of a great book! In fact, I am still feeling the adrenaline rush of that last sentence. ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "♡ Kim ♡"
+      },
+      {
+        "text": "Holy crap!!! What a crazy ride this book is! Twists & turns in the plot that don't end til the very last whopper of a sentence! My mind was completely blown! I believe this is the best book yet by Belle & I loved it!",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Laura Rash"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+
+  {
+    "id": "BOOK_PRD_6",
+    "name": "The Twilight Wife ",
+    "price": 500,
+    "description":"The best price for Apple MacBook Pro MD101HNA Price is Rs. 46968 at TataCliQ. The price list was fetched from top online stores in India and was last refreshed on 23 Jan 2017",
+    "type": "book",
+    "subType": "fiction",
+    "language": "english",
+    "author" :"A.J. Banner",
+    "pic": "app/img/Books/The-twilight-wife-1.jpg",
+    "comments": [
+      {
+        "text": "Thinking on this one. Review to come",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Chelsea Humphrey "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+
+  {
+    "id": "BOOK_PRD_7",
+    "name": "Bad Boy",
+    "price": 300,
+    "description":"Vlog star Renard Grant has nothing to prove: he’s got a pretty face, chiseled body, and two million adoring video subscribers. Plus the scars on his chest and a prescription for testosterone. Because Ren is transgender: assigned female at birth, living now as male. He films his transition and shares it bravely with the world; his fans love his honesty and positivity.",
+    "type": "book",
+    "subType": "fiction",
+    "language": "english",
+    "author" :" Elliot Wake",
+    "pic": "app/img/Books/bad-boy-1.jpg",
+    "comments": [
+      {
+        "text": "Hi. I wrote this. It's about a trans boy, like me. I hope you like it.",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Elliot Wake"
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+
+  {
+    "id": "BOOK_PRD_8",
+    "name": "Whatever Happened to Interracial Love",
+    "price": 399,
+    "description":"Now available in Ecco’s Art of the Story series: a never-before-published collection of stories from a brilliant yet little known African American artist and filmmaker—a contemporary of revered writers including Toni Cade Bambara, Laurie Colwin, Ann Beattie, Amy Hempel, and Grace Paley—whose prescient work has recently resurfaced to wide acclaim",
+    "type": "book",
+    "subType": "fiction",
+    "language": "english",
+    "author" :"Kathleen Collins",
+    "pic": "app/img/Books/Whatever-Happened-to-Interracial-Love-1.jpg",
+    "comments": [
+      {
+        "text": "The titular story is fantastic.",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Sarah SE "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+
+  {
+    "id": "BOOK_PRD_9",
+    "name": "Love, Alice",
+    "price": 600,
+    "description":"From the author of Summer at Hideaway Key comes a sweeping new Southern women’s fiction novel about forgiving the past one letter at a time..",
+    "type": "book",
+    "subType": "fiction",
+    "language": "english",
+    "author" :" Stephanie Scott",
+    "pic": "app/img/Books/love-alice-1.jpg",
+    "comments": [
+      {
+        "text": "This was a good yarn! Reminds me of some of the novels I read when I was a kid when I couldn't wait to get done with school so I could finish! Very enjoyable",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Carol Scheherazade "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+
+  {
+    "id": "BOOK_PRD_10",
+    "name": "Scared to Death",
+    "price": 999,
+    "description":"A serial killer murdering for kicks. A detective seeking revenge. When the body of a snatched schoolgirl is found in an abandoned biosciences building, the case is first treated as a kidnapping gone wrong. ",
+    "type": "book",
+    "subType": "fiction",
+    "language": "english",
+    "author" :" Rachel Amphlett",
+    "pic": "app/img/Books/scared-to-death-1.jpg",
+    "comments": [
+      {
+        "text": "Just what I need, another series! I love so many and will add this to the pile. Kept me interested throughout. Highly recommend.",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Karin "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+  {
+    "id": "BOOK_PRD_11",
+    "name": "Alterations",
+    "price": 359,
+    "description":"If anyone saw the prom boards Amelia Blanco makes on her favorite fashion app, they'd think Ethan Laurenti was her boyfriend. They wouldn't know that all the plans she's made for them are just dreams, and that she's the girl who watches him from the kitchen while her parents cook for his famous family.",
+    "type": "book",
+    "subType": "fiction",
+    "language": "english",
+    "author" :"Stephanie Scott",
+    "pic": "app/img/Books/Alterations-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+  {
+    "id": "BOOK_PRD_11",
+    "name": "All I Ever Wanted",
+    "price": 456,
+    "description":"Nancy is four, nearly five. She talks all the time: in the car, on the way to nursery, to her extrovert older brother, to her collection of bears. But then, one February morning, everything changes. Nancy's mum and dad split up. Her father Patrick moves away from their Bristol home to Newcastle. And Nancy stops talking.",
+    "type": "book",
+    "subType": "fiction",
+    "language": "english",
+    "author" :" Lucy Dillon",
+    "pic": "app/img/Books/All-I-Ever-Wanted-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+  {
+    "id": "BOOK_PRD_12",
+    "name": "Four Weddings and a Sixpence: An Anthology",
+    "price": 799,
+    "description":"Beloved authors Julia Quinn, Elizabeth Boyle, Laura Lee Guhrke, and Stefanie Sloane deliver the stories of four friends from Madame Rochambeaux’s Gentle School for Girls who find an old sixpence in their bedchamber and decide that it will be the lucky coin for each of their weddings…",
+    "type": "book",
+    "subType": "fiction",
+    "language": "english",
+    "author" :" Julia Quinn",
+    "pic": "app/img/Books/Four-Weddings-and-a-Sixpence-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+
+  {
+    "id": "BOOK_PRD_13",
+    "name": "Rogue One: A Star Wars Story",
+    "price": 299,
+    "description":"NEW YORK TIMES BESTSELLER Go beyond the film with a novelization featuring new scenes and expanded material. As the shadows of the Empire loom ever larger across the galaxy, so do deeply troubling rumors. The Rebellion has learned of a sinister Imperial plot to bring entire worlds to their knees. Deep in Empire-dominated space, a machine of unimaginable destructive power ",
+    "type": "book",
+    "subType": "fiction",
+    "language": "english",
+    "author" :" Alexander Freed",
+    "pic": "app/img/Books/Rogue-One-A-Star-Wars-Story-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+
+  {
+    "id": "BOOK_PRD_14",
+    "name": "Last Year",
+    "price": 399,
+    "description":"From the author of the bestselling and Hugo Award-winning Spin, comes an SF tale that poses searching questions about tourism and colonization",
+    "type": "book",
+    "subType": "fiction",
+    "language": "english",
+    "author" :" Robert Charles Wilson",
+    "pic": "app/img/Books/Last-Year-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+
+  {
+    "id": "BOOK_PRD_15",
+    "name": "The Legend of Wonder Woman Vol. 1: Origins",
+    "price": 1099,
+    "description":"A new 9-issue miniseries with a story written and pencilled by Renae De Liz ('The Last Unicorn')! In the beginning, there was only chaos. But Hippolyta, Queen of the Amazons, saw a better future--and eventually, her daughter would be destined to bring that new world to life.",
+    "type": "book",
+    "subType": "fiction",
+    "language": "english",
+    "author" :" Renae De Liz",
+    "pic": "app/img/Books/The-Legend-of-Wonder-Woman-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded. Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":5
+  },
+
+  {
+    "id": "BOOK_PRD_16",
+    "name": "Miniatures: The Very Short Fiction of John Scalzi",
+    "price": 799,
+    "description":"The ex-planet Pluto has a few choice words about being thrown out of the solar system. A listing of alternate histories tells you all the various ways Hitler has died. A lawyer sues an interplanetary union for dangerous working conditions. And four artificial intelligences explain, in increasingly worrying detail, how they plan not to destroy humanity.",
+    "type": "book",
+    "subType": "fiction",
+    "language": "english",
+    "author" :" John Scalzi ,  Natalie Metzger",
+    "pic": "app/img/Books/Miniatures-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+  {
+    "id": "BOOK_PRD_17",
+    "name": "Ms. Marvel, Vol. 6: Civil War II",
+    "price": 50799,
+    "description":"While CIVIL WAR II brews, the next generation of Avengers has bigger things to worry about - like a tri-state academic competition! As rival schools clash, Ms. Marvel's teammates Spider-Man and Nova are now her enemies! But when Kamala gets called to the real battle's front line, she faces a fight",
+    "type": "book",
+    "subType": "fiction",
+    "language": "english",
+    "author" :"  G. Willow Wilson",
+    "pic": "app/img/Books/Ms. Marvel-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded. Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+
+  {
+    "id": "BOOK_PRD_18",
+    "name": "First of the Tudors",
+    "price": 300,
+    "description":"A stunning novel of the Tudors from the best-selling author of The Agincourt Bride.",
+    "type": "book",
+    "subType": "fiction",
+    "language": "english",
+    "author" :"Joanna Hickson",
+    "pic": "app/img/Books/First-of-the-Tudors-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+
+  {
+    "id": "BOOK_PRD_19",
+    "name": "Prose and Cons ",
+    "price": 799,
+    "description":"Magic, books, and cats collide in a village near Niagara Falls in the latest mystery from the author of Crime and Poetry...",
+    "type": "book",
+    "subType": "fiction",
+    "language": "english",
+    "author" :" Amanda Flower",
+    "pic": "app/img/Books/Prose-and-Cons-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+
+  {
+    "id": "BOOK_PRD_20",
+    "name": "The Liberation",
+    "price": 799,
+    "description":"Set in a world that might have been, of mechanical men and alchemical dreams, this is the third and final novel in a stunning series of revolution by Ian Tregillis, confirming his place as one of the most original new voices in speculative fiction.",
+    "type": "book",
+    "subType": "fiction",
+    "language": "english",
+    "author" :" Ian Tregillis",
+    "pic": "app/img/Books/The-Liberation-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+
+  {
+    "id": "BOOK_PRD_21",
+    "name": "Expecting to Die",
+    "price": 599,
+    "description":"Some places earn their bad reputation through tall tales or chance. Grizzly Falls is different. Here, killers aren't just the stuff of legends and campfire lore. Someone is in the nighttime shadows, watching the local teens in the moonlit woods. Waiting for the right moment, the right victim. Waiting to take away a life.",
+    "type": "book",
+    "subType": "fiction",
+    "language": "english",
+    "author" :" Lisa Jackson",
+    "pic": "app/img/Books/Expecting-to-Die-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+  {
+    "id": "BOOK_PRD_22",
+    "name": "Unfettered II ",
+    "price": 200,
+    "description":"Life can kick us when we are down. In Shawn Speakman’s case, he is fighting back.",
+    "type": "book",
+    "subType": "fiction",
+    "language": "english",
+    "author" :" Shawn Speakman",
+    "pic": "app/img/Books/Unfettered-II-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+  {
+    "id": "BOOK_PRD_23",
+    "name": "Stalked ",
+    "price": 599,
+    "description":"If you're reading this, I'm already dead… That's the note seventeen-year-old Haley Cooke leaves behind when she disappears from inside her high school. FBI profiler Evelyn Baine is called in to figure out who had reason to hurt her.",
+    "type": "book",
+    "subType": "fiction",
+    "language": "english",
+    "author" :"  Elizabeth Heiter",
+    "pic": "app/img/Books/Stalked-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+  {
+    "id": "BOOK_PRD_24",
+    "name": "In Mistletoe",
+    "price": 899,
+    "description":"At twenty-five, Grace Evans is steadily picking up the pieces of everyone else’s life. So, when her younger sister decides to turn into a runaway bride just four weeks before the wedding, Grace, drops everything to chase after her and bring her back home. ",
+    "type": "book",
+    "subType": "fiction",
+    "language": "english",
+    "author" :" Tammy L. Bailey",
+    "pic": "app/img/Books/In-Mistletoe-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+  {
+    "id": "BOOK_PRD_25",
+    "name": "The Nature of a Pirate",
+    "price": 50799,
+    "description":"The third novel in the Stormwrack series, following a young woman's odyssey into a fantastical age-of-sail world Marine videographer and biologist Sophie Hansa has spent the past few months putting her knowledge of science to use on the strange world of Stormwrack, solving seemingly impossible cases where no solution had been found before. ",
+    "type": "book",
+    "subType": "fiction",
+    "language": "english",
+    "author" :" A.M. Dellamonica",
+    "pic": "app/img/Books/The-Nature-of-a-Pirate-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+
+
+
+
+  {
+    "id": "BOOK_PRD_26",
+    "name": "Romeo and Juliet",
+    "price": 50799,
+    "description":"Romeo and Juliet, The Comic Book quick read for students edition of William Shakespeare's famous play. Read and understand the play in minutes, not hours. This edition has new 'Fun Facts' to add to one's understanding and enjoyment. Fully illustrated color comic book version brings all the action to life on the pages; perfect for busy students.",
+    "type": "book",
+    "subType": "comic",
+    "language": "english",
+    "author" :" William Shakespeare",
+    "pic": "app/img/Books/Romeo-and-Juliet-1.jpg",
+    "comments": [
+      {
+        "text": "Why didn’t they just run away together? It would have saved a lot of heart ache. ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Bookworm Sean "
+      },
+      {
+        "text": "It is always so satisfying to read a book you've heard so much about throughout your life. You should have seen how excited I got when Juliet started saying 'Romeo, o Romeo'!",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Ariel "
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+
+
+  {
+    "id": "BOOK_PRD_27",
+    "name": "A Game of Thrones",
+    "price": 799,
+    "description":"A New York Times bestselling epic. A blockbuster TV series. And now, George R. R. Martin’s breathtaking fantasy masterpiece makes its powerful graphic novel debut—with all the majesty, intrigue, full-blooded adventure, and sweeping, mythic vision that have made it a landmark work of imaginative literature. ",
+    "type": "book",
+    "subType": "comic",
+    "language": "english",
+    "author" :"  Daniel Abraham",
+    "pic": "app/img/Books/A-Game-of-Thrones-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+
+  {
+    "id": "BOOK_PRD_28",
+    "name": "Born Standing Up",
+    "price": 299,
+    "description":"In the midseventies, Steve Martin exploded onto the comedy scene. By 1978 he was the biggest concert draw in the history of stand-up. In 1981 he quit forever. This book is, in his own words, the story of 'why I did stand-up and why I walked away' ",
+    "type": "book",
+    "subType": "comic",
+    "language": "english",
+    "author" :"Steve Martin",
+    "pic": "app/img/Books/Born-Standing-Up-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+
+
+  {
+    "id": "BOOK_PRD_29",
+    "name": "The Mammoth Book of Comic Fantasy",
+    "price": 799,
+    "description":"A compendium of comic fantasy writing. Most of the stories are modern, with many especially written for this collection. The book also includes classic reprints and rare gems from comic fantasy's roots in past years.",
+    "type": "book",
+    "subType": "comic",
+    "language": "english",
+    "author" :"  Mike Ashley",
+    "pic": "app/img/Books/The-Mammoth-Book-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+
+  {
+    "id": "BOOK_PRD_30",
+    "name": "Laughter",
+    "price": 599,
+    "description":"In this great philosophical essay, Henri Bergson explores why people laugh and what laughter means. Written at the turn of the twentieth century, Laughter explores what it is in language that makes a joke funny and what it is in us that makes us laugh.",
+    "type": "book",
+    "subType": "comic",
+    "language": "english",
+    "author" :"  Henri Bergson, Fred Rothwell",
+    "pic": "app/img/Books/Laughter-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":5
+  },
+
+  {
+    "id": "BOOK_PRD_31",
+    "name": "Fall in Love Like a Comic",
+    "price": 599,
+    "description":"Rena Sakura is a high school student with a secret: she's a professional mangaka. And although she's never been on a date, that doesn't stop her from drawing steamy shojo scenes for Chami magazine",
+    "type": "book",
+    "subType": "comic",
+    "language": "english",
+    "author" :"  Chitose Yagami, Nancy Thistlethwaite",
+    "pic": "app/img/Books/Fall-in-Love-Like-a-Comic-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+
+  {
+    "id": "BOOK_PRD_32",
+    "name": "Mort",
+    "price": 399,
+    "description":"An illustrated version of one of Terry Pratchett's comic science-fiction novels. Mort has been chosen as Death's apprentice. He gets board and lodging, free use of company horse, and doesn't even need time off for his grandmother's funeral. Looking like a skeleton is not compulsory, either.",
+    "type": "book",
+    "subType": "comic",
+    "language": "english",
+    "author" :"  Terry Pratchett, Lyn Pratchett, Graham Higgins",
+    "pic": "app/img/Books/Mort-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+
+  {
+    "id": "BOOK_PRD_33",
+    "name": "Tattoo",
+    "price": 599,
+    "description":"An illustrated version of one of Terry Pratchett's comic science-fiction novels. Mort has been chosen as Death's apprentice. He gets board and lodging, free use of company horse, and doesn't even need time off for his grandmother's funeral. Looking like a skeleton is not compulsory, either.",
+    "type": "book",
+    "subType": "comic",
+    "language": "english",
+    "author" :"  Rantz Hoseley",
+    "pic": "app/img/Books/Tattoo-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+  {
+    "id": "BOOK_PRD_34",
+    "name": "Tina's Mouth",
+    "price": 699,
+    "description":"In the tradition of Persepolis and American Born Chinese, a wise and funny high school heroine comes of age.",
+    "type": "book",
+    "subType": "comic",
+    "language": "english",
+    "author" :" Keshni Kashyap ",
+    "pic": "app/img/Books/Tina's-Mouth-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+
+  {
+    "id": "BOOK_PRD_35",
+    "name": "Tales of the Slayers ",
+    "price": 1599,
+    "description":"Buffy the Vampire Slayer is the latest in a long tradition of young women who've been trained to give their lives in the war against vampires. We've gotten glimpses of these other women over the years on T.V., in comics, and in books.",
+    "type": "book",
+    "subType": "comic",
+    "language": "english",
+    "author" :"  Joss Whedon, Amber Benson",
+    "pic": "app/img/Books/Tales-of-the-Slayers-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":5
+  },
+
+  {
+    "id": "BOOK_PRD_36",
+    "name": "Men of Tomorrow",
+    "price": 1099,
+    "description":"Animated by the stories of some of the last century's most charismatic and conniving artists, writers, and businessmen, Men of Tomorrow brilliantly demonstrates how the creators of the superheroes gained their cultural power and established a crucial place in the modern imagination.",
+    "type": "book",
+    "subType": "comic",
+    "language": "english",
+    "author" :" Gerard Jones ",
+    "pic": "app/img/Books/Men-of-Tomorrow-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+
+  {
+    "id": "BOOK_PRD_37",
+    "name": "Super Graphic",
+    "price": 599,
+    "description":"The comic book universe is adventurous, mystifying, and filled with heroes, villains, and cosplaying Comic-Con attendees. This book by one of Wired magazine's art directors traverses the graphic world through a collection of pie charts, bar graphs, timelines, scatter plots, and more",
+    "type": "book",
+    "subType": "comic",
+    "language": "english",
+    "author" :"  Tim Leong",
+    "pic": "app/img/Books/Super-Graphic-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+  {
+    "id": "BOOK_PRD_38",
+    "name": "The Mammoth Book of Comic Fantasy II",
+    "price": 599,
+    "description":"Bungee-jumping demons, mad Magi, seafaring aliens, and a tricky wizard who leaks to the press populate this new collection of magic and mayhem from fantasy's funniest, wackiest writers, among them Harlan Ellison, Ambrose Bierce, Neil Gaiman, Craig Shaw Gardner, Harry Harrison, Tom Holt, and many more",
+    "type": "book",
+    "subType": "comic",
+    "language": "english",
+    "author" :"  Mike Ashley",
+    "pic": "app/img/Books/The-Mammoth-Book-of-Comic-FantasyII-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+
+  {
+    "id": "BOOK_PRD_39",
+    "name": "Doctor Who",
+    "price": 1199,
+    "description":"Take a blistering trip through time and space with three stunning ALL-NEW short stories featuring Tenth Doctor, Eleventh Doctor and the brand-new Twelfth Doctor by the ongoing DOCTOR WHO creative teams",
+    "type": "book",
+    "subType": "comic",
+    "language": "english",
+    "author" :" Nick Abadzis, Al Ewing, Robbie Morrison, Rob Williams, Elena Casagrande",
+    "pic": "app/img/Books/Doctor-Who-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+
+  {
+    "id": "BOOK_PRD_40",
+    "name": "Chicken",
+    "price": 699,
+    "description":"Chicken is a soulful expression of the love between cat and person as it collides with the powerful tide of family, friends, loss, and the invisible forces that connect us.",
+    "type": "book",
+    "subType": "comic",
+    "language": "english",
+    "author" :" Terese Jungle, Jungle Terese",
+    "pic": "app/img/Books/Chicken-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":5
+  },
+
+  {
+    "id": "BOOK_PRD_41",
+    "name": "The Mammoth Book of New Comic Fantasy",
+    "price": 659,
+    "description":"Mike Ashley is back with an all-new edition of one of the bestselling Mammoth Books ever, from the funniest writers in the field, including Neil Gaiman, Tom Holt, and Terry Jones. The thirty- five off-the-wall comic fantasies featured in Ashley's new collection are a mix of specially written stories and hard-to-find gems: a computer salesman in fairyland, a vampire footbal",
+    "type": "book",
+    "subType": "comic",
+    "language": "english",
+    "author" :" Neil Gaiman",
+    "pic": "app/img/Books/The-Mammoth-Book-of-New-Comic-Fantasy-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+  {
+    "id": "BOOK_PRD_42",
+    "name": "Storm Born #2",
+    "price": 299,
+    "description":"Eugenie Markham is a freelance shaman, guarding our world from the invasion of Otherworldly creatures. Those who try have 'The Dark Swan' to contend with. But Eugenie's about to cross into the Otherworld alone to rescue a girl that nobody else will.'",
+    "type": "book",
+    "subType": "comic",
+    "language": "english",
+    "author" :" Richelle Mead",
+    "pic": "app/img/Books/Storm-Born -#2-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+  {
+    "id": "BOOK_PRD_43",
+    "name": "A Scandal in Bohemia",
+    "price": 2099,
+    "description":"A Scandal in Bohemia was a nicely written short story. It was the very first Sherlock Holmes short story following the detective's introduction in the novels A Study in Scarlet and The Sign of the Four. Here Fufeng House presents the comic book of this story, and it is the No. 1 book in 'Sherlock Holmes Comic Series'.",
+    "type": "book",
+    "subType": "comic",
+    "language": "english",
+    "author" :" Arthur Conan Doyle, Situ Qing ",
+    "pic": "app/img/Books/A-Scandal-in-Bohemia-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":5
+  },
+
+  {
+    "id": "BOOK_PRD_44",
+    "name": "Clerks",
+    "price": 699,
+    "description":"Common-sense advice for living a less hectic and more meaningful, loving life. Carlson explains how to focus on the important things and not let small stuff take control. Japanese Edition of the best-seller in Comic form.",
+    "type": "book",
+    "subType": "comic",
+    "language": "english",
+    "author" :" Kevin Smith, Jim Mahfood",
+    "pic": "app/img/Books/Clerks-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+
+  {
+    "id": "BOOK_PRD_45",
+    "name": "Malcolm",
+    "price": 599,
+    "description":"Introduced simply as the boy on the bench, the titular character of Malcolm is a Candide-like figure who is picked up by the most famous astrologer of his period and introduced to a series of increasingly absurd characters and bizarre situations in the most prodigiously funny book to streak across these heavy-hanging times (Dorothy Parker).",
+    "type": "book",
+    "subType": "comic",
+    "language": "english",
+    "author" :" James Purdy ",
+    "pic": "app/img/Books/Laughter-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+
+
+  {
+    "id": "BOOK_PRD_46",
+    "name": "Danger in Darjeeling",
+    "price": 799,
+    "description":"Comic book based on Satyajit Ray's Danger in Darjeeling",
+    "type": "book",
+    "subType": "comic",
+    "language": "english",
+    "author" :"Satyajit Ray ",
+    "pic": "app/img/Books/Danger-in-Darjeeling-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+
+  {
+    "id": "BOOK_PRD_47",
+    "name": "Krazy Kat",
+    "price": 358,
+    "description":"Krazy Kat, created by George Herriman, made its debut in 1913. During its 31 year run, it was enormously popular with the public and with many writers, artists, and intellectuals of the time. An innovative cartoon masterpiece and the first major biographical work on the artist himself.",
+    "type": "book",
+    "subType": "comic",
+    "language": "english",
+    "author" :"  George Herriman, Patrick McDonnell, Karen O'Connell, Georgia Riley de Havenon",
+    "pic": "app/img/Books/Krazy-Kat-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+
+  {
+    "id": "BOOK_PRD_48",
+    "name": "The Great Comic Book Heroes",
+    "price": 599,
+    "description":"Fantagraphics is proud to publish Jules Feiffer's long out-of-print and seminal essay of comics criticism, The Great Comic Book Heroes, in a compact and affordable size. In 1965, Feiffer wrote what is arguably the first critical history of the comic book superheroes of the late 1930s and early 1940s, including Plastic Man, Batman, Superman, The Spirit and others",
+    "type": "book",
+    "subType": "comic",
+    "language": "english",
+    "author" :"  Jules Feiffer",
+    "pic": "app/img/Books/The-Great-Comic-Book-Heroes-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":4
+  },
+
+
+  {
+    "id": "BOOK_PRD_49",
+    "name": "Tickled Pink",
+    "price": 499,
+    "description":"Mindy Solomon absolutely has to leave Miami. Florida is bad for her head and her hair. She dreams of a dancing career on Broadway and moves to New York, but after a string of failures and mishaps, she realizes that she needs to rethink her grand plan. ",
+    "type": "book",
+    "subType": "comic",
+    "language": "english",
+    "author" :"Rita Rudner",
+    "pic": "app/img/Books/Tickled-Pink-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
+  },
+
+
+  {
+    "id": "BOOK_PRD_50",
+    "name": "Twilight: Biss Zum Morgengrauen",
+    "price": 599,
+    "description":"La historia de amor más famosa de todos los tiempos es ahora llevada al cómic de la mano del consagrado ilustrador coreano Young Kim y bajo la supervisión en todo momento de Stephenie Meyer.",
+    "type": "book",
+    "subType": "comic",
+    "language": "french",
+    "author" :" Young Kim ",
+    "pic": "app/img/Books/Twilight-Biss-Zum-Morgengrauen-1.jpg",
+    "comments": [
+      {
+        "text": "The movies are terrible. Too many key things from the book(s) excluded.Never judge a book by it's movie ",
+        "rating": "3",
+        "commentedOn": "13/01/2017",
+        "username": "Novica Vukobratovic "
+      },
+      {
+        "text": "All three of the books are much, much, much better then the movies. The movies leave out many important parts whereas the book has a lot more depth",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Mia"
+      },
+      {
+        "text": "I read this book when I was 12. There is killing... Most of it is not detailed and none of it is too gory. Really any age above 12 would be perfect.",
+        "rating": "2",
+        "commentedOn": "14/01/2017",
+        "username": "Katie Verm"
+      }
+    ],
+    "offers": [
+      {
+        "type": "discount",
+        "percentage": 5
+      }
+    ],
+    "rating":3
   }
 
 ]

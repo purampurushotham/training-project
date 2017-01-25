@@ -72,15 +72,17 @@
 
 
 <div class="container">
-    <div>
-        <ul>
-            <li ng-repeat="customer in vc.similarProducts | limitTo:vc.pageSize">
-            </li>
-        </ul>
-        <button ng-disabled="vc.pageButtonDisabled(-1)" ng-click="vc.paginate(-1)">Previous</button>&nbsp;&nbsp;
-        <button ng-disabled="vc.pageButtonDisabled(1)" ng-click="vc.paginate(1)">Next</button>
-        <br /><br />
-        Page {{vc.currentPage+1}} of {{vc.totalPages}}
+    <div class="center-block">
+        <div>
+            <ul>
+                <li ng-repeat="customer in vc.similarProducts | limitTo:vc.pageSize">
+                </li>
+            </ul>
+            <button class="fa fa-hand-o-left" style='font-size:24px' ng-disabled="vc.pageButtonDisabled(-1)" ng-click="vc.paginate(-1)"></button>&nbsp;&nbsp;
+            <button class="fa fa-hand-o-right" style="font-size:24px" ng-disabled="vc.pageButtonDisabled(1)" ng-click="vc.paginate(1)"></button>
+            <br /><br />
+            Page {{vc.currentPage+1}} of {{vc.totalPages}}
+        </div>
     </div>
 </div>
 <!--

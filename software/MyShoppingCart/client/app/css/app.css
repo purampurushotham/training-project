@@ -127,3 +127,6 @@ li:hover .sub-menu {
 .custom-slider.rzslider .rz-tick.rz-selected {
     background: orange;
 }
+/*font awesome*/
+.fa fa-hand-o-left,.fa fa-hand-o-right{
+    font-size:24px}

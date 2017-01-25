@@ -21,7 +21,7 @@
             else {
                 vm.limitNameSearch = 0;
             }
-        }
+        };
         vm.viewState = function (id) {
             $state.go('view', {id:id});
 
