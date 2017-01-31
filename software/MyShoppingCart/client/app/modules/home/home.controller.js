@@ -5,23 +5,50 @@
 
     angular
         .module('MSC.home')
-        .controller('homeController', homeController);
-       homeController.$inject=['samData','$rootScope'];
-    function homeController(samData,$rootScope) {
-        var vm = this;
+        .controller('homeController', homeController)
+        .directive('homeDirective',homeDirective);
+    homeController.$inject=['samData','$rootScope'];
+    /*function homeController(samData,$rootScope) {
 
-     //   vm.products=[];
-      /*  vm.getData=function () {
-            samData.getData().then(function (data) {
-                    $rootScope.products={};
-                $rootScope.products=data;
-            },
-            function (msg) {
-                console.log("error");
-            }); 
-        };
-        vm.getData();*/
-        console.log("in home controller")
+     }*/ function homeController(samData,$rootScope) {
+        var vm = this;
+        vm.products = angular.copy($rootScope.products);
+        console.log("in home controller");
+        vm.mobiles = 'mobiles';
+        vm.laptops = 'laptops';
+        vm.Books = 'Books';
+        vm.type = "something"
+        console.log("hhhhh"+vm.mobiles)
     }
 
+    function homeDirective() {
+
+
+        console.log("in homeDirective");
+        return {
+            restrict: 'EA',
+            controller: homeController,
+            controllerAs: 'hc',
+            scope: {
+                prodType: '@'
+            },
+            templateUrl: "app/partials/products.html",
+
+           /* link: function (scope,attrs) {*/
+           /*     // console.log(scope.proType)    ;*/
+           /*     console.log("attrs ==" + scope.prodType)*/
+           /*     if (scope.prodType === 'mobiles') {*/
+           /*         scope.type = "mobiles";*/
+           /*         console.log(scope.proType);*/
+           /*     }*/
+           /*     else if (scope.prodType === 'laptops') {*/
+           /*         scope.prodType = "laptops"*/
+           /*     }*/
+           /*     else if (scope.prodType === 'book') {*/
+           /*         scope.prodType = "comic";*/
+           /*     }*/
+           /* }*/
+
+        };
+    }
 }());

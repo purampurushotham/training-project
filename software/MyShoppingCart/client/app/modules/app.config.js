@@ -14,8 +14,8 @@
            .state("Home", {
                url: "/Home",
                templateUrl: "app/partials/home.html",
-               controller:"homeController",
-               controllerAs:"hc"
+              /* controller:"homeController",
+               controllerAs:"hc"*/
            })
           .state("view", {
                url: "/view/{{id}}",
