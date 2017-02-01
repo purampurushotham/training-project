@@ -1,0 +1,32 @@
+<div class="row" pro-id="vc.getID()">
+    <div class="col-lg-5">
+        <img src="{{vc.vp.pic}}" class="lg_pics">
+    </div>
+    <div class="col-md-7" >
+        <h2 class="Display-2"><span ng-bind="vc.vp.name"></span></h2>
+        <p class="lead"><span  ng-bind="vc.vp.price"><span>/-</span></span></p>
+        <p class="lead"><span ng-bind="vc.vp.description"></span></p>
+        <p><jk-rating-stars class="custom_rating" rating="vc.vp.rating" read-only="true" ></jk-rating-stars></p>
+        <h2>Specifications:</h2>
+        <dl class="row">
+            <dt class="col-sm-3">Brand :</dt>
+            <dd class="col-sm-9" ng-bind="vc.vp.brand"></dd>
+            <dt class="col-sm-3">Model :</dt>
+            <dd class="col-sm-9" ng-bind="vc.vp.modelName"></dd>
+            <dt class="col-sm-3">RAM :</dt>
+            <dd class="col-sm-9" ng-bind="vc.vp.RAM"></dd>
+            <dt class="col-sm-3">color :</dt>
+            <dd class="col-sm-9" ng-bind="vc.vp.color"></dd>
+            <dt class="col-sm-3">Battery :</dt>
+            <dd class="col-sm-9" ng-bind="vc.vp.battery"></dd>
+        </dl>
+        <!--   <div class="col-xs-4"><rzslider class="custom-slider" rz-slider-model="vc.slider.minValue"
+                                           rz-slider-high="vc.slider.maxValue"
+                                           rz-slider-options="vc.slider.options"></rzslider>
+               <p>Price: {{vc.slider.minValue}}</p>
+               <p>Price: {{vc.slider.maxValue}}</p>
+               <input type="number" ng-model="vc.slider.minValue"/>
+               <input type="number" ng-model="vc.slider.maxValue"/>
+           </div>-->
+    </div>
+</div>
