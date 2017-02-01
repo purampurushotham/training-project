@@ -7,15 +7,12 @@
 (function(){
     'use strict';
     angular.module("MSC.footer")
-        .controller('footerCtrl',footerCtrl)
-        .directive('footerDirective',footerDirective);
+        .component("footerComponent",{
+           templateUrl : "app/partials/footer.html",
+            controller : footerCtrl,
+            controllerAs : "fc"
+        });
     function footerCtrl(){
         console.log("in footer");
-    }
-    function footerDirective(){
-        return {
-            restrict: "A",
-            templateUrl:"app/partials/footer.html"
-        }
     }
 })();

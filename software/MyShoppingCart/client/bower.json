@@ -18,6 +18,7 @@
     "angular-jk-rating-stars": "^1.0.3",
     "angularjs-slider": "^6.0.0",
     "angular-rateit": "^3.0.2",
-    "components-font-awesome": "^4.7.0"
+    "components-font-awesome": "^4.7.0",
+    "bootstrap-sass": "^3.3.7"
   }
 }

@@ -1,0 +1,12 @@
+<div ng:repeat="i in hc.products | orderBy:'-rating'|filter:{subType : hc.pro} |limitTo:'6'" class="col-md-4">
+    <!--{{// hc.prodType}}-->
+    <div class="container lead">
+        <a class="search_a" ui-sref="view({id:i.id})">
+            <img src="{{i.pic}}" class="pics">
+            <p ng-bind="i.name"></p>
+            <p ng-bind="i.price"></p>
+            <p><jk-rating-stars class="custom_rating" rating="i.rating" read-only="true" ></jk-rating-stars>
+            </p>
+        </a>
+    </div>
+</div>

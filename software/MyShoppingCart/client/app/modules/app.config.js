@@ -20,8 +20,8 @@
           .state("view", {
                url: "/view/{{id}}",
                templateUrl: "app/partials/product_view.html",
-               controller:"viewCtrl",
-               controllerAs:"vc"
+              /* controller:"viewCtrl",
+               controllerAs:"vc"*/
            })
            .state("Electronics", {
                url: "/Electronics",

@@ -4,16 +4,15 @@
 (function(){
     'use strict'
     angular.module('MSC.header')
-        .controller('headerCtrl',headerCtrl)
-        .directive('headerDirective',headerDirective);
-    /*headerCtrl.$inject=['headerDirective'];*/
+        .component('headerComponent',{
+            templateUrl : "app/partials/header.html",
+            controller : headerCtrl,
+            controllerAs : "hc"
+        });
     function headerCtrl() {
         console.log("in header ctrl")
     }
-    function headerDirective() {
-        return{
-            restrict:'A',
-            templateUrl:"app/partials/header.html"
-        }
-    }
 })();
+// .controller('headerCtrl',headerCtrl)
+// .directive('headerDirective',headerDirective);
+/*headerCtrl.$inject=['headerDirective'];*/

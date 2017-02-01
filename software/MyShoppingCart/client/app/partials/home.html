@@ -1,31 +1,21 @@
-<div class="container" ng-controller="homeController">
+<div class="container">
     <div class="container">
         <div class="row">
             <p class="lead">Mobiles</p>
-
-            <home-directive prod-type="mobile">
-
-            </home-directive>
-
+            <home-component pro="mobile"></home-component>
         </div>
         <div class="row">
             <p class="lead">Laptops</p>
-
-            <home-directive prod-type="laptop">
-
-            </home-directive>
-
+            <home-component pro="laptop"></home-component>
         </div>
         <div class="row">
             <p class="lead">Books</p>
-
-            <home-directive prod-type="comic">
-
-            </home-directive>
-
+            <home-component pro="comic"></home-component>
         </div>
     </div>
-    <!--<div class="container">
+</div>
+
+<!--<div class="container">
         <div class="row">
             <p class="lead">Laptops</p>
             <home-directive pro-type="hc.laptops"></home-directive>
@@ -37,4 +27,3 @@
             <home-directive pro-type="hc.Books"></home-directive>
         </div>
     </div>-->
-</div>

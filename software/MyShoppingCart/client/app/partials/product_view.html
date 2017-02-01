@@ -1,57 +1,8 @@
 <div class="container">
     <div class="row">
-        <div class="row">
-            <div class="col-lg-5">
-                <img src="{{vc.vp.pic}}" class="lg_pics">
-            </div>
-            <div class="col-md-7" >
-                <h2 class="Display-2"><span ng-bind="vc.vp.name"></span></h2>
-                <p class="lead"><span  ng-bind="vc.vp.price"><span>/-</span></span></p>
-                <p class="lead"><span ng-bind="vc.vp.description"></span></p>
-                <p><jk-rating-stars class="custom_rating" rating="vc.vp.rating" read-only="true" ></jk-rating-stars></p>
-                <h2>Specifications:</h2>
-                <dl class="row">
-                    <dt class="col-sm-3">Brand :</dt>
-                    <dd class="col-sm-9" ng-bind="vc.vp.brand"></dd>
-                    <dt class="col-sm-3">Model :</dt>
-                    <dd class="col-sm-9" ng-bind="vc.vp.modelName"></dd>
-                    <dt class="col-sm-3">RAM :</dt>
-                    <dd class="col-sm-9" ng-bind="vc.vp.RAM"></dd>
-                    <dt class="col-sm-3">color :</dt>
-                    <dd class="col-sm-9" ng-bind="vc.vp.color"></dd>
-                    <dt class="col-sm-3">Battery :</dt>
-                    <dd class="col-sm-9" ng-bind="vc.vp.battery"></dd>
-                </dl>
-                <div class="col-xs-4"><rzslider class="custom-slider" rz-slider-model="vc.slider.minValue"
-                                                rz-slider-high="vc.slider.maxValue"
-                                                rz-slider-options="vc.slider.options"></rzslider>
-                    <p>Price: {{vc.slider.minValue}}</p>
-                    <p>Price: {{vc.slider.maxValue}}</p>
-                    <input type="number" ng-model="vc.slider.minValue"/>
-                    <input type="number" ng-model="vc.slider.maxValue"/>
-                </div>
-            </div>
-
-            <div class="col-sm-6">
-                <h4>Commments : <span class="glyphicon-comment"></span> </h4>
-                <div ng-repeat="i  in vc.vp.comments" class="well well-sm" >
-                    <dl class="row">
-                        <dt class="col-sm-3">comment :</dt>
-                        <dd class="col-sm-9" ng-bind="i.text"></dd>
-                        <dt class="col-sm-3">Rating :</dt>
-                        <dd class="col-sm-9" ><jk-rating-stars class="comment_rating " rating="i.rating" read-only="true" ></jk-rating-stars></dd>
-                        <dt class="col-sm-3">Customer :</dt>
-                        <dd class="col-sm-9" ng-bind="i.username"></dd>
-                    </dl>
-
-                    <!--   <p class=""><span ng-bind="i.text"></span></p>
-                   <p class=""><span ng-bind="i.rating"></span></p>
-                   <p class=""><span ng-bind="i.username"></span></p>-->
-                </div>
-            </div>
-        </div>
+    <view-component>
+    </view-component>
     </div>
-
 </div>
 <!-- similar products-->
 
@@ -83,6 +34,24 @@
             <br /><br />
             Page {{vc.currentPage+1}} of {{vc.totalPages}}
         </div>
+    </div>
+</div>
+<div class="col-sm-6"></div>
+<div class="col-sm-6">
+    <h4>Commments : <span class="glyphicon-comment"></span> </h4>
+    <div ng-repeat="i  in vc.vp.comments" class="well well-sm" >
+        <dl class="row">
+            <dt class="col-sm-3">comment :</dt>
+            <dd class="col-sm-9" ng-bind="i.text"></dd>
+            <dt class="col-sm-3">Rating :</dt>
+            <dd class="col-sm-9" ><jk-rating-stars class="comment_rating " rating="i.rating" read-only="true" ></jk-rating-stars></dd>
+            <dt class="col-sm-3">Customer :</dt>
+            <dd class="col-sm-9" ng-bind="i.username"></dd>
+        </dl>
+
+        <!--   <p class=""><span ng-bind="i.text"></span></p>
+       <p class=""><span ng-bind="i.rating"></span></p>
+       <p class=""><span ng-bind="i.username"></span></p>-->
     </div>
 </div>
 <!--
