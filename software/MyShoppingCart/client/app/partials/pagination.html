@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="center-block">
+        <div>
+            <ul>
+                <li ng-repeat="customer in pc.pages | limitTo:pc.pageSize">
+                </li>
+            </ul>
+            <button class="fa fa-hand-o-left" style='font-size:24px' ng-disabled="pc.pageButtonDisabled(-1)" ng-click="pc.paginate(-1)"></button>&nbsp;&nbsp;
+            <button class="fa fa-hand-o-right" style="font-size:24px" ng-disabled="pc.pageButtonDisabled(1)" ng-click="pc.paginate(1)"></button>
+            <br /><br />
+            Page {{pc.currentPage+1}} of {{pc.totalPages}}
+        </div>
+    </div>
+</div>

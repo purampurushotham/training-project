@@ -1,4 +1,4 @@
-<div class="row" pro-id="vc.getID()">
+<div class="row">
     <div class="col-lg-5">
         <img src="{{vc.vp.pic}}" class="lg_pics">
     </div>
@@ -20,13 +20,23 @@
             <dt class="col-sm-3">Battery :</dt>
             <dd class="col-sm-9" ng-bind="vc.vp.battery"></dd>
         </dl>
-        <!--   <div class="col-xs-4"><rzslider class="custom-slider" rz-slider-model="vc.slider.minValue"
-                                           rz-slider-high="vc.slider.maxValue"
-                                           rz-slider-options="vc.slider.options"></rzslider>
-               <p>Price: {{vc.slider.minValue}}</p>
-               <p>Price: {{vc.slider.maxValue}}</p>
-               <input type="number" ng-model="vc.slider.minValue"/>
-               <input type="number" ng-model="vc.slider.maxValue"/>
-           </div>-->
+        <!--      <div class="col-xs-4"><rzslider class="custom-slider" rz-slider-model="vc.slider.minValue"
+                                              rz-slider-high="vc.slider.maxValue"
+                                              rz-slider-options="vc.slider.options"></rzslider>
+                  <p>Price: {{vc.slider.minValue}}</p>
+                  <p>Price: {{vc.slider.maxValue}}</p>
+                  <input type="number" ng-model="vc.slider.minValue"/>
+                  <input type="number" ng-model="vc.slider.maxValue"/>
+              </div>-->
     </div>
+
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <similar-component product-type="vc.subType" same="vc.vp" pro-brand="vc.vp.brand"></similar-component>
+    </div>
+</div>
+<div class="container">
+    <comments-component sam="vc.vp.comments"></comments-component>
+
 </div>

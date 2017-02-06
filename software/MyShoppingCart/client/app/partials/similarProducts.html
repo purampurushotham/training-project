@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<div class="container">
+    <<h2 class="Display-2">Similar Products</h2>
+    <div class="row">
 
-</body>
-</html>
+        <div ng:repeat="i in sm.similarProducts |limitTo:3 " class="col-md-4">
+            <div class="container">
+                <a ui-sref="view({id:i.id})">
+                    <img src="{{i.pic}}" class="pics"></a>
+                <p>Name:<span ng-bind="i.name"></span></p>
+                <p>Price:<span ng-bind="i.price"></span></p>
+                <p>Rating:<span ng-bind="i.rating"></span></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="center-block">
+        <pagination-component pages="sm.similarProducts"></pagination-component>
+    </div>
+</div>
+<!--
+<div>
+<slider-component slider="sm.similarProducts"></slider-component>
+</div>
+-->
