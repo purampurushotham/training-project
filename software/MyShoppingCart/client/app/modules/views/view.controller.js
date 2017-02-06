@@ -44,7 +44,7 @@
             controller : sliderFeature,
             controllerAs : "slc",
             bindings : {
-                slider :"="
+                sliderProducts :"="
             }
 
         })
@@ -92,12 +92,13 @@
             console.log(this);
             vm.similarProducts=[];
             vm.ProductComments=[];
+            vm.productRange=[];
             angular.forEach($rootScope.products, function (similarProduct, index) {
                 if (vm.productType === similarProduct.subType &&vm.proBrand === similarProduct.brand && vm.same != similarProduct ){
                     vm.similarProducts.push(similarProduct);
                 }
-
             });
+            vm.productRange=vm.similarProducts;
             console.log(vm.similarProducts);
         };
     }
@@ -110,7 +111,11 @@
     }
     function userDefinedPagination() {
         var vm = this;
+        console.log("userDefinedPagination");
         vm.$onInit = function () {
+
+            console.log("%%%%%%%%%%%%%%%%%%%%%%");
+            console.log(vm.pages);
             vm.currentPage = 0;
             vm.totalPages = 0;
             vm.pageSize = 3;
@@ -144,9 +149,8 @@
        vm.$onInit = function () {
            console.log("in slider feature");
            console.log(vm.slider);
-           vm.similarProducts=vm.slider;
-           vm.copySimilarProds=angular.copy(vm.similarProducts);
-           console.log(vm.copySimilarProds)
+           vm.copySimilarProds=angular.copy(vm.sliderProducts);
+           console.log(vm.copySimilarProds);
            /* slideer */
            vm.slider = {
                minValue:1000,
@@ -173,11 +177,11 @@
            //slider on change
            function onSliderChange() {
                /*   console.log("in slide change")*/
-               vm.similarProducts = [];
+               vm.sliderProducts = [];
                angular.forEach(vm.copySimilarProds, function (eachProd, index){
                    if(eachProd.price <= vm.slider.maxValue && eachProd.price >= vm.slider.minValue) {
-                       vm.similarProducts.push(eachProd);
-                       console.log(vm.similarProducts);
+                       vm.sliderProducts.push(eachProd);
+                       console.log(vm.sliderProducts);
                    }
                });
 
