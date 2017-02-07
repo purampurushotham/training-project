@@ -1,0 +1,22 @@
+<div class="col-md-3">
+    <check-boxes-component products-list="ec.products" brand-type="ec.electronic_subType"></check-boxes-component>
+        <slider-component slider-products="ec.products" ></slider-component>
+    </div>
+<div class="col-md-9">
+    <div class="col-md-4" ng:repeat="i in ec.products | orderBy:'-rating'|filter:{subType :ec.electronic_subType} " >
+        <div class="container   ">
+            <div class="row">
+                <div class="col-md-4">
+            <a class="search_a" ui-sref="view({id:i.id})">
+                <img src="{{i.pic}}" class="pics">
+                <p ng-bind="i.name"></p>
+                <p ng-bind="i.price"></p>
+                <p><jk-rating-stars class="custom_rating" rating="i.rating" read-only="true" ></jk-rating-stars>
+                </p>
+            </a>
+        </div>
+        </div>
+        </div>
+    </div>
+</div>
+

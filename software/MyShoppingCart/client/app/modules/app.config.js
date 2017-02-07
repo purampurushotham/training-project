@@ -18,16 +18,16 @@
                controllerAs:"hc"*/
            })
           .state("view", {
-               url: "/view/{{id}}",
+               url: "/view/:id",
                templateUrl: "app/partials/product_view.html",
                /*controller:"viewCtrl",
                controllerAs:"vc"*/
            })
-           .state("Electronics", {
-               url: "/Electronics",
+           .state("search", {
+               url: "/search/electronics/:productType",
                templateUrl: "app/partials/Electronics.html",
-               controller:"ElectronicsCtrl",
-               controllerAs:"EC"
+               //controller:"ElectronicsCtrl",
+               //controllerAs:"EC"
            });
        /*.state('Electronics.Mobiles', {
                url: '/Mobiles',

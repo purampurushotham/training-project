@@ -7,12 +7,15 @@
         "ui.bootstrap",
         "ui.select",
         "rzModule",
+        "checklist-model",
         "MSC.header",
         "MSC.footer",
         "MSC.home",
         "MSC.search",
         "MSC.view",
-        "MSC.Electronics"
+        "MSC.Electronics",
+        "MSC.checkBoxes",
+        "MSC.priceSlider"
     ]);
     console.log("in module");
 }());

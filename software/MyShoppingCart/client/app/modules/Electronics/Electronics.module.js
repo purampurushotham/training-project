@@ -3,7 +3,6 @@
  */
 
 (function(){
-
     angular
         .module('MSC.Electronics', []);
 }());
