@@ -1,9 +1,26 @@
-<div class="row"  ng-repeat="Brand in cm.singleList | filter : {subType:cm.singleBrand} "
-     ng-if="cm.singleBrand === 'Laptops' || cm.singleBrand === 'Mobiles' " ng-init="cm.removeDuplicates()">
-    <div class="col-md-12">
-        <div ng-if=""
-        <label>
-            <input type="checkbox" checklist-model="cm.selectedBrand" checklist-value="Brand" checklist-comparator="cm.compareFn" > {{Brand.brand}}
-        </label>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Filters</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3 >Categories</h3>
+        </div>
+    </div>
+    <div class="row" ng-repeat="Brand in cm.singleList | filter : {subType:cm.singleBrand} "
+         ng-if="cm.singleBrand === 'Laptops' || cm.singleBrand === 'Mobiles' ">
+        <div class="col-md-12">
+            <label>
+                <input type="checkbox" checklist-model="cm.getBrands()" checklist-value="Brand" ng-change="cm.check(Brand,checked)"> {{Brand.brand}}
+            </label>
+        </div>
+    </div>
+    <p>selected brands : {{cm.selectedBrand | json}}</p>
+    <div class="row">
+        <div class="col-md-12" ng-repeat="Brand in cm.multiProduct track by $index" >
+            <p>{{Brand.id}}</p>
+        </div>
     </div>
 </div>
