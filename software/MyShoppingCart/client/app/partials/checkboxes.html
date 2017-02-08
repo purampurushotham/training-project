@@ -1,6 +1,6 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
+<div class="container panel-body">
+    <div class="row panel-heading">
+        <div class="col-md-12 panel-title">
             <h1>Filters</h1>
         </div>
     </div>
@@ -17,10 +17,15 @@
             </label>
         </div>
     </div>
-    <p>selected brands : {{cm.selectedBrand | json}}</p>
-    <div class="row">
-        <div class="col-md-12" ng-repeat="Brand in cm.multiProduct track by $index" >
-            <p>{{Brand.id}}</p>
+    <div class="row" ng-init="cm.slideFeature()">
+        <div class=col-md-3"><rzslider class="custom-slider" rz-slider-model="cm.slider.minValue"
+                                        rz-slider-high="cm.slider.maxValue"
+                                        rz-slider-options="cm.slider.options"></rzslider>
+            <p>Price: {{cm.slider.minValue}}</p>
+            <p>Price: {{cm.slider.maxValue}}</p>
+            <input type="number" ng-model="cm.slider.minValue"/>
+            <input type="number" ng-model="cm.slider.maxValue"/>
         </div>
     </div>
+</div>
 </div>

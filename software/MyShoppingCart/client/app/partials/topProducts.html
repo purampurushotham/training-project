@@ -5,7 +5,7 @@
             <img src="{{i.pic}}" class="pics">
             <p ng-bind="i.name"></p>
             <p ng-bind="i.price"></p>
-            <p><jk-rating-stars class="custom_rating" rating="i.rating" read-only="true" ></jk-rating-stars>
+            <p><ng-rate-it ng-model="i.rating" class="custom_rating"  read-only="true" ></ng-rate-it>
             </p>
         </a>
     </div>

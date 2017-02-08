@@ -6,7 +6,7 @@
         <h2 class="Display-2"><span ng-bind="vc.vp.name"></span></h2>
         <p class="lead"><span  ng-bind="vc.vp.price"><span>/-</span></span></p>
         <p class="lead"><span ng-bind="vc.vp.description"></span></p>
-        <p><jk-rating-stars class="custom_rating" rating="vc.vp.rating" read-only="true" ></jk-rating-stars></p>
+        <p><ng-rate-it ng-model="vc.vp.rating" class="custom_rating"  read-only="true" ></ng-rate-it></p>
         <h2>Specifications:</h2>
         <dl class="row">
             <dt class="col-sm-3">Brand :</dt>

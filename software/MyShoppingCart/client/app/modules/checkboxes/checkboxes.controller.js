@@ -14,38 +14,30 @@
                 multiSelect : "="
             }
         });
-    checkBoxCtrl.$inject=[];
     function checkBoxCtrl() {
         var vm = this;
         vm.$onInit = function () {
             vm.singleList = vm.productsList;
             vm.multiProduct = vm.multiSelect;
             vm.singleBrand = vm.brandType;
+            var clickCount = false;
             console.log(vm.singleBrand)
             vm.selectedBrand = [];
             vm.duplicateList1 = [];
             vm.duplicateList2 = [];
-            /*  console.log("before removing duplicates");
-             console.log(vm.singleList);
-             */
-            console.log(vm.selectedBrand);
-            /*console.log("in checkBoxCtrl");
-             console.log(vm.singleBrand);*/
-            vm.removeDuplicates = function () {
-                console.log("$$$$$$$$$$$$$$");
+            /* functions */
+
+            var removeDuplicates = function () {
                 angular.forEach(vm.singleList, function (similarType, index) {
                     if (angular.equals(similarType.subType, vm.singleBrand)) {
                         vm.duplicateList1.push(similarType);
                     }
                 });
-                /*console.log("in duplicate list1");
-                 console.log(vm.duplicateList1);*/
+                //removing duplicate products
                 vm.singleList = [];
                 angular.forEach(vm.duplicateList1, function (duplicateObject, index) {
                     vm.flag = false;
                     angular.forEach(vm.duplicateList2, function (singleObject, index) {
-                        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
-                        console.log(duplicateObject)
                         if (angular.equals(duplicateObject.brand, singleObject.brand)) {
                             vm.flag = true
                         }
@@ -55,12 +47,12 @@
                     }
                 });
             };
+            //function to get list of brands as check boxes
             vm.getBrands = function () {
                 return vm.selectedBrand;
             };
-            vm.removeDuplicates();
-            /* console.log("after removing duplicates");
-             console.log(vm.duplicateList2);*/
+            //calling to remove simlilar brands
+            removeDuplicates();
             vm.singleList = angular.copy(vm.duplicateList2)
             //getting products based on brand
             vm.check = function (value, checked) {
@@ -73,23 +65,99 @@
                     console.log(vm.selectedBrand)
 
                 }
-                vm.multipleCheckings();
-            }
-            vm.multipleCheckings = function () {
+                // calling for multiple selected checkboxes
+                multipleCheckings();
+                if (checked) {
+                    vm.productsList = vm.multiProduct;
+                }
+                else if (!checked) {
+                    vm.productsList = getOriginal();
+                }
+            };
+            //function is called when clicked on multiple checkboxes
+            var multipleCheckings = function () {
                 vm.checkedList = [];
                 vm.checkedList = angular.copy(vm.multiProduct);
                 vm.multiProduct = [];
-                console.log("multi select");
-                angular.forEach(vm.selectedBrand,function(singleObject,index){
-                   angular.forEach(vm.duplicateList1,function(selectedObject,index){
-                        if(angular.equals(singleObject.brand,selectedObject.brand) &&
-                            angular.equals(singleObject.subType,selectedObject.subType)){
-                            console.log("equals")
-                                vm.multiProduct.push(singleObject);
+                angular.forEach(vm.selectedBrand, function (singleObject, index) {
+                    angular.forEach(vm.duplicateList1, function (selectedObject, index) {
+                        if (angular.equals(singleObject.brand, selectedObject.brand) &&
+                            angular.equals(singleObject.subType, selectedObject.subType)) {
+                            vm.multiProduct.push(selectedObject);
                         }
                     });
                 });
-                console.log(vm.multiProduct);
+            };
+            //called when checkboxes are unchecked
+            var getOriginal = function () {
+                if (typeof vm.selectedBrand != 'undefined' && vm.selectedBrand.length === 0) {
+                    return vm.duplicateList1;
+                }
+                else if (clickCount == false) {
+                    multipleCheckings();
+                    clickCount = true;
+                    return vm.multiProduct;
+                }
+            };
+            vm.slideFeature = function () {
+                console.log("in slider feature");
+                console.log(vm.productsList);
+                vm.copySimilarProds = angular.copy(vm.productsList);
+                console.log(vm.copySimilarProds);
+                /* slideer */
+                vm.slider = {
+                    minValue: getMin,
+                    maxValue: getMax,
+                    options: {
+                        floor: 1000,
+                        ceil: 30000,
+                        step: 1000,
+                        minRange: 1000,
+                        maxRange: 100000,
+                        onChange: onSliderChange,
+                        translate: function (value, sliderId, label) {
+                            switch (label) {
+                                case 'model':
+                                    return '<b>Min :</b> ₹' + value;
+                                case 'high':
+                                    return '<b>Max :</b>₹' + value;
+                                default:
+                                    return '₹/' + value
+                            }
+                        }
+                    }
+                };
+                //slider on change
+                function onSliderChange() {
+                    /*   console.log("in slide change")*/
+                    vm.sliderProducts = [];
+                    angular.forEach(vm.copySimilarProds, function (eachProd, index) {
+                        if (eachProd.price <= vm.slider.maxValue && eachProd.price >= vm.slider.minValue) {
+                            vm.sliderProducts.push(eachProd);
+                        }
+                    });
+                    vm.productsList = vm.sliderProducts;
+                    console.log('after slider changing')
+                    console.log(vm.productsList)
+                }
+
+                function getMin() {
+                    console.log("in min function");
+                    return Math.min.apply(Math, vm.productsList.map(function (item) {
+                        console.log()
+                        return item.price;
+                    }));
+                }
+
+                function getMax() {
+                    console.log("in getmax function")
+                    return Math.max.apply(Math, vm.productsList.map(function (item) {
+                        return item.price;
+                    }));
+
+
+                }
+
             }
         }
     }

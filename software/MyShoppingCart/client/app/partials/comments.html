@@ -7,7 +7,7 @@
                     <dt class="col-sm-3">comment :</dt>
                     <dd class="col-sm-9" ng-bind="i.text"></dd>
                     <dt class="col-sm-3">Rating :</dt>
-                    <dd class="col-sm-9" ><jk-rating-stars class="comment_rating " rating="i.rating" read-only="true" ></jk-rating-stars></dd>
+                    <dd class="col-sm-9" ><ng-rate-it ng-model="i.rating" class="custom_rating"  read-only="true" ></ng-rate-it>
                     <dt class="col-sm-3">Customer :</dt>
                     <dd class="col-sm-9" ng-bind="i.username"></dd>
                 </dl>
