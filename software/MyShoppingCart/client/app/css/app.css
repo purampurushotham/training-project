@@ -128,5 +128,5 @@ li:hover .sub-menu {
     background: orange;
 }
 /*font awesome*/
-.fa fa-hand-o-left,.fa fa-hand-o-right{
+.fa .fa-hand-o-left,.fa .fa-hand-o-right{
     font-size:24px}
