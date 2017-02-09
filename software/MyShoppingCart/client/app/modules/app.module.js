@@ -15,6 +15,7 @@
         "MSC.view",
         "MSC.Electronics",
         "MSC.checkBoxes",
+        "MSC.searchByBrand",
         "MSC.priceSlider"
     ]);
     console.log("in module");

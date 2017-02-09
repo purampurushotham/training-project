@@ -1,35 +1,28 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-4 col-centered col-fixed"><div class="item"><div class="content"></div></div></div>
-        <div class="col-md-6 col-centered col-fixed">
-            <div class="item">
-                <div class="content">
-                    <div class="ui_select" ng-controller="searchCtrl as sc">
-                        {{products}}
-                        <ui-select ng-model="sc.selected"
-                                   theme="bootstrap"
-                                   reset-search-input="true"
-                                   style="width: 600px;"
-                                   title="Choose an address"
-                                   on-select='sc.viewState(sc.selected.id)'>
-                            <ui-select-match placeholder="Enter an product name..." >{{$select.selected.name}}</ui-select-match>
-                            <ui-select-choices  refresh="sc.checkName($select.search)"
-                                                refresh-delay="0"
-                                                repeat="e in sc.product | filter: $select.search | limitTo: sc.limitNameSearch">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-md-3"><a ui-sref="view({id:e.id})"><p ng-bind="e.name"></p></a></div>
-                                        <div class="col-md-3"><p ng-bind="e.price"></p></div></div>
-                                    <div class="row">
-                                        <div class="col-md-6 offset-md-3"><p><ng-rate-it ng-model="e.rating" class="custom_rating"  read-only="true" ></ng-rate-it></p></div></div>
-                                </div>
-                            </ui-select-choices>
-                        </ui-select>
-                    </div>
-                </div>
+<div class="ui_select">
+    <ui-select ng-model="sc.selected"
+               theme="bootstrap"
+               reset-search-input="true"
+               style="width: 600px;"
+               title="Choose an address"
+               on-select='sc.viewState(sc.selected.id)'>
+        <ui-select-match placeholder="Enter an product name..." >{{$select.selected.name}}</ui-select-match>
+        <ui-select-choices  refresh="sc.checkName($select.search)"
+                            refresh-delay="0"
+                            repeat="e in sc.product | filter: $select.search | limitTo: sc.limitNameSearch">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3"><a ui-sref="view({id:e.id})"><p ng-bind="e.name"></p></a></div>
+                    <div class="col-md-3"><p ng-bind="e.price"></p></div></div>
+                <div class="row">
+                    <div class="col-md-6 offset-md-3"><p><ng-rate-it ng-model="e.rating" class="custom_rating"  read-only="true" ></ng-rate-it></p></div></div>
             </div>
-        </div>
-    </div>
+        </ui-select-choices>
+    </ui-select>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
 <!--

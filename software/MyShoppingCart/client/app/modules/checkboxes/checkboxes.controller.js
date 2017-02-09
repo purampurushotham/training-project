@@ -1,5 +1,5 @@
 /**
- * Created by Ashoka on 2/7/2017.
+ * Created by purushotham on 2/7/2017.
  */
 (function(){
     'use strict';
@@ -20,13 +20,11 @@
             vm.singleList = vm.productsList;
             vm.multiProduct = vm.multiSelect;
             vm.singleBrand = vm.brandType;
-            var clickCount = false;
             console.log(vm.singleBrand)
             vm.selectedBrand = [];
             vm.duplicateList1 = [];
             vm.duplicateList2 = [];
             /* functions */
-
             var removeDuplicates = function () {
                 angular.forEach(vm.singleList, function (similarType, index) {
                     if (angular.equals(similarType.subType, vm.singleBrand)) {
@@ -49,6 +47,9 @@
             };
             //function to get list of brands as check boxes
             vm.getBrands = function () {
+                console.log("in selecting")
+                console.log(vm.selectedBrand)
+
                 return vm.selectedBrand;
             };
             //calling to remove simlilar brands
@@ -69,33 +70,43 @@
                 multipleCheckings();
                 if (checked) {
                     vm.productsList = vm.multiProduct;
+                    console.log("in checked")
+                    vm.slideFeature();
                 }
                 else if (!checked) {
-                    vm.productsList = getOriginal();
+                    console.log("in checkout")
+                    console.log("before getoriginal")
+                    console.log(vm.productsList);
+                    vm.productsList = vm.getOriginal();
+                    console.log("after getoriginal")
+                    console.log(vm.productsList);
+                    vm.slideFeature();
                 }
+
             };
             //function is called when clicked on multiple checkboxes
             var multipleCheckings = function () {
-                vm.checkedList = [];
-                vm.checkedList = angular.copy(vm.multiProduct);
                 vm.multiProduct = [];
                 angular.forEach(vm.selectedBrand, function (singleObject, index) {
                     angular.forEach(vm.duplicateList1, function (selectedObject, index) {
                         if (angular.equals(singleObject.brand, selectedObject.brand) &&
                             angular.equals(singleObject.subType, selectedObject.subType)) {
                             vm.multiProduct.push(selectedObject);
+                            console.log("in multiple checkings")
+
                         }
                     });
                 });
             };
             //called when checkboxes are unchecked
-            var getOriginal = function () {
+            vm.getOriginal = function () {
                 if (typeof vm.selectedBrand != 'undefined' && vm.selectedBrand.length === 0) {
+                    console.log("in get Original");
+                    console.log("getting error");
                     return vm.duplicateList1;
                 }
-                else if (clickCount == false) {
+                else  {
                     multipleCheckings();
-                    clickCount = true;
                     return vm.multiProduct;
                 }
             };
@@ -103,14 +114,14 @@
                 console.log("in slider feature");
                 console.log(vm.productsList);
                 vm.copySimilarProds = angular.copy(vm.productsList);
-                console.log(vm.copySimilarProds);
+                console.log(vm.productsList);
                 /* slideer */
                 vm.slider = {
-                    minValue: getMin,
-                    maxValue: getMax,
+                    minValue: 1000,
+                    maxValue: Math.max.apply(Math, vm.productsList.map(function (item) {return item.price})),
                     options: {
                         floor: 1000,
-                        ceil: 30000,
+                        ceil: Math.max.apply(Math, vm.productsList.map(function (item) {return item.price})),
                         step: 1000,
                         minRange: 1000,
                         maxRange: 100000,
@@ -125,8 +136,26 @@
                                     return '₹/' + value
                             }
                         }
+
                     }
                 };
+                /*var getMin=function () {
+                    console.log("in min function");
+                     Math.min.apply(Math, vm.productsList.map(function (item) {
+                        console.log(item.price)
+                        return item.price;
+                    }));
+                }
+                var getMax= function getMax() {
+                    console.log("in getmax function")
+                    return Math.max.apply(Math, vm.productsList.map(function (item) {
+                        console.log(item.price)
+                        return item.price;
+                    }));
+
+
+                }
+*/
                 //slider on change
                 function onSliderChange() {
                     /*   console.log("in slide change")*/
@@ -140,24 +169,6 @@
                     console.log('after slider changing')
                     console.log(vm.productsList)
                 }
-
-                function getMin() {
-                    console.log("in min function");
-                    return Math.min.apply(Math, vm.productsList.map(function (item) {
-                        console.log()
-                        return item.price;
-                    }));
-                }
-
-                function getMax() {
-                    console.log("in getmax function")
-                    return Math.max.apply(Math, vm.productsList.map(function (item) {
-                        return item.price;
-                    }));
-
-
-                }
-
             }
         }
     }

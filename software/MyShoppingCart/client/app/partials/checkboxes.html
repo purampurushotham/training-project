@@ -1,6 +1,6 @@
 <div class="container panel-body">
-    <div class="row panel-heading">
-        <div class="col-md-12 panel-title">
+    <div class="row ">
+        <div class="col-md-12 ">
             <h1>Filters</h1>
         </div>
     </div>
@@ -9,7 +9,25 @@
             <h3 >Categories</h3>
         </div>
     </div>
-    <div class="row" ng-repeat="Brand in cm.singleList | filter : {subType:cm.singleBrand} "
+    <div class="row">
+        <div class="col-md-12">
+            <h5>Search by brand</h5>
+            <div  ng-repeat="Selected in cm.selectedBrand" >
+                <label>
+                    {{Selected.brand}}{{$last ? '' : ', '}}
+                </label>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <label>
+                <p><input type="text" ng-model="filteredText"></p>
+            </label>
+        </div>
+    </div>
+    <div class="row" ng-repeat="Brand in cm.singleList | filter : {subType:cm.singleBrand} | filter :filteredText "
          ng-if="cm.singleBrand === 'Laptops' || cm.singleBrand === 'Mobiles' ">
         <div class="col-md-12">
             <label>
@@ -17,15 +35,15 @@
             </label>
         </div>
     </div>
-    <div class="row" ng-init="cm.slideFeature()">
+    <div class="row"ng-init="cm.slideFeature()">
+
         <div class=col-md-3"><rzslider class="custom-slider" rz-slider-model="cm.slider.minValue"
-                                        rz-slider-high="cm.slider.maxValue"
-                                        rz-slider-options="cm.slider.options"></rzslider>
-            <p>Price: {{cm.slider.minValue}}</p>
-            <p>Price: {{cm.slider.maxValue}}</p>
-            <input type="number" ng-model="cm.slider.minValue"/>
-            <input type="number" ng-model="cm.slider.maxValue"/>
+                                       rz-slider-high="cm.slider.maxValue"
+                                       rz-slider-options="cm.slider.options"></rzslider>
+            <p>Min Price: {{cm.slider.minValue}}</p>
+            <p>max Price: {{cm.slider.maxValue}}</p>
+            <!-- <input type="number" ng-model="cm.slider.minValue"/>
+             <input type="number" ng-model="cm.slider.maxValue"/>-->
         </div>
     </div>
-</div>
 </div>

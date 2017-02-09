@@ -4,9 +4,20 @@
 (function () {
     angular
         .module("MSC.search")
-        .controller("searchCtrl",searchCtrl);
-    searchCtrl.$inject=['samData','$state','$rootScope']
-    function searchCtrl(samData,$state,$rootScope,checkName,viewState   ) {
+        .component("searchComponent",{
+            templateUrl: "app/partials/search.html",
+            controller : searchCtrl,
+            controllerAs :"sc",
+           /* bindings : {
+                viewState :"&",
+                checkName : "&"
+            }
+*/
+
+        });
+    //.controller("searchCtrl",searchCtrl);
+    searchCtrl.$inject=['$state','$rootScope']
+    function searchCtrl($state,$rootScope,checkName,viewState) {
         var vm = this;
         vm.products = [];
         //ssvm.products={};*/
@@ -14,7 +25,7 @@
         vm.limitNameSearch = 500;
         vm.product=$rootScope.products;
         vm.checkName = function (lettersTyped) {
-        console.log("in checkName");
+            console.log("in checkName");
             if (lettersTyped.length > 2) {
                 vm.limitNameSearch = 500;            }
             else {
