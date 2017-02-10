@@ -34,11 +34,29 @@
         "rating": "1",
         "commentedOn": "14/01/2017",
         "username": "Jhon Deo Sister"
+      },
+      {
+        "text": "Worst phone",
+        "rating": "1",
+        "commentedOn": "13/01/2017",
+        "username": "Jhon Deo"
+      },
+      {
+        "text": "Awesome phone",
+        "rating": "5",
+        "commentedOn": "15/01/2017",
+        "username": "Jhon Deo brother"
+      },
+      {
+        "text": "Worth price. The phone does not look cheap from any angle. Some have even confused this with the Galaxy A5, so this says a lot!",
+        "rating": "1",
+        "commentedOn": "14/01/2017",
+        "username": "Jhon Deo Sister"
       }
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 10
       }
     ],
@@ -83,7 +101,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 10
       }
     ],
@@ -128,7 +146,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 10
       }
     ],
@@ -173,7 +191,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 10
       }
     ],
@@ -259,7 +277,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 10
       }
     ],
@@ -304,7 +322,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 10
       }
     ],
@@ -350,7 +368,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Festival Offer",
         "percentage": 10
       }
     ],
@@ -395,7 +413,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Festival Offer",
         "percentage": 10
       }
     ],
@@ -441,7 +459,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Festival Offer",
         "percentage": 5
       }
     ],
@@ -487,7 +505,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Festival Offer",
         "percentage": 5
       }
     ],
@@ -533,7 +551,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Festival Offer",
         "percentage": 5
       }
     ],
@@ -579,7 +597,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Festival Offer",
         "percentage": 5
       }
     ],
@@ -625,7 +643,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Festival Offer",
         "percentage": 5
       }
     ],
@@ -671,7 +689,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Festival Offer",
         "percentage": 5
       }
     ],
@@ -717,7 +735,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Festival Offer",
         "percentage": 5
       }
     ],
@@ -763,7 +781,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Festival Offer",
         "percentage": 5
       }
     ],
@@ -809,7 +827,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Festival Offer",
         "percentage": 5
       }
     ],
@@ -855,7 +873,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Festival Offer",
         "percentage": 5
       }
     ],
@@ -901,7 +919,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Festival Offer",
         "percentage": 5
       }
     ],
@@ -947,7 +965,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Festival Offer",
         "percentage": 5
       }
     ],
@@ -993,7 +1011,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Festival Offer",
         "percentage": 5
       }
     ],
@@ -1039,7 +1057,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Festival Offer",
         "percentage": 5
       }
     ],
@@ -1085,7 +1103,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Festival Offer",
         "percentage": 5
       }
     ],
@@ -1130,7 +1148,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Festival Offer",
         "percentage": 5
       }
     ],
@@ -1175,7 +1193,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Festival Offer",
         "percentage": 5
       }
     ],
@@ -1221,7 +1239,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Festival Offer",
         "percentage": 5
       }
     ],
@@ -1267,7 +1285,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Festival Offer",
         "percentage": 5
       }
     ],
@@ -1313,7 +1331,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Festival Offer",
         "percentage": 5
       }
     ],
@@ -1359,7 +1377,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -1405,7 +1423,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -1451,7 +1469,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -1497,7 +1515,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -1543,7 +1561,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -1589,7 +1607,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -1634,7 +1652,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -1680,7 +1698,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -1726,7 +1744,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -1772,7 +1790,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -1818,7 +1836,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -1864,7 +1882,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -1910,7 +1928,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -1956,7 +1974,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -2002,7 +2020,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -2040,7 +2058,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -2079,7 +2097,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -2118,7 +2136,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -2157,7 +2175,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -2196,7 +2214,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -2235,7 +2253,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -2274,7 +2292,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -2313,7 +2331,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -2352,7 +2370,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -2391,7 +2409,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -2430,7 +2448,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Special Price",
         "percentage": 5
       }
     ],
@@ -2469,7 +2487,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Special Price",
         "percentage": 5
       }
     ],
@@ -2508,7 +2526,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Special Price",
         "percentage": 5
       }
     ],
@@ -2547,7 +2565,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Special Price",
         "percentage": 5
       }
     ],
@@ -2587,7 +2605,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Special Price",
         "percentage": 5
       }
     ],
@@ -2626,7 +2644,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Special Price",
         "percentage": 5
       }
     ],
@@ -2665,7 +2683,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Special Price",
         "percentage": 5
       }
     ],
@@ -2704,7 +2722,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Special Price",
         "percentage": 5
       }
     ],
@@ -2743,7 +2761,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Special Price",
         "percentage": 5
       }
     ],
@@ -2782,7 +2800,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Special Price",
         "percentage": 5
       }
     ],
@@ -2821,7 +2839,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Special Price",
         "percentage": 5
       }
     ],
@@ -2860,7 +2878,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Special Price",
         "percentage": 5
       }
     ],
@@ -2899,7 +2917,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Special Price",
         "percentage": 5
       }
     ],
@@ -2938,7 +2956,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Special Price",
         "percentage": 5
       }
     ],
@@ -2977,7 +2995,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Special Price",
         "percentage": 5
       }
     ],
@@ -3016,7 +3034,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Special Price",
         "percentage": 5
       }
     ],
@@ -3058,7 +3076,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Special Price",
         "percentage": 5
       }
     ],
@@ -3098,7 +3116,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Special Price",
         "percentage": 5
       }
     ],
@@ -3137,7 +3155,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Special Price",
         "percentage": 5
       }
     ],
@@ -3177,7 +3195,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Special Price",
         "percentage": 5
       }
     ],
@@ -3216,7 +3234,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Special Price",
         "percentage": 5
       }
     ],
@@ -3255,7 +3273,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Special Price",
         "percentage": 5
       }
     ],
@@ -3295,7 +3313,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Special Price",
         "percentage": 5
       }
     ],
@@ -3334,7 +3352,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -3373,7 +3391,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -3412,7 +3430,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -3451,7 +3469,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -3491,7 +3509,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -3530,7 +3548,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -3569,7 +3587,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -3608,7 +3626,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -3647,7 +3665,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -3686,7 +3704,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -3725,7 +3743,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -3764,7 +3782,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -3803,7 +3821,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -3843,7 +3861,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -3882,7 +3900,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -3921,7 +3939,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -3961,7 +3979,7 @@
     ],
     "offers": [
       {
-        "type": "discount",
+        "type": "Discount",
         "percentage": 5
       }
     ],
@@ -4001,8 +4019,8 @@
     ],
     "offers": [
       {
-        "type": "discount",
-        "percentage": 5
+        "type": "Special Price",
+        "percentage": 10
       }
     ],
     "rating":3

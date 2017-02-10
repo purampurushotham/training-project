@@ -96,7 +96,29 @@
         var vm=this;
         vm.$onInit = function () {
             console.log(vm.sam);
+            vm.commentsSize=2;
+            vm.tempSize=vm.commentsSize
+            vm.viewMore=function(){
+                console.log("in viewMore function");
+                console.log(vm.sam.length);
+                if(vm.sam.length > vm.commentsSize ){
+                    vm.commentsSize=(vm.commentsSize)+((vm.sam.length-1)/2);
+                    console.log(vm.commentsSize);
+                }
+                else if(vm.sam.length < vm.commentsSize){
+                    vm.commentsSize = vm.sam.length;
+                }
+            }
+                vm.hideButton=function(){
+                    if(angular.equals(vm.commentsSize,vm.sam.length)){
+                        return true;
+                    }
+                    else
+                        return false;
+                }
+
         }
+
     }
     function userDefinedPagination() {
         var vm = this;

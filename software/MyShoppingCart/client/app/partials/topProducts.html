@@ -1,6 +1,6 @@
-<div ng:repeat="i in hc.products | orderBy:'-rating'|filter:{subType : hc.pro} |limitTo:'6'" class="col-md-4">
+<div ng:repeat="i in hc.products | orderBy:'-rating'|filter:{subType : hc.pro} |limitTo:'8'" class="col-md-3 panel panel-default">
     <!--{{// hc.prodType}}-->
-    <div class="container lead">
+    <div class="container" >
         <a class="search_a" ui-sref="view({id:i.id})">
             <img src="{{i.pic}}" class="pics">
             <p ng-bind="i.name"></p>
@@ -8,5 +8,6 @@
             <p><ng-rate-it ng-model="i.rating" class="custom_rating"  read-only="true" ></ng-rate-it>
             </p>
         </a>
+    </div>
     </div>
 </div>

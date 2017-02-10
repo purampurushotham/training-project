@@ -11,7 +11,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <h5>Search by brand</h5>
+            <h5>Selected Brands</h5>
             <div  ng-repeat="Selected in cm.selectedBrand" >
                 <label>
                     {{Selected.brand}}{{$last ? '' : ', '}}
@@ -21,9 +21,9 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12">
-            <label>
-                <p><input type="text" ng-model="filteredText"></p>
+        <div class="col-md-12 form-group row">
+            <label class ="col-form-label">Search By Brand
+                <input type="text"  class="form-control" ng-model="filteredText">
             </label>
         </div>
     </div>
@@ -35,6 +35,14 @@
             </label>
         </div>
     </div>
+    <!--<div class="row" ng-repeat="Brand in cm.singleList | filter : {subType:cm.singleBrand} | filter :filteredText "
+         ng-if="cm.singleBrand === 'book' ">
+        <div class="col-md-12">
+            <label>
+                <input type="checkbox" checklist-model="cm.getBookBrands()" checklist-value="Brand" ng-change="cm.check(Brand,checked)"> {{Brand.subType}}
+            </label>
+        </div>
+    </div>-->
     <div class="row"ng-init="cm.slideFeature()">
 
         <div class=col-md-3"><rzslider class="custom-slider" rz-slider-model="cm.slider.minValue"
@@ -46,4 +54,16 @@
              <input type="number" ng-model="cm.slider.maxValue"/>-->
         </div>
     </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h4> Avail Offers</h4>
+            </div>
+        </div>
+        <div class="row" ng-repeat="Brand in cm.duplicate_offers| filter : {subType:oc.tempBrands}| filter :filteredText ">
+            <div class="col-md-12">
+                <label>
+                    <input type="checkbox" checklist-model="cm.getBrands()" checklist-value="Brand" ng-change="oc.check(Brand,checked)"> {{Brand.type}} <span>{{Brand.percentage}}</span>
+                </label>
+            </div>
+        </div>
 </div>

@@ -64,6 +64,7 @@ li:hover .sub-menu {
   position: relative;
   z-index: 10000; /* The select2 dropdown has a z-index of 9999 */
 }
+/*products pics */
 .pics {
   width: 250px;
   height: 200px;
@@ -72,18 +73,14 @@ li:hover .sub-menu {
   width:350px;
   height:300px;
 }
-.search_pic{
-  width:70px;
-  height:40px;
-}
-/* custom rating */
+/* custom rating
 .custom_rating .button .material-icons {
  font-size: 25px;
 }
 .comment_rating     .button .material-icons{
     font-size: 15px
 }
-/* custom slider */
+/* custom price slider */
 .custom-slider.rzslider .rz-bar {
     background: #ffe4d1;
     height: 2px;
@@ -130,3 +127,12 @@ li:hover .sub-menu {
 /*font awesome*/
 .fa .fa-hand-o-left,.fa .fa-hand-o-right{
     font-size:24px}
+/*view product css*/
+/*panels*/
+/* first panel*/
+.first_panel{
+   margin-top: 40px
+}
+.second_panel{
+    margin-left: 40px
+}

@@ -1,42 +1,35 @@
-<div class="container">
-    <header>
-        <nav class="navbar  navbar-inverse bg-primary "> <!--ng-controller="NavbarController"-->
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" ui-sref="Home">MyShoppingCart</a>
-                </div>
-                <!-- <div class="navbar-collapse collapse in" collapse="isCollapsed" aria-expanded="true">-->
-                <ul class="nav nav-tabs">
-                    <li class="nav-item"><a class="nav-link" ui-sref="Home">Home<!--<span class="sr-only">(current)</span>--></a></li>
-                    <li><a>Electronics<!--<span class="sr-only">(current)</span>--></a>
-                        <ul class="sub-menu">
-                            <li><a ui-sref="search({productType:'Laptops'})">Laptops<!--<span class="sr-only">(current)</span>--></a></li>
-                            <li><a ui-sref="search({productType:'Mobiles'})">Mobiles<!--<span class="sr-only">(current)</span>--></a></li>
-                        </ul>
-                    </li>
-                    <li><a ui-sref="Books">Books</a>
-                        <ul class="sub-menu">
-                            <li><a ui-sref="search({productType:'fiction'})">Fiction</a></li>
-                            <li><a ui-sref="search({productType:'comic'})">Comic</a></li>
-                            <li><a ui-sref="search({productType:'Laptops'})">BioGraphy</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <search-component></search-component>
-                    </li>
+<nav class="navbar  navbar-inverse bg-primary "> <!--ng-controller="NavbarController"-->
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" ui-sref="Home">MyShoppingCart</a>
+        </div>
+        <!-- <div class="navbar-collapse collapse in" collapse="isCollapsed" aria-expanded="true">-->
+        <ul class="nav nav-tabs">
+            <li class="nav-item"><a class="nav-link" ui-sref="Home">Home<!--<span class="sr-only">(current)</span>--></a></li>
+            <li><a>Electronics<!--<span class="sr-only">(current)</span>--></a>
+                <ul class="sub-menu">
+                    <li><a ui-sref="search({productType:'Laptops'})">Laptops<!--<span class="sr-only">(current)</span>--></a></li>
+                    <li><a ui-sref="search({productType:'Mobiles'})">Mobiles<!--<span class="sr-only">(current)</span>--></a></li>
                 </ul>
-            </div>
+            </li>
+            <li><a ui-sref="Books">Books</a>
+                <ul class="sub-menu">
+                    <li><a ui-sref="search({productType:'fiction'})">Fiction</a></li>
+                    <li><a ui-sref="search({productType:'comic'})">Comic</a></li>
+                    <li><a ui-sref="search({productType:'Laptops'})">BioGraphy</a></li>
+                </ul>
+            </li>
+            <li style="margin-top: 8px">
+                <search-component></search-component>
+            </li>
+        </ul>
+    </div>
 
-        </nav>
+</nav>
 
-</div>
-</div>
-
-</header>
-</div>

@@ -25,6 +25,9 @@
             vm.duplicateList1 = [];
             vm.duplicateList2 = [];
             /* functions */
+            /*vm.getBookBrands=function(){
+
+             }*/
             var removeDuplicates = function () {
                 angular.forEach(vm.singleList, function (similarType, index) {
                     if (angular.equals(similarType.subType, vm.singleBrand)) {
@@ -33,9 +36,12 @@
                 });
                 //removing duplicate products
                 vm.singleList = [];
+
+                console.log(vm.duplicateList2)
                 angular.forEach(vm.duplicateList1, function (duplicateObject, index) {
                     vm.flag = false;
                     angular.forEach(vm.duplicateList2, function (singleObject, index) {
+                        console.log("before loop")
                         if (angular.equals(duplicateObject.brand, singleObject.brand)) {
                             vm.flag = true
                         }
@@ -45,10 +51,12 @@
                     }
                 });
             };
+            //get offers in each brand
+            angular.forEach()
             //function to get list of brands as check boxes
             vm.getBrands = function () {
-                console.log("in selecting")
-                console.log(vm.selectedBrand)
+                /*console.log("in selecting")
+                 console.log(vm.selectedBrand)*/
 
                 return vm.selectedBrand;
             };
@@ -63,23 +71,23 @@
                 }
                 if (idx < 0 && checked) {
                     vm.selectedBrand.push(value);
-                    console.log(vm.selectedBrand)
+                    /*console.log(vm.selectedBrand)*/
 
                 }
                 // calling for multiple selected checkboxes
                 multipleCheckings();
                 if (checked) {
                     vm.productsList = vm.multiProduct;
-                    console.log("in checked")
+                    /*console.log("in checked")*/
                     vm.slideFeature();
                 }
                 else if (!checked) {
-                    console.log("in checkout")
-                    console.log("before getoriginal")
-                    console.log(vm.productsList);
+                    /*console.log("in checkout")
+                     console.log("before getoriginal")
+                     console.log(vm.productsList);*/
                     vm.productsList = vm.getOriginal();
-                    console.log("after getoriginal")
-                    console.log(vm.productsList);
+                    /*console.log("after getoriginal")
+                     console.log(vm.productsList);*/
                     vm.slideFeature();
                 }
 
@@ -92,7 +100,7 @@
                         if (angular.equals(singleObject.brand, selectedObject.brand) &&
                             angular.equals(singleObject.subType, selectedObject.subType)) {
                             vm.multiProduct.push(selectedObject);
-                            console.log("in multiple checkings")
+                            //console.log("in multiple checkings")
 
                         }
                     });
@@ -101,8 +109,8 @@
             //called when checkboxes are unchecked
             vm.getOriginal = function () {
                 if (typeof vm.selectedBrand != 'undefined' && vm.selectedBrand.length === 0) {
-                    console.log("in get Original");
-                    console.log("getting error");
+                    /*console.log("in get Original");
+                     console.log("getting error");*/
                     return vm.duplicateList1;
                 }
                 else  {
@@ -111,8 +119,8 @@
                 }
             };
             vm.slideFeature = function () {
-                console.log("in slider feature");
-                console.log(vm.productsList);
+                /*console.log("in slider feature");
+                 console.log(vm.productsList);*/
                 vm.copySimilarProds = angular.copy(vm.productsList);
                 console.log(vm.productsList);
                 /* slideer */
@@ -140,22 +148,22 @@
                     }
                 };
                 /*var getMin=function () {
-                    console.log("in min function");
-                     Math.min.apply(Math, vm.productsList.map(function (item) {
-                        console.log(item.price)
-                        return item.price;
-                    }));
-                }
-                var getMax= function getMax() {
-                    console.log("in getmax function")
-                    return Math.max.apply(Math, vm.productsList.map(function (item) {
-                        console.log(item.price)
-                        return item.price;
-                    }));
+                 console.log("in min function");
+                 Math.min.apply(Math, vm.productsList.map(function (item) {
+                 console.log(item.price)
+                 return item.price;
+                 }));
+                 }
+                 var getMax= function getMax() {
+                 console.log("in getmax function")
+                 return Math.max.apply(Math, vm.productsList.map(function (item) {
+                 console.log(item.price)
+                 return item.price;
+                 }));
 
 
-                }
-*/
+                 }
+                 */
                 //slider on change
                 function onSliderChange() {
                     /*   console.log("in slide change")*/
@@ -166,36 +174,10 @@
                         }
                     });
                     vm.productsList = vm.sliderProducts;
-                    console.log('after slider changing')
-                    console.log(vm.productsList)
+                    /*console.log('after slider changing')
+                     console.log(vm.productsList)*/
                 }
             }
         }
     }
 })();
-/*console.log(vm.singleList);*/
-
-/* vm.checkFirst = function() {
- vm.selectedBrand.splice(0, vm.selectedBrand.length, vm.singleList[0]);
- };
-
- vm.checkAll = function() {
- vm.selectedBrand.splice(0, vm.selectedBrand.length);
- for (var i in vm.singleList) {
- vm.selectedBrand.push(vm.singleList[i]);
- }
- };
-
- vm.uncheckAll = function() {
- vm.selectedBrand.splice(0, vm.selectedBrand.length);
- }
- */
-
-/*    vm.compareFn = function(obj1, obj2){
- console.log("in compare function")
- console.log(obj1.brand)
- console.log("in compare function")
- console.log(obj2.brand)
- return obj1.brand === obj2.brand;
- };
- */

@@ -1,10 +1,11 @@
-<div class="col-md-3 panel panel-primary">
+<div class="col-md-3 panel panel-primary first_panel">
     <div class="col-md-12">
         <check-boxes-component products-list="ec.products" multi-select="ec.products" brand-type="ec.electronic_subType"></check-boxes-component>
-<!--        <slider-component slider-products="ec.products" ></slider-component>-->
+<!--          <slider-component slider-products="ec.products" ></slider-component>-->
+        <offers-component offered-products = "ec.products" offer-brand="ec.electronic_subType"></offers-component>
     </div>
 </div>
-<div class="col-md-9">
+<div class="col-md-9 first_panel">
     <div class="col-md-4"  ng:repeat="i in ec.products | orderBy:'-rating'|filter:{subType :ec.electronic_subType} " >
         <div class="container">
             <div class="row">
