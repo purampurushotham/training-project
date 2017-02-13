@@ -14,7 +14,7 @@
             <h5>Selected Brands</h5>
             <div  ng-repeat="Selected in cm.selectedBrand" >
                 <label>
-                    {{Selected.brand}}{{$last ? '' : ', '}}
+                    {{Selected}}{{$last ? '' : ', '}}
                 </label>
             </div>
 
@@ -27,11 +27,11 @@
             </label>
         </div>
     </div>
-    <div class="row" ng-repeat="Brand in cm.singleList | filter : {subType:cm.singleBrand} | filter :filteredText "
-         ng-if="cm.singleBrand === 'Laptops' || cm.singleBrand === 'Mobiles' ">
+
+    <div class="row" ng-repeat="Brand in cm.filteredBrands | filter :filteredText ">
         <div class="col-md-12">
             <label>
-                <input type="checkbox" checklist-model="cm.getBrands()" checklist-value="Brand" ng-change="cm.check(Brand,checked)"> {{Brand.brand}}
+                <input type="checkbox" checklist-model="cm.selectedBrand" checklist-value="Brand" ng-change="cm.checkBrand()",ng-click="vm.filteredProducts(Brand)"> {{Brand}}
             </label>
         </div>
     </div>
@@ -54,16 +54,16 @@
              <input type="number" ng-model="cm.slider.maxValue"/>-->
         </div>
     </div>
-        <div class="row">
-            <div class="col-md-12">
-                <h4> Avail Offers</h4>
-            </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h4> Avail Offers</h4>
         </div>
-        <div class="row" ng-repeat="Brand in cm.duplicate_offers| filter : {subType:oc.tempBrands}| filter :filteredText ">
-            <div class="col-md-12">
-                <label>
-                    <input type="checkbox" checklist-model="cm.getBrands()" checklist-value="Brand" ng-change="oc.check(Brand,checked)"> {{Brand.type}} <span>{{Brand.percentage}}</span>
-                </label>
-            </div>
+    </div>
+    <div class="row" ng-repeat="Brand in cm.filteredOffers">
+        <div class="col-md-12">
+            <label>
+                <input type="checkbox" checklist-model="cm.selectedOffer" checklist-value="Brand" ng-change="cm.checkOffers(Brand,checked)"> {{Brand}} <span>{{Brand.percentage}}</span>
+            </label>
         </div>
+    </div>
 </div>
