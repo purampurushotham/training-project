@@ -32,9 +32,12 @@
             vm.filteredBrands=removeDuplicates(vm.brandType);
             vm.filteredOffers=[];
             vm.filteredObjects={
-                filteredBrand:getBrand,
-                filteredOffer:getOffers,
-                filteredPrice:getPriceRange
+                filteredBrand: [],
+                filteredOffer:[],
+                filteredPrice:{
+                    minPrice : null,
+                    maxPrice : null
+                }
             };
             function removeDuplicates (filteredSubType) {
                 angular.forEach(vm.singleList, function (eachDevice, index) {
@@ -75,106 +78,15 @@
                 if (index < 0 && checked) {
                     vm.selectedBrand.push(value);
                 }
-                console.log(vm.selectedBrand)
+                console.log(vm.filteredObjects)
             };
-            function getBrand(brand){
-                angular.forEach(vm.productsList,function(){})
+            function filterDevices(){
+                console.log("in filter Devices");
+                
             }
             //removing duplicate products
             /*
              /!* vm.singleList = [];
-             console.log(vm.duplicateList1);
-             angular.forEach(vm.duplicateList1, function (duplicateObject, index) {
-             vm.flag = false;
-             angular.forEach(vm.duplicateList2, function (singleObject, index) {
-
-             if (angular.equals(duplicateObject.brand, singleObject.brand)) {
-             vm.flag = true;
-             }
-             });
-             if (vm.flag == false && duplicateObject.brand != "") {
-             vm.duplicateList2.push(duplicateObject);
-             //  console.log(vm.duplicateList2)
-             }
-             });
-             };*!/
-             var removeDuplicateOffers = function () {
-             console.log("removeDuplicateOffers");
-             angular.forEach(vm.duplicateList1, function (singleObject, index) {
-             vm.offers.push(singleObject.offers);
-             });
-             // console.log(vm.offers);
-             angular.forEach(vm.offers, function (singleObject, index) {
-             console.log("-----------ok-------------");
-             console.log(singleObject[0].type);
-             angular.forEach(singleObject, function (singleOffer, index) {
-             /!*TODO:REMOVE THIS LOOP*!/
-             console.log("INSIDE SINGLE OFFER");
-             console.log(singleOffer.type);
-             vm.boolOffer = false;
-             angular.forEach(vm.offersType, function (duplicateOffer, index) {
-             console.log("INSIDE DUPLICATE OFFER");
-             console.log(singleOffer.type + " " + duplicateOffer.type);
-             if (angular.equals(duplicateOffer.type, singleOffer.type)) {
-             vm.boolOffer = true;
-             }
-             });
-             if (vm.boolOffer === false && singleOffer.type != "") {
-             vm.offersType.push(singleOffer)
-
-             }
-             });
-             });
-             };
-             //function to get list of brands as check boxes
-             //get offers in each brand
-             //calling to remove simlilar brands
-             //after removing duplicate brands
-             vm.singleList = angular.copy(vm.duplicateList2)
-             //getting products based on brand
-             vm.check = function (value, checked) {
-             var index = vm.selectedBrand.indexOf(value);
-             if (index >= 0 && !checked) {
-             vm.selectedBrand.splice(index, 1);
-             }
-             if (index < 0 && checked) {
-             vm.selectedBrand.push(value);
-             }
-             // calling for multiple selected checkboxes
-             multipleCheckings();
-             if (checked) {
-             vm.productsList = vm.multiProduct;
-             vm.slideFeature();
-             }
-             else if (!checked) {
-             vm.productsList = vm.getOriginal();
-             vm.slideFeature();
-             }
-             };
-             //function is called when clicked on multiple checkboxes
-             var multipleCheckings = function () {
-             vm.multiProduct = [];
-             angular.forEach(vm.selectedBrand, function (singleObject, index) {
-             angular.forEach(vm.duplicateList1, function (selectedObject, index) {
-             if (angular.equals(singleObject.brand, selectedObject.brand) &&
-             angular.equals(singleObject.subType, selectedObject.subType)) {
-             vm.multiProduct.push(selectedObject);
-             console.log("in multiple checkings")
-
-             }
-             });
-             });
-             };
-             //called when checkboxes are unchecked
-             vm.getOriginal = function () {
-             if (typeof vm.selectedBrand != 'undefined' && vm.selectedBrand.length === 0) {
-             return vm.duplicateList1;
-             }
-             else {
-             multipleCheckings();
-             return vm.multiProduct;
-             }
-             };
              vm.slideFeature = function () {
              /!* slideer *!/
              vm.slider = {
