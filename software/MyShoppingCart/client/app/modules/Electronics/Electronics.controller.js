@@ -19,6 +19,7 @@
             vm.electronic_subType=$stateParams.productType;
             console.log(vm.electronic_subType);
 
+
            /* vm.viewState = function (id) {
                 $state.go('view', {id:id});
 

@@ -31,7 +31,7 @@
     <div class="row" ng-repeat="Brand in cm.filteredBrands | filter :filteredText ">
         <div class="col-md-12">
             <label>
-                <input type="checkbox" checklist-model="cm.filteredObjects.filteredBrand" checklist-value="Brand" ng-change="cm.checkBrand()"> {{Brand}}
+                <input type="checkbox" checklist-model="cm.filteredObjects.filteredBrand" checklist-value="Brand" checklist-change="cm.checkBrand(checked)"> {{Brand}}
             </label>
         </div>
     </div>
@@ -45,11 +45,11 @@
     </div>-->
     <div class="row"ng-init="cm.slideFeature()">
 
-        <div class=col-md-3"><rzslider class="custom-slider" rz-slider-model="cm.slider.minValue"
-                                       rz-slider-high="cm.slider.maxValue"
+        <div class=col-md-3"><rzslider class="custom-slider" rz-slider-model="cm.filteredObjects.filteredPrice.minPrice"
+                                       rz-slider-high="cm.filteredObjects.filteredPrice.maxPrice"
                                        rz-slider-options="cm.slider.options"></rzslider>
-            <p>Min Price: {{cm.filteredObjects.filteredOffer.minPrice}}</p>
-            <p>max Price: {{cm.filteredObjects.filteredOffer.maxPrice}}</p>
+            <p>Min Price: {{cm.filteredObjects.filteredPrice.minPrice}}</p>
+            <p>max Price: {{cm.filteredObjects.filteredPrice.maxPrice}}</p>
             <!-- <input type="number" ng-model="cm.slider.minValue"/>
              <input type="number" ng-model="cm.slider.maxValue"/>-->
         </div>
@@ -62,7 +62,7 @@
     <div class="row" ng-repeat="Brand in cm.filteredOffers">
         <div class="col-md-12">
             <label>
-                <input type="checkbox" checklist-model="cm.filteredObjects.filteredOffer" checklist-value="Brand" ng-change="cm.checkBrand()"> {{Brand}} <span>{{Brand.percentage}}</span>
+                <input type="checkbox" checklist-model="cm.filteredObjects.filteredOffer" checklist-value="Brand" checklist-change="cm.checkBrand()"> {{Brand}} <span>{{Brand.percentage}}</span>
             </label>
         </div>
     </div>

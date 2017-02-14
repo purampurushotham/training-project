@@ -13,12 +13,13 @@
                 multiSelect: "="
             }
         });
-    function checkBoxCtrl() {
+    checkBoxCtrl.$inject=['filterProductsService']
+    function checkBoxCtrl(filterProductsService) {
         var vm = this;
         vm.$onInit = function () {
             vm.singleList = vm.productsList;
             vm.multiProduct = vm.multiSelect;
-            vm.singleBrand = vm.brandType;
+            vm.protype = vm.brandType;
             console.log(vm.singleBrand)
             vm.selectedBrand = [];
             vm.selectedOffer = [];
@@ -35,8 +36,10 @@
                 filteredBrand: [],
                 filteredOffer:[],
                 filteredPrice:{
-                    minPrice : null,
-                    maxPrice : null
+                    minPrice : 1000,
+                    maxPrice : Math.max.apply(Math, vm.productsList.map(function (item) {
+                        return item.price
+                    }))
                 }
             };
             function removeDuplicates (filteredSubType) {
@@ -44,9 +47,17 @@
                     if (!vm.allBrands[eachDevice.subType]) {
                         vm.allBrands[eachDevice.subType] = [];
                     }
+                    if(typeof eachDevice.brand === 'undefined'){
+                        console.log("in undefinerd");
+                        eachDevice.brand = eachDevice.language;
+                        console.log(eachDevice.brand)
+                    }
                     if (vm.allBrands[eachDevice.subType].indexOf(eachDevice.brand) < 0) {
+                        console.log("in if conditomn")
+                        console.log(eachDevice.brand)
                         vm.allBrands[eachDevice.subType].push(eachDevice.brand);
                     }
+
                     angular.forEach(eachDevice.offers, function(eachOffer) {
                         if (!vm.allOffers[eachOffer.type]) {
                             vm.allOffers[eachOffer.type] = eachOffer;
@@ -66,24 +77,19 @@
                 else if(angular.equals(filteredSubType,"fiction")){
                     return vm.allBrands.fiction;
                 }
-
             };
             vm.filteredOffers=Object.keys(vm.allOffers);
-            console.log(vm.filteredBrands);
-            vm.checkBrand = function (value, checked) {
-                var index = vm.selectedBrand.indexOf(value);
-                if (index >= 0 && !checked) {
-                    vm.selectedBrand.splice(index, 1);
-                }
-                if (index < 0 && checked) {
-                    vm.selectedBrand.push(value);
-                }
+            vm.checkBrand = function (checked) {
                 console.log(vm.filteredObjects)
+                vm.productsList=[];
+                vm.productsList=filterProductsService.filterProducts(vm.singleList ,vm.filteredObjects,vm.protype,vm.filteredOffers);
+
+                console.log(vm.filteredObjects)
+
             };
-            function filterDevices(){
-                console.log("in filter Devices");
-                
-            }
+
+
+
             //removing duplicate products
             /*
              /!* vm.singleList = [];
@@ -113,7 +119,6 @@
              return '₹/' + value
              }
              }
-
              }
              };
              //slider on change
