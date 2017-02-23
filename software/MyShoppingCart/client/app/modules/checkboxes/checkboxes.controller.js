@@ -39,7 +39,17 @@
                     minPrice : 1000,
                     maxPrice : Math.max.apply(Math, vm.productsList.map(function (item) {
                         return item.price
-                    }))
+                    })),
+                    options: {
+                        floor: 1000,
+                        ceil: Math.max.apply(Math, vm.productsList.map(function (item) {
+                            return item.price
+                        })),
+                        step: 1000,
+                        minRange: 1000,
+                        maxRange: 100000,
+                        onChange: checkBrand,
+                    }
                 }
             };
             function removeDuplicates (filteredSubType) {
@@ -79,10 +89,13 @@
                 }
             };
             vm.filteredOffers=Object.keys(vm.allOffers);
-            vm.checkBrand = function (checked) {
+            vm.checkfilter =checkBrand();
+            function checkBrand() {
                 console.log(vm.filteredObjects)
+                vm.min=vm.filteredObjects.filteredPrice.minPrice;
+                vm.max=vm.filteredObjects.filteredPrice.maxPrice;
                 vm.productsList=[];
-                vm.productsList=filterProductsService.filterProducts(vm.singleList ,vm.filteredObjects,vm.protype,vm.filteredOffers);
+                vm.productsList=filterProductsService.filterProducts(vm.singleList ,vm.filteredObjects,vm.protype,vm.filteredOffers,vm.min,vm.max);
 
                 console.log(vm.filteredObjects)
 

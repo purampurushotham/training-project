@@ -39,7 +39,6 @@
                     angular.forEach(dummyList, function (multipleObject, index) {
                         angular.forEach(multipleObject.offers, function (multipleOffers, index) {
                             if (multipleOffers.type == eachOffer) {
-                                console.log("**********" + multipleOffers.type)
                                 console.log(multipleObject);
                                 filteredList.push(multipleObject);
                                 console.log(filteredList);
@@ -49,7 +48,7 @@
                     });
                 });
 
-                return isEmpty(filteredList)
+                return isEmpty(filteredList);
             };
             var getPrice =function(filteredList) {
                 var copySimilarProds = angular.copy(filteredList);
@@ -74,9 +73,10 @@
                 return filteredList;
             };
             this.filteredList = [];
+
             this.filteredList =getfilteredBrands(this.filteredList);
-            this.filteredList = getPrice(this.filteredList);
             this.filteredList = getfilteredOffers( this.filteredList);
+            this.filteredList = getPrice(this.filteredList);
             return this.filteredList;
         }
     }
