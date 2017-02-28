@@ -31,7 +31,7 @@
     <div class="row" ng-repeat="Brand in cm.filteredBrands | filter :filteredText ">
         <div class="col-md-12">
             <label>
-                <input type="checkbox" checklist-model="cm.filteredObjects.filteredBrand" checklist-value="Brand" checklist-change="cm.checkfilter()"> {{Brand}}
+                <input type="checkbox" checklist-model="cm.filteredObjects.filteredBrand" checklist-value="Brand" checklist-change="cm.checkBrand()"> {{Brand}}
             </label>
         </div>
     </div>
@@ -51,7 +51,7 @@
     <div class="row" ng-repeat="Brand in cm.filteredOffers">
         <div class="col-md-12">
             <label>
-                <input type="checkbox" checklist-model="cm.filteredObjects.filteredOffer" checklist-value="Brand" checklist-change="cm.checkfilter()"> {{Brand}} <span>{{Brand.percentage}}</span>
+                <input type="checkbox" checklist-model="cm.filteredObjects.filteredOffer" checklist-value="Brand" checklist-change="cm.checkBrand()"> {{Brand}} <span>{{Brand.percentage}}</span>
             </label>
         </div>
     </div>
@@ -62,7 +62,7 @@
 
     <div class=col-md-3"><rzslider class="custom-slider" rz-slider-model="cm.filteredObjects.filteredPrice.minPrice"
                                    rz-slider-high="cm.filteredObjects.filteredPrice.maxPrice"
-                                   rz-slider-options="cm.slider.options"></rzslider>
+                                   rz-slider-options="cm.filteredObjects.filteredPrice.options"></rzslider>
         <p>Min Price: {{cm.filteredObjects.filteredPrice.minPrice}}</p>
         <p>max Price: {{cm.filteredObjects.filteredPrice.maxPrice}}</p>
         <!-- <input type="number" ng-model="cm.slider.minValue"/>

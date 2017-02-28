@@ -6,8 +6,10 @@
     angular.module("MSC.checkBoxes")
         .service("filterProductsService",filterProductsService);
     function filterProductsService() {
+
         console.log("in filterProducts Service");
         this.filterProducts=function(products, filterObj,protype,offer,minval,maxval) {
+
             //for brand
             var getfilteredBrands =function (filteredList){
                 angular.forEach(filterObj.filteredBrand, function (eachBrand, index) {
@@ -22,12 +24,11 @@
                         }
                     });
                 });
-                return isEmpty(filteredList)
+
+                return getPrice(filteredList)
 
             };
-            var getfilteredOffers =function (filteredList) {
 
-            }
             //for discounts
             var getfilteredOffers = function (filteredList) {
                 if(filterObj.filteredOffer.length === 0)
@@ -48,11 +49,13 @@
                     });
                 });
 
-                return isEmpty(filteredList);
+                return getPrice(filteredList);
             };
-            var getPrice =function(filteredList) {
+            //filter based on price
+            var getPrice = function (filteredList) {
                 var copySimilarProds = angular.copy(filteredList);
                 var filteredList = [];
+
                 angular.forEach(copySimilarProds, function (eachProd, index) {
                     console.log("in getPrice");
                     console.log("*****************");
@@ -65,6 +68,7 @@
                 });
                 return isEmpty(filteredList);
             };
+            //check for filteredList is empty or not
             var isEmpty=function(filteredList){
                 if (filteredList.length === 0) {
                     filteredList = products;
@@ -72,12 +76,12 @@
                 }
                 return filteredList;
             };
-            this.filteredList = [];
 
+            this.filteredList = [];
             this.filteredList =getfilteredBrands(this.filteredList);
             this.filteredList = getfilteredOffers( this.filteredList);
-            this.filteredList = getPrice(this.filteredList);
             return this.filteredList;
         }
+
     }
 }());

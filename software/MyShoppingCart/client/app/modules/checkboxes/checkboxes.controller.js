@@ -31,6 +31,16 @@
             vm.allBrands = [];
             vm.allOffers = [];
             vm.filteredBrands=removeDuplicates(vm.brandType);
+            vm.checkBrand=function () {
+                console.log(vm.filteredObjects)
+                vm.min=vm.filteredObjects.filteredPrice.minPrice;
+                vm.max=vm.filteredObjects.filteredPrice.maxPrice;
+                vm.productsList=[];
+                vm.productsList=filterProductsService.filterProducts(vm.singleList ,vm.filteredObjects,vm.protype,vm.filteredOffers,vm.min,vm.max);
+
+                console.log(vm.filteredObjects)
+
+            };
             vm.filteredOffers=[];
             vm.filteredObjects={
                 filteredBrand: [],
@@ -48,10 +58,12 @@
                         step: 1000,
                         minRange: 1000,
                         maxRange: 100000,
-                        onChange: checkBrand,
+                        onChange : vm.checkBrand
+
                     }
                 }
             };
+
             function removeDuplicates (filteredSubType) {
                 angular.forEach(vm.singleList, function (eachDevice, index) {
                     if (!vm.allBrands[eachDevice.subType]) {
@@ -89,20 +101,6 @@
                 }
             };
             vm.filteredOffers=Object.keys(vm.allOffers);
-            vm.checkfilter =checkBrand();
-            function checkBrand() {
-                console.log(vm.filteredObjects)
-                vm.min=vm.filteredObjects.filteredPrice.minPrice;
-                vm.max=vm.filteredObjects.filteredPrice.maxPrice;
-                vm.productsList=[];
-                vm.productsList=filterProductsService.filterProducts(vm.singleList ,vm.filteredObjects,vm.protype,vm.filteredOffers,vm.min,vm.max);
-
-                console.log(vm.filteredObjects)
-
-            };
-
-
-
             //removing duplicate products
             /*
              /!* vm.singleList = [];
