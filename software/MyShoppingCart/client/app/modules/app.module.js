@@ -2,7 +2,10 @@
     'use strict';
 
 // Declare app level module which depends on views, and components
-    angular.module("MSC", ["ngRateIt","ngScrollbars",
+    angular.module("MSC", [
+        "ngRateIt",
+        "ngScrollbars",
+        "ngResource",
         "ui.router",
         "ui.bootstrap",
         "ui.select",

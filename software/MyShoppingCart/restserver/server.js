@@ -15,10 +15,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.engine('html', require('ejs').renderFile);
-
 app.set('views', path.join(__dirname, '../client/app/partials'));
 app.set('view engine', 'html');
 console.log("hhhhhhh")
+var extConfigLoc =path.join(__dirname+'/config/config.json');
+console.log(extConfigLoc)
+console.log('> Searching for the external configuration in ',extConfigLoc);
+var config = require(extConfigLoc);
+var appConfig = JSON.parse(JSON.stringify(config));
 require('./models/db')(app, appConfig).then(init);
 function init() {
     index(app)

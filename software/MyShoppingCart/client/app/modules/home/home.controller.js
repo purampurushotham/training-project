@@ -8,17 +8,31 @@
         .component('homeComponent',{
             templateUrl : "app/partials/topProducts.html",
             controller : homeController,
-            controllerAs : "hc",
-            bindings :{
-                pro: '@'
-            }
+            controllerAs : "hc"
         });
     /*  .controller('homeController', homeController)
      .directive('homeDirective',homeDirective);*/
-    homeController.$inject=['samData','$rootScope'];
-
-    function homeController(samData,$rootScope) {
+    homeController.$inject=['$rootScope'];
+    function homeController($rootScope) {
         var vm = this;
-        vm.products = angular.copy($rootScope.products);}
+        vm.products=$rootScope.products;
+        angular.forEach(vm.products, function(each,index){
+            console.log(each)
+            
+        })
+
+        /*vm.type = vm.pro;
+        var query ={
+            productType : vm.type
+        };
+        homeData.getProdType(query).then(function (response) {
+            console.log(response)
+            },
+            function (msg) {
+                console.log("error");
+            });
+        
+*/
+    }
 }());
 
