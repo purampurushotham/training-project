@@ -6,11 +6,6 @@ require('mongoose-double')(mongoose);
 var Schema = mongoose.Schema;
 var SchemaTypes = mongoose.Schema.Types;
 var commentsSchema = new Schema({
-        product_id : {
-            type :Schema.Types.ObjectId,
-            ref : "productModel",
-            required : true
-        },
         username : {
             type :String,
             required : true
@@ -26,7 +21,6 @@ var commentsSchema = new Schema({
         }
     },
     {collection:'comments', strict: false}
-
 );
-var commentsModel = mongoose.model("comments",commentsSchema)
+var commentsModel = mongoose.model("comments",commentsSchema);
 module.exports = commentsModel;

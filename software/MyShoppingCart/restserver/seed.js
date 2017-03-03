@@ -44,14 +44,13 @@ function  insertProducts(productsList) {
         p.price = eachProd.price;
         p.type = eachProd.type;
         p.subType = eachProd.subType;
-        for (k in eachProd.camera) {
+        for (var j=0;j< eachProd.camera.length;j++) {
             console.log("$$$$$$$$$$$$$$$$$$$$");
-            console.log(k)
-            p.cam.push(k);
+            console.log(eachProd.camera[j])
+            p.cam.push(eachProd.camera[j]);
         }
         eachProd.offers.forEach(function (eachoffer) {
             p.offers.push(eachoffer)
-
         });
         p.rating = eachProd.rating;
 

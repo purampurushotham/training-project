@@ -89,9 +89,8 @@ var productSchema = new Schema({
             trim : true
         },
         offers : {
-            type : Array,
-            default : [],
-            trim: true
+            type : SchemaTypes.ObjectId,
+            ref : "offers"
         },
         rating :{
             type :SchemaTypes.Double,
