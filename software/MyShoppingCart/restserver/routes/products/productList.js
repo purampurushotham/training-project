@@ -59,16 +59,16 @@ ProductRoute= {
         });
     },
     similarProducts: function (req, res) {
-        console.log("**************************"+"in simiar products")
+
         var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
-        console.log(queryParam)
-        var query = {type: req.params.type,subType :req.params.subType}
+        console.log("**************************"+"in simiar products")
+        console.log(queryParam.type)
+        var query = {type: queryParam.type,subType :queryParam.subType}
         if(queryParam.brand) {
             query.brand = queryParam.brand;
         }
-        console.log("**************************")
+        console.log("**************************"+"in simiar products")
         console.log(query)
-
         products.find(query).exec(function (err, simialrProds) {
             console.log("in similarProducts");
             if (err) {
@@ -76,6 +76,7 @@ ProductRoute= {
             }
             else {
 
+                console.log(simialrProds)
                 res.send({data: simialrProds});
                 res.end();
             }

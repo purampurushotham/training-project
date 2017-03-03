@@ -10,6 +10,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var app = express();
 //mongoose.connect(process.env.OPENSHIFT_MONGODB_DB_URL || 'mongodb://localhost/myshoppingcart');
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.json({limit: '5mb'}));

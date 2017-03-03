@@ -34,6 +34,7 @@
             var deferred = $q.defer();
             //query = ObjToQueryParam(query)
             console.log("iiii"+query)
+            console.log(query)
             return api.similarProduct({q:query}).$promise;
         }
         function getComments(productID){
