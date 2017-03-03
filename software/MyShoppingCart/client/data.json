@@ -11,7 +11,7 @@
     "modelName": "Galaxy 1",
     "color": "Gold",
     "battery": "2600 mAh Li-Ion Battery",
-    "pic": "app/img/mobiles/samsung-galaxy-1.png",
+    "pic": "app/img/mobiles/samsung-galaxy-1.jpg",
     "camera": {
       "front": "5MP",
       "rear": "8MP"
@@ -74,7 +74,7 @@
     "modelName": "Galaxy 2",
     "color": "Gold",
     "battery": "2600 mAh Li-Ion Battery",
-    "pic": "app/img/mobiles/samsung-galaxy-2.png",
+    "pic": "app/img/mobiles/samsung-galaxy-2.jpg",
     "camera": {
       "front": "5MP",
       "rear": "8MP"
@@ -251,7 +251,7 @@
     "modelName": "g_50_80",
     "color": "Black",
     "battery": "8000 mAh Li-Ion Battery",
-    "pic": "app/img/laptops/Lenovo-g-5080-1.png",
+    "pic": "app/img/laptops/Lenovo-g-5080-1.jpg",
     "camera": {
       "webcam": "2MP"
     },
@@ -296,7 +296,7 @@
     "modelName": "Pavillion series p1",
     "color": "Silver",
     "battery": "9300 mAh Li-Ion Battery",
-    "pic": "app/img/laptops/Hp_pavillion-1.png",
+    "pic": "app/img/laptops/Hp_pavillion-1.jpg",
     "camera": {
       "webcam": "2.0MP"
     },
@@ -342,7 +342,7 @@
     "modelName": "Inspiron series D2",
     "color": "Silver",
     "battery": "9300 mAh Li-Ion Battery",
-    "pic": "app/img/laptops/Dell-Inspiron-1.png",
+    "pic": "app/img/laptops/Dell-Inspiron-1.jpg",
     "camera": {
       "webcam": "2.0MP"
     },
@@ -387,7 +387,7 @@
     "modelName": "Sony Vivo series v2",
     "color": "Silver",
     "battery": "9300 mAh Li-Ion Battery",
-    "pic": "app/img/laptops/Sony-Vivo-1.png",
+    "pic": "app/img/laptops/Sony-Vivo-1.jpg",
     "camera": {
       "webcam": "2.0MP"
     },

@@ -8,16 +8,16 @@ var SchemaTypes = mongoose.Schema.Types;
 var offersSchema = new Schema({
         Discount : {
             type :String,
-            required : true
+            trim :true
         },
         SpecialOffer : {
             type :String,
-            required : true
+            trim :true
 
         },
         FestivalOffer : {
             type :String,
-            required : true
+            trim :true
         }
     },
     {collection:'offers', strict: false}

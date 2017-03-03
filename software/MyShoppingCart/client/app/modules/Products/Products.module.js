@@ -4,5 +4,5 @@
 
 (function(){
     angular
-        .module('MSC.Electronics', []);
+        .module('MSC.Products', []);
 }());

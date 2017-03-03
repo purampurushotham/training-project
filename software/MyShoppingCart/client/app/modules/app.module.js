@@ -16,7 +16,7 @@
         "MSC.home",
         "MSC.search",
         "MSC.view",
-        "MSC.Electronics",
+        "MSC.Products",
         "MSC.checkBoxes",
         "MSC.priceSlider"
     ]);

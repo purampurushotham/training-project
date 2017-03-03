@@ -12,9 +12,9 @@
             <dt class="col-sm-3">Brand :</dt>
             <dd class="col-sm-9" ng-bind="vc.vp.brand"></dd>
             <dt class="col-sm-3">Model :</dt>
-            <dd class="col-sm-9" ng-bind="vc.vp.mode_Name"></dd>
+            <dd class="col-sm-9" ng-bind="vc.vp.model_Name"></dd>
             <dt class="col-sm-3">RAM :</dt>
-            <dd class="col-sm-9" ng-bind="vc.vp.RAM"></dd>
+            <dd class="col-sm-9" ng-bind="vc.vp.ram"></dd>
             <dt class="col-sm-3">color :</dt>
             <dd class="col-sm-9" ng-bind="vc.vp.color"></dd>
             <dt class="col-sm-3">Battery :</dt>
@@ -31,15 +31,13 @@
     </div>
 
 </div>
-<!--
 
 <div class="row">
     <div class="col-lg-6">
-        <similar-component product-type="vc.subType" same="vc.vp" pro-brand="vc.vp.brand"></similar-component>
+        <similar-component ng-if="vc.simialrProds" similar-prods="vc.simialrProds"></similar-component>
     </div>
 </div>
 <div class="container">
-    <comments-component sam="vc.vp.comments"></comments-component>
+    <comments-component ng-if="vc.simialrProds" comments="vc.simialrProds"></comments-component>
 
 </div>
--->

@@ -8,16 +8,18 @@ var SchemaTypes = mongoose.Schema.Types;
 var commentsSchema = new Schema({
         username : {
             type :String,
-            required : true
+            trim :true
+
         },
         CommentedOn : {
             type :Date,
-            required : true
+            trim :true
+
 
         },
         rating : {
             type :SchemaTypes.Double,
-            required : true
+            
         }
     },
     {collection:'comments', strict: false}

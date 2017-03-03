@@ -16,7 +16,6 @@ function samData($http,$q) {
         getData:function () {
             var products=[];
             var deffered=$q.defer();
-
             $http.get('/products').then(function mySuccess(response) {
                 deffered.resolve(response.data);
                 console.log("in samData");

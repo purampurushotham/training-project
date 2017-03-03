@@ -23,6 +23,18 @@
             'viewProduct': {
                 method : 'GET',
                 url : '/api/products/:id'
+            },
+            "similarProduct":{
+                method : "GET",
+                url : "/api/products/similaritems/*"
+            },
+            'viewBandWiseProducts': {
+                method : 'GET',
+                url : "/api/products/subType/"
+            },
+            'getComments': {
+                method : 'GET',
+                url : "/api/products/comments/"
             }
         }
     }

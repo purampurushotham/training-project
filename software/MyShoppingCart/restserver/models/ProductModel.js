@@ -69,16 +69,12 @@ var productSchema = new Schema({
 
         },
         pic: {
-            data : Buffer,
-            contentType : String,
-            
+            type :String
         },
-        cam: {
+        camera: {
             type : Array,
             default : [],
-
             trim: true
-
         },
         language :{
             type : String,
@@ -88,10 +84,10 @@ var productSchema = new Schema({
             type : String,
             trim : true
         },
-        offers : {
+        offers : [{
             type : SchemaTypes.ObjectId,
             ref : "offers"
-        },
+        }],
         rating :{
             type :SchemaTypes.Double,
             required : true,
