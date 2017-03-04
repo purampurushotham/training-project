@@ -32,7 +32,8 @@ ProductRoute= {
     },
     viewEachProduct: function (req, res) {
 
-        products.findOne({product_id: req.params.id}).exec(function (err, oneProduct) {
+        products.findOne({product_id: req.params.id}).populate('comments').exec(function (err, oneProduct) {
+            console.log("**************************"+"in getProduct")
             console.log(oneProduct);
             if (err) {
                 res.send(err);
@@ -44,7 +45,7 @@ ProductRoute= {
         });
 
     },
-    getComments: function(req,res){
+   /* getComments: function(req,res){
        // var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
         console.log("**************************in getComments ********************" )
         products.find({product_id: req.params.productId}).populate('comments').exec(function (err, oneProduct) {
@@ -57,8 +58,8 @@ ProductRoute= {
                 res.end();
             }
         });
-    },
-    similarProducts: function (req, res) {
+    },*/
+    getSimilarProduct: function (req, res) {
 
         var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
         console.log("**************************"+"in simiar products")
@@ -66,6 +67,8 @@ ProductRoute= {
         var query = {type: queryParam.type,subType :queryParam.subType}
         if(queryParam.brand) {
             query.brand = queryParam.brand;
+        } else if(queryParam.language){
+            query.language = queryParam.language;
         }
         console.log("**************************"+"in simiar products")
         console.log(query)

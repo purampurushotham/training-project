@@ -74,14 +74,18 @@
             console.log(vm.vp.brand);
             var subType = vm.vp.subType;
             var type=vm.vp.type;
+            if(vm.vp.brand == 'undefined'){
+                vm.vp.brand = vm.vp.language;
+            }
             var brand=vm.vp.brand;
+
             console.log("in product Controller");
             //calling for similar products
             getSimilarProduct(type,subType,brand);
 
             function getSimilarProduct(type,subType,brand){
                 //calling viewProductService tp view products
-                viewProductService.similarProduct(type,subType,brand).then(success).catch(failed);
+                viewProductService.getSimilarProduct(type,subType,brand).then(success).catch(failed);
                 function success(response){
 
                     console.log(response);
@@ -98,7 +102,7 @@
             }
         };
     }
-   similarProduct.$inject=[];
+    similarProduct.$inject=[];
     function similarProduct() {
         console.log("similarProducts");
         var vm = this;
@@ -108,54 +112,36 @@
             console.log(vm.similarProducts)
         };
     }
-    /*
     commentsCtrl.$inject = [viewProductService]
-     function commentsCtrl(viewProductService) {
-         console.log("in comments ctrl");
-         var vm = this;
-         vm.$onInit = function () {
-             vm.comm=vm.comments.id;
-             getComments(vm.comm);
-             function getComments(productId){
-                 viewProductService.getComments(productId).then(success).catch(failed);
-                 function success(response){
+    function commentsCtrl(viewProductService) {
+        console.log("in comments ctrl");
+        var vm = this;
+        vm.$onInit = function () {
+            vm.comm=vm.comments.id;
+            console.log(vm.sam);
+            vm.commentsSize = 2;
+            vm.tempSize = vm.commentsSize
+            vm.viewMore = function () {
+                console.log("in viewMore function");
+                console.log(vm.sam.length);
+                if (vm.sam.length > vm.commentsSize) {
+                    vm.commentsSize = (vm.commentsSize) + ((vm.sam.length - 1) / 2);
+                    console.log(vm.commentsSize);
+                }
+                else if (vm.sam.length < vm.commentsSize) {
+                    vm.commentsSize = vm.sam.length;
+                }
+            }
+            vm.hideButton = function () {
+                if (angular.equals(vm.commentsSize, vm.sam.length)) {
+                    return true;
+                }
+                else
+                    return false;
+            }
 
-                     console.log(response);
-                     vm.commentsList=response;
-                     console.log("**************************success");
-                     console.log(vm.commentsList)
-                     //    console.log($rootScope.products);
-                 }
-                 function failed(error) {
-                     console.log(error);
-                     console.log("**************************Failed");
-                 }
-             };
-
-             /!*console.log(vm.sam);
-             vm.commentsSize = 2;
-             vm.tempSize = vm.commentsSize
-             vm.viewMore = function () {
-                 console.log("in viewMore function");
-                 console.log(vm.sam.length);
-                 if (vm.sam.length > vm.commentsSize) {
-                     vm.commentsSize = (vm.commentsSize) + ((vm.sam.length - 1) / 2);
-                     console.log(vm.commentsSize);
-                 }
-                 else if (vm.sam.length < vm.commentsSize) {
-                     vm.commentsSize = vm.sam.length;
-                 }
-             }
-             vm.hideButton = function () {
-                 if (angular.equals(vm.commentsSize, vm.sam.length)) {
-                     return true;
-                 }
-                 else
-                     return false;
-             }*!/
-
-         }
-     }*/
+        }
+    }
 
     /*
      function userDefinedPagination() {

@@ -26,7 +26,7 @@
             },
             "similarProduct":{
                 method : "GET",
-                url : "/api/products/similaritems/*"
+                url : "/api/products/viewProduct/similaritems/*"
             },
             'viewBandWiseProducts': {
                 method : 'GET',

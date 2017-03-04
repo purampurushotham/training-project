@@ -10,8 +10,7 @@
     function viewProductService(api,$q) {
         var getProduct = {
             viewProduct: viewProduct,
-            similarProduct : similarProduct,
-            getComments : getComments
+            getSimilarProduct : getSimilarProduct
 
         };
 
@@ -22,13 +21,13 @@
             var deferred = $q.defer();
             return api.viewProduct({id:id}).$promise;
         }
-        function similarProduct(type,subType,brand){
+        function getSimilarProduct(type,subType,brand){
             console.log("in viewProductService "+" ****************" + "similarProduct");
             var query={};
             query.type =type;
             query.subType = subType;
             if(type == 'book') {
-                query.brand = "language";
+                query.language = brand;
             }else
                 query.brand = brand;
             var deferred = $q.defer();
@@ -37,14 +36,14 @@
             console.log(query)
             return api.similarProduct({q:query}).$promise;
         }
-        function getComments(productID){
+       /* function getComments(productID){
             console.log("in viewProductService "+" ****************" + "getComments");
             var query={};
             query.productId=productID;
             var deferred = $q.defer();
             return api.getComments().$promise;
         }
-
+*/
       /*  function ObjToQueryParam(query){
             var paramString = ""
             var names = Object.keys(query)
