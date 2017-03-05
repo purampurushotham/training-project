@@ -42,12 +42,12 @@
         });
     //root controller
     viewCtrl.$inject=['$stateParams','$rootScope','viewProductService'];
-    function viewCtrl($stateParams,$rootScope,viewProductService) {
-        var vm = this;
-        vm.similarProducts = [];
-        vm.id = $stateParams.id;
-        console.log(vm.id);
-        view(vm.id);
+        function viewCtrl($stateParams,$rootScope,viewProductService) {
+            var vm = this;
+            vm.similarProducts = [];
+            vm.id = $stateParams.id;
+            console.log(vm.id);
+            view(vm.id);
         console.log(vm.id);
         function view(id){
             viewProductService.viewProduct(id).then(success).catch(failed);
@@ -82,12 +82,10 @@
             console.log("in product Controller");
             //calling for similar products
             getSimilarProduct(type,subType,brand);
-
             function getSimilarProduct(type,subType,brand){
                 //calling viewProductService tp view products
                 viewProductService.getSimilarProduct(type,subType,brand).then(success).catch(failed);
                 function success(response){
-
                     console.log(response);
                     vm.simialrProds={};
                     vm.simialrProds=response;
@@ -117,10 +115,13 @@
         console.log("in comments ctrl");
         var vm = this;
         vm.$onInit = function () {
-            vm.comm=vm.comments.id;
+            vm.comm=vm.comments;
+            console.log("Comments Ctrl")
+            console.log(vm.comm)
+            vm.sam =vm.comm;
             console.log(vm.sam);
             vm.commentsSize = 2;
-            vm.tempSize = vm.commentsSize
+            vm.tempSize = vm.commentsSize;
             vm.viewMore = function () {
                 console.log("in viewMore function");
                 console.log(vm.sam.length);

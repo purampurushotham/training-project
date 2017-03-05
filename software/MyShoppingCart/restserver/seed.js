@@ -56,7 +56,7 @@ function insertProducts(eachProduct){
     product.subType = eachProduct.subType;
     product.author = eachProduct.author;
     product.rating = eachProduct.rating;
-    product.ram = eachProduct.ram;
+    product.ram = eachProduct.RAM;
     product.rom =eachProduct.rom;
     product.color = eachProduct.color;
     product.battery = eachProduct.battery;

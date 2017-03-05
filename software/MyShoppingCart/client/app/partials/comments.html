@@ -4,9 +4,9 @@
         <div class="col-md-8">
             <h4 >Commments : <span class="glyphicon-comment"></span> </h4>
         </div>
-       <!-- <div class="col-md-3"><button type="button" ng-disabled = cm.hideButton() class="btn btn-lg btn-primary" ng-click="cm.viewMore()">View More</button></div>-->
+        <div class="col-md-3"><button type="button" ng-disabled = cm.hideButton() class="btn btn-lg btn-primary" ng-click="cm.viewMore()">View More</button></div>
     </div>
-    <div ng-repeat="i in cm.commentsList | limitTo : cm.commentsSize" class="well well-sm panel-body" >
+    <div ng-repeat="i in cm.sam | limitTo : cm.commentsSize" class="well well-sm panel-body" >
         <dl class="row">
             <dt class="col-sm-3">comment :</dt>
             <dd class="col-sm-9" ng-bind="i.text"></dd>

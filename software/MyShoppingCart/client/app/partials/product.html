@@ -5,7 +5,7 @@
     <div class="col-md-7 panel panel-info second_panel">
         <h2 class="Display-2"><span ng-bind="vc.vp.name"></span></h2>
         <p class="lead"><span  ng-bind="vc.vp.price"><span>/-</span></span></p>
-        <p class="lead"><span ng-bind="vc.vp.description"></span></p>
+        <!--<p class="lead"><span ng-bind="vc.vp.description"></span></p>-->
         <p><ng-rate-it ng-model="vc.vp.rating" class="custom_rating"  read-only="true" ></ng-rate-it></p>
         <h2>Specifications:</h2>
         <dl class="row">`
@@ -16,7 +16,7 @@
             <dt class="col-sm-3">RAM :</dt>
             <dd class="col-sm-9" ng-bind="vc.vp.ram"></dd>
             <dt class="col-sm-3">color :</dt>
-            <dd class="col-sm-9" ng-bind="vc.vp.color"></dd>
+            <dd class=  "col-sm-9" ng-bind="vc.vp.color"></dd>
             <dt class="col-sm-3">Battery :</dt>
             <dd class="col-sm-9" ng-bind="vc.vp.battery"></dd>
         </dl>
@@ -31,13 +31,13 @@
     </div>
 
 </div>
-
 <div class="row">
     <div class="col-lg-6">
         <similar-component ng-if="vc.simialrProds" similar-prods="vc.simialrProds"></similar-component>
     </div>
 </div>
 <div class="container">
-    <comments-component ng-if="vc.simialrProds" comments="vc.vp"></comments-component>
+    <comments-component ng-if="vc.vp" comments="vc.vp.comments"></comments-component>
 
 </div>
+

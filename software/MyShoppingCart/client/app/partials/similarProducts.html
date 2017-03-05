@@ -3,7 +3,7 @@
     <div class="row panel-body">
         <div ng:repeat="i in sm.similarProducts.data" class="col-md-4">
             <div class="container">
-                <a ui-sref="view({id:i.id})">
+                <a ui-sref="view({id:i.product_id})">
                     <img src="{{i.pic}}" class="pics"></a>
                 <p>Name:<span ng-bind="i.name"></span></p>
                 <p>Price:<span ng-bind="i.price"></span></p>

@@ -2,6 +2,8 @@
  * Created by purushotham on 1/3/17.
  */
 var products=require('../../models/ProductModel');
+var comments =require('../../models/CommentModel');
+var offers = require('../../models/OffersModel');
 var mongoose=require('mongoose');
 var ProductRoute;
 ProductRoute= {
@@ -33,7 +35,7 @@ ProductRoute= {
     viewEachProduct: function (req, res) {
 
         products.findOne({product_id: req.params.id}).populate('comments').exec(function (err, oneProduct) {
-            console.log("**************************"+"in getProduct")
+            console.log("**************************"+"in view eachProduct")
             console.log(oneProduct);
             if (err) {
                 res.send(err);
@@ -60,7 +62,7 @@ ProductRoute= {
         });
     },*/
     getSimilarProduct: function (req, res) {
-
+        console.log("********************* get similar product ******************8")
         var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
         console.log("**************************"+"in simiar products")
         console.log(queryParam.type)
