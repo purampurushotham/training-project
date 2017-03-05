@@ -88,7 +88,6 @@ ProductRoute= {
         });
 
     },
-    
     viewBandWiseProducts : function(req,res){
         var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
         console.log("$$$$$$$$$$$$$$$$$$$$$");
