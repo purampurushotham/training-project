@@ -18,14 +18,16 @@
 
             vm.electronic_subType=$stateParams.productType;
             console.log("in electronics controller");
-            console.log(vm.electronic_subType)
+            console.log(vm.electronic_subType);
             viewProductsByBrand(vm.electronic_subType);
             function viewProductsByBrand(subType){
                 console.log("**&&&&&&&&&&&&&&&&&&&&&&&&&&^^^^^^^^^^^^^");
                 ProductsListService.viewProductsByBrand(subType).then(success).catch(failed);
                 function success(response){
                     console.log(response);
-                    vm.productsList=response.data;
+                    vm.products=response.data;
+                    console.log("**&&&&&&&&&&&&&&&&&&&&&&&&&&^^^^^^^^^^^^^");
+                    console.log(vm.products)
                     console.log("**************************success");
 
                 }

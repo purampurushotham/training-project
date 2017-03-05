@@ -24,7 +24,7 @@
                  controllerAs:"vc"*/
             })
             .state("search", {
-                url: "/search/electronics/:productType",
+                url: "/search/product/:productType",
                 templateUrl: "app/partials/Electronics.html",
                 //controller:"ElectronicsCtrl",
                 //controllerAs:"EC"

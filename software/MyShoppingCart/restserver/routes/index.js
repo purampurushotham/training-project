@@ -8,6 +8,6 @@ var appRoutes=function(app){
     app.get('/products',products.topRatedProducts);
    app.get('/api/products/:id',products.viewEachProduct);
     app.get('/api/products/viewProduct/similaritems/*',products.getSimilarProduct);
-    app.get('/api/products/viewProduct/category',products.viewBandWiseProducts);
+    app.get('/api/products/viewProduct/category/*',products.viewBandWiseProducts);
 }
 module.exports = appRoutes;

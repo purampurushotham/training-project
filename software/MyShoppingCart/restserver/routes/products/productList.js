@@ -94,7 +94,7 @@ ProductRoute= {
         console.log(queryParam);
         console.log("##############################");
         var query = { subType: req.params.subType};
-        products.find({subType : req.params.subType}).exec(function (err, simialrProds) {
+        products.find({subType : queryParam.subType}).exec(function (err, simialrProds) {
             console.log("in similarProducts");
             if (err) {
                 res.send(err);

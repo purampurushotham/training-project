@@ -14,11 +14,11 @@
         };
         return getAllProducts;
         
-        function viewProductsByBrand(query) {
-            /*console.log("in ProductsListService " + " ****************" + "viewProductsByBrand");
+        function viewProductsByBrand(subType) {
+            console.log("in ProductsListService " + " ****************" + "viewProductsByBrand");
             var query = {};
             query.subType=subType;
-            */var deferred = $q.defer();
+            var deferred = $q.defer();
             return api.viewBandWiseProducts({q: query}).$promise;
         }
     }

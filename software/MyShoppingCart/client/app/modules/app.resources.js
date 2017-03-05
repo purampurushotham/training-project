@@ -30,12 +30,12 @@
             },
             'viewBandWiseProducts': {
                 method : 'GET',
-                url : "/api/products/subType/"
+                url : "/api/products/viewProduct/category/*"
             },
-            'getComments': {
+            /*'getComments': {
                 method : 'GET',
                 url : "/api/products/comments/"
             }
-        }
+*/        }
     }
 }());
