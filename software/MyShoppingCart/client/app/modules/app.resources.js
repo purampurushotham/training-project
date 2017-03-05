@@ -32,6 +32,18 @@
                 method : 'GET',
                 url : "/api/products/viewProduct/category/*"
             },
+            'getSelectedBrands' : {
+                method : 'GET',
+                url : "/api/products/brands/*"
+            },
+            'getOffers' :{
+                method : 'GET',
+                url : "/api/products/offers/*"
+            },
+            'filteredProducts':{
+                method :'GET',
+                url : "/api/filteredProducts/*"
+            }
             /*'getComments': {
                 method : 'GET',
                 url : "/api/products/comments/"

@@ -52,17 +52,17 @@
         function view(id){
             viewProductService.viewProduct(id).then(success).catch(failed);
             function success(response){
-                console.log("**************************success");
-                console.log(response);
-                vm.eachProduct=response;
-                console.log(vm.eachProduct)
-                //    console.log($rootScope.products);
+                    console.log("**************************success");
+                    console.log(response);
+                    vm.eachProduct=response;
+                    console.log(vm.eachProduct)
+                    //    console.log($rootScope.products);
+                }
+                function failed(error) {
+                    //console.log("**************************Failed");
+                    console.log(error);
+                }
             }
-            function failed(error) {
-                //console.log("**************************Failed");
-                console.log(error);
-            }
-        }
     }
     //getProduct controller
     productController.$inject=['viewProductService'];

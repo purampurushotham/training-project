@@ -47,20 +47,20 @@ ProductRoute= {
         });
 
     },
-   /* getComments: function(req,res){
-       // var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
-        console.log("**************************in getComments ********************" )
-        products.find({product_id: req.params.productId}).populate('comments').exec(function (err, oneProduct) {
-            console.log(oneProduct);
-            if (err) {
-                res.send(err);
-            }
-            else {
-                res.send(oneProduct);
-                res.end();
-            }
-        });
-    },*/
+    /* getComments: function(req,res){
+     // var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
+     console.log("**************************in getComments ********************" )
+     products.find({product_id: req.params.productId}).populate('comments').exec(function (err, oneProduct) {
+     console.log(oneProduct);
+     if (err) {
+     res.send(err);
+     }
+     else {
+     res.send(oneProduct);
+     res.end();
+     }
+     });
+     },*/
     getSimilarProduct: function (req, res) {
         console.log("********************* get similar product ******************8")
         var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
@@ -95,7 +95,6 @@ ProductRoute= {
         console.log("##############################");
         var query = { subType: req.params.subType};
         products.find({subType : queryParam.subType}).exec(function (err, simialrProds) {
-            console.log("in similarProducts");
             if (err) {
                 res.send(err);
             }
@@ -105,7 +104,94 @@ ProductRoute= {
                 res.end();
             }
         });
+    },
+    getSelectedBrands : function(req,res){
+        console.log("&&&&&&&&&&&&&&&&&&&&&&&& in getSelectedBrands")
+        var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
+        console.log(queryParam);
+        var t ="";
+        var query= {subType : queryParam.subType};
+        if(queryParam.brand){
+            t="brand";
+        } if(queryParam.language){
+            t="language";
+            console.log("&&&&&&&&&&&&&&&&&&&&&&&&");
+        }
+        console.log(t)
+        console.log(query)
+        products.distinct(t,query ).exec(function (err, brands) {
+            console.log(t);
+            if (err) {
+                res.send(err);
+            }
+            else {
+                console.log(brands)
+                res.send({data: brands});
+                res.end();
+            }
+        });
+
+    },
+    getOffers : function(req,res) {
+        console.log("&&&&&&&&&&&&&&&&&&&&&&&& in getOffers")
+        offers.distinct("type").exec(function (err, offers) {
+            console.log("in getOffers");
+            if (err) {
+                res.send(err);
+            }
+            else {
+                console.log(offers)
+                res.send({data: offers});
+                res.end();
+            }
+        });
+    },
+    filteredProducts : function(req,res){
+        var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
+        console.log(queryParam);
+        var offersQuery=queryParam.offers;
+        var brandsQuery=queryParam.brandsArray;
+        var QArray=[];
+        QArray.push({ "$unwind": "$offers" });
+        QArray.push({$lookup : { from : "offers",localField : "offers",foreignField : "_id", as : "resObj"}});
+        QArray.push({ "$unwind": "$resObj" });
+        QArray.push({"$match" : {"brand" : queryParam.subtype, "price" : {$gt : queryParam.min,$lt : queryParam.max}}});
+        console.log("&&&&&&&&&&&&&&&&&&&&&&&& in filtered");
+      if(offersQuery != undefined){
+            if(offersQuery.length !=0){
+                //queryTo.offers.type = {$in : offersSelectedArray};
+                QArray.push({"$match" : {"resObj.type" : {$in : offersQuery}}});
+                console.log("quertoooo + "+QArray)
+                console.log(QArray)
+            }
+        }
+        /*
+        if(brandsQuery != undefined){
+            if(brandsQuery.length !=0){
+                if(queryParam.type == "fiction" || query.type == "comics" || query.type == "Biography")
+                    QArray.push({"$match" : {"author" : {$in : regexBrandArray}}});
+                else
+                    QArray.push({"$match" : {"brand" : {$in : regexBrandArray}}});
+                console.log("quertoooo + "+QArray)
+
+            }
+        }*/
+        console.log(QArray)
+        products.aggregate(QArray).exec(function(err, response){
+            console.log("in productlist categorywiseProducts")
+            if(err)
+                console.log(err);
+            else
+            {
+                console.log("categorywiseProducts response received"+response.length);
+                res.send(response);
+            }
+
+        });
+        console.log("quertoooo formed + "+QArray)
+
+        console.log(queryTo)
     }
-};
+}
 module.exports=ProductRoute;
 

@@ -27,7 +27,7 @@
                     console.log(response);
                     vm.products=response.data;
                     console.log("**&&&&&&&&&&&&&&&&&&&&&&&&&&^^^^^^^^^^^^^");
-                    console.log(vm.products)
+                    console.log(vm.products[0])
                     console.log("**************************success");
 
                 }

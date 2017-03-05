@@ -5,20 +5,15 @@
     'use strict';
     angular
         .module('MSC.priceSlider')
-        .component('sliderComponent',{
-            templateUrl : "app/partials/rz-slider.html",
-            controller: sliderFeature,
-            controllerAs : "slc",
-            bindings :{
-                sliderProducts : "="
-            }
-        });
+
     //Price Range feature
+    sliderFeature.$inject=['sliderFeature'];
     function sliderFeature() {
         var vm = this;
         vm.$onInit = function () {
             console.log("in slider feature");
             console.log(vm.sliderProducts);
+            vm.products=vm.sliderProducts
             vm.copySimilarProds = angular.copy(vm.sliderProducts);
             console.log(vm.copySimilarProds);
             /* slideer */
@@ -30,7 +25,9 @@
                     ceil: 30000,
                     step: 1000,
                     minRange: 1000,
-                    maxRange: 100000,
+                    maxRange: Math.max.apply(Math, vm.productsList.map(function (item) {
+                        return item.price
+                    })),
                     onChange: onSliderChange,
                     translate: function (value, sliderId, label) {
                         switch (label) {

@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-md-12">
             <h5>Selected Brands</h5>
-            <div  ng-repeat="Selected in cm.selectedBrand" >
+            <div  ng-repeat="Selected in cm.selectBrand" >
                 <label>
                     {{Selected}}{{$last ? '' : ', '}}
                 </label>
@@ -28,13 +28,40 @@
         </div>
     </div>
 
-    <div class="row" ng-repeat="Brand in cm.filteredBrands | filter :filteredText ">
+    <div class="row" ng-repeat="Brand in cm.setBrands | filter :filteredText ">
         <div class="col-md-12">
             <label>
                 <input type="checkbox" checklist-model="cm.filteredObjects.filteredBrand" checklist-value="Brand" checklist-change="cm.checkBrand()"> {{Brand}}
             </label>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h4> Avail Offers</h4>
+        </div>
+    </div>
+    <div class="row" ng-if="cm.setBrands" ng-repeat="offer in cm.setOffers">
+        <div class="col-md-12">
+            <label>
+                <input type="checkbox" checklist-model="cm.filteredObjects.filteredOffer" checklist-value="offer" checklist-change="cm.checkBrand()"> {{offer}}</span>
+            </label>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3" ng-if="cm.setBrands"><rzslider class="custom-slider" rz-slider-model="cm.filteredObjects.slider.minValue"
+                                        rz-slider-high="cm.filteredObjects.slider.maxValue"
+                                        rz-slider-options="cm.filteredObjects.slider.options"></rzslider>
+            <p>Price: {{cm.slider.minValue}}</p>
+            <p>Price: {{cm.slider.maxValue}}</p>
+            <input type="number" ng-model="slc.slider.minValue"/>
+            <input type="number" ng-model="slc.slider.maxValue"/>
+        </div>
+    </div>
+</div>
     <!--<div class="row" ng-repeat="Brand in cm.singleList | filter : {subType:cm.singleBrand} | filter :filteredText "
          ng-if="cm.singleBrand === 'book' ">
         <div class="col-md-12">
@@ -43,12 +70,12 @@
             </label>
         </div>
     </div>-->
-    <div class="row">
+   <!-- <div class="row">
         <div class="col-md-12">
             <h4> Avail Offers</h4>
         </div>
     </div>
-    <div class="row" ng-repeat="Brand in cm.filteredOffers">
+    <div class="row" ng-repeat="Brand in cm.setBrands">
         <div class="col-md-12">
             <label>
                 <input type="checkbox" checklist-model="cm.filteredObjects.filteredOffer" checklist-value="Brand" checklist-change="cm.checkBrand()"> {{Brand}} <span>{{Brand.percentage}}</span>
@@ -57,15 +84,18 @@
     </div>
 
 
-</div>
-<div class="row"ng-init="cm.slideFeature()">
+</div>-->
+ <!--   <offers-component ng-if="cm.setBrands"></offers-component>
+<div class="row">
 
-    <div class=col-md-3"><rzslider class="custom-slider" rz-slider-model="cm.filteredObjects.filteredPrice.minPrice"
+
+    &lt;!&ndash;<div class=col-md-3"><rzslider class="custom-slider" rz-slider-model="cm.filteredObjects.filteredPrice.minPrice"
                                    rz-slider-high="cm.filteredObjects.filteredPrice.maxPrice"
                                    rz-slider-options="cm.filteredObjects.filteredPrice.options"></rzslider>
         <p>Min Price: {{cm.filteredObjects.filteredPrice.minPrice}}</p>
         <p>max Price: {{cm.filteredObjects.filteredPrice.maxPrice}}</p>
-        <!-- <input type="number" ng-model="cm.slider.minValue"/>
-         <input type="number" ng-model="cm.slider.maxValue"/>-->
-    </div>
+        &lt;!&ndash; <input type="number" ng-model="cm.slider.minValue"/>
+         <input type="number" ng-model="cm.slider.maxValue"/>&ndash;&gt;
+    </div>&ndash;&gt;
 </div>
+</div>-->

@@ -1,9 +1,9 @@
-<!--<div class="col-md-3 panel panel-primary first_panel">
+<div class="col-md-3 panel panel-primary first_panel">
     <div class="col-md-12">
-        <check-boxes-component products-list="ec.products"brand-type="ec.electronic_subType"></check-boxes-component>
-        <slider-component slider-products="ec.products" ></slider-component>&ndash;&gt;
+        <check-boxes-component  ng-if = "pc.products" products-list="pc.products[0]" brand-type="pc.electronic_subType"></check-boxes-component>
+        <slider-component  ng-if = "pc.products" slider-products="pc.products" ></slider-component>
     </div>
-</div>-->
+</div>
 <div class="col-md-9 first_panel">
     <div class="col-md-4"  ng:repeat="i in pc.products " >
         <div class="container">
