@@ -72,8 +72,7 @@ var productSchema = new Schema({
             type :String
         },
         camera: {
-            type : Array,
-            default : [],
+            type : Object,
             trim: true
         },
         language :{
@@ -97,8 +96,9 @@ var productSchema = new Schema({
             type : SchemaTypes.ObjectId,
             ref: 'comments'
         }]
-    }
-    /*  {collection:'productsList', strict: false}*/
+    },
+{collection:'products',strict : false}
+
 );
 var products = mongoose.model("products",productSchema);
 module.exports =products;

@@ -17,6 +17,10 @@ var commentsSchema = new Schema({
 
 
         },
+    text : {
+            type : String,
+        trim : true
+    },
         rating : {
             type :SchemaTypes.Double,
             

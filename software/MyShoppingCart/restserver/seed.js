@@ -1,129 +1,151 @@
-/**
- * Created by purushotham on 1/3/17.
- */
-var mongoose = require('mongoose')
-var assert = require('assert')
-var path =require("path")
-var fs = require("fs");
-var products = require("./models/ProductModel");
-var CommentModel = require("./models/CommentModel");
-var offers = require("./models/OffersModel");
-var dateFormat = require('dateformat');
-var moment = require('moment')
-var Q =require ("q")
-mongoose.connect('mongodb://localhost/myShoppingCart')
 
+/**
+ * Created by SB004 on 2/28/2017.
+ */
+var async = require('async');
+var mongoose = require('mongoose')
+require('mongoose-double')(mongoose);
+var fs = require("fs");
+var ProductModel=require('./models/ProductModel');
+var CommentModel=require('./models/CommentModel');
+var OfferModel=require('./models/OffersModel');
+
+var Q = require('q');
+
+var dateFormat = require('dateformat');
+var moment = require('moment');
+mongoose.connect('mongodb://localhost/myShoppingCart');
+var db = mongoose.connection;
+var dbCollection = db.collections;
+console.log("connected and collections are : "+dbCollection);
+//console.log(dbCollection);
 console.log("\n *STARTING* \n");
 // Get content from file
-console.log(__dirname)
-var s=path.join(__dirname, '../client/data.json');
-var contents = fs.readFileSync(s);
+var contents = fs.readFileSync("../client/data.json");
 // Define to JSON type
 var jsonContent = JSON.parse(contents);
-// Get Value from JSON
-var productsList =[];
-var commentsList = [];
-var offersList =[];
-var promises=[];
-for (var i=0;i<jsonContent.length;i++) {
+console.log("length = "+jsonContent.length);
+var allProducts = [];
+var allComments = [];
 
-    var singleProduct= jsonContent[i];
-    insertProducts(singleProduct);
+for(var i = 0; i<jsonContent.length; i++){
+    var eachProd = jsonContent[i];
+    insertProducts(eachProd);
+
+    /*for(var key in eachProd){
+     if(key == 'comments'){
+     allComments = insertComments(eachProd.id,eachProd[key],allComments);
+     }
+     else {
+     prodFields[key] = eachProd[key];
+     }
+     }
+     allProducts.push(prodFields);*/
 }
-function  insertProducts(product) {
-    // defining each product  object to map values
-    var p =[];
-    p.camera=[];
-    p.product_id = product.id;
-    p.name = product.name;
-    p.price = product.price;
-    p.type = product.type;
-    p.subType = product.subType;
-    for(c in product.camera){
-        var s=product.camera[c];
-        var  ps ={};
-        ps[c]=s;
-        p.camera.push(ps);
-
-    }
-    p.rating = product.rating;
-    p.language = product.language;
-    p.author = product.author;
-    p.brand = product.brand;
-    p.color = product.color;
-    p.model_Name = product.modelName;
-    p.battery = product.battery;
-    p.rom = product.rom;
-    p.ram = product.RAM;
-    p.pic=product.pic;
-    p.offers=[];
-    p.comments=[];
-    console.log(p);
-
-    //inserting offers with promises
-    product.offers.forEach(function(eachOffer) {
-        promises.push(insertOffers(p,eachOffer));
+console.log(allProducts.length);
+function insertProducts(eachProduct){
+    var product ={};
+    //console.log(eachProduct);
+    console.log("prod id "+eachProduct.id);
+    product.product_id = eachProduct.id;
+    product.name = eachProduct.name
+    product.price = eachProduct.price;
+    product.model_Name = eachProduct.modelName;
+    product.type = eachProduct.type;
+    product.brand = eachProduct.brand;
+    product.subType = eachProduct.subType;
+    product.author = eachProduct.author;
+    product.rating = eachProduct.rating;
+    product.ram = eachProduct.ram;
+    product.rom =eachProduct.rom;
+    product.color = eachProduct.color;
+    product.battery = eachProduct.battery;
+    product.camera= eachProduct.camera;
+    product.language=eachProduct.language;
+    product.pic=eachProduct.pic;
+    product.offers = [];
+    product.comments = [];
+    //p.push(eachProduct);
+    var allOfferIds = [];
+    var allCommentIds = [];
+    var promises = [];
+    eachProduct.offers.forEach(function(eachOffer) {
+        //console.log(allProducts[j]);
+        promises.push(insertOffers(product,eachOffer));
     });
-    //inserting comments with promises
-    product.comments.forEach(function(eachComment) {
-        promises.push(insertComments(p, eachComment));
+    eachProduct.comments.forEach(function(eachComment) {
+        promises.push(insertComments(product, eachComment));
     });
-
     Q.allSettled( promises ).then(function (resp) {
-        var ProductsList = products(p);
-        ProductsList.save(function (err) {
+        var p = ProductModel(product);
+        //console.log(product);
+        p.save(function (err) {
             if (err) {
                 console.log(err);
                 //return err;
             }
             else {
-                console.log("data is loaded ");
+                console.log("data Loaded");
             }
         });
     });
+
+    /* for(var j in eachProduct.comments)
+     {
+     var eachComment = eachProduct.comments[j];
+     console.log("user : "+eachComment.username);
+     allCommentIds.push(insertCommentToModel(eachProduct.id,eachComment));
+
+     }*/
+    //allComments = eachProduct.comments;
+    //var pId = p._id;
+
 }
-function insertOffers(product,eachOffer){
-    console.log("in Inserting offers");
-    var offer={};
+function insertOffers(prod,eachOffer){
+    var newOffer ={};
     var deffered = Q.defer();
-    offer.type =eachOffer.type;
-    offer.percentage = eachOffer.percentage;
-    var o=offers(offer);
-    o.save(function (error, data) {
-        if (error) {
-            console.log(error);
+    newOffer.type = eachOffer.type;
+    newOffer.percentage = eachOffer.percentage;
+    var offer = OfferModel(newOffer);
+    offer.save(function (err) {
+        //console.log("dateform = "+dateform);
+        if (err) {
+            console.log(err);
             deffered.reject("reject");
+            //return err;
         }
         else {
-            console.log("$$$$$$$$$$$$$$$$$$$$")
-            product.offers.push(o._id);
+            prod.offers.push(offer._id);
             deffered.resolve();
         }
     });
     return deffered.promise;
+
 }
-function insertComments(product,eachComment){
-    console.log("in Inserting comments");
-    var comment={};
+function insertComments(prod,eachComment){
+    var newComment ={};
     var deffered = Q.defer();
-    comment.username=eachComment.username;
-    comment.text=eachComment.text;
-    comment.rating=eachComment.rating;
+    newComment.username = eachComment.username;
+    newComment.rating = eachComment.rating
+    newComment.text = eachComment.text;
     var date = moment(eachComment.commentedOn.toString(), 'DD/MM/YYYY');
     var formatedDate = date.format('MM/DD/YYYY');
     var formatedIso = dateFormat(formatedDate, "isoDateTime");
     //console.log(" formated date"+formatedIso);// 20120412
-    comment.commentedOn = formatedIso;
-    var comm = CommentModel(comment);
-    comm.save(function (error, data) {
-        //console.log("saving comments to db");
-        if (error) {
-            console.log(error);
-            deffered.reject("reject");
+    newComment.commentedOn = formatedIso;
+    var comment = CommentModel(newComment);
+    var dateform = comment.commentedOn;
+    //p.push(eachProduct);
+    comment.save(function (err) {
+        //console.log("dateform = "+dateform);
+        if (err) {
+            console.log(err);
+            console.log("errorrr");
+
+            deffered.reject("rejected");
         }
         else {
-            //console.log(data);
-            product.comments.push(comm._id);
+            prod.comments.push(comment._id);
             deffered.resolve();
         }
     });
