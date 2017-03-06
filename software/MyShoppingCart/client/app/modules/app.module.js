@@ -4,6 +4,7 @@
 // Declare app level module which depends on views, and components
     angular.module("MSC", [
         "ngRateIt",
+        "ui.bootstrap",
         "ngScrollbars",
         "ngResource",
         "ui.router",
