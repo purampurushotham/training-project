@@ -18,7 +18,6 @@ app.use(bodyParser.urlencoded({ limit: '5mb' }));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));*/
-
 app.engine('html', require('ejs').renderFile);
 console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
 console.log(path.join(__dirname, '../client/app/partials'));

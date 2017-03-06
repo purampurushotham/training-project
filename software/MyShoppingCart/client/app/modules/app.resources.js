@@ -47,7 +47,16 @@
             'filteredProducts':{
                 method :'GET',
                 url : "/api/filteredProducts/"
+            },
+            'getExistedEmail' : {
+                method : "GET",
+                url : "/api/users/getExistedEmail/"
+            },
+            'createUserNew': {
+                method : 'POST',
+                url : "/api/users/addUser"
             }
+
             
             /*'getComments': {
                 method : 'GET',

@@ -24,23 +24,9 @@ console.log("\n *STARTING* \n");
 var contents = fs.readFileSync("../client/data.json");
 // Define to JSON type
 var jsonContent = JSON.parse(contents);
-console.log("length = "+jsonContent.length);
-var allProducts = [];
-var allComments = [];
-
 for(var i = 0; i<jsonContent.length; i++){
     var eachProd = jsonContent[i];
     insertProducts(eachProd);
-
-    /*for(var key in eachProd){
-     if(key == 'comments'){
-     allComments = insertComments(eachProd.id,eachProd[key],allComments);
-     }
-     else {
-     prodFields[key] = eachProd[key];
-     }
-     }
-     allProducts.push(prodFields);*/
 }
 console.log(allProducts.length);
 function insertProducts(eachProduct){
@@ -89,17 +75,6 @@ function insertProducts(eachProduct){
             }
         });
     });
-
-    /* for(var j in eachProduct.comments)
-     {
-     var eachComment = eachProduct.comments[j];
-     console.log("user : "+eachComment.username);
-     allCommentIds.push(insertCommentToModel(eachProduct.id,eachComment));
-
-     }*/
-    //allComments = eachProduct.comments;
-    //var pId = p._id;
-
 }
 function insertOffers(prod,eachOffer){
     var newOffer ={};
