@@ -7,7 +7,6 @@ var staticRouter = express.Router();
 staticRouter.get('/partials/:name', function(req, res) {
     res.render('partials/'+name);
 });
-
 /*
 staticRouter.get('/images/:name', function(req, res) {
     res.render('images/'+name);

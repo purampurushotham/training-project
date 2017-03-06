@@ -32,6 +32,27 @@ ProductRoute= {
             }
         });
     },
+    getSearchedProduct : function(req,res){
+      var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
+        console.log("*********************** iin getSearchedProduct ********************")
+        console.log(queryParam);
+        var regularExpression = "/^"+queryParam.keyword+"/i";
+        var regex = new RegExp(queryParam.keyword,"i");
+        console.log(regularExpression)
+        console.log(regex);
+        var query={$or: [{name: { $regex: regex }}, {brand: { $regex: regex   }}]}
+        products.find(query).exec(function (err, oneProduct) {
+            console.log("**************************"+"in getSearched")
+            console.log(oneProduct);
+            if (err) {
+                res.send(err);
+            }
+            else {
+                res.send({data : oneProduct});
+                res.end();
+            }
+        });
+    },
     viewEachProduct: function (req, res) {
 
         products.findOne({product_id: req.params.id}).populate('comments').exec(function (err, oneProduct) {

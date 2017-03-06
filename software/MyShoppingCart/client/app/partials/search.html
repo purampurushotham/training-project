@@ -4,14 +4,14 @@
                reset-search-input="true"
                style="width: 600px;"
                title="Choose an address"
-               on-select='sc.viewState(sc.selected.id)'>
-        <ui-select-match placeholder="Enter an product name..." >{{$select.selected.name}}</ui-select-match>
+               on-select='sc.viewState(sc.selected.product_id)' >
+        <ui-select-match placeholder="Enter an product name..." allow-clear="true">{{$select.selected.name}}</ui-select-match>
         <ui-select-choices  refresh="sc.checkName($select.search)"
                             refresh-delay="0"
-                            repeat="e in sc.product | filter: $select.search | limitTo: sc.limitNameSearch">
+                            repeat="e in sc.products | filter: $select.search | limitTo: sc.limitNameSearch">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3"><a ui-sref="view({id:e.id})"><p ng-bind="e.name"></p></a></div>
+                    <div class="col-md-3"><a ui-sref="view({id:e.product_id})"><p ng-bind="e.name"></p></a></div>
                     <div class="col-md-3"><p ng-bind="e.price"></p></div></div>
                 <div class="row">
                     <div class="col-md-6 offset-md-3"><p><ng-rate-it ng-model="e.rating" class="custom_rating"  read-only="true" ></ng-rate-it></p></div></div>

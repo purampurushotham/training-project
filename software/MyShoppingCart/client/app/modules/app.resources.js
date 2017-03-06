@@ -24,26 +24,31 @@
                 method : 'GET',
                 url : '/api/products/:id'
             },
+            "getSearchedProduct": {
+                method : 'GET',
+                url : '/api/products/search'
+            },
             "similarProduct":{
                 method : "GET",
-                url : "/api/products/viewProduct/similaritems/*"
+                url : "/api/products/viewProduct/similaritems/"
             },
             'viewBandWiseProducts': {
                 method : 'GET',
-                url : "/api/products/viewProduct/category/*"
+                url : "/api/products/viewProduct/category/"
             },
             'getSelectedBrands' : {
                 method : 'GET',
-                url : "/api/products/brands/*"
+                url : "/api/products/category/brands"
             },
             'getOffers' :{
                 method : 'GET',
-                url : "/api/products/offers/*"
+                url : "/api/products/category/offers/"
             },
             'filteredProducts':{
                 method :'GET',
-                url : "/api/filteredProducts/*"
+                url : "/api/filteredProducts/"
             }
+            
             /*'getComments': {
                 method : 'GET',
                 url : "/api/products/comments/"

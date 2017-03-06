@@ -37,7 +37,8 @@ function init() {
     app.use(express.static(path.join(__dirname, '../client')));
     app.use(express.static(path.join(__dirname, '../client/.tmp')));
     app.use(express.static(path.join(__dirname, '../client/app')));
-    var allRoutes = require("./routes/appRoutes");
+    //var allRoutes = require("./routes/appRoutes");
+    app.all('/api/*');
     index(app)
 // catch 404 and forward to error handler
     app.use(function (req, res, next) {
