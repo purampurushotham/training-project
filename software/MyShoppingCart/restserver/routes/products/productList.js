@@ -170,7 +170,7 @@ ProductRoute= {
                 console.log("*********************** filtering  ********************");
                 if(queryParam.subtype == "fiction" || queryParam.subtype == "comic" || queryParam.subtype == "Biography") {
                     console.log("*********************** changing  subtype  ********************");
-                    QArray.push({"$match": {"author": {$in: brandsQuery}}});
+                    QArray.push({"$match": {"language": {$in: brandsQuery}}});
                 }
                 else{
                     console.log("*********************** not  changing  subtype  ********************");
