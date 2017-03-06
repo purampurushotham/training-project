@@ -10,7 +10,8 @@
             controllerAs: "cm",
             bindings: {
                 productsList: "=",
-                brandType: "="
+                brandType: "=",
+                allProducts: "="
             }
         });
     //Price Range feature
@@ -22,6 +23,9 @@
         console.log("****************in checkbox controller *************** ")
         var vm = this;
         vm.$onInit = function () {
+            vm.collection=vm.allProducts
+            console.log("all Products")
+            console.log(vm.collection)
             vm.eachProduct = vm.productsList;
             console.log(vm.eachProduct)
             vm.selectedSubType = vm.brandType;
@@ -105,41 +109,24 @@
                             }
                         }
                     },
-                    onChange: function(){
-                        console.log("@@@@@@@@@@@@ on change @@@@@@@@@@@");
-                        ProductsListService.filteredProducts(vm.filteredObjects,vm.slider.minValue,vm.slider.maxValue).then(
-                        function success(response) {
-                            console.log("**************************success");
-                            console.log(response);
-                            vm.setOffers = response.data;
-                            console.log(vm.setOffers);
-                            //    console.log($rootScope.products);
-                        },
-                        function failed(error) {
-                            console.log("**************************Failed");
-                            console.log(error);
-
-                        })
-                    },
-
+                    onChange : vm.checkBrand
+                    
                 }
-            };
-        console.log("*****************************  ")
-
+            }
         vm.checkBrand=function () {
             console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^");
             vm.min=vm.filteredObjects.slider.minValue;
             vm.max=vm.filteredObjects.slider.maxValue;
             vm.ProductType=vm.proType;
-            console.log("###########################")
-            console.log(vm.ProductType);
             ProductsListService.filteredProducts(vm.filteredObjects,vm.ProductType,vm.min,vm.max).then(
                 function success(response) {
                     console.log("**************************success");
                     console.log(response);
                     vm.filteredResult = response.data;
                     console.log(vm.filteredResult);
-
+                    vm.allProducts=angular.copy(vm.filteredResult);
+                    console.log("###########################")
+                    console.log(vm.allProducts)
                     //    console.log($rootScope.products);
                 },
                 function failed(error) {
@@ -149,8 +136,6 @@
             console.log(vm.filteredObjects)
         };
     }
-
-
     /* vm.singleList = vm.productsList;
      vm.multiProduct = vm.multiSelect;
      vm.protype = vm.brandType;

@@ -147,6 +147,7 @@ ProductRoute= {
         });
     },
     filteredProducts : function(req,res){
+        console.log("*********************** filtered products  ********************");
         var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
         console.log(queryParam);
         var offersQuery=queryParam.offers;
@@ -155,8 +156,7 @@ ProductRoute= {
         QArray.push({ "$unwind": "$offers" });
         QArray.push({$lookup : { from : "offers",localField : "offers",foreignField : "_id", as : "resObj"}});
         QArray.push({ "$unwind": "$resObj" });
-        QArray.push({"$match" : {"brand" : queryParam.subtype, "price" : {$gt : queryParam.min,$lt : queryParam.max}}});
-        console.log("&&&&&&&&&&&&&&&&&&&&&&&& in filtered");
+        QArray.push({"$match" : {"subType" : queryParam.subtype, "price" : {$gt : queryParam.min,$lt : queryParam.max}}});
       if(offersQuery != undefined){
             if(offersQuery.length !=0){
                 //queryTo.offers.type = {$in : offersSelectedArray};
@@ -165,18 +165,22 @@ ProductRoute= {
                 console.log(QArray)
             }
         }
-        /*
         if(brandsQuery != undefined){
             if(brandsQuery.length !=0){
-                if(queryParam.type == "fiction" || query.type == "comics" || query.type == "Biography")
-                    QArray.push({"$match" : {"author" : {$in : regexBrandArray}}});
-                else
-                    QArray.push({"$match" : {"brand" : {$in : regexBrandArray}}});
-                console.log("quertoooo + "+QArray)
+                console.log("*********************** filtering  ********************");
+                if(queryParam.subtype == "fiction" || queryParam.subtype == "comic" || queryParam.subtype == "Biography") {
+                    console.log("*********************** changing  subtype  ********************");
+                    QArray.push({"$match": {"author": {$in: brandsQuery}}});
+                }
+                else{
+                    console.log("*********************** not  changing  subtype  ********************");
+                    QArray.push({"$match" : {"brand" : {$in : brandsQuery}}});
 
+                }
+                console.log(QArray)
             }
-        }*/
-        console.log(QArray)
+        }
+        console.log("*********************** default query ********************");
         products.aggregate(QArray).exec(function(err, response){
             console.log("in productlist categorywiseProducts")
             if(err)
@@ -184,13 +188,13 @@ ProductRoute= {
             else
             {
                 console.log("categorywiseProducts response received"+response.length);
-                res.send(response);
+                res.send({data : response});
             }
 
         });
         console.log("quertoooo formed + "+QArray)
 
-        console.log(queryTo)
+        console.log(QArray)
     }
 }
 module.exports=ProductRoute;
