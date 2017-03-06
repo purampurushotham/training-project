@@ -1,15 +1,41 @@
 <div class="modal-header">
-    <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
+    <h3 class="modal-title" id="modal-title">Registration</h3>
 </div>
 <div class="modal-body" id="modal-body">
-    <ul>
-        <li ng-repeat="item in rc.items">
-            <a href="#" ng-click="$event.preventDefault(); $rc.selected.item = item">{{ item }}</a>
-        </li>
-    </ul>
-    Selected: <b>{{ rc.selected.item }}</b>
+    <form name="form" ng-submit="vm.register()" role="form">
+        <div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
+            <label for="firstName">First name</label>
+            <input type="text" name="firstName" id="firstName" class="form-control" ng-model="vm.user.firstName" ng-minlength="5"  required />
+            <span ng-show="form.firstName.$dirty && form.firstName.$error.minlength" class="help-block">First name is short</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.lastName.$dirty && form.lastName.$error.required }">
+            <label for="lastName">Last name</label>
+            <input type="text" name="lastName" id="Text1" class="form-control" ng-model="vm.user.lastName"  ng-minlength="5" required />
+            <span ng-show="form.lastName.$dirty && form.lastName.$error.required" class="help-block">Last name is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
+            <label for="email">email</label>
+            <input type="email" name="username" id="email" class="form-control" ng-model="vm.user.email" required />
+            <span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">email is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control" ng-model="vm.user.password"  ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/" required />
+            <span ng-show="form.password.$dirty && form.password.$error.pattern" class="help-block">Password should contain atleast one capital,one small,one special char and one number</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text" name="phoneNumber" id="phoneNumber" class="form-control" ng-model="vm.user.phoneNumber" ng-minlength="10" ng-maxlength="10"  ng-pattern = "/^[0-9]{10,10}$/"  required />
+            <span ng-show="form.phoneNumber.$dirty && form.phoneNumber.$error.pattern" class="help-block">phoneNumber is required only number with 10 digit number</span>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button class="btn btn-warning" type="button" ng-click="rc.cancel()">Cancel</button>
+        </div>
+    </form>
 </div>
+<!--
 <div class="modal-footer">
     <button class="btn btn-primary" type="button" ng-click="rc.ok()">OK</button>
     <button class="btn btn-warning" type="button" ng-click="rc.cancel()">Cancel</button>
-</div>
+</div>-->
