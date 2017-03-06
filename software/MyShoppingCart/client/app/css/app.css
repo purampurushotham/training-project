@@ -4,7 +4,16 @@ html, body {
   overflow-x: hidden !important;
 
 }
-
+.navbar-default .navbar-nav > li.dropdown:hover > a,
+.navbar-default .navbar-nav > li.dropdown:hover > a:hover,
+.navbar-default .navbar-nav > li.dropdown:hover > a:focus {
+    background-color: rgb(231, 231, 231);
+    color: rgb(85, 85, 85);
+}
+li.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+/*
 ul, li {
   list-style-type: none;
   margin: 0;
@@ -46,14 +55,14 @@ li:hover .sub-menu {
 }
 
 .select2 > .select2-choice.ui-select-match {
-  /* Because of the inclusion of Bootstrap */
+  !* Because of the inclusion of Bootstrap *!
   height: 29px;
 }
 
 .selectize-control > .selectize-dropdown {
   top: 36px;
 }
-/* Some additional styling to demonstrate that append-to-body helps achieve the proper z-index layering. */
+!* Some additional styling to demonstrate that append-to-body helps achieve the proper z-index layering. *!
 .select-box {
   background: #fff;
   position: relative;
@@ -62,8 +71,8 @@ li:hover .sub-menu {
 .alert-info.positioned {
   margin-top: 1em;
   position: relative;
-  z-index: 10000; /* The select2 dropdown has a z-index of 9999 */
-}
+  z-index: 10000; !* The select2 dropdown has a z-index of 9999 *!
+}*/
 /*products pics */
 .pics {
   width: 250px;

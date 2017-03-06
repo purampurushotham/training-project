@@ -59,33 +59,22 @@
                 function getOffers() {
                     console.log("$$$$$$$$$$$$$$$$$$$$$$$$$")
                     ProductsListService.getOffers().then(
-                    function success(response) {
-                        console.log("**************************success");
-                        console.log(response);
-                        vm.setOffers = response.data;
-                        console.log(vm.setOffers);
+                        function success(response) {
+                            console.log("**************************success");
+                            console.log(response);
+                            vm.setOffers = response.data;
+                            console.log(vm.setOffers);
 
-                        //    console.log($rootScope.products);
-                    },
-                    function failed(error) {
-                        console.log("**************************Failed");
-                        console.log(error);
-                    });
+                            //    console.log($rootScope.products);
+                        },
+                        function failed(error) {
+                            console.log("**************************Failed");
+                            console.log(error);
+                        });
                 }
             }
-            sliderFeature(vm.productsList,vm.selectedSubType);
-            function sliderFeature(productsList,type) {
-                console.log("in slider products")
-                console.log("in slider feature");
-                console.log(productsList);
-                vm.products = productsList
-                vm.proType=type;
-                vm.copySimilarProds = angular.copy(vm.products);
-                console.log(vm.copySimilarProds);
-                /* slideer */
-            }
-        };
-        vm.filteredObjects=
+           /* sliderFeature(vm.productsList,vm.selectedSubType);*/
+            vm.filteredObjects=
             {
                 filteredBrand: [],
                 filteredOffer: [],
@@ -94,10 +83,10 @@
                     maxValue: 80000,
                     options: {
                         floor: 1000,
-                        ceil: 100000,
+                        ceil: 90000,
                         step: 1000,
                         minRange: 1000,
-                        maxRange: 1000000,
+                        maxRange: 90000,
                         translate: function (value, sliderId, label) {
                             switch (label) {
                                 case 'model':
@@ -109,10 +98,21 @@
                             }
                         }
                     },
-                    onChange : vm.checkBrand
-                    
+                    onChange : sliderFeature(vm.productsList,vm.selectedSubType)
                 }
             }
+            function sliderFeature(productsList,type) {
+                console.log("in slider products")
+                console.log("in slider feature");
+                console.log(productsList);
+                vm.products = productsList
+                vm.proType=type;
+                vm.copySimilarProds = angular.copy(vm.products);
+                console.log(vm.copySimilarProds);
+                /* slideer */
+            }
+        };
+
         vm.checkBrand=function () {
             console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^");
             vm.min=vm.filteredObjects.slider.minValue;

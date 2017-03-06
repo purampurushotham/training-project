@@ -18,7 +18,7 @@
         "MSC.view",
         "MSC.Products",
         "MSC.checkBoxes",
-        "MSC.priceSlider"
+
     ]);
     console.log("in module");
 }());

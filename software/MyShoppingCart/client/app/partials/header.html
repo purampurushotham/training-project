@@ -10,16 +10,16 @@
             <a class="navbar-brand" ui-sref="Home">MyShoppingCart</a>
         </div>
         <!-- <div class="navbar-collapse collapse in" collapse="isCollapsed" aria-expanded="true">-->
-        <ul class="nav nav-tabs">
+        <ul class="nav navbar-nav">
             <li class="nav-item"><a class="nav-link" ui-sref="Home">Home<!--<span class="sr-only">(current)</span>--></a></li>
-            <li><a>Electronics<!--<span class="sr-only">(current)</span>--></a>
-                <ul class="sub-menu">
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Electronics<!--<span class="sr-only">(current)</span>--></a>
+                <ul class="dropdown-menu">
                     <li><a ui-sref="search({productType:'Laptops'})">Laptops<!--<span class="sr-only">(current)</span>--></a></li>
                     <li><a ui-sref="search({productType:'Mobiles'})">Mobiles<!--<span class="sr-only">(current)</span>--></a></li>
                 </ul>
             </li>
-            <li><a ui-sref="Books">Books</a>
-                <ul class="sub-menu">
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Books</a>
+                <ul class="dropdown-menu">
                     <li><a ui-sref="search({productType:'fiction'})">Fiction</a></li>
                     <li><a ui-sref="search({productType:'comic'})">Comic</a></li>
                     <li><a ui-sref="search({productType:'Laptops'})">BioGraphy</a></li>
