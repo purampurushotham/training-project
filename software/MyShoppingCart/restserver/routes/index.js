@@ -2,7 +2,7 @@ var express = require('express');
 /*var router = express.Router();*/
 var path = require('path');
 var products = require("./products/productList");
-var users = require("./users/usersRoute");
+var usersRoute = require("./users/usersRoute");
 /* GET home page. */
 var appRoutes=function(app){
     console.log("**********************************************in index.js")
@@ -14,7 +14,8 @@ var appRoutes=function(app){
     app.get('/api/products/category/brands',products.getSelectedBrands);
     app.get('/api/products/category/offers',products.getOffers);
     app.get('/api/filteredProducts/',products.filteredProducts);
-    app.get('/api/users/getExistedEmail/',users.getExistedEmail);
-    app.post('/api/users/addUser',users.createUserNew);
+    app.get('/api/users/getExistedEmail',usersRoute.getExistedEmail);
+    app.post('/api/users/addUser',usersRoute.createUserNew);
+    app.put('/api/users/confirmUser',usersRoute.confirmUser)
 }
 module.exports = appRoutes;

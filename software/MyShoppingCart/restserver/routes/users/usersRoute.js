@@ -1,10 +1,14 @@
 /**
  * Created by purushotham on 6/3/17.
  */
+var passwordHash = require('password-hash');
 var mongoose=require('mongoose');
+var jwt = require('jwt-simple');
+var tokens=require('../../models/TokenModel')
 var users=require('../../models/userModel')
-var RegistrationRoute;
-RegistrationRoute={
+var tokenEnumObject=require('../../enums/token_enums')
+var sendmail = require('sendmail')();
+var usersRoute = {
     getExistedEmail : function(req,res){
         var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
         console.log("*****************************");
@@ -22,33 +26,128 @@ RegistrationRoute={
             }
             else {
                 res.send({res :emailsSet.email});
+
                 res.end();
             }
         });
-
     },
-    createUserNew : function(req,res) {
+    createUserNew : function(req, res) {
         console.log("in adddddddddddddddd");
-        console.log(req.query)
-        var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
+        // console.log(req);
+        // console.log('params ', req.param('q'));
+        var queryParam =  req.body.q;
         console.log(queryParam);
-        var query = queryParam
-        console.log("**************************"+"in addd user")
+        var query ={};
+        //  query.firstName="puram"
+        query=queryParam;
+        query.password=hashingPassword(query.password);
+        function hashingPassword(password){
+            var hashedPassword =passwordHash.generate(password);
+            return hashedPassword;
+        }
+        //console.log("**************************"+"in addd user")
         query.startDate = new Date();
         query.updatedDate = new Date();
         query.isActive = false;
-        users.insertOne(query).exec(function (err, response) {
-            console.log("**************************"+"in addd user")
+        var newUser=new users(query);
+        newUser.save(function (err) {
+            if (err) {
+                console.log(err)
+                res.send(err);
+            }
+            else {
+                console.log("************************* calling generate Token")
+                //console.log(result)
+                generateToken(query.firstName,query.lastName);
+                res.send("Success");
+                res.end();
+            }
+        });
+        function generateToken(firstName,lastName){
+            var serverAddress = req.protocol + '://' + req.get('host');
+            console.log(firstName,lastName)
+            console.log("************************* in generateToken");
+            var newToken=new tokens();
+            newToken.token=jwt.encode(query.email,'xxx');
+            console.log(newToken.token);
+            if(newToken.token) {
+                console.log("************************* token exists");
+                newToken.type=tokenEnumObject.REGISTRATION.code
+                newToken.email = query.email;
+                newToken.startDate=new Date();
+                newToken.updatedDate=new Date();
+                console.log("*************************new token Object");
+                console.log(newToken);
+                newToken.save(function (err) {
+                    if (err) {
+                        console.log(err)
+                        res.send(err);
+                    }
+                    else {
+                        sendmail({
+                            from: 'no-reply@myShoppingCart.com',
+                            to: 'puram.purushotham@india.semanticbits.com',
+                            subject: 'Registration Scuccessful',
+                            html: "HI"+" "+firstName+ " "+lastName+"please follow this link for account activation" + " "+
+                            serverAddress+"/#!/confirmregistration/"+newToken.token
+                        }, function(err, reply) {
+                            console.log(err && err.stack);
+                            console.log("************************* in send mail");
+                            console.log(reply);
+                        });
+                        console.log("*************************");
+                        //console.log(result)
+
+
+                    }
+                })
+            }
+        }
+    },
+    confirmUser : function(req,res){
+        var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
+        console.log("***************** in confirm User");
+        var query={token : queryParam.token}
+        tokens.findOne(query).exec(function (err, result) {
+            console.log("**************************"+"in getExistedEmail")
             if (err) {
                 res.send(err);
             }
             else {
-                res.send("status : 200");
-                res.end();
+                /*if(result == null){
+                 res.send("failed")
+                 console.log("**************************"+"in confirmUser")
+                 res.end();
+                 }*/
+                var re=result.email
+                if(re == null || typeof re =='undefined'){
+
+                }
+                var quert1={email :re}
+                users.findOneAndUpdate({email :re},{$set : {isActive : "true"}}).exec(function (err, confirmed) {
+                    console.log("**************************"+"in user collection")
+                    if (err) {
+                        res.send(err);
+                    }
+                    else{
+                        console.log(confirmed);
+                        tokens.findOne({email :re}).remove().exec(function (err, result) {
+                            console.log("**************************"+"in removing token")
+                            if (err) {
+                                res.send(err);
+                            }
+                            else {
+                                console.log("************************** token is removedd");
+                                res.send({status : 200});
+                                res.end();
+                            }
+
+                        });
+                    }
+                });
             }
         });
-    
     }
 
-}
-module.exports=RegistrationRoute;
+};
+module.exports=usersRoute;

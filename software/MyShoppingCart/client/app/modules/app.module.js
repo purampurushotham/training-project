@@ -13,6 +13,7 @@
         "rzModule",
         "checklist-model",
         "MSC.header",
+        "MSC.user",
         "MSC.footer",
         "MSC.home",
         "MSC.search",

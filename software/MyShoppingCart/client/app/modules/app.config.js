@@ -28,12 +28,15 @@
                 templateUrl: "app/partials/Electronics.html",
                 //controller:"ElectronicsCtrl",
                 //controllerAs:"EC"
-            });
-        /*.state('Electronics.Mobiles', {
-         url: '/Mobiles',
-         templateUrl: 'Electronics-Mobiles.html'
-
-         })
+            })
+        .state('confirmRegistration', {
+         url: '/confirmregistration/:token',
+           /* controller  : "confirmationCtrl",
+            controllerAs : "cc",*/
+            external : true,
+            templateUrl: 'app/partials/user.html',
+         });
+        /*
          .state('Electronics.Laptops', {
          url: '/Laptops',
          templateUrl: 'Electronics-Laptops.html',

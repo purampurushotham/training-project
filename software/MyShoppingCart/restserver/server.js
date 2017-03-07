@@ -10,14 +10,13 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var app = express();
 //mongoose.connect(process.env.OPENSHIFT_MONGODB_DB_URL || 'mongodb://localhost/myshoppingcart');
-/*app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.json({limit: '5mb'}));
 app.use(bodyParser.urlencoded({ limit: '5mb' }));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(__dirname + '/public'));*/
 app.engine('html', require('ejs').renderFile);
 console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
 console.log(path.join(__dirname, '../client/app/partials'));

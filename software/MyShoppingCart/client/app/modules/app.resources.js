@@ -55,6 +55,10 @@
             'createUserNew': {
                 method : 'POST',
                 url : "/api/users/addUser"
+            },
+            'confirmUser':{
+                method : 'PUT',
+                url : "/api/users/confirmUser"
             }
 
             

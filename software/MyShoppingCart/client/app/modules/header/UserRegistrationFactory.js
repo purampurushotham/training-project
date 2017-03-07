@@ -17,14 +17,14 @@
         var query={};
         query.keyword=keyword;
         console.log("########################")
-        console.log(keyword)
+        console.log(query)
         return api.getExistedEmail({q:query}).$promise
     }
         function createUserNew(user) {
             var query=user;
             console.log("######################## in adduser")
             console.log(query)
-            return api.createUserNew({q:query}).$promise
+            return api.createUserNew({q:user}).$promise
         }
     }
     
