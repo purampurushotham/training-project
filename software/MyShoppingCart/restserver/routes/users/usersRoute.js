@@ -4,9 +4,9 @@
 var passwordHash = require('password-hash');
 var mongoose=require('mongoose');
 var jwt = require('jwt-simple');
-var tokens=require('../../models/TokenModel')
-var users=require('../../models/userModel')
-var tokenEnumObject=require('../../enums/token_enums')
+var tokens=require('../../models/TokenModel');
+var users=require('../../models/userModel');
+var tokenEnumObject=require('../../enums/token_enums');
 var sendmail = require('sendmail')();
 var usersRoute = {
     getExistedEmail : function(req,res){
@@ -15,9 +15,9 @@ var usersRoute = {
         console.log(queryParam);
         var regularExpression = "/^"+queryParam.keyword+"/i";
         var regex = new RegExp(queryParam.keyword,"i");
-        console.log(regularExpression)
+        console.log(regularExpression);
         console.log(regex);
-        var query={email: { $regex: regex }}
+        var query={email: { $regex: regex }};
         users.find(query).exec(function (err, emailsSet) {
             console.log("**************************"+"in getExistedEmail")
             console.log({res :emailsSet});
@@ -26,7 +26,6 @@ var usersRoute = {
             }
             else {
                 res.send({res :emailsSet.email});
-
                 res.end();
             }
         });
@@ -114,11 +113,12 @@ var usersRoute = {
                 res.send(err);
             }
             else {
-                /*if(result == null){
-                 res.send("failed")
-                 console.log("**************************"+"in confirmUser")
-                 res.end();
-                 }*/
+                console.log(result)
+                if(result === 'null'){
+                    res.send("failed")
+                    console.log("**************************"+"in confirmUser")
+                    res.end();
+                }
                 var re=result.email
                 if(re == null || typeof re =='undefined'){
 

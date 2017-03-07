@@ -20,7 +20,10 @@
                     console.log(vm.sucess)
                 },
                 function failed(error) {
-                    console.log(error);
+                    console.log(error.data);
+                    if(error.data === "null"){
+                        $state.go('oldUser');
+                    }
                     console.log("**************************Failed");
                 }
             );

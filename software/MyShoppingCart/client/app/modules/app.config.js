@@ -35,7 +35,14 @@
             controllerAs : "cc",*/
             external : true,
             templateUrl: 'app/partials/user.html',
-         });
+         })
+            .state('oldUser', {
+                url: '/existingUser',
+                /* controller  : "confirmationCtrl",
+                 controllerAs : "cc",*/
+                external : true,
+                templateUrl: 'app/partials/oldUser.html',
+            });
         /*
          .state('Electronics.Laptops', {
          url: '/Laptops',

@@ -36,6 +36,26 @@
                 });
             };
             console.log("after header ctrl")
+            vm.loginModal=function(){
+                var modalInstance = uibModal.open({
+                    animation: vm.animationsEnabled,
+                    ariaLabelledBy: 'modal-title',
+                    ariaDescribedBy: 'modal-body',
+                    templateUrl: 'app/partials/Login.html',
+                    controller: 'loginCtrl',
+                    controllerAs: 'lc',
+                    resolve: {
+                        items: function () {
+                            return vm.items;
+                        }
+                    }
+                });
+                modalInstance.result.then(function (selectedItem) {
+                    vm.selected = selectedItem;
+                }, function () {
+                    $log.info('Modal dismissed at: ' + new Date());
+                });
+            };
         }
         
     }
