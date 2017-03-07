@@ -37,6 +37,7 @@
             };
             console.log("after header ctrl")
         }
+        
     }
 }());
 // .controller('headerCtrl',headerCtrl)
