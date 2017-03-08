@@ -19,7 +19,6 @@
         console.log(vm.user)
         vm.validateUser = validateUser;
         function validateUser(){
-
             console.log("user loigin");
             userService.validateUser(vm.user).then(
                 function success(response){
@@ -27,7 +26,6 @@
                     vm.success=response;
                     console.log(vm.success);
                     console.log("**************************success");
-
                     vm.fullName.firstName=vm.success.firstName;
                     vm.fullName.lastName=vm.success.lastName;
                     $localStorage.userDetails =vm.fullName;

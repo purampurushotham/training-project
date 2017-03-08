@@ -53,7 +53,7 @@ var authenticateRoute = {
                     }
                 }
                 else {
-                    res.send({data: "Login failed"});
+                    res.send({data: { message :"Login failed",status  : 404}});
                     res.end();
                 }
             }
