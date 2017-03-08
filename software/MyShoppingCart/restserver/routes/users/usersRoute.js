@@ -114,39 +114,41 @@ var usersRoute = {
             }
             else {
                 console.log(result)
-                if(result === 'null'){
-                    res.send("failed")
+                if(result == null){
                     console.log("**************************"+"in confirmUser")
+                    res.send({data : result})
                     res.end();
                 }
-                var re=result.email
-                if(re == null || typeof re =='undefined'){
+                else {
 
+                    var re=result.email
+
+                    var quert1={email :re}
+                    users.findOneAndUpdate({email :re},{$set : {isActive : true}}).exec(function (err, confirmed) {
+                        console.log("**************************"+"in user collection")
+                        if (err) {
+                            res.send(err);
+                        }
+                        else{
+                            console.log(confirmed);
+                            tokens.findOne({email :re}).remove().exec(function (err, result) {
+                                console.log("**************************"+"in removing token")
+                                if (err) {
+                                    res.send(err);
+                                }
+                                else {
+                                    console.log("************************** token is removedd");
+                                    res.send({status : 200});
+                                    res.end();
+                                }
+
+                            });
+                        }
+                    });
                 }
-                var quert1={email :re}
-                users.findOneAndUpdate({email :re},{$set : {isActive : "true"}}).exec(function (err, confirmed) {
-                    console.log("**************************"+"in user collection")
-                    if (err) {
-                        res.send(err);
-                    }
-                    else{
-                        console.log(confirmed);
-                        tokens.findOne({email :re}).remove().exec(function (err, result) {
-                            console.log("**************************"+"in removing token")
-                            if (err) {
-                                res.send(err);
-                            }
-                            else {
-                                console.log("************************** token is removedd");
-                                res.send({status : 200});
-                                res.end();
-                            }
-
-                        });
-                    }
-                });
             }
-        });
+
+    });
     }
 
 };

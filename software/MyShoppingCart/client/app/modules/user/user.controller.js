@@ -4,8 +4,8 @@
 (function() {
     angular.module('MSC.user')
         .controller('confirmregistration',confirmregistration);
-    confirmregistration.$inject=['$stateParams','userService']
-    function confirmregistration($stateParams,userService){
+    confirmregistration.$inject=['$stateParams','$state','userService']
+    function confirmregistration($stateParams,$state,userService){
         console.log("in confirmationCtrl");
         var vm=this;
         vm.token=$stateParams.token;
@@ -15,14 +15,14 @@
             userService.confirmUser(token).then(
                 function success(response){
                     console.log(response);
-                    vm.sucess=response.res;
-                    console.log("**************************success");
-                    console.log(vm.sucess)
+                    if(response.data == null){
+                        console.log("**************************success");
+                        $state.go('Login')
+                    }
                 },
                 function failed(error) {
                     console.log(error.data);
                     if(error.data === "null"){
-                        $state.go('oldUser');
                     }
                     console.log("**************************Failed");
                 }

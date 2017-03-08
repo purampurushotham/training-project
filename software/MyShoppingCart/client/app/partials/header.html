@@ -30,8 +30,17 @@
 
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><button type="button" class="btn btn-default" ng-click ="hc.registrationModal()">Register</button></li>
-            <li><button type="button" class="btn btn-primary" ng-click ="hc.loginModal()">Login</button></li>
+            <div ng-show="hc.exists">
+                <ul>
+                    <li  >  HI {{hc.oneUser.firstName}} {{hc.oneUser.lastName}} </li>
+                    <li><button type="button" class="btn btn-primary" ng-click ="hc.logout()">Logout</button></li>
+                </ul>
+            </div>
+            <div ng-show="!hc.exists">
+                <ul><li><button type="button" class="btn btn-default" ng-click ="hc.registrationModal()">Register</button></li>
+                    <li><button type="button" class="btn btn-primary" ng-click ="hc.loginModal()">Login</button></li>
+                </ul>
+            </div>
         </ul>
     </div>
     <div class="container">

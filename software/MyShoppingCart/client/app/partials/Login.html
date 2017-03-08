@@ -2,7 +2,7 @@
     <h3 class="modal-title" id="modal-title">User Login </h3>
 </div>
 <div class="modal-body" id="modal-body">
-    <form name="form" ng-submit="lc.submitUser()" role="form">
+    <form name="form" ng-submit="lc.validateUser()" role="form">
         <div class="form-group" ><!--ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }"-->
             <label for="email">email</label>
             <input type="email" name="userEmail" id="userEmail" class="form-control" ng-model="lc.user.email" required />
@@ -15,10 +15,10 @@
             <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
         </div>
         <div class="form-actions">
-            <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary" ng-click ="lc.submit">Login</button>
+            <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary" ng-click ="lc.submit()">Login</button>
             <button class="btn btn-danger" type="button" ng-click="lc.cancel()">Cancel</button>
             <p class="help-block">
-                <a class="pull-right text-muted" href="#" id="olvidado"><small>Forgot your password?</small></a>
+                <a class="pull-right text-muted" href="#" id="olvidado" ng-click="lc.forgotPassword()"><small>Forgot your password?</small></a>
             </p>
         </div>
 

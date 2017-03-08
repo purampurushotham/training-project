@@ -31,7 +31,7 @@
             <span ng-show="form.phoneNumber.$dirty && form.phoneNumber.$error.pattern" class="help-block" role="alert">phoneNumber is required only number with 10 digit number</span>
         </div>
         <div class="form-actions">
-            <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Submit</button>
+            <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary" ng-click="rc.submit()">Submit</button>
             <button class="btn btn-danger" type="button" ng-click="rc.cancel()">Cancel</button>
         </div>
     </form>

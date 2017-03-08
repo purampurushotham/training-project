@@ -9,12 +9,13 @@
             controller: headerCtrl,
             controllerAs: "hc"
         });
-    headerCtrl.$inject = ['$uibModal'];
-    function headerCtrl(uibModal) {
+    headerCtrl.$inject = ['$uibModal','$localStorage','$state'];
+    function headerCtrl(uibModal,$localStorage,$state) {
         console.log("in header ctrl")
         var vm = this;
-        vm.items = ['item1', 'item2', 'item3'];
         vm.$onInit = function () {
+            console.log($localStorage);
+            checkLogin();
             vm.registrationModal = function () {
                 var modalInstance = uibModal.open({
                     animation: vm.animationsEnabled,
@@ -24,18 +25,20 @@
                     controller: 'registrationCtrl',
                     controllerAs: 'rc',
                     resolve: {
-                        items: function () {
-                            return vm.items;
+                        fullName: function () {
+                            return vm.fullName;
                         }
                     }
                 });
-                modalInstance.result.then(function (selectedItem) {
-                    vm.selected = selectedItem;
+                modalInstance.result.then(function (fullName) {
+                    vm.fullName = fullName;
+                    console.log("*************************")
+                    console.log(vm.fullName)
                 }, function () {
                     $log.info('Modal dismissed at: ' + new Date());
                 });
             };
-            console.log("after header ctrl")
+            console.log("after header ctrl");
             vm.loginModal=function(){
                 var modalInstance = uibModal.open({
                     animation: vm.animationsEnabled,
@@ -45,21 +48,51 @@
                     controller: 'loginCtrl',
                     controllerAs: 'lc',
                     resolve: {
-                        items: function () {
-                            return vm.items;
+                        fullName: function () {
+                            return vm.fullName;
                         }
+
                     }
                 });
-                modalInstance.result.then(function (selectedItem) {
-                    vm.selected = selectedItem;
+                modalInstance.result.then(function (fullName) {
+                    if($localStorage.userDetails){
+                        console.log("********* true");
+                        vm.oneUser={};
+                        vm.oneUser.firstName=$localStorage.userDetails.firstName
+                        vm.oneUser.lastName=$localStorage.userDetails.lastName;
+                        vm.exists=true;
+                    }
+
                 }, function () {
                     $log.info('Modal dismissed at: ' + new Date());
                 });
             };
-        }
-        
+            vm.logout= logout;
+            function logout(){
+                $localStorage.$reset()
+                console.log($localStorage);
+                vm.exists=false;
+                console.log("logged out successfuly")
+                $state.go('Home')
+            }
+            function checkLogin(){
+                console.log()
+                console.log("******************** in check Login")
+                if($localStorage.hasOwnProperty('userDetails')){
+                    vm.exists=true;
+                }
+            }
+
+        };
+
+
     }
 }());
 // .controller('headerCtrl',headerCtrl)
 // .directive('headerDirective',headerDirective);
 /*headerCtrl.$inject=['headerDirective'];*/
+/*
+ $localStorage.userDetails = respone.data;
+ console.log("$localStorage.userDetails ");
+ console.log($localStorage.userDetails);
+ vm.userIsLogged = true;*/

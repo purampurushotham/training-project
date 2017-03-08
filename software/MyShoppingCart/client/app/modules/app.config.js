@@ -36,13 +36,19 @@
             external : true,
             templateUrl: 'app/partials/user.html',
          })
-            .state('oldUser', {
+            .state('Login', {
                 url: '/existingUser',
                 /* controller  : "confirmationCtrl",
                  controllerAs : "cc",*/
                 external : true,
-                templateUrl: 'app/partials/oldUser.html',
-            });
+                templateUrl: 'app/partials/Login.html',
+            })
+        .state('forgotpassword',{
+            url : "/forgotpassword/:token",
+            external : true,
+            templateUrl: 'app/partials/ResetPassword.html',
+           
+        });
         /*
          .state('Electronics.Laptops', {
          url: '/Laptops',

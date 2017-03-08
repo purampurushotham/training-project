@@ -5,9 +5,11 @@
     'use strict'
     angular.module('MSC.header')
         .controller("registrationCtrl",registrationCtrl);
-    registrationCtrl.$inject=['$uibModalInstance','userRegistrationFactory']
-    function registrationCtrl($uibModalInstance,userRegistrationFactory) {
+    registrationCtrl.$inject=['$uibModalInstance','userRegistrationFactory','fullName']
+    function registrationCtrl($uibModalInstance,userRegistrationFactory,fullName) {
         var vm = this;
+        vm.fullName = fullName;
+        console.log(vm.fullName)
         vm.user={};
         console.log("registrationCtrl");
         vm.submitUser=submitUser;

@@ -11,6 +11,7 @@
         "ui.bootstrap",
         "ui.select",
         "rzModule",
+        "ngStorage",
         "checklist-model",
         "MSC.header",
         "MSC.user",

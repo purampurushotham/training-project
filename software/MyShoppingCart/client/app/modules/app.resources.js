@@ -59,7 +59,20 @@
             'confirmUser':{
                 method : 'PUT',
                 url : "/api/users/confirmUser"
+            },
+            'validateUser' : {
+                method : 'GET',
+                url : "/api/user/authenticate"
+            },
+            'forgotPassword' : {
+                method : "GET",
+                url : "/api/users/forgotPassword"
+            },
+            'resetPassword' : {
+                method : 'PUT',
+                url : "/api/users/resetPassword"
             }
+
 
             
             /*'getComments': {

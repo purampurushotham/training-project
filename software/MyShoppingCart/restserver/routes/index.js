@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var products = require("./products/productList");
 var usersRoute = require("./users/usersRoute");
+var authenticateRoute = require("./authenticateRoute/authenticateRoute");
 /* GET home page. */
 var appRoutes=function(app){
     console.log("**********************************************in index.js")
@@ -16,6 +17,10 @@ var appRoutes=function(app){
     app.get('/api/filteredProducts/',products.filteredProducts);
     app.get('/api/users/getExistedEmail',usersRoute.getExistedEmail);
     app.post('/api/users/addUser',usersRoute.createUserNew);
-    app.put('/api/users/confirmUser',usersRoute.confirmUser)
+    app.put('/api/users/confirmUser',usersRoute.confirmUser);
+    app.get('/api/user/authenticate',authenticateRoute.validateUser);
+    app.get('/api/users/forgotPassword',authenticateRoute.forgotPassword);
+    app.put('/api/users/resetPassword',authenticateRoute.resetPassword);
+
 }
 module.exports = appRoutes;
