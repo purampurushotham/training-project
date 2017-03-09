@@ -213,8 +213,6 @@ ProductRoute= {
             }
 
         });
-        console.log("quertoooo formed + "+QArray)
-
         console.log(QArray)
     }
 }

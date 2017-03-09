@@ -6,6 +6,7 @@ var mongoose=require('mongoose');
 var jwt = require('jwt-simple');
 var tokens=require('../../models/TokenModel');
 var users=require('../../models/userModel');
+var addresses=require('../../models/AddressModel')
 var tokenEnumObject=require('../../enums/token_enums');
 var sendmail = require('sendmail')();
 var authenticateRoute = {
@@ -174,23 +175,37 @@ var authenticateRoute = {
     getProfile: function (req, res) {
         var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
         console.log("in reset password");
-        console.log(queryParam)
+        console.log(queryParam);
         users.findById({_id : queryParam.id}).exec(function (err, result) {
-            console.log("**************************"+"in getProfile")
+            console.log("**************************"+"in getProfile");
             if (err) {
                 res.send(err);
             }
             else {
                 console.log("**************************document fount getProfile");
+                console.log(queryParam.id)
+               /* addresses.findOne({user_id: '58c1341b594d3b0e21a306ad' }).exec(function (err,address) {
+                    console.log("**************************"+"in getProfile")
+                    console.log(address)
+                    if (err) {
+                        res.send(err);
+                    }
+                    else if(address!=null){
+                        var addresses={};
+                        console.log("***************************************");
+                        addresses=address;
+                        console.log(addresses)
+                    }
+                });
+            */
                 var profile={};
                 profile.firstName=result.firstName;
                 profile.lastName=result.lastName;
                 profile.email=result.email;
                 profile.phoneNumber=result.phoneNumber;
-                res.send({data : {profile : profile,status : 200}});
+                res.send({data : {profile : profile,address: addresses,status : 200}});
                 res.end();
             }
-
         });
     }
 }

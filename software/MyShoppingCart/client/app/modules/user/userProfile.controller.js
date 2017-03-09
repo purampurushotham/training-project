@@ -15,7 +15,9 @@
             function success(response) {
                 console.log(response);
                 vm.profile = response.data.profile;
+                vm.addresses=response.data.addresses
                 console.log(vm.profile);
+                console.log(vm.addresses);
                 console.log("**************************success");
             },
             function failed(error) {

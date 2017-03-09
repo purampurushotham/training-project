@@ -41,7 +41,11 @@ var UserSchema = new Schema({
         isActive : {
             type : Boolean,
             trim : true
-        }
+        },
+        address :[{
+            type : SchemaTypes.ObjectId,
+            ref : "addresses"
+        }],
     },
     {collection : 'users'}
 );

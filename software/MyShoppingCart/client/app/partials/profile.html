@@ -1,52 +1,110 @@
-
 <div class="container" ng-if =pc.profile>
-    <div class="row justify-content-md-center">
-                <h2>User profile</h2>
-                <div class="col-md-6">
-                    <div class="row justify-content-md-center">
-                        <div class="col-4 ">
-                            <p>First Name:
-                                <input ng-model="pc.profile.firstName" ng-readonly="true"/>
-                            </p>
-                        </div>
-                        <div class="col-4">
-                            <p>Last Name:
-                                <input ng-model="pc.profile.lastName" ng-readonly="true"/>
-                            </p>
-                        </div>
+    <div class="row -align-justify">
+        <div class="col-6 col-md-4"></div>
+        <div class="col-6 col-md-4">
+            <h3>User Profile</h3>
+            <form class="form-horizontal" >
+                <div class="form-group">
+                    <label for="firstName" class="control-label col-xs-2">First Name</label>
+                    <div class="col-xs-10">
+                        <input type="text" class="form-control" id="firstName" ng-readonly="true" ng-model="pc.profile.firstName">
                     </div>
-
                 </div>
-
-
-
+                <div class="form-group">
+                    <label for="lastName" class="control-label col-xs-2">Last Name</label>
+                    <div class="col-xs-10">
+                        <input type="text" class="form-control" id="lastName"ng-readonly="true" ng-model="pc.profile.lastName"->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="control-label col-xs-2">Email</label>
+                    <div class="col-xs-10">
+                        <input type="email" class="form-control" id="email" ng-readonly="true" ng-model="pc.profile.email"->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Phone" class="control-label col-xs-2">Phone</label>
+                    <div class="col-xs-10">
+                        <input type="text" class="form-control" id="inputPassword" ng-readonly="true" ng-model="pc.profile.phoneNumber"->
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-6 col-md-4"></div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
         <div class="col-md-6">
-            <div class="row justify-content-md-center">
-                <div class="col-4">
-                    <p>email Address:
-                        <input ng-model="pc.profile.email" ng-readonly="true"/>
-                    </p>
-                </div>
-                <div class="col-4">
-                    <p>Phone Number:
-                        <input ng-model="pc.profile.phoneNumber" ng-readonly="true"/>
-                    </p>
-                </div>
-            </div>
+            <h3>Address</h3>
         </div>
     </div>
-
-<div > working Address Body</div>
-<!--
-<div class="container">
-    <div class="row justify-content-md-center">
-        <div class="col col-lg-2">
-            1 of 3
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered table-hover table-condensed">
+                <tr style="font-weight: bold">
+                    <td style="width:20%">Type</td>
+                    <td style="width:20%">Address Line 1</td>
+                    <td style="width:20%">Address Line 2</td>
+                    <td style="width:25%">Street</td>
+                    <td style="width:25%">City</td>
+                    <td style="width:25%">Country</td>
+                    <td style="width:25%">ZipCode</td>
+                    <td style="width:25%">edit</td>
+                </tr>
+                <td>
+                    <!-- editable username (text with validation) -->
+        <span editable-text="pc.addresses.type" e-name="pc.addresses.type" e-form="rowform" onbeforesave="checkName($data, user.id)">
+          {{ pc.addresses.type || 'empty' }}
+        </span>
+                </td>
+                <td>
+                    <!-- editable status (select-local) -->
+            <span editable-text="pc.addresses.addressLine_1" e-name="pc.addresses.addressLine_1" e-form="rowform" onbeforesave="checkName($data, user.id)">
+          {{ pc.addresses.addressLine_1 || 'empty' }}
+        </span>
+                </td>
+                <td>
+            <span editable-text="pc.addresses.addressLine_2" e-name="pc.addresses.addressLine_2" e-form="rowform" onbeforesave="checkName($data, user.id)">
+          {{ pc.addresses.addressLine_2 || 'empty' }}
+        </span>
+                </td>
+                <td>
+            <span editable-text="pc.addresses.street" e-name="email" e-form="rowform" onbeforesave="checkName($data, user.id)">
+          {{ pc.profile.email || 'empty' }}
+        </span>
+                </td>
+                <td>
+            <span editable-text="pc.addresses.city" e-name="pc.addresses.city" e-form="rowform" onbeforesave="checkName($data, user.id)">
+          {{ pc.addresses.city || 'empty' }}
+        </span>
+                </td>
+                <td>
+            <span editable-text="pc.addresses.country" e-name="pc.addresses.country" e-form="rowform" onbeforesave="checkName($data, user.id)">
+          {{ pc.addresses.country || 'empty' }}
+        </span>
+                </td>
+                <td>
+            <span editable-text="pc.addresses.zipcode" e-name="pc.addresses.zipcode" e-form="rowform" onbeforesave="checkName($data, user.id)">
+          {{ pc.addresses.zipcode || 'empty' }}
+        </span>
+                </td>
+                <td style="white-space: nowrap">
+                    <!-- form -->
+                    <form editable-form name="rowform" onbeforesave="saveUser($data, user.id)" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == user">
+                        <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary" ng-click="pc.updateUser()">
+                            save
+                        </button>
+                        <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default">
+                            cancel
+                        </button>
+                    </form>
+                    <div class="buttons" ng-show="!rowform.$visible">
+                        <button type="button" class="btn btn-primary" ng-click="rowform.$show()">edit</button>
+                        <button type="button" class="btn btn-danger" ng-click="removeUser($index)">del</button>
+                    </div>
+                </td>
+            </table>
         </div>
-        <div class="col-12 col-md-auto">
-            Variable width content
-        </div>
-        <div class="col col-lg-2">
-            3 of 3
-        </div>
-    </div>-->
+    </div>
+</div>
