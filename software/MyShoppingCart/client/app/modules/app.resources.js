@@ -71,7 +71,12 @@
             'resetPassword' : {
                 method : 'PUT',
                 url : "/api/users/resetPassword"
+            },
+            'getProfile': {
+                method : "GET",
+                url : "/api/user/profile"
             }
+            
 
 
             

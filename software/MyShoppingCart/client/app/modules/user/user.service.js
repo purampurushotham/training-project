@@ -11,7 +11,8 @@
             confirmUser:confirmUser,
             validateUser :validateUser,
             forgotPassword : forgotPassword,
-            resetPassword : resetPassword
+            resetPassword : resetPassword,
+            getProfile : getProfile
         };
         return setOfUSerServices;
         function confirmUser(token){
@@ -41,6 +42,15 @@
             query.user=user;
             query.token=token;
             return api.resetPassword({q:query}).$promise
+        }
+        function getProfile(id){
+            var query={}
+            query.id=id
+            console.log("**************************** in getprofile user service")
+            console.log(query);
+            return api.getProfile({q:query}).$promise
+
+
         }
 
     }

@@ -1,21 +1,23 @@
 <div class="modal-header">
-    <h3 class="modal-title" id="modal-title">User Login </h3>
+    {{lc.exists}}
+    <h3 class="modal-title" id="modal-title" >User Login  </h3>
 </div>
 <div class="modal-body" id="modal-body">
-    <form name="form" ng-submit="lc.validateUser()" role="form">
+    <form name="lc.loginForm"  role="form">
         <div class="form-group" ><!--ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }"-->
             <label for="email">email</label>
             <input type="email" name="userEmail" id="userEmail" class="form-control" ng-model="lc.user.email" required />
-            <span ng-if="!lc.exists" ng-show="form.userEmail.$dirty && form.userEmail.$error.email" class="help-block">Not a valid email Id</span>
-            <span  ng-show="lc.exists" class="help-block">{{lc.user.email}} already exists</span>
+            <span  ng-show="lc.loginForm.userEmail.$dirty && lc.loginForm.userEmail.$error.email" class="has-error">Not a valid email Id</span>
+            <!--<span  ng-show="!lc.exists" class="help-block">{{lc.user.email}} already exists</span>-->
         </div>
-        <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+        <div class="form-group" ng-class="{ 'has-error': lc.loginForm.password.$dirty && form.password.$error.required }">
             <label for="password">Password</label>
-            <input type="password" name="password" id="password" class="form-control" ng-model="lc.user.password"  ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/" required />
-            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+            <input type="password" name="password" id="password" class="form-control" ng-model="lc.user.password" required />
+            <span ng-show="lc.loginForm.password.$dirty && lc.loginForm.password.$error.required" >Password is required</span>
+            <span ng-show="!lc.exists"> invalid email or password </span>
         </div>
         <div class="form-actions">
-            <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary" ng-click ="lc.submit()">Login</button>
+            <button type="submit"  ng-disabled="lc.loginForm.$invalid" class="btn btn-primary" ng-click ="lc.submit()">Login</button>
             <button class="btn btn-danger" type="button" ng-click="lc.cancel()">Cancel</button>
             <p class="help-block">
                 <a class="pull-right text-muted" href="#" id="olvidado" ng-click="lc.forgotPassword()"><small>Forgot your password?</small></a>

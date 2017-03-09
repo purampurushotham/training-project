@@ -30,18 +30,19 @@
 
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <div ng-show="hc.exists">
-                <ul>
-                    <li  >  HI {{hc.oneUser.firstName}} {{hc.oneUser.lastName}} </li>
-                    <li><button type="button" class="btn btn-primary" ng-click ="hc.logout()">Logout</button></li>
-                </ul>
-            </div>
+                <li  ng-show="hc.exists"class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">HI {{hc.oneUser.firstName}}</a>
+                    <ul class="dropdown-menu">
+                        <li> <a ui-sref="profile">Profile</a>  </li>
+                        <li><a><button type="button" class="b   tn btn-primary" ng-click ="hc.logout()">Logout</button></a></li>
+                    </ul>
+                </li>
             <div ng-show="!hc.exists">
                 <ul><li><button type="button" class="btn btn-default" ng-click ="hc.registrationModal()">Register</button></li>
                     <li><button type="button" class="btn btn-primary" ng-click ="hc.loginModal()">Login</button></li>
                 </ul>
             </div>
         </ul>
+
     </div>
     <div class="container">
         <div class="row">

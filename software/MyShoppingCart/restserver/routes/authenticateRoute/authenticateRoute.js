@@ -21,7 +21,8 @@ var authenticateRoute = {
             if (err) {
                 res.send(err);
             }
-            else {
+
+            else if(resultSet != null) {
                 console.log("**************************" + "in validateUser")
                 var validatePassword = passwordHash.verify(queryParam.password, resultSet.password);
                 console.log(validatePassword);
@@ -47,6 +48,7 @@ var authenticateRoute = {
                                 var data = {}
                                 data.firstName = resultSet.firstName;
                                 data.lastName = resultSet.lastName;
+                                data.id=resultSet._id;
                                 res.send(data);
                             }
                         });
@@ -57,13 +59,17 @@ var authenticateRoute = {
                     res.end();
                 }
             }
+            else {
+                res.send({data: "Login failed"});
+                res.end();
+            }
         });
     },
     forgotPassword: function (req, res) {
         var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
         console.log("in forgotpassword");
         console.log(queryParam);
-        var query = {email: queryParam.email,isActive : true}
+        var query = {email: queryParam.email,isActive : true};
         console.log(query);
         users.findOne(query).exec(function (err, resultSet) {
             console.log("**************************" + "in validateUser")
@@ -71,8 +77,8 @@ var authenticateRoute = {
             if (err) {
                 res.send(err);
             }
-            else {
-                console.log("********************Email exists")
+            else if(resultSet !=null) {
+                console.log("********************Email exists");
                 var newToken = new tokens();
                 var serverAddress = req.protocol + '://' + req.get('host');
                 newToken.token = jwt.encode(query.email, 'xxx');
@@ -110,10 +116,14 @@ var authenticateRoute = {
                     });
                 }
             }
+            else{
+                res.send({data:{message : "user Email Doesn't exists",status:404 }});
+                res.end();
+            }
         });
     },
     resetPassword : function (req, res) {
-        var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;;
+        var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
         console.log("in reset password");
         console.log(queryParam)
         var query={token : queryParam.token}
@@ -159,6 +169,28 @@ var authenticateRoute = {
                     });
                 }
             }
+        });
+    },
+    getProfile: function (req, res) {
+        var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
+        console.log("in reset password");
+        console.log(queryParam)
+        users.findById({_id : queryParam.id}).exec(function (err, result) {
+            console.log("**************************"+"in getProfile")
+            if (err) {
+                res.send(err);
+            }
+            else {
+                console.log("**************************document fount getProfile");
+                var profile={};
+                profile.firstName=result.firstName;
+                profile.lastName=result.lastName;
+                profile.email=result.email;
+                profile.phoneNumber=result.phoneNumber;
+                res.send({data : {profile : profile,status : 200}});
+                res.end();
+            }
+
         });
     }
 }

@@ -5,49 +5,51 @@
     'use strict'
     angular.module('MSC.header')
         .controller("loginCtrl", loginCtrl);
-    loginCtrl.$inject=['$uibModalInstance','userService','$localStorage','$uibModal']
-    function loginCtrl(uibModalInstance,userService,$localStorage,uibModal){
+    loginCtrl.$inject=['$uibModalInstance','userService','$localStorage','$uibModal','$state']
+    function loginCtrl(uibModalInstance,userService,$localStorage,uibModal,$state){
         console.log("in login ctrl");
         var vm=this;
         vm.fullName={
             firstName : "",
             lastName : ""
         };
-        console.log(vm.fullName)
-        var exists=false;
+        console.log(vm.fullName);
+        vm.exists=true;
         vm.user={};
-        console.log(vm.user)
+        console.log(vm.user);
         vm.validateUser = validateUser;
         function validateUser(){
-
             console.log("user loigin");
             userService.validateUser(vm.user).then(
-                function success(response){
+                function success(response) {
                     console.log(response);
-                    vm.success=response;
+                    vm.success = response;
                     console.log(vm.success);
                     console.log("**************************success");
-
-                    vm.fullName.firstName=vm.success.firstName;
-                    vm.fullName.lastName=vm.success.lastName;
-                    $localStorage.userDetails =vm.fullName;
-                    console.log($localStorage.userDetails)
+                    checkResult();
                 },
                 function failed(error) {
                     console.log("invalid userid or password");
                     console.log("**************************Failed");
                 }
             );
-            if(vm.success === "Login successfully"){
-                exists=true;
-                $state.go('Home')
-            }
-            else if(vm.success === "Login failed"){
-                exists=false;
-            }
-
-
         }
+        function checkResult(){
+            console.log("in check Result")
+            if (vm.success.hasOwnProperty('firstName') && vm.success.hasOwnProperty('lastName')) {
+                vm.exists = true;
+                $localStorage.userDetails={};
+                $localStorage.userDetails.firstName = vm.success.firstName;
+                $localStorage.userDetails.lastName=vm.success.lastName;
+                $localStorage.userDetails.id=vm.success.id;
+                console.log($localStorage.userDetails)
+                console.log("**************************success");
+                $state.go('Home')
+                uibModalInstance.close('submit');
+            }
+            else if (angular.equals(vm.success.data,"Login failed")) {
+                vm.exists = false;
+            }                }
         vm.forgotPassword=function(){
             var modalInstance = uibModal.open({
                 animation: vm.animationsEnabled,
@@ -57,7 +59,7 @@
                 controller: 'forgotPasswordCtrl',
                 controllerAs: 'fc',
                 resolve: {
-                    
+
                 }
             });
             modalInstance.result.then(function () {
@@ -67,7 +69,13 @@
             });
         };
         vm.submit = function () {
-            uibModalInstance.close('submit');
+            if(vm.loginForm.$valid) {
+                validateUser();
+            }
+            else{
+                vm.exists=false;
+            }
+
         };
         vm.cancel = function () {
             uibModalInstance.dismiss('cancel');

@@ -45,10 +45,20 @@
             })
         .state('forgotpassword',{
             url : "/forgotpassword/:token",
+            controller : 'resetPasswordCtrl',
+            controllerAs : 'rp',
             external : true,
             templateUrl: 'app/partials/ResetPassword.html',
            
-        });
+        })
+            .state('profile',{
+                url : "/user/profile",
+                controller : 'profileCtrl',
+                controllerAs : 'pc',
+                external : true,
+                templateUrl: 'app/partials/profile.html'
+
+            });
         /*
          .state('Electronics.Laptops', {
          url: '/Laptops',
