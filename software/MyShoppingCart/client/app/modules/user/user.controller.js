@@ -17,7 +17,7 @@
                     console.log(response);
                     if(response.data == null){
                         console.log("**************************success");
-                        $state.go('Login')
+                        $state.go('confirmRegistration')
                     }
                 },
                 function failed(error) {

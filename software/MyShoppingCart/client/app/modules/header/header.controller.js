@@ -14,6 +14,7 @@
         console.log("in header ctrl")
         var vm = this;
         vm.$onInit = function () {
+            vm.exists=false;
             console.log($localStorage);
             checkLogin();
             vm.registrationModal = function () {
@@ -76,7 +77,6 @@
                 $state.go('Home')
             }
             function checkLogin(){
-                console.log()
                 console.log("******************** in check Login")
                 if($localStorage.hasOwnProperty('userDetails')){
                     vm.exists=true;

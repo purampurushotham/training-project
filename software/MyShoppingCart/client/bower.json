@@ -25,6 +25,7 @@
     "angularjs-autocomplete": "^0.4.8",
     "ng-scrollbars": "^0.0.11",
     "angular-resource": "^1.6.2",
-    "ngstorage": "^0.3.11"
+    "ngstorage": "^0.3.11",
+    "at-table": "^1.0.7"
   }
 }

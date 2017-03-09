@@ -13,6 +13,10 @@ html, body {
 li.dropdown:hover > .dropdown-menu {
     display: block;
 }
+table {
+    display: block;
+    overflow-x: scroll;
+}
 /*
 ul, li {
   list-style-type: none;

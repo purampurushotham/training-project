@@ -4,16 +4,25 @@
 (function() {
     'use Strict'
     angular.module('MSC.user')
-        .controller('resetPasswordCtrl', resetPasswordCtrl);
-      //  .directive('compareTo',compareTo);
+        .controller('resetPasswordCtrl', resetPasswordCtrl)
+
     //function(
-    resetPasswordCtrl.$inject=['$stateParams','$state','userService'];
-    function resetPasswordCtrl ($stateParams,$state,userService){
+    resetPasswordCtrl.$inject=['$stateParams','$state','userService','$uibModalInstance'];
+    function resetPasswordCtrl ($stateParams,$state,userService,$uibModalInstance){
         var vm=this;
         console.log("#####################")
         vm.token = $stateParams.token;
         console.log("in reset password controller");
         vm.user={};
+        vm.pass=false;
+        vm.checkPassword = function (){
+            console.log("******* in checkpassword");
+            console.log(vm.user.cpassword);
+            if(vm.user.cpassword == vm.user.password)
+                vm.pass=true;
+            else
+                vm.pass=false;
+        }
         vm.resetPassword=resetPassword;
         function resetPassword(){
             console.log("in resert password")
@@ -36,7 +45,18 @@
             );
             
         }
+        vm.submit = function () {
+            if(vm.resetForm .$valid){
+                resetPassword();
+                $uibModalInstance.close('submit');
+            }
+        };
+
+        vm.cancel = function () {
+            $uibModalInstance.dismiss('cancel');
+        };
     }
+
        /* var model = this;
 
         model.message = "";
