@@ -2,6 +2,8 @@
  * Created by purushotham on 6/3/17.
  */
 var passwordHash = require('password-hash');
+var nodemailer = require("nodemailer");
+var smtpTransport=require('nodemailer-smtp-transport')
 var mongoose=require('mongoose');
 var jwt = require('jwt-simple');
 var tokens=require('../../models/TokenModel');
@@ -83,7 +85,29 @@ var usersRoute = {
                         res.send(err);
                     }
                     else {
-                        sendmail({
+                        var transport = nodemailer.createTransport(smtpTransport({
+                            service: "gmail ",  // sets automatically host, port and connection security settings
+                            auth: {
+                                user: "purams225@gmail.com",
+                                pass: "Bujji143Bunny$"
+                            }
+                        }));
+
+                        transport.sendMail({  //email options
+                            from: "noreply@gmail.com", // sender address.  Must be the same as authenticated user if using Gmail.
+                            to: "puram.purushotham@india.semanticbits.com", // receiver
+                            subject: "Emailing with nodemailer", // subject
+                            text: "HI"+" "+firstName+ " "+lastName+"please follow this link for account activation" + " "+
+                            serverAddress+"/#!/confirmregistration/"+newToken.token //body
+                        }, function(error, response){  //callback
+                            if(error){
+                                console.log(error);
+                            }else{
+                                console.log("Message sent: " + response.message);
+                            }
+                            transport.close(); // shut down the connection pool, no more messages.  Comment this line out to continue sending emails.
+                        });
+                       /* sendmail({
                             from: 'no-reply@myShoppingCart.com',
                             to: 'puram.purushotham@india.semanticbits.com',
                             subject: 'Registration Scuccessful',
@@ -97,7 +121,7 @@ var usersRoute = {
                         console.log("*************************");
                         //console.log(result)
 
-
+*/
                     }
                 })
             }
