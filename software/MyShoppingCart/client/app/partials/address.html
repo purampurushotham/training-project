@@ -1,0 +1,61 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title" >Add Address </h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <form name="tc.addressForm"  role="form">
+        <div class="form-group" ><!--ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }"-->
+            <label for="Type">Type</label>
+            <input type="text" name="Type" id="Type" class="form-control" ng-model="tc.address.type" required />
+            <span  ng-show="tc.addressForm.Type.$dirty && tc.addressForm.Type.$error.required" class="has-error">Type of Work is required</span>
+            <!--<span  ng-show="!tc.exists" class="help-block">{{tc.address.email}} already exists</span>-->
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': tc.addressForm.addressLine1.$dirty && form.addressLine1.$error.required }">
+            <label for="AddressLine_1">Address Line 1</label>
+            <input type="text" name="addressLine1" id="addressLine1" class="form-control" ng-model="tc.address.addressLine1" required />
+            <span ng-show="tc.addressForm.addressLine1.$dirty && tc.addressForm.addressLine1.$error.required" >addressLine 1  is required</span>
+            <!--<span ng-show="!tc.exists"> invalid email or password </span>-->
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': tc.addressForm.addressLine2.$dirty && form.addressLine2.$error.required }">
+            <label for="AddressLine_2">Address Line 2</label>
+            <input type="text" name="addressLine2" id="addressLine2" class="form-control" ng-model="tc.address.addressLine2" required />
+            <span ng-show="tc.addressForm.addressLine2.$dirty && tc.addressForm.addressLine2.$error.required" >addressLine 2  is required</span>
+            <!--<span ng-show="!tc.exists"> invalid email or password </span>-->
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': tc.addressForm.street.$dirty && form.street.$error.required }">
+            <label for="Street">Street</label>
+            <input type="text" name="street" id="street" class="form-control" ng-model="tc.address.street" required />
+            <span ng-show="tc.addressForm.street.$dirty && tc.addressForm.Street.$error.required" >Street  is required</span>
+            <!--<span ng-show="!tc.exists"> invalid email or password </span>-->
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': tc.addressForm.city.$dirty && form.city.$error.required }">
+            <label for="City">City</label>
+            <input type="text" name="city" id="city" class="form-control" ng-model="tc.address.city" required />
+            <span ng-show="tc.addressForm.city.$dirty && tc.addressForm.city.$error.required" >addressLine 2  is required</span>
+            <!--<span ng-show="!tc.exists"> invalid email or password </span>-->
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': tc.addressForm.State.$dirty && form.State.$error.required }">
+            <label for="state">State</label>
+            <input type="text" name="state" id="state" class="form-control" ng-model="tc.address.state" required />
+            <span ng-show="tc.addressForm.state.$dirty && tc.addressForm.state.$error.required" >State is required</span>
+            <!--<span ng-show="!tc.exists"> invalid email or password </span>-->
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': tc.addressForm.Country.$dirty && form.Country.$error.required }">
+            <label for="Country">Country</label>
+            <input type="text" name="country" id="country" class="form-control" ng-model="tc.address.country" required />
+            <span ng-show="tc.addressForm.country.$dirty && tc.addressForm.country.$error.required" >Country is required</span>
+            <!--<span ng-show="!tc.exists"> invalid email or password </span>-->
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': tc.addressForm.zipcode.$dirty && form.zipcode.$error.required }">
+            <label for="zipcode">Zipcode</label>
+            <input type="text" name="zipcode" id="zipcode" class="form-control" ng-model="tc.address.zipcode" required />
+            <span ng-show="tc.addressForm.zipcode.$dirty && tc.addressForm.zipcode.$error.required" >zipcode is required</span>
+            <!--<span ng-show="!tc.exists"> invalid email or password </span>-->
+        </div>
+        <div class="form-actions">
+            <button type="submit"  ng-disabled="tc.addressForm.$invalid" class="btn btn-primary" ng-click ="tc.submit()">Save</button>
+            <button class="btn btn-danger" type="button" ng-click="tc.cancel()">Cancel</button>
+        </div>
+
+    </form>
+
+</div>

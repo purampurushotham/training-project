@@ -75,6 +75,14 @@
             'getProfile': {
                 method : "GET",
                 url : "/api/user/profile"
+            },
+            'createAddress' : {
+                method  : 'POST',
+                url : "/api/users/address/create"
+            },
+            'getAddress' : {
+              method : "GET",
+                url : "/api/users/profile/address"
             }
             
 

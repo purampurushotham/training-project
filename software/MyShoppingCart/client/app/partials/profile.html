@@ -37,73 +37,23 @@
     <div class="row">
         <div class="col-md-6">
             <h3>Address</h3>
+            <button type="submit" class="btn btn-primary" ng-click ="pc.addRows()">ADD</button>
         </div>
     </div>
-    <div class="row">
+    <div ng-show ="!pc.tableExists">table doesm't exists </div>
+    <div ng-show =pc.tableExists class="row">
         <div class="col-md-12">
-            <table class="table table-bordered table-hover table-condensed">
-                <tr style="font-weight: bold">
-                    <td style="width:20%">Type</td>
-                    <td style="width:20%">Address Line 1</td>
-                    <td style="width:20%">Address Line 2</td>
-                    <td style="width:25%">Street</td>
-                    <td style="width:25%">City</td>
-                    <td style="width:25%">Country</td>
-                    <td style="width:25%">ZipCode</td>
-                    <td style="width:25%">edit</td>
+            <table ng-table="pc.tableParams" class="table table-condensed table-bordered table-striped">
+                <tr ng-repeat="row in $data track by row.id">
+                    <!--<td data-title="'TYPE" filter="{type: 'text'}" sortable="'type'">{{row.type}}</td>-->
+                    <td data-title="'Address Line 1'" filter="{addressLine1: 'text'}" sortable="'addressLine1'">{{row.addressLine_1}}</td>
+                    <td data-title="'Address Line 2'" filter="{addressLine2: 'text'}" sortable="'addressLine2'">{{row.addressLine_2}}</td>
+                    <td data-title="'Street'" filter="{street: 'text'}" sortable="'street'">{{row.street}}</td>
+                    <td data-title="'City'" filter="{city: 'text'}" sortable="'city'">{{row.city}}</td>
+                    <td data-title="'State'" filter="{state: 'text'}" sortable="'state'">{{row.state}}</td>
+                    <td data-title="'Country'" filter="{country: 'text'}" sortable="'country'">{{row.country}}</td>
+                    <td data-title="'Zipcode'" filter="{zipcode: 'number'}" sortable="'zipcode'">{{row.zipcode}}</td>
                 </tr>
-                <td>
-                    <!-- editable username (text with validation) -->
-        <span editable-text="pc.addresses.type" e-name="pc.addresses.type" e-form="rowform" onbeforesave="checkName($data, user.id)">
-          {{ pc.addresses.type || 'empty' }}
-        </span>
-                </td>
-                <td>
-                    <!-- editable status (select-local) -->
-            <span editable-text="pc.addresses.addressLine_1" e-name="pc.addresses.addressLine_1" e-form="rowform" onbeforesave="checkName($data, user.id)">
-          {{ pc.addresses.addressLine_1 || 'empty' }}
-        </span>
-                </td>
-                <td>
-            <span editable-text="pc.addresses.addressLine_2" e-name="pc.addresses.addressLine_2" e-form="rowform" onbeforesave="checkName($data, user.id)">
-          {{ pc.addresses.addressLine_2 || 'empty' }}
-        </span>
-                </td>
-                <td>
-            <span editable-text="pc.addresses.street" e-name="email" e-form="rowform" onbeforesave="checkName($data, user.id)">
-          {{ pc.profile.email || 'empty' }}
-        </span>
-                </td>
-                <td>
-            <span editable-text="pc.addresses.city" e-name="pc.addresses.city" e-form="rowform" onbeforesave="checkName($data, user.id)">
-          {{ pc.addresses.city || 'empty' }}
-        </span>
-                </td>
-                <td>
-            <span editable-text="pc.addresses.country" e-name="pc.addresses.country" e-form="rowform" onbeforesave="checkName($data, user.id)">
-          {{ pc.addresses.country || 'empty' }}
-        </span>
-                </td>
-                <td>
-            <span editable-text="pc.addresses.zipcode" e-name="pc.addresses.zipcode" e-form="rowform" onbeforesave="checkName($data, user.id)">
-          {{ pc.addresses.zipcode || 'empty' }}
-        </span>
-                </td>
-                <td style="white-space: nowrap">
-                    <!-- form -->
-                    <form editable-form name="rowform" onbeforesave="saveUser($data, user.id)" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == user">
-                        <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary" ng-click="pc.updateUser()">
-                            save
-                        </button>
-                        <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default">
-                            cancel
-                        </button>
-                    </form>
-                    <div class="buttons" ng-show="!rowform.$visible">
-                        <button type="button" class="btn btn-primary" ng-click="rowform.$show()">edit</button>
-                        <button type="button" class="btn btn-danger" ng-click="removeUser($index)">del</button>
-                    </div>
-                </td>
             </table>
         </div>
     </div>

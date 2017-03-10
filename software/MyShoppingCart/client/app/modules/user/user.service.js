@@ -12,7 +12,9 @@
             validateUser :validateUser,
             forgotPassword : forgotPassword,
             resetPassword : resetPassword,
-            getProfile : getProfile
+            getProfile : getProfile,
+            createAddress: createAddress,
+            getAddress :getAddress
         };
         return setOfUSerServices;
         function confirmUser(token){
@@ -52,6 +54,18 @@
 
 
         }
-
+        function createAddress(address,id){
+           var query={}
+            query.address=address
+            query.id=id;
+            console.log(query);
+            return api.createAddress({q:query}).$promise
+        }
+        function getAddress(id){
+            var query =id;
+            console.log("******* in get addreess servicce")
+            console.log(query)
+            return api.getAddress({q: query}).$promise
+        }
     }
 }());

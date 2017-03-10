@@ -20,6 +20,8 @@
     "mongoose": "^4.8.5",
     "mongoose-double": "0.0.1",
     "morgan": "~1.7.0",
+    "nodemailer": "^3.1.5",
+    "nodemailer-smtp-transport": "^2.7.2",
     "password-hash": "^1.2.2",
     "q": "^1.4.1",
     "sendmail": "^1.1.1",

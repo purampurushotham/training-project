@@ -22,6 +22,8 @@ var appRoutes=function(app){
     app.get('/api/users/forgotPassword',authenticateRoute.forgotPassword);
     app.put('/api/users/resetPassword',authenticateRoute.resetPassword);
     app.get('/api/user/profile',authenticateRoute.getProfile);
+    app.post('/api/users/address/create',usersRoute.createAddress);
+    app.get('/api/users/profile/address',authenticateRoute.getAddress);
 
 }
 module.exports = appRoutes;
