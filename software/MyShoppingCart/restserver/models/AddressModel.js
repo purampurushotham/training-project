@@ -7,6 +7,10 @@ require('mongoose-double')(mongoose);
 var Schema = mongoose.Schema;
 var SchemaTypes = mongoose.Schema.Types;
 var addressSchema=new Schema({
+        type:{
+          type :String,
+            trim : true
+        },
         addressLine_1: {
             type: String,
             trim: true

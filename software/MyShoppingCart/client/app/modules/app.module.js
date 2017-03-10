@@ -10,7 +10,7 @@
         "ui.router",
         "ui.bootstrap",
         "ui.select",
-        'xeditable',
+        'ngTable',
         "rzModule",
         "ngStorage",
         "checklist-model",

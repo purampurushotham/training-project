@@ -31,13 +31,14 @@
         vm.submit = function () {
             if(vm.forgotForm.$valid){
                 forgotPassword();
-                 uibModalInstance.close('submit');
+                // uibModalInstance.close('submit');
             };
         }
         function checkEmail() {
             if(vm.success.data.status=404){
                 vm.message=vm.success.data.message;
                 vm.exists=false;
+                console.log("*************"+vm.exists)
             }
             else
                 vm.exists=true;

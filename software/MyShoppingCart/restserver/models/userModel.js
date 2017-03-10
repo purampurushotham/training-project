@@ -42,7 +42,7 @@ var UserSchema = new Schema({
             type : Boolean,
             trim : true
         },
-        address :[{
+        addresses :[{
             type : SchemaTypes.ObjectId,
             ref : "addresses"
         }],

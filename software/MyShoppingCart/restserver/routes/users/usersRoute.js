@@ -7,6 +7,7 @@ var smtpTransport=require('nodemailer-smtp-transport')
 var mongoose=require('mongoose');
 var jwt = require('jwt-simple');
 var tokens=require('../../models/TokenModel');
+var addresses=require('../../models/AddressModel')
 var users=require('../../models/userModel');
 var tokenEnumObject=require('../../enums/token_enums');
 var sendmail = require('sendmail')();
@@ -107,21 +108,21 @@ var usersRoute = {
                             }
                             transport.close(); // shut down the connection pool, no more messages.  Comment this line out to continue sending emails.
                         });
-                       /* sendmail({
-                            from: 'no-reply@myShoppingCart.com',
-                            to: 'puram.purushotham@india.semanticbits.com',
-                            subject: 'Registration Scuccessful',
-                            html: "HI"+" "+firstName+ " "+lastName+"please follow this link for account activation" + " "+
-                            serverAddress+"/#!/confirmregistration/"+newToken.token
-                        }, function(err, reply) {
-                            console.log(err && err.stack);
-                            console.log("************************* in send mail");
-                            console.log(reply);
-                        });
-                        console.log("*************************");
-                        //console.log(result)
+                        /* sendmail({
+                         from: 'no-reply@myShoppingCart.com',
+                         to: 'puram.purushotham@india.semanticbits.com',
+                         subject: 'Registration Scuccessful',
+                         html: "HI"+" "+firstName+ " "+lastName+"please follow this link for account activation" + " "+
+                         serverAddress+"/#!/confirmregistration/"+newToken.token
+                         }, function(err, reply) {
+                         console.log(err && err.stack);
+                         console.log("************************* in send mail");
+                         console.log(reply);
+                         });
+                         console.log("*************************");
+                         //console.log(result)
 
-*/
+                         */
                     }
                 })
             }
@@ -172,7 +173,41 @@ var usersRoute = {
                 }
             }
 
-    });
+        });
+    },
+    createAddress : function (req,res) {
+        var qp = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
+        var queryParam=qp.address;
+        var query_id=qp.id
+        console.log(queryParam)
+        console.log("***************** create addrerss");
+        var query={type : queryParam.type ,addressLine_1 : queryParam.addressLine1,addressLine_2 : queryParam.addressLine2,street : queryParam.street,city : queryParam.city,state : queryParam.state,country : queryParam.country ,zipcode : queryParam.zipcode}
+        console.log(query)
+        var newAddress=new addresses(query);
+        newAddress.save(function (err,address) {
+            if (err) {
+                console.log(err)
+                res.send(err);
+            }
+            else {
+                console.log("************************* calling ")
+                console.log(address)
+                //console.log(result)
+                users.findOneAndUpdate({_id : query_id }, {$set : {addresses : address._id }}).exec(function (err, result) {
+                    console.log("**************************"+"in removing token");
+                    if (err) {
+                        res.send(err);
+                    }
+                    else {
+                        console.log("************************** token is removedd");
+                        console.log(result);
+                        res.send({status : 200});
+                        res.end();
+                    }
+
+                });
+            }
+        });
     }
 
 };

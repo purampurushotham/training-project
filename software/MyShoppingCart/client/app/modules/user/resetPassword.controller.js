@@ -7,8 +7,8 @@
         .controller('resetPasswordCtrl', resetPasswordCtrl)
 
     //function(
-    resetPasswordCtrl.$inject=['$stateParams','$state','userService','$uibModalInstance'];
-    function resetPasswordCtrl ($stateParams,$state,userService,$uibModalInstance){
+    resetPasswordCtrl.$inject=['$stateParams','$state','userService'];
+    function resetPasswordCtrl ($stateParams,$state,userService){
         var vm=this;
         console.log("#####################")
         vm.token = $stateParams.token;
@@ -48,12 +48,12 @@
         vm.submit = function () {
             if(vm.resetForm .$valid){
                 resetPassword();
-                $uibModalInstance.close('submit');
+                //$uibModalInstance.close('submit');
             }
         };
 
         vm.cancel = function () {
-            $uibModalInstance.dismiss('cancel');
+            //$uibModalInstance.dismiss('cancel');
         };
     }
 
