@@ -73,7 +73,7 @@ var usersRoute = {
                             service: "gmail ",  // sets automatically host, port and connection security settings
                             auth: {
                                 user: "purams225@gmail.com",
-                                pass: "Password"
+                                pass: "Bujji143Bunny$"
                             }
                         }));
 
@@ -148,15 +148,21 @@ var usersRoute = {
                 res.send(err);
             }
             else {
-                users.find({_id : query_id }).exec(function (err, result) {
+                users.findOne({_id : query_id }).exec(function (err, result) {
                     if (err) {
                         res.send(err);
                     }
                     else {
-                        console.log(result);
+                        console.log({data : result});
+                        console.log("************************************")
+                        //console.log(typeof result.addresses)
                         if(result != null ){
-                            if(result.addresses.indexOf(address._id) === 'undefined')
+                            if(typeof result.addresses === 'undefined' ){
                                 result.addresses.push(address._id);
+                            }
+                            else if(!result.addresses.includes(address._id)){
+                                result.addresses.push(address._id);
+                            }
                             result.save(function (errad,response){
                                 if(errad){
                                     console.log(errad);

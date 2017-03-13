@@ -14,7 +14,8 @@
             resetPassword : resetPassword,
             getProfile : getProfile,
             createAddress: createAddress,
-            getAddress :getAddress
+            getAddress :getAddress,
+            deleteAddress : deleteAddress
         };
         return setOfUSerServices;
         function confirmUser(token){
@@ -56,6 +57,12 @@
         function getAddress(id){
             var query =id;
             return api.getAddress({q: query}).$promise
+        }
+        function deleteAddress(address,id) {
+            var query={};
+            query.address=address;
+            query.id=id;
+            return api.deleteAddress({q: query}).$promise
         }
     }
 }());

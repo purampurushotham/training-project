@@ -37,7 +37,7 @@ function init() {
         err.status = 404;
         next(err);
     });
-
+    
 // error handler
     app.use(function (err, req, res, next) {
         // set locals, only providing error in development
@@ -48,5 +48,6 @@ function init() {
         res.render('error');
     });
     app.listen(port);
+
 }
 module.exports = app;

@@ -57,7 +57,7 @@
             }
     }
     //getProduct controller
-    productController.$inject=['viewProductService'];
+    ProductController.$inject=['viewProductService'];
     function ProductController(viewProductService) {
         var vm = this;
         vm.$onInit = function () {
@@ -90,7 +90,7 @@
             vm.similarProducts=vm.similarProds;
         };
     }
-    commentsCtrl.$inject = [viewProductService]
+    commentsCtrl.$inject = ['viewProductService']
     function commentsCtrl(viewProductService) {
 
         var vm = this;

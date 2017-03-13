@@ -83,7 +83,7 @@ var authenticateRoute = {
                                 service: "gmail ",  // sets automatically host, port and connection security settings
                                 auth: {
                                     user: "purams225@gmail.com",
-                                    pass: "password"
+                                    pass: "Bujji143Bunny$"
                                 }
                             }));
 
@@ -171,17 +171,59 @@ var authenticateRoute = {
     },
     getAddress: function (req, res) {
         var queryParam=req.query.q;
+        console.log(queryParam)
         var query = {_id: queryParam}
-        users.find(query).populate('addresses').exec(function (err, results) {
+        users.findOne(query).populate('addresses').exec(function (err, results) {
             if (err) {
                 res.send(err);
             }
             else {
-                res.send({data :results.addresses}  )
+                console.log("************************ i getAddress")
+                console.log(results)
+                res.send({data :results.addresses})
             }
         });
+    },
+    deleteAddress : function(req,res){
+        var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
+        console.log(queryParam);
+        var address=queryParam.address;
+        users.findOne({ _id : queryParam.id}).exec(function (err, results) {
+            if (err) {
+                res.send(err);
+            }
+            else {
+                for(var i=0;i< results.addresses.length;i++){
+                //    console.log(addr +"***********"+  address._id)
+                    if(results.addresses.includes(address._id))
+                    results.addresses.pop(addr);
+                    console.log(results.addresses)
+                }
+
+
+                results.save(function (err) {
+                    if (err) {
+                        res.send(err);
+                    }
+                    else {
+                        console.log("******************** in removing address")
+                        addresses.remove({_id : address._id}).exec(function (errad,response) {
+                            if (errad) {
+                                res.send(errad);
+                            }
+                            else {
+                                //  console.log(response)
+                                console.log(results);
+                                res.send(response)
+                            }
+                        });
+                    }
+                });
+            }
+
+        });
     }
-}
+};
 module.exports=authenticateRoute;
 
 

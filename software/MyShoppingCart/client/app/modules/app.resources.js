@@ -83,6 +83,10 @@
             'getAddress' : {
                 method : "GET",
                 url : "/api/users/profile/address"
+            },
+            'deleteAddress' : {
+                method : 'DELETE',
+                url : "/api/users/profile/deleteAddress"
             }
         }
     }

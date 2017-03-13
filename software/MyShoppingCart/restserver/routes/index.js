@@ -6,6 +6,7 @@ var usersRoute = require("./users/usersRoute");
 var authenticateRoute = require("./authenticateRoute/authenticateRoute");
 /* GET home page. */
 var appRoutes=function(app){
+    console.log("********************************** in n=index")
     app.get('/products',products.topRatedProducts);
     app.get('/api/products/search',products.getSearchedProduct)
     app.get('/api/products/:id',products.viewEachProduct);
@@ -23,6 +24,7 @@ var appRoutes=function(app){
     app.get('/api/user/profile',authenticateRoute.getProfile);
     app.post('/api/users/address/create',usersRoute.createAddress);
     app.get('/api/users/profile/address',authenticateRoute.getAddress);
+    app.delete("/api/users/profile/deleteAddress",authenticateRoute.deleteAddress)
 
 }
 module.exports = appRoutes;

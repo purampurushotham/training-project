@@ -11,6 +11,7 @@
         vm.id=id
         vm.address={};
         console.log(vm.address);
+        console.log(id)
         function createAddress(address){
             userService.createAddress(address,vm.id).then(
                 function success(response) {
@@ -23,6 +24,7 @@
         vm.submit = function () {
             if(vm.addressForm.$valid) {
                 createAddress(vm.address);
+                loadTable();
                 uibModalInstance.close(vm.id);
             }
             else{
