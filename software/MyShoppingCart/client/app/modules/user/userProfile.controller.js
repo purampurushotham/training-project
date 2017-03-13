@@ -62,9 +62,9 @@
                 $log.info('Modal dismissed at: ' + new Date());
             });
         }
-         vm.editRow=function () {
+        /* vm.editRow=function () {
              saveOrUpdateModal()
-         };
+         };*/
         vm.addRows = function () {
             var modalInstance = uibModal.open({
                 animation: vm.animationsEnabled,
