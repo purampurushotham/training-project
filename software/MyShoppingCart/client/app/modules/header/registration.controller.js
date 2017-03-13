@@ -14,49 +14,37 @@
         console.log("registrationCtrl");
         vm.submitUser=submitUser;
         function submitUser(){
-            console.log("in submitUser");
             console.log(vm.user)
             userRegistrationFactory.createUserNew(vm.user).then(
                 function success(response){
                     console.log(response);
-                    console.log("**************************success");
-                    //    console.log($rootScope.products);
                 },
                 function failed(error) {
                     console.log(error);
-                    console.log("**************************Failed");
                 }
             );
         }
-        vm.limitNameSearch = 500;
-        vm.checkmail =function(){
+        vm.checkmail =function() {
             console.log(vm.user.email)
             console.log("in checkmail");
-            if (typeof vm.user.email != 'undefined' ) {
+            if (typeof vm.user.email != 'undefined') {
                 //api call
-                var email=vm.user.email;
+                var email = vm.user.email;
                 console.log("api call");
                 userRegistrationFactory.getExistedEmail(email).then(
-                    function success(response){
+                    function success(response) {
                         console.log(response);
-                        vm.emailSet=response.res;
-                        console.log("**************************success");
-                        console.log(vm.emailSet)
-                        //    console.log($rootScope.products);
-                        check(vm.user.email,vm.emailSet);
+                        vm.emailSet = response.res;
+                        check(vm.user.email, vm.emailSet);
                     },
                     function failed(error) {
                         console.log(error);
-                        console.log("**************************Failed");
                     }
                 );
-                vm.limitNameSearch = 500;            }
-            else {
-                vm.limitNameSearch = 0;
             }
         };
-        function  check(usere,resultE) {
-            console.log("**************** in check function")
+        //checking if the email exists in DB
+        function check(usere,resultE) {
             if(usere === resultE){
                 vm.exists=true;
             }

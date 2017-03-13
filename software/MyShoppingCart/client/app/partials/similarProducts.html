@@ -1,7 +1,7 @@
 <div class="container panel panel-success">
     <h2 class="Display-2 panel-heading">Similar Products</h2>
     <div class="row panel-body">
-        <div ng:repeat="i in sm.similarProducts.data" class="col-md-4">
+        <div ng:repeat="i in sm.similarProducts.data |limitTo: 3" class="col-md-4">
             <div class="container">
                 <a ui-sref="view({id:i.product_id})">
                     <img src="{{i.pic}}" class="pics"></a>

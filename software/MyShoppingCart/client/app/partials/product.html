@@ -8,7 +8,7 @@
         <!--<p class="lead"><span ng-bind="vc.vp.description"></span></p>-->
         <p><ng-rate-it ng-model="vc.vp.rating" class="custom_rating"  read-only="true" ></ng-rate-it></p>
         <h2>Specifications:</h2>
-        <dl class="row">`
+        <dl  ng-if="vc.vp.brand" class="row dl-horizontal">`
             <dt class="col-sm-3">Brand :</dt>
             <dd class="col-sm-9" ng-bind="vc.vp.brand"></dd>
             <dt class="col-sm-3">Model :</dt>
@@ -20,14 +20,14 @@
             <dt class="col-sm-3">Battery :</dt>
             <dd class="col-sm-9" ng-bind="vc.vp.battery"></dd>
         </dl>
-        <!--      <div class="col-xs-4"><rzslider class="custom-slider" rz-slider-model="vc.slider.minValue"
-                                              rz-slider-high="vc.slider.maxValue"
-                                              rz-slider-options="vc.slider.options"></rzslider>
-                  <p>Price: {{vc.slider.minValue}}</p>
-                  <p>Price: {{vc.slider.maxValue}}</p>
-                  <input type="number" ng-model="vc.slider.minValue"/>
-                  <input type="number" ng-model="vc.slider.maxValue"/>
-              </div>-->
+        <dl  ng-if="vc.vp.language" class=" dl-horizontal">`
+            <dt class="col-sm-3">subType :</dt>
+            <dd class="col-sm-9" ng-bind="vc.vp.subType"></dd>
+            <dt class="col-sm-3">Author :</dt>
+            <dd class="col-sm-9" ng-bind="vc.vp.author"></dd>
+            <dt class="col-sm-3">language :</dt>
+            <dd class="col-sm-9" ng-bind="vc.vp.language"></dd>
+        </dl>
     </div>
 
 </div>

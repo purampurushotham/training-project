@@ -81,17 +81,9 @@
                 url : "/api/users/address/create"
             },
             'getAddress' : {
-              method : "GET",
+                method : "GET",
                 url : "/api/users/profile/address"
             }
-            
-
-
-            
-            /*'getComments': {
-                method : 'GET',
-                url : "/api/products/comments/"
-            }
-*/        }
+        }
     }
 }());

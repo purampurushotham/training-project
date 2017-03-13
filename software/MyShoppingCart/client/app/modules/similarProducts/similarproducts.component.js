@@ -1,6 +1,7 @@
 /**
  * Created by purushotham on 01-02-2017.
  */
+//not using this component refer this component  in view controller 
 (function () {
     'use strict'
     angular.module('MSC.similarProducts')

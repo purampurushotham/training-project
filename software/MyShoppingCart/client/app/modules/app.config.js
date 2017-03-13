@@ -14,43 +14,33 @@
             .state("Home", {
                 url: "/Home",
                 templateUrl: "app/partials/home.html",
-                /* controller:"homeController",
-                 controllerAs:"hc"*/
             })
             .state("view", {
                 url: "/view/:id",
                 templateUrl: "app/partials/product_view.html",
-                /*controller:"viewCtrl",
-                 controllerAs:"vc"*/
             })
             .state("search", {
                 url: "/search/product/:productType",
                 templateUrl: "app/partials/Electronics.html",
-                //controller:"ElectronicsCtrl",
-                //controllerAs:"EC"
             })
-        .state('confirmRegistration', {
-         url: '/confirmregistration/:token',
-           /* controller  : "confirmationCtrl",
-            controllerAs : "cc",*/
-            external : true,
-            templateUrl: 'app/partials/user.html',
-         })
+            .state('confirmRegistration', {
+                url: '/confirmregistration/:token',
+                external : true,
+                templateUrl: 'app/partials/user.html',
+            })
             .state('Login', {
                 url: '/existingUser',
-                /* controller  : "confirmationCtrl",
-                 controllerAs : "cc",*/
                 external : true,
                 templateUrl: 'app/partials/Login.html',
             })
-        .state('forgotpassword',{
-            url : "/forgotpassword/:token",
-            controller : 'resetPasswordCtrl',
-            controllerAs : 'rp',
-            external : true,
-            templateUrl: 'app/partials/ResetPassword.html',
-           
-        })
+            .state('forgotpassword',{
+                url : "/forgotpassword/:token",
+                controller : 'resetPasswordCtrl',
+                controllerAs : 'rp',
+                external : true,
+                templateUrl: 'app/partials/ResetPassword.html',
+
+            })
             .state('profile',{
                 url : "/user/profile",
                 controller : 'profileCtrl',
@@ -59,29 +49,6 @@
                 templateUrl: 'app/partials/profile.html'
 
             });
-        /*
-         .state('Electronics.Laptops', {
-         url: '/Laptops',
-         templateUrl: 'Electronics-Laptops.html',
-         controller: "LaptopCtrl"
-         })
-         .state("Books", {
-         url: "/Books",
-         templateUrl: "Books.html"
-         })
-         .state("Books.Fiction", {
-         url: "/Fiction",
-         templateUrl: "Books-Fiction.html"
-         })
-         .state("Books.Comic", {
-         url: "/Comic",
-         templateUrl: "Books-Comic.html"
-         })
-         .state("Books.Biographies", {
-         url: "/Biographies",
-         templateUrl: "Books-Biographies.html"
-         });
-         */
         console.log("in config");
     }
 })();
