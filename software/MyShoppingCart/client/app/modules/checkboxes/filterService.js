@@ -1,6 +1,7 @@
 /**
  * Created by Ashoka on 2/14/2017.
  */
+//not using this service  please refer productListFactory.js
 (function(){
     'use strict';
     angular.module("MSC.checkBoxes")
@@ -57,10 +58,6 @@
                 var filteredList = [];
 
                 angular.forEach(copySimilarProds, function (eachProd, index) {
-                    console.log("in getPrice");
-                    console.log("*****************");
-                    console.log("------------------"+eachProd.price)
-                    console.log(minval + " "+maxval)
                     if (eachProd.price <= maxval && eachProd.price >= minval) {
                         filteredList.push(eachProd);
                         console.log(filteredList);

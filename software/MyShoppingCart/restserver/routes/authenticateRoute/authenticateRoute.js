@@ -14,34 +14,23 @@ var sendmail = require('sendmail')();
 var authenticateRoute = {
     validateUser: function (req, res) {
         var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
-        console.log("*****************************");
-        console.log(queryParam.email);
-        console.log("**********************")
         var query = {email: queryParam.email, isActive: true};
         users.findOne(query).exec(function (err, resultSet) {
-            console.log("**************************" + "in validateUser")
-            console.log(resultSet);
             if (err) {
                 res.send(err);
             }
 
             else if (resultSet != null) {
-                console.log("**************************" + "in validateUser")
                 var validatePassword = passwordHash.verify(queryParam.password, resultSet.password);
-                console.log(validatePassword);
                 if (validatePassword) {
-                    console.log("********************************* token")
                     var newToken = new tokens();
                     newToken.token = jwt.encode(query.email, 'xxx');
                     console.log(newToken.token);
                     if (newToken.token) {
-                        console.log("************************* token exists");
                         newToken.type = tokenEnumObject.AUTH.code
                         newToken.email = query.email;
                         newToken.startDate = new Date();
                         newToken.updatedDate = new Date();
-                        console.log("*************************new token Object");
-                        console.log(newToken);
                         newToken.save(function (err) {
                             if (err) {
                                 console.log(err)
@@ -70,30 +59,20 @@ var authenticateRoute = {
     },
     forgotPassword: function (req, res) {
         var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
-        console.log("in forgotpassword");
-        console.log(queryParam);
         var query = {email: queryParam.email, isActive: true};
-        console.log(query);
         users.findOne(query).exec(function (err, resultSet) {
-            console.log("**************************" + "in validateUser")
-            console.log(resultSet);
             if (err) {
                 res.send(err);
             }
             else if (resultSet != null) {
-                console.log("********************Email exists");
                 var newToken = new tokens();
                 var serverAddress = req.protocol + '://' + req.get('host');
                 newToken.token = jwt.encode(query.email, 'xxx');
-                console.log(newToken.token);
                 if (newToken.token) {
-                    console.log("************************* token exists");
                     newToken.type = tokenEnumObject.OTP.code
                     newToken.email = query.email;
                     newToken.startDate = new Date();
                     newToken.updatedDate = new Date();
-                    console.log("*************************new token Object");
-                    console.log(newToken);
                     newToken.save(function (err) {
                         if (err) {
                             console.log(err)
@@ -104,7 +83,7 @@ var authenticateRoute = {
                                 service: "gmail ",  // sets automatically host, port and connection security settings
                                 auth: {
                                     user: "purams225@gmail.com",
-                                    pass: "Bujji143Bunny$"
+                                    pass: "password"
                                 }
                             }));
 
@@ -135,19 +114,13 @@ var authenticateRoute = {
     },
     resetPassword: function (req, res) {
         var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
-        console.log("in reset password");
-        console.log(queryParam)
         var query = {token: queryParam.token}
-        console.log(query)
         tokens.findOne(query).exec(function (err, result) {
-            console.log("**************************" + "in resetPassword")
             if (err) {
                 res.send(err);
             }
             else {
-                console.log(result)
                 if (result == null) {
-                    console.log("**************************" + "in  ")
                     res.send({data: result});
                     res.end();
                 }
@@ -155,7 +128,6 @@ var authenticateRoute = {
                 else {
                     var re = result.email
                     var newPassword = passwordHash.generate(queryParam.user.password);
-                    console.log(newPassword)
                     var quert1 = {email: re}
                     users.findOneAndUpdate({email: re}, {$set: {password: newPassword}}).exec(function (err, confirmed) {
                         console.log("**************************" + "in user collection")
@@ -163,14 +135,11 @@ var authenticateRoute = {
                             res.send(err);
                         }
                         else {
-                            console.log(confirmed);
                             tokens.findOne({email: re}).remove().exec(function (err, result) {
-                                console.log("**************************" + "in removing token")
                                 if (err) {
                                     res.send(err);
                                 }
                                 else {
-                                    console.log("************************** token is removedd");
                                     res.send({status: 200});
                                     res.end();
                                 }
@@ -184,16 +153,11 @@ var authenticateRoute = {
     },
     getProfile: function (req, res) {
         var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
-        console.log("in reset password");
-        console.log(queryParam);
         users.findById({_id: queryParam.id}).exec(function (err, result) {
-            console.log("**************************" + "in getProfile");
             if (err) {
                 res.send(err);
             }
             else {
-                console.log("**************************document fount getProfile");
-                console.log(result);
                 var profile = {};
                 profile.firstName = result.firstName;
                 profile.lastName = result.lastName;
@@ -206,20 +170,13 @@ var authenticateRoute = {
         });
     },
     getAddress: function (req, res) {
-        console.log("in getAddress");
-        console.log(req.query.q);
         var queryParam=req.query.q;
-        console.log(queryParam);
-        console.log("&*************************Z i getAddress");
         var query = {_id: queryParam}
-        users.findOne(query).populate('addresses').exec(function (err, results) {
-            console.log("**************************" + "i query executiopn");
+        users.find(query).populate('addresses').exec(function (err, results) {
             if (err) {
                 res.send(err);
             }
             else {
-                console.log("**************************got dsata");
-                console.log(results.addresses);
                 res.send({data :results.addresses}  )
             }
         });

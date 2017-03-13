@@ -6,7 +6,6 @@ var usersRoute = require("./users/usersRoute");
 var authenticateRoute = require("./authenticateRoute/authenticateRoute");
 /* GET home page. */
 var appRoutes=function(app){
-    console.log("**********************************************in index.js")
     app.get('/products',products.topRatedProducts);
     app.get('/api/products/search',products.getSearchedProduct)
     app.get('/api/products/:id',products.viewEachProduct);

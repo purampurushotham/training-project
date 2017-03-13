@@ -28,13 +28,12 @@ for(var i = 0; i<jsonContent.length; i++){
     var eachProd = jsonContent[i];
     insertProducts(eachProd);
 }
-console.log(allProducts.length);
 function insertProducts(eachProduct){
     var product ={};
     //console.log(eachProduct);
     console.log("prod id "+eachProduct.id);
     product.product_id = eachProduct.id;
-    product.name = eachProduct.name
+    product.name = eachProduct.name;
     product.price = eachProduct.price;
     product.model_Name = eachProduct.modelName;
     product.type = eachProduct.type;
@@ -56,7 +55,6 @@ function insertProducts(eachProduct){
     var allCommentIds = [];
     var promises = [];
     eachProduct.offers.forEach(function(eachOffer) {
-        //console.log(allProducts[j]);
         promises.push(insertOffers(product,eachOffer));
     });
     eachProduct.comments.forEach(function(eachComment) {
@@ -106,13 +104,11 @@ function insertComments(prod,eachComment){
     var date = moment(eachComment.commentedOn.toString(), 'DD/MM/YYYY');
     var formatedDate = date.format('MM/DD/YYYY');
     var formatedIso = dateFormat(formatedDate, "isoDateTime");
-    //console.log(" formated date"+formatedIso);// 20120412
     newComment.commentedOn = formatedIso;
     var comment = CommentModel(newComment);
     var dateform = comment.commentedOn;
     //p.push(eachProduct);
     comment.save(function (err) {
-        //console.log("dateform = "+dateform);
         if (err) {
             console.log(err);
             console.log("errorrr");

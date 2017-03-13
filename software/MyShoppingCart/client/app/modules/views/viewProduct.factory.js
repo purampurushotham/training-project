@@ -22,7 +22,6 @@
             return api.viewProduct({id:id}).$promise;
         }
         function getSimilarProduct(type,subType,brand){
-            console.log("in viewProductService "+" ****************" + "similarProduct");
             var query={};
             query.type =type;
             query.subType = subType;
@@ -36,21 +35,6 @@
             console.log(query)
             return api.similarProduct({q:query}).$promise;
         }
-       /* function getComments(productID){
-            console.log("in viewProductService "+" ****************" + "getComments");
-            var query={};
-            query.productId=productID;
-            var deferred = $q.defer();
-            return api.getComments().$promise;
-        }
-*/
-      /*  function ObjToQueryParam(query){
-            var paramString = ""
-            var names = Object.keys(query)
-            for(var i = 0; i < names.length; i++) {
-                paramString = paramString +names[i]+'='+query[names[i]]+'&'
-            }
-            return paramString
-        }*/
+
     }
 }());

@@ -9,7 +9,6 @@ var port = process.env.PORT || 9000;
 var index = require('./routes/index');
 var users = require('./routes/users');
 var app = express();
-//mongoose.connect(process.env.OPENSHIFT_MONGODB_DB_URL || 'mongodb://localhost/myshoppingcart');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -18,19 +17,13 @@ app.use(bodyParser.urlencoded({ limit: '5mb' }));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.engine('html', require('ejs').renderFile);
-console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-console.log(path.join(__dirname, '../client/app/partials'));
 app.set('views', path.join(__dirname, '../client/app/partials'));
 app.set('view engine', 'html');
-console.log("hhhhhhh");
 var extConfigLoc =path.join(__dirname+'/config/config.json');
-console.log(extConfigLoc);
-console.log('> Searching for the external configuration in ',extConfigLoc);
 var config = require(extConfigLoc);
 var appConfig = JSON.parse(JSON.stringify(config));
 require('./models/db')(app, appConfig).then(init);
 function init() {
-    console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
     app.use('/users', users);
     app.use(express.static(path.join(__dirname, '../client')));
     app.use(express.static(path.join(__dirname, '../client/.tmp')));
@@ -55,6 +48,5 @@ function init() {
         res.render('error');
     });
     app.listen(port);
-    console.log("App listening on " + port);
 }
 module.exports = app;

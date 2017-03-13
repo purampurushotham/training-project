@@ -14,15 +14,10 @@ var sendmail = require('sendmail')();
 var usersRoute = {
     getExistedEmail : function(req,res){
         var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
-        console.log("*****************************");
-        console.log(queryParam);
         var regularExpression = "/^"+queryParam.keyword+"/i";
         var regex = new RegExp(queryParam.keyword,"i");
-        console.log(regularExpression);
-        console.log(regex);
         var query={email: { $regex: regex }};
         users.find(query).exec(function (err, emailsSet) {
-            console.log("**************************"+"in getExistedEmail")
             console.log({res :emailsSet});
             if (err) {
                 res.send(err);
@@ -34,20 +29,15 @@ var usersRoute = {
         });
     },
     createUserNew : function(req, res) {
-        console.log("in adddddddddddddddd");
-        // console.log(req);
-        // console.log('params ', req.param('q'));
         var queryParam =  req.body.q;
         console.log(queryParam);
         var query ={};
-        //  query.firstName="puram"
         query=queryParam;
         query.password=hashingPassword(query.password);
         function hashingPassword(password){
             var hashedPassword =passwordHash.generate(password);
             return hashedPassword;
         }
-        //console.log("**************************"+"in addd user")
         query.startDate = new Date();
         query.updatedDate = new Date();
         query.isActive = false;
@@ -58,8 +48,6 @@ var usersRoute = {
                 res.send(err);
             }
             else {
-                console.log("************************* calling generate Token")
-                //console.log(result)
                 generateToken(query.firstName,query.lastName);
                 res.send("Success");
                 res.end();
@@ -67,19 +55,14 @@ var usersRoute = {
         });
         function generateToken(firstName,lastName){
             var serverAddress = req.protocol + '://' + req.get('host');
-            console.log(firstName,lastName)
-            console.log("************************* in generateToken");
             var newToken=new tokens();
             newToken.token=jwt.encode(query.email,'xxx');
             console.log(newToken.token);
             if(newToken.token) {
-                console.log("************************* token exists");
                 newToken.type=tokenEnumObject.REGISTRATION.code
                 newToken.email = query.email;
                 newToken.startDate=new Date();
                 newToken.updatedDate=new Date();
-                console.log("*************************new token Object");
-                console.log(newToken);
                 newToken.save(function (err) {
                     if (err) {
                         console.log(err)
@@ -90,7 +73,7 @@ var usersRoute = {
                             service: "gmail ",  // sets automatically host, port and connection security settings
                             auth: {
                                 user: "purams225@gmail.com",
-                                pass: "Bujji143Bunny$"
+                                pass: "Password"
                             }
                         }));
 
@@ -108,21 +91,6 @@ var usersRoute = {
                             }
                             transport.close(); // shut down the connection pool, no more messages.  Comment this line out to continue sending emails.
                         });
-                        /* sendmail({
-                         from: 'no-reply@myShoppingCart.com',
-                         to: 'puram.purushotham@india.semanticbits.com',
-                         subject: 'Registration Scuccessful',
-                         html: "HI"+" "+firstName+ " "+lastName+"please follow this link for account activation" + " "+
-                         serverAddress+"/#!/confirmregistration/"+newToken.token
-                         }, function(err, reply) {
-                         console.log(err && err.stack);
-                         console.log("************************* in send mail");
-                         console.log(reply);
-                         });
-                         console.log("*************************");
-                         //console.log(result)
-
-                         */
                     }
                 })
             }
@@ -130,39 +98,31 @@ var usersRoute = {
     },
     confirmUser : function(req,res){
         var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
-        console.log("***************** in confirm User");
         var query={token : queryParam.token}
         tokens.findOne(query).exec(function (err, result) {
-            console.log("**************************"+"in getExistedEmail")
             if (err) {
                 res.send(err);
             }
             else {
                 console.log(result)
                 if(result == null){
-                    console.log("**************************"+"in confirmUser")
                     res.send({data : result})
                     res.end();
                 }
                 else {
 
                     var re=result.email
-
                     var quert1={email :re}
                     users.findOneAndUpdate({email :re},{$set : {isActive : true}}).exec(function (err, confirmed) {
-                        console.log("**************************"+"in user collection")
                         if (err) {
                             res.send(err);
                         }
                         else{
-                            console.log(confirmed);
                             tokens.findOne({email :re}).remove().exec(function (err, result) {
-                                console.log("**************************"+"in removing token")
                                 if (err) {
                                     res.send(err);
                                 }
                                 else {
-                                    console.log("************************** token is removedd");
                                     res.send({status : 200});
                                     res.end();
                                 }
@@ -172,15 +132,13 @@ var usersRoute = {
                     });
                 }
             }
-
         });
     },
+    //still implementing
     createAddress : function (req,res) {
         var qp = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
         var queryParam=qp.address;
         var query_id=qp.id
-        console.log(queryParam)
-        console.log("***************** create addrerss");
         var query={type : queryParam.type ,addressLine_1 : queryParam.addressLine1,addressLine_2 : queryParam.addressLine2,street : queryParam.street,city : queryParam.city,state : queryParam.state,country : queryParam.country ,zipcode : queryParam.zipcode}
         console.log(query)
         var newAddress=new addresses(query);
@@ -190,17 +148,26 @@ var usersRoute = {
                 res.send(err);
             }
             else {
-                console.log("************************* calling ")
-                console.log(address)
-                //console.log(result)
-                users.findOneAndUpdate({_id : query_id }, {$set : {addresses : address._id }}).exec(function (err, result) {
-                    console.log("**************************"+"in removing token");
+                users.find({_id : query_id }).exec(function (err, result) {
                     if (err) {
                         res.send(err);
                     }
                     else {
-                        console.log("************************** token is removedd");
                         console.log(result);
+                        if(result != null ){
+                            if(result.addresses.indexOf(address._id) === 'undefined')
+                                result.addresses.push(address._id);
+                            result.save(function (errad,response){
+                                if(errad){
+                                    console.log(errad);
+                                    res.send(errad)
+                                }
+                                else {
+                                    console.log("************************* after saving addresses  ");
+                                    console.log(response)
+                                }
+                            });
+                        }
                         res.send({status : 200});
                         res.end();
                     }

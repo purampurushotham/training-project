@@ -9,28 +9,20 @@
     function tableCtrl(userService,uibModalInstance,id,NgTableParams){
         var vm=this;
         vm.id=id
-        console.log("************************** "+vm.id)
         vm.address={};
-        console.log("********************* table ctrl");
         console.log(vm.address);
         function createAddress(address){
             userService.createAddress(address,vm.id).then(
                 function success(response) {
-                    console.log(response);
                     vm.success = response;
-                    console.log(vm.success);
-                    console.log("**************************success");
                 },
                 function failed(error) {
-                    console.log("invalid userid or password");
-                    console.log("**************************Failed");
                 }
             );
         }
         vm.submit = function () {
             if(vm.addressForm.$valid) {
-               createAddress(vm.address);
-                console.log(vm.address);
+                createAddress(vm.address);
                 uibModalInstance.close(vm.id);
             }
             else{

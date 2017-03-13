@@ -1,6 +1,7 @@
 /**
  * Created by Ashoka on 2/9/2017.
  */
+//not using this component refer search controller
 (function(){
     'use strict';
     angular.module('MSC.searchByBrand')

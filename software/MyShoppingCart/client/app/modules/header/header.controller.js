@@ -33,8 +33,6 @@
                 });
                 modalInstance.result.then(function (fullName) {
                     vm.fullName = fullName;
-                    console.log("*************************")
-                    console.log(vm.fullName)
                 }, function () {
                     $log.info('Modal dismissed at: ' + new Date());
                 });
@@ -57,7 +55,6 @@
                 });
                 modalInstance.result.then(function (fullName) {
                     if($localStorage.userDetails){
-                        console.log("********* true");
                         vm.oneUser={};
                         vm.oneUser.firstName=$localStorage.userDetails.firstName
                         vm.oneUser.lastName=$localStorage.userDetails.lastName;
@@ -71,13 +68,10 @@
             vm.logout= logout;
             function logout(){
                 $localStorage.$reset()
-                console.log($localStorage);
                 vm.exists=false;
-                console.log("logged out successfuly")
                 $state.go('Home')
             }
             function checkLogin(){
-                console.log("******************** in check Login")
                 if($localStorage.hasOwnProperty('userDetails')){
                     vm.exists=true;
                 }

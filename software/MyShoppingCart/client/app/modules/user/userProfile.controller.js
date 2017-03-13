@@ -5,25 +5,22 @@
     'use strict';
     angular.module('MSC.user')
         .controller("profileCtrl",profileCtrl);
-    profileCtrl.$inject=['$localStorage','userService','$uibModal','$state','NgTableParams','$scope']
-    function profileCtrl($localStorage,userService,uibModal,$state,NgTableParams,$scope){
-        console.log("in use profile");
+    profileCtrl.$inject=['$localStorage','userService','$uibModal','NgTableParams']
+    function profileCtrl($localStorage,userService,uibModal,NgTableParams){
         var vm=this;
         vm.tableExists=false;
         vm.id=$localStorage.userDetails.id;
          vm.profile={}
         userService.getProfile(vm.id).then(
             function success(response) {
-                console.log(response);
                 vm.profile = response.data.profile;
-                console.log(vm.profile);
                 vm.tableExists=true;
                 loadTable();
-                console.log("**************************success");
+                vm.tableParams.reload();
             },
             function failed(error) {
-                console.log("invalid userid or password");
-                console.log("**************************Failed");
+                /*console.log(error);
+                console.log("**************************Failed");*/
             }
         );
 
@@ -33,16 +30,13 @@
                     // ajax request to api
                     return userService.getAddress(vm.id).then(function (response) {
                         //params.total(data.inlineCount); // recal. page nav controls
-                        console.log("********************* in user service*******************************8")
-                        console.log(response.data);
                         var data=response.data;
                         return data;
                     });
                 }
             });
-            $scope.$watch("data", function () {
-                vm.tableParams.reload();
-            });
+
+
 
         }
 
@@ -63,16 +57,12 @@
             modalInstance.result.then(function (id) {
                 vm.id=id;
                 console.log(vm.id)
-                //$state.go('profile');
-                //console.log(vm.fullName)
                 loadTable();
 
             }, function () {
                 $log.info('Modal dismissed at: ' + new Date());
             });
         };
-
-        console.log("after user service");
 
     }
 }());

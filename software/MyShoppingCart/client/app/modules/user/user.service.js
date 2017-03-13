@@ -24,22 +24,17 @@
             return api.confirmUser({q:query}).$promise
         }
         function validateUser(user){
-            console.log("in userLogin");
-            console.log(user);
             var query={}
             query.email=user.email;
             query.password=user.password;
             return api.validateUser({q:query}).$promise
         }
         function forgotPassword(email){
-            console.log("*************** in forgotPassword sertvice");
             var query=email;
-            console.log(query)
             return api.forgotPassword({q:query}).$promise
 
         }
         function resetPassword(user,token){
-            console.log("in resert password service");
             var query={};
             query.user=user;
             query.token=token;
@@ -48,23 +43,18 @@
         function getProfile(id){
             var query={}
             query.id=id
-            console.log("**************************** in getprofile user service")
-            console.log(query);
             return api.getProfile({q:query}).$promise
 
 
         }
         function createAddress(address,id){
-           var query={}
+            var query={}
             query.address=address
             query.id=id;
-            console.log(query);
             return api.createAddress({q:query}).$promise
         }
         function getAddress(id){
             var query =id;
-            console.log("******* in get addreess servicce")
-            console.log(query)
             return api.getAddress({q: query}).$promise
         }
     }
