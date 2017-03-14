@@ -15,7 +15,6 @@
         var vm = this;
         vm.$onInit = function () {
             vm.exists=false;
-            console.log($localStorage);
             checkLogin();
             vm.registrationModal = function () {
                 var modalInstance = uibModal.open({
@@ -26,9 +25,9 @@
                     controller: 'registrationCtrl',
                     controllerAs: 'rc',
                     resolve: {
-                        fullName: function () {
+                       /* fullName: function () {
                             return vm.fullName;
-                        }
+                        }*/
                     }
                 });
                 modalInstance.result.then(function (fullName) {
@@ -53,14 +52,13 @@
 
                     }
                 });
-                modalInstance.result.then(function (fullName) {
+                modalInstance.result.then(function () {
                     if($localStorage.userDetails){
                         vm.oneUser={};
                         vm.oneUser.firstName=$localStorage.userDetails.firstName
                         vm.oneUser.lastName=$localStorage.userDetails.lastName;
                         vm.exists=true;
                     }
-
                 }, function () {
                     $log.info('Modal dismissed at: ' + new Date());
                 });
@@ -73,6 +71,12 @@
             }
             function checkLogin(){
                 if($localStorage.hasOwnProperty('userDetails')){
+                    console.log($localStorage)
+                     vm.oneUser={};
+                     vm.oneUser.firstName=$localStorage.userDetails.firstName
+                     vm.oneUser.lastName=$localStorage.userDetails.lastName;
+                     vm.exists=true;
+                    console.log("in checkLogin")
                     vm.exists=true;
                 }
             }
@@ -82,11 +86,3 @@
 
     }
 }());
-// .controller('headerCtrl',headerCtrl)
-// .directive('headerDirective',headerDirective);
-/*headerCtrl.$inject=['headerDirective'];*/
-/*
- $localStorage.userDetails = respone.data;
- console.log("$localStorage.userDetails ");
- console.log($localStorage.userDetails);
- vm.userIsLogged = true;*/

@@ -176,13 +176,14 @@ var authenticateRoute = {
         var query = {_id: queryParam.id}
         users.findOne(query).populate({
             path: 'addresses',
-            options: {sort: [queryParam.sortingCriteria] ,skip : 2,limit: 10 }}).exec(function (err, results) {
+            options: {sort: [queryParam.sortingCriteria],skip : queryParam.page ,limit :queryParam.page_size }}).exec(function (err, results) {
             if (err) {
                 res.send(err);
             }
             else {
                 console.log("************************ in getAddress")
-                console.log(results.addresses)
+                console.log(results.addresses.length);
+                users.findOne(query).populate('addresses').exec()
                 res.send({data: results.addresses})
             }
         });
