@@ -10,6 +10,7 @@ var tokens=require('../../models/TokenModel');
 var addresses=require('../../models/AddressModel')
 var users=require('../../models/userModel');
 var tokenEnumObject=require('../../enums/token_enums');
+var mailService=require("../mail/mailService")
 var sendmail = require('sendmail')();
 var usersRoute = {
     getExistedEmail : function(req,res){
@@ -69,28 +70,21 @@ var usersRoute = {
                         res.send(err);
                     }
                     else {
-                        var transport = nodemailer.createTransport(smtpTransport({
-                            service: "gmail ",  // sets automatically host, port and connection security settings
-                            auth: {
-                                user: "purams225@gmail.com",
-                                pass: "Bujji143Bunny$"
+                        var sendQuery={}
+                        sendQuery.firstName=queryParam.firstName
+                        sendQuery.lastName=queryParam.lastName
+                        sendQuery.email=queryParam.email;
+                        sendQuery.token=newToken.token;
+                        sendQuery.serverAddress=serverAddress;
+                        console.log("**************** berfore mail service")
+                        console.log(sendQuery)
+                        mailService.sendMail(sendQuery).then(function (success){    
+                                console.log("************************ after mail service in success")
+                                console.log(success)
+                            },function (failed){
+                                console.log(failed)
                             }
-                        }));
-
-                        transport.sendMail({  //email options
-                            from: "noreply@gmail.com", // sender address.  Must be the same as authenticated user if using Gmail.
-                            to: "puram.purushotham@india.semanticbits.com", // receiver
-                            subject: "Emailing with nodemailer", // subject
-                            text: "HI"+" "+firstName+ " "+lastName+"please follow this link for account activation" + " "+
-                            serverAddress+"/#!/confirmregistration/"+newToken.token //body
-                        }, function(error, response){  //callback
-                            if(error){
-                                console.log(error);
-                            }else{
-                                console.log("Message sent: " + response.message);
-                            }
-                            transport.close(); // shut down the connection pool, no more messages.  Comment this line out to continue sending emails.
-                        });
+                        );
                     }
                 })
             }
@@ -139,15 +133,27 @@ var usersRoute = {
         var qp = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
         var queryParam=qp.address;
         var query_id=qp.id
-        var query={type : queryParam.type ,addressLine_1 : queryParam.addressLine1,addressLine_2 : queryParam.addressLine2,street : queryParam.street,city : queryParam.city,state : queryParam.state,country : queryParam.country ,zipcode : queryParam.zipcode}
-        console.log(query)
-        var newAddress=new addresses(query);
+        var query={type : queryParam.type ,addressLine_1 : queryParam.addressLine_1,addressLine_2 : queryParam.addressLine_2,street : queryParam.street,city : queryParam.city,state : queryParam.state,country : queryParam.country ,zipcode : queryParam.zipcode}
+        console.log("************************* in create address")
+        var newAddress=new addresses(queryParam);
+        if(queryParam._id){
+            console.log("*********** has id")
+            newAddress.isNew=false
+
+        }
+        else{
+            console.log("*********** no id")
+            newAddress.isNew=true
+        }
         newAddress.save(function (err,address) {
             if (err) {
                 console.log(err)
                 res.send(err);
             }
-            else {
+            else if(!queryParam._id ){
+                console.log("**************************8");
+                console.log(address)
+                console.log("**************************************************************************************************************8")
                 users.findOne({_id : query_id }).exec(function (err, result) {
                     if (err) {
                         res.send(err);
@@ -155,9 +161,8 @@ var usersRoute = {
                     else {
                         console.log({data : result});
                         console.log("************************************")
-                        //console.log(typeof result.addresses)
                         if(result != null ){
-                            if(typeof result.addresses === 'undefined' ){
+                            if(typeof result.addresses === 'undefined' || result.addresses.length ==0 ){
                                 result.addresses.push(address._id);
                             }
                             else if(!result.addresses.includes(address._id)){

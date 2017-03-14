@@ -4,6 +4,7 @@
 
 var mongoose = require('mongoose');
 require('mongoose-double')(mongoose);
+var mongoosePaginate = require('mongoose-paginate');
 var Schema = mongoose.Schema;
 var SchemaTypes = mongoose.Schema.Types;
 var addressSchema=new Schema({
@@ -42,6 +43,7 @@ var addressSchema=new Schema({
     },
     {collections : 'addresses'}
 );
+addressSchema.plugin(mongoosePaginate)
 var addressModel=mongoose.model('addresses',addressSchema);
 module.exports=addressModel;
 

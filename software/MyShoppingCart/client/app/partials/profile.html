@@ -37,7 +37,7 @@
     <div class="row">
         <div class="col-md-6">
             <h3>Address</h3>
-            <button type="submit" class="btn btn-primary" ng-click ="pc.addRows()">ADD</button>
+            <button type="submit" class="btn btn-primary" ng-click ="pc.addRows(    )">ADD</button>
         </div>
     </div>
     <div ng-show ="!pc.tableExists">table doesm't exists </div>
@@ -45,17 +45,17 @@
         <div class="col-md-12">
             <table ng-table="pc.tableParams" class="table table-condensed table-bordered table-striped">
                 <tr ng-repeat="row in $data track by $index">
-                    <!--<td data-title="'TYPE" filter="{type: 'text'}" sortable="'type'">{{row.type}}</td>-->
-                    <td data-title="'Address Line 1'" filter="{addressLine_1: 'text'}" sortable="'addressLine1'">{{row.addressLine_1}}</td>
-                    <td data-title="'Address Line 2'" filter="{addressLine_2: 'text'}" sortable="'addressLine2'">{{row.addressLine_2}}</td>
-                    <td data-title="'Street'" filter="{street: 'text'}" sortable="'street'">{{row.street}}</td>
-                    <td data-title="'City'" filter="{city: 'text'}" sortable="'city'">{{row.city}}</td>
-                    <td data-title="'State'" filter="{state: 'text'}" sortable="'state'">{{row.state}}</td>
-                    <td data-title="'Country'" filter="{country: 'text'}" sortable="'country'">{{row.country}}</td>
-                    <td data-title="'Zipcode'" filter="{zipcode: 'number'}" sortable="'zipcode'">{{row.zipcode}}</td>
+                    <td data-title="'Type'" filter="{type: 'text'}" sortable="'type'" >{{row.type}}</td>
+                    <td data-title="'Address Line 1'" filter="{addressLine_1: 'text'}" sortable="'addressLine_1'" ng-bind="row.addressLine_1"></td>
+                    <td data-title="'Address Line 2'" filter="{addressLine_2: 'text'}" sortable="'addressLine_2'" ng-bind="row.addressLine_2"></td>
+                    <td data-title="'Street'" filter="{street: 'text'}" sortable="'street'" ng-bind="row.street"></td>
+                    <td data-title="'City'" filter="{city: 'text'}" sortable="'city'" ng-bind="row.city"></td>
+                    <td data-title="'State'" filter="{state: 'text'}" sortable="'state'" ng-bind="row.state"></td>
+                    <td data-title="'Country'" filter="{country: 'text'}" sortable="'country'"ng-bind="row.country"></td>
+                    <td data-title="'Zipcode'" filter="{zipcode: 'number'}" sortable="'zipcode'"ng-bind="row.zipcode"></td>
                     <td data-title="'Actions'">
-                        <button type="button"  class="glyphicon glyphicon-edit" ng-click="pc.editRow(row)">
-                        <button type="button" ng-click="pc.deleteRow(row)" class="glyphicon glyphicon-remove-circle">
+                        <button type="button"  class="glyphicon glyphicon-edit" ng-click="pc.editRow(row)"></button>
+                            <button type="button" ng-click="pc.deleteRow(row)" class="glyphicon glyphicon-remove-circle"></button>
                     </td>
                 </tr>
             </table>

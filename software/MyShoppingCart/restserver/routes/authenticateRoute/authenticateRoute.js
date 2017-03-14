@@ -5,6 +5,7 @@ var passwordHash = require('password-hash');
 var nodemailer = require("nodemailer");
 var smtpTransport=require('nodemailer-smtp-transport')
 var mongoose=require('mongoose');
+var mongoosePaginate = require('mongoose-paginate');
 var jwt = require('jwt-simple');
 var tokens=require('../../models/TokenModel');
 var users=require('../../models/userModel');
@@ -170,19 +171,68 @@ var authenticateRoute = {
         });
     },
     getAddress: function (req, res) {
-        var queryParam=req.query.q;
-        console.log(queryParam)
-        var query = {_id: queryParam}
-        users.findOne(query).populate('addresses').exec(function (err, results) {
+        var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
+        console.log(queryParam);
+        var query = {_id: queryParam.id}
+        users.findOne(query).populate({
+            path: 'addresses',
+            options: {sort: [queryParam.sortingCriteria] ,skip : 2,limit: 10 }}).exec(function (err, results) {
             if (err) {
                 res.send(err);
             }
             else {
-                console.log("************************ i getAddress")
-                console.log(results)
-                res.send({data :results.addresses})
+                console.log("************************ in getAddress")
+                console.log(results.addresses)
+                res.send({data: results.addresses})
             }
         });
+        /*
+         if(req.query.page) {
+         var page_number =req.query.page ? req.query.page:1;
+         var page_size = req.query.page_size ? req.query.page_size : 5 ;
+         var regExp;
+         if(req.query.firstName){
+         var str = req.query.firstName;
+         var tokens = str.split(' ');
+         var andQuery = [];
+
+         if(tokens.length===1){
+         andQuery.push({firstName:new RegExp(tokens[0], "i")},{lastName:new RegExp(tokens[0], "i")});
+         query['$or'] = andQuery;
+         }
+         else{
+         ['firstName','lastName'].forEach(function(attr, ind){
+         var orQuery = [];
+         tokens.forEach(function(token,tokenInd) {
+         var ele = {};
+         ele[attr]= new RegExp(token, "i");
+         orQuery.push(ele)
+         });
+         andQuery.push({'$or':orQuery})
+         });
+         query['$and'] = andQuery;
+         }
+         }if(req.query.email){
+         regExp= new RegExp(req.query.email, "i");
+         query.email=regExp;
+         }if(req.query.phoneNumber){
+         regExp= new RegExp(req.query.phoneNumber, "i");
+         query.phoneNumber=regExp;
+         } if(req.query.isPayeeNotAllowed) {
+         query.roles = {'$ne':'ROLE_PAYEE'};
+         }
+
+
+         // Refer for paginate https://www.npmjs.com/package/mongoose-paginate
+         UserModel.paginate(query, { page: Number(page_number), limit: Number(page_size) }, function(err, response) {
+         if (err) {
+         res.send(new errorResult('ERROR', "failed",err));
+         } else {
+         res.send(new SuccessResponse('OK', response.docs, response, "success") );
+         res.end();
+         }
+         });
+         */
     },
     deleteAddress : function(req,res){
         var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
@@ -194,9 +244,9 @@ var authenticateRoute = {
             }
             else {
                 for(var i=0;i< results.addresses.length;i++){
-                //    console.log(addr +"***********"+  address._id)
+                    //    console.log(addr +"***********"+  address._id)
                     if(results.addresses.includes(address._id))
-                    results.addresses.pop(addr);
+                        results.addresses.pop(addr);
                     console.log(results.addresses)
                 }
 

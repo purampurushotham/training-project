@@ -5,15 +5,20 @@
     'use strict';
     angular.module('MSC.user')
         .controller("tableCtrl",tableCtrl);
-    tableCtrl.$inject=['userService','$uibModalInstance','id','NgTableParams']
-    function tableCtrl(userService,uibModalInstance,id,NgTableParams){
+    tableCtrl.$inject=['userService','$uibModalInstance','obj','NgTableParams']
+    function tableCtrl(userService,uibModalInstance,obj,NgTableParams){
         var vm=this;
-        vm.id=id
+        /*vm.id=id;
         vm.address={};
-        console.log(vm.address);
-        console.log(id)
-        function createAddress(address){
-            userService.createAddress(address,vm.id).then(
+         console.log(vm.address);
+         console.log(id)
+         */
+        vm.obj=obj
+        vm.address=vm.obj.address
+        console.log(vm.address)
+        console.log(vm.obj)
+        function createAddress(obj){
+            userService.createAddress(vm.address,vm.obj.id).then(
                 function success(response) {
                     vm.success = response;
                 },
@@ -24,8 +29,7 @@
         vm.submit = function () {
             if(vm.addressForm.$valid) {
                 createAddress(vm.address);
-                loadTable();
-                uibModalInstance.close(vm.id);
+                uibModalInstance.close(vm.obj);
             }
             else{
                 vm.exists=false;

@@ -31,6 +31,7 @@ function init() {
     //var allRoutes = require("./routes/appRoutes");
     app.all('/api/*');
     index(app)
+    users(app)
 // catch 404 and forward to error handler
     app.use(function (req, res, next) {
         var err = new Error('Not Found');

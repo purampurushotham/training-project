@@ -3,5 +3,14 @@
     "username": "username",
     "password": "password",
     "url": "mongodb://localhost/myShoppingCart"
+  },
+  "mail": {
+    "auth":  {
+      "email" : "purams225@gmail.com",
+      "password": "Bujji143Bunny$"
+    },
+    "addUserSubject" : "Your new  Account",
+    "forgotPassworSubject":"Reset myshoppingCart Password"
   }
+
 }

@@ -54,8 +54,10 @@
             query.id=id;
             return api.createAddress({q:query}).$promise
         }
-        function getAddress(id){
-            var query =id;
+        function getAddress(object){
+            var query =object;
+            console.log("*********************** in user service ******************")
+            console.log(query)
             return api.getAddress({q: query}).$promise
         }
         function deleteAddress(address,id) {
