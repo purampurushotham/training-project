@@ -3,16 +3,17 @@
  */
 var passwordHash = require('password-hash');
 var nodemailer = require("nodemailer");
-var smtpTransport=require('nodemailer-smtp-transport')
+var smtpTransport=require('nodemailer-smtp-transport');
 var mongoose=require('mongoose');
 var jwt = require('jwt-simple');
 var tokens=require('../../models/TokenModel');
-var addresses=require('../../models/AddressModel')
+var addresses=require('../../models/AddressModel');
 var users=require('../../models/userModel');
 var tokenEnumObject=require('../../enums/token_enums');
-var mailService=require("../mail/mailService")
+var mailService=require("../mail/mailService");
 var SuccessResponse= require('../../models/SuccessResponse');
-var ErrorResult = require('../../models/errorResult/ErrorResult')
+var ErrorResult = require('../../models/errorResult/ErrorResult');
+var apiUtils=require('../../utils/apiUtils');
 var sendmail = require('sendmail')();
 var usersRoute = {
     getExistedEmail : function(req,res){
