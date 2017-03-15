@@ -62,7 +62,7 @@ var usersRoute = {
             }
         });
         function generateToken(firstName,lastName){
-            var serverAddress = req.protocol + '://' + req.get('host');
+            var serverAddress = apiUtils.getServerUrl(req)
             var newToken=new tokens();
             newToken.token=jwt.encode(query.email,'xxx');
             console.log(newToken.token);
