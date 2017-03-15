@@ -11,16 +11,19 @@ var tokens=require('../../models/TokenModel');
 var users=require('../../models/userModel');
 var addresses=require('../../models/AddressModel')
 var tokenEnumObject=require('../../enums/token_enums');
+var SuccessResponse= require('../../models/SuccessResponse');
+var ErrorResult = require('../../models/errorResult/ErrorResult')
 var sendmail = require('sendmail')();
 var authenticateRoute = {
     validateUser: function (req, res) {
         var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
         var query = {email: queryParam.email, isActive: true};
         users.findOne(query).exec(function (err, resultSet) {
+            console.log("******************************** in vsalideate usesr")
+            console.log(resultSet)
             if (err) {
                 res.send(err);
             }
-
             else if (resultSet != null) {
                 var validatePassword = passwordHash.verify(queryParam.password, resultSet.password);
                 if (validatePassword) {
@@ -42,21 +45,41 @@ var authenticateRoute = {
                                 data.firstName = resultSet.firstName;
                                 data.lastName = resultSet.lastName;
                                 data.id = resultSet._id;
-                                res.send(data);
+                                res.send(new SuccessResponse('ok',data,'',"logged in successfully"));
                             }
                         });
                     }
                 }
                 else {
-                    res.send({data: { message :"Login failed",status  : 404}});
-                    res.end();
+                    return res.json(new ErrorResult('failed', "Invalid credentials", [{'msg':'Password is incorrect'}]));
                 }
             }
             else {
-                res.send({data: "Login failed"});
-                res.end();
+                return res.json(new ErrorResult('failed', "Invalid credentials", [{'msg':'email is incorrect'}]));
             }
         });
+    },
+    logout : function(req,res){
+        var queryParam=req.query.q;
+        console.log("***************************");
+        console.log(queryParam);
+        users.findOne( {_id :queryParam} ).exec(function (err,result){
+            if(err){
+                res.send(err)
+            }
+            else if(result !=null){
+                tokens.remove({email : result.email}).exec(function(err1,response){
+                    if(err1){
+                        res.send(err)
+                    }
+                    else {
+                        console.log(response)
+                        res.send({status : "ok"});
+                    }
+                });
+            }
+        });
+
     },
     forgotPassword: function (req, res) {
         var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
@@ -183,8 +206,16 @@ var authenticateRoute = {
             else {
                 console.log("************************ in getAddress")
                 console.log(results.addresses.length);
-                users.findOne(query).populate('addresses').exec()
-                res.send({data: results.addresses})
+                users.findOne(query).populate('addresses').exec(function (err,response) {
+                    if(err){
+                        res.send(err);
+                    }
+                    else{
+                        console.log("************************"+response.addresses.length)
+                        res.send({data: response.addresses})
+                    }
+                })
+
             }
         });
         /*

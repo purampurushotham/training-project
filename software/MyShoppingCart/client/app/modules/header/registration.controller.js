@@ -5,11 +5,9 @@
     'use strict'
     angular.module('MSC.header')
         .controller("registrationCtrl",registrationCtrl);
-    registrationCtrl.$inject=['$uibModalInstance','userRegistrationFactory','fullName']
-    function registrationCtrl($uibModalInstance,userRegistrationFactory,fullName) {
+    registrationCtrl.$inject=['$uibModalInstance','userRegistrationFactory']
+    function registrationCtrl($uibModalInstance,userRegistrationFactory) {
         var vm = this;
-        vm.fullName = fullName;
-        console.log(vm.fullName)
         vm.user={};
         console.log("registrationCtrl");
         vm.submitUser=submitUser;
@@ -34,8 +32,9 @@
                 userRegistrationFactory.getExistedEmail(email).then(
                     function success(response) {
                         console.log(response);
-                        vm.emailSet = response.res;
-                        check(vm.user.email, vm.emailSet);
+                        vm.emailSet = response.data;
+                        console.log(vm.emailSet);
+                        check(email, vm.emailSet);
                     },
                     function failed(error) {
                         console.log(error);

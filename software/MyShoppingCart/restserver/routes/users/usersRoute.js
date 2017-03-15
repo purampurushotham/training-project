@@ -18,13 +18,13 @@ var usersRoute = {
         var regularExpression = "/^"+queryParam.keyword+"/i";
         var regex = new RegExp(queryParam.keyword,"i");
         var query={email: { $regex: regex }};
-        users.find(query).exec(function (err, emailsSet) {
-            console.log({res :emailsSet});
+        users.findOne(query).exec(function (err, emailsSet) {
+            console.log({data : emailsSet});
             if (err) {
                 res.send(err);
             }
             else {
-                res.send({res :emailsSet.email});
+                res.send({data : emailsSet.email});
                 res.end();
             }
         });
@@ -45,7 +45,7 @@ var usersRoute = {
         var newUser=new users(query);
         newUser.save(function (err) {
             if (err) {
-                console.log(err)
+                console.log(err);
                 res.send(err);
             }
             else {
@@ -105,8 +105,8 @@ var usersRoute = {
                 }
                 else {
 
-                    var re=result.email
-                    var quert1={email :re}
+                    var re=result.email;
+                    var quert1={email :re};
                     users.findOneAndUpdate({email :re},{$set : {isActive : true}}).exec(function (err, confirmed) {
                         if (err) {
                             res.send(err);

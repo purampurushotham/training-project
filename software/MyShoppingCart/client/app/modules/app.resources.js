@@ -64,6 +64,10 @@
                 method : 'GET',
                 url : "/api/user/authenticate"
             },
+            'logout' : {
+                method : 'GET',
+                url : "/api/user/logout"
+            },
             'forgotPassword' : {
                 method : "GET",
                 url : "/api/users/forgotPassword"
@@ -86,7 +90,7 @@
             },
             'deleteAddress' : {
                 method : 'DELETE',
-                url : "/api/users/profile/deleteAddress"
+                url : "api/users/profile/dee"
             }
         }
     }

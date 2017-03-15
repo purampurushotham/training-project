@@ -37,7 +37,7 @@
     <div class="row">
         <div class="col-md-6">
             <h3>Address</h3>
-            <button type="submit" class="btn btn-primary" ng-click ="pc.addRows(    )">ADD</button>
+            <i class="fa fa-plus-square" aria-hidden="true" ng-click ="pc.addRows(    )"></i>
         </div>
     </div>
     <div ng-show ="!pc.tableExists">table doesm't exists </div>
@@ -54,8 +54,8 @@
                     <td data-title="'Country'" filter="{country: 'text'}" sortable="'country'"ng-bind="row.country"></td>
                     <td data-title="'Zipcode'" filter="{zipcode: 'number'}" sortable="'zipcode'"ng-bind="row.zipcode"></td>
                     <td data-title="'Actions'">
-                        <button type="button"  class="glyphicon glyphicon-edit" ng-click="pc.editRow(row)"></button>
-                            <button type="button" ng-click="pc.deleteRow(row)" class="glyphicon glyphicon-remove-circle"></button>
+                        <i class="fa fa-pencil-square-o" aria-hidden="true" ng-click="pc.editRow(row)"></i>
+                        <i class="fa fa-trash-o" aria-hidden="true" ng-click="pc.deleteRow(row)"></i>
                     </td>
                 </tr>
             </table>

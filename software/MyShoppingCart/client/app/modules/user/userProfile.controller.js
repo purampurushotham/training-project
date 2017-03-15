@@ -29,7 +29,7 @@
             console.log("In load table")
             vm.tableParams = new NgTableParams({
                 page:1,
-                count: 2
+                count: 4
 
             },{
 

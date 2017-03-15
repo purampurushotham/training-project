@@ -9,8 +9,8 @@
             controller: headerCtrl,
             controllerAs: "hc"
         });
-    headerCtrl.$inject = ['$uibModal','$localStorage','$state'];
-    function headerCtrl(uibModal,$localStorage,$state) {
+    headerCtrl.$inject = ['$uibModal','$localStorage','$state','userService'];
+    function headerCtrl(uibModal,$localStorage,$state,userService) {
         console.log("in header ctrl")
         var vm = this;
         vm.$onInit = function () {
@@ -23,15 +23,10 @@
                     ariaDescribedBy: 'modal-body',
                     templateUrl: 'app/partials/Registration.html',
                     controller: 'registrationCtrl',
-                    controllerAs: 'rc',
-                    resolve: {
-                       /* fullName: function () {
-                            return vm.fullName;
-                        }*/
-                    }
+                    controllerAs: 'rc'
                 });
-                modalInstance.result.then(function (fullName) {
-                    vm.fullName = fullName;
+                modalInstance.result.then(function () {
+                    console.log("******************* registration modal")
                 }, function () {
                     $log.info('Modal dismissed at: ' + new Date());
                 });
@@ -65,17 +60,28 @@
             };
             vm.logout= logout;
             function logout(){
-                $localStorage.$reset()
-                vm.exists=false;
-                $state.go('Home')
+                console.log("****************** logout")
+                var id=$localStorage.userDetails.id;
+                userService.logout(id).then(function (success){
+                    console.log("*********** inservice")
+                        if(success){
+                            $localStorage.$reset()
+                            vm.exists=false;
+                            $state.go('Home');
+                        }
+                    },
+                    function (failed){
+                        console.log("**************** ")
+                        console.log(failed)
+                    });
             }
             function checkLogin(){
                 if($localStorage.hasOwnProperty('userDetails')){
                     console.log($localStorage)
-                     vm.oneUser={};
-                     vm.oneUser.firstName=$localStorage.userDetails.firstName
-                     vm.oneUser.lastName=$localStorage.userDetails.lastName;
-                     vm.exists=true;
+                    vm.oneUser={};
+                    vm.oneUser.firstName=$localStorage.userDetails.firstName
+                    vm.oneUser.lastName=$localStorage.userDetails.lastName;
+                    vm.exists=true;
                     console.log("in checkLogin")
                     vm.exists=true;
                 }

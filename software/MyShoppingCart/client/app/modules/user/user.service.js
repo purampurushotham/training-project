@@ -10,6 +10,7 @@
         var setOfUSerServices={
             confirmUser:confirmUser,
             validateUser :validateUser,
+            logout : logout,
             forgotPassword : forgotPassword,
             resetPassword : resetPassword,
             getProfile : getProfile,
@@ -25,10 +26,15 @@
             return api.confirmUser({q:query}).$promise
         }
         function validateUser(user){
-            var query={}
+            var query={};
             query.email=user.email;
             query.password=user.password;
             return api.validateUser({q:query}).$promise
+        }
+        function logout(id){
+            var query=id;
+            console.log("****************** in user logout service")
+            return api.logout({q:query}).$promise
         }
         function forgotPassword(email){
             var query=email;

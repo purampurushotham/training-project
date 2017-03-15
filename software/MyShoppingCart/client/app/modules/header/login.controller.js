@@ -24,7 +24,7 @@
                 function success(response) {
                     console.log(response);
                     vm.success = response;
-                    console.log(vm.success);
+                    //console.log(vm.success);
                     console.log("**************************success");
                     checkResult();
                 },
@@ -36,20 +36,22 @@
         }
         function checkResult(){
             console.log("in check Result")
-            if (vm.success.hasOwnProperty('firstName') && vm.success.hasOwnProperty('lastName')) {
+            if (vm.success.data){
                 vm.exists = true;
                 $localStorage.userDetails={};
-                $localStorage.userDetails.firstName = vm.success.firstName;
-                $localStorage.userDetails.lastName=vm.success.lastName;
-                $localStorage.userDetails.id=vm.success.id;
+                $localStorage.userDetails.firstName = vm.success.data.firstName;
+                $localStorage.userDetails.lastName=vm.success.data.lastName;
+                $localStorage.userDetails.id=vm.success.data.id;
                 console.log($localStorage.userDetails)
                 console.log("**************************success");
                 $state.go('Home')
                 uibModalInstance.close('submit');
             }
-            else if (vm.success.data.status === 404) {
+            else if(vm.success.status === 'failed'){
+                console.log(vm.success.messages)
                 vm.exists = false;
-            }                }
+            }
+        }
         vm.forgotPassword=function(){
             var modalInstance = uibModal.open({
                 animation: vm.animationsEnabled,
