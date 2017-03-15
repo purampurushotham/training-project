@@ -5,7 +5,7 @@
     <form name="form" ng-submit="rc.submitUser()" role="form">
         <div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
             <label for="firstName">First name</label>
-            <input type="text" name="firstName" id="firstName" class="form-control" ng-model="rc.user.firstName" ng-minlength="5"  required />
+            <input type="text" name="firstName" id="firstName" class="form-control" ng-model="rc.user.firstName" ng-minlength="rc.minLength"  required />
             <span  ng-show="form.firstName.$dirty && form.firstName.$error.minlength" class="help-block">First name is short</span>
         </div>
         <div class="form-group" ng-class="{ 'has-error': form.lastName.$dirty && form.lastName.$error.required }">
@@ -22,12 +22,12 @@
         </div>
         <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
             <label for="password">Password</label>
-            <input type="password" name="password" id="password" class="form-control" ng-model="rc.user.password"  ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/" required />
+            <input type="password" name="password" id="password" class="form-control" ng-model="rc.user.password"  ng-pattern="rc.passwordPattern" required />
             <span ng-show="form.password.$dirty && form.password.$error.pattern" class="help-block">Password should contain atleast one capital,one small,one special char and one number</span>
         </div>
         <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
             <label for="phoneNumber">Phone Number</label>
-            <input type="text" name="phoneNumber" id="phoneNumber" class="form-control" ng-model="rc.user.phoneNumber" ng-minlength="10" ng-maxlength="10"  ng-pattern = "/^[0-9]{10,10}$/"  required />
+            <input type="text" name="phoneNumber" id="phoneNumber" class="form-control" ng-model="rc.user.phoneNumber" ng-minlength="rc.minLength" ng-maxlength="rc.maxLength"  ng-pattern = "rc.phonePattern"  required />
             <span ng-show="form.phoneNumber.$dirty && form.phoneNumber.$error.pattern" class="help-block" role="alert">phoneNumber is required only number with 10 digit number</span>
         </div>
         <div class="form-actions">

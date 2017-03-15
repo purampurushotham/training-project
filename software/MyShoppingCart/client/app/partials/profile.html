@@ -44,6 +44,7 @@
     <div ng-show =pc.tableExists class="row">
         <div class="col-md-12">
             <table ng-table="pc.tableParams" class="table table-condensed table-bordered table-striped">
+                {{pc.tableParams.data}}
                 <tr ng-repeat="row in $data track by $index">
                     <td data-title="'Type'" filter="{type: 'text'}" sortable="'type'" >{{row.type}}</td>
                     <td data-title="'Address Line 1'" filter="{addressLine_1: 'text'}" sortable="'addressLine_1'" ng-bind="row.addressLine_1"></td>

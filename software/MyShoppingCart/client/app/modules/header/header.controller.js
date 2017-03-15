@@ -48,12 +48,7 @@
                     }
                 });
                 modalInstance.result.then(function () {
-                    if($localStorage.userDetails){
-                        vm.oneUser={};
-                        vm.oneUser.firstName=$localStorage.userDetails.firstName
-                        vm.oneUser.lastName=$localStorage.userDetails.lastName;
-                        vm.exists=true;
-                    }
+                    checkLogin();
                 }, function () {
                     $log.info('Modal dismissed at: ' + new Date());
                 });
@@ -63,7 +58,7 @@
                 console.log("****************** logout")
                 var id=$localStorage.userDetails.id;
                 userService.logout(id).then(function (success){
-                    console.log("*********** inservice")
+                    console.log(success)
                         if(success){
                             $localStorage.$reset()
                             vm.exists=false;

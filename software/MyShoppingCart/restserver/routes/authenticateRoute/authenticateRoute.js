@@ -19,8 +19,6 @@ var authenticateRoute = {
         var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
         var query = {email: queryParam.email, isActive: true};
         users.findOne(query).exec(function (err, resultSet) {
-            console.log("******************************** in vsalideate usesr")
-            console.log(resultSet)
             if (err) {
                 res.send(err);
             }
@@ -60,7 +58,7 @@ var authenticateRoute = {
         });
     },
     logout : function(req,res){
-        var queryParam=req.query.q;
+        var queryParam=req.query.q
         console.log("***************************");
         console.log(queryParam);
         users.findOne( {_id :queryParam} ).exec(function (err,result){
@@ -70,11 +68,11 @@ var authenticateRoute = {
             else if(result !=null){
                 tokens.remove({email : result.email}).exec(function(err1,response){
                     if(err1){
-                        res.send(err)
+                        res.send(new ErrorResult('failed','token not found'))
                     }
                     else {
-                        console.log(response)
-                        res.send({status : "ok"});
+                        // console.log(response)
+                        res.send(new SuccessResponse('ok',response,'',"logged out successfully"));
                     }
                 });
             }
@@ -129,10 +127,11 @@ var authenticateRoute = {
                         }
                     });
                 }
+                res.send(new SuccessResponse("ok",response,'',"message delivered successfully"))
             }
             else {
-                res.send({data: {message: "user Email Doesn't exists", status: 404}});
-                res.end();
+                return res.json(new ErrorResult('failed', "Invalid credentials", [{'msg':'email is incorrect'}]))
+
             }
         });
     },
@@ -145,10 +144,9 @@ var authenticateRoute = {
             }
             else {
                 if (result == null) {
-                    res.send({data: result});
+                    res.send(new ErrorResult('failed', "Invalid credentials", [{'msg':'token is expiresd'}]));
                     res.end();
                 }
-
                 else {
                     var re = result.email
                     var newPassword = passwordHash.generate(queryParam.user.password);
@@ -158,17 +156,20 @@ var authenticateRoute = {
                         if (err) {
                             res.send(err);
                         }
-                        else {
+                        else if(confirmed != null){
                             tokens.findOne({email: re}).remove().exec(function (err, result) {
                                 if (err) {
                                     res.send(err);
                                 }
                                 else {
-                                    res.send({status: 200});
+                                    res.send(new SuccessResponse("ok",result,'',"password rpdated successfully"));
                                     res.end();
                                 }
 
                             });
+                        }
+                        else{
+                          return res.json(new ErrorResult('failed', "Invalid Token ", [{'msg':'email is incorrect'}]))
                         }
                     });
                 }
@@ -181,16 +182,18 @@ var authenticateRoute = {
             if (err) {
                 res.send(err);
             }
-            else {
+            else if(result !=null){
                 var profile = {};
                 profile.firstName = result.firstName;
                 profile.lastName = result.lastName;
                 profile.email = result.email;
                 profile.phoneNumber = result.phoneNumber;
                 console.log(profile)
-                res.send({data: {profile: profile, status: 200}});
+                res.send(new SuccessResponse("ok",profile,'',"success"));
                 res.end();
             }
+            else
+                return res.json(new ErrorResult('failed', "Invalid user ", [{'msg':'user doesn;t exists'}]))
         });
     },
     getAddress: function (req, res) {
@@ -199,24 +202,27 @@ var authenticateRoute = {
         var query = {_id: queryParam.id}
         users.findOne(query).populate({
             path: 'addresses',
-            options: {sort: [queryParam.sortingCriteria],skip : queryParam.page ,limit :queryParam.page_size }}).exec(function (err, results) {
+            options: {sort: queryParam.sortingCriteria,skip : queryParam.page ,limit :queryParam.page_size }}).exec(function (err, results) {
             if (err) {
                 res.send(err);
             }
-            else {
+            else if(results != null){
                 console.log("************************ in getAddress")
-                console.log(results.addresses.length);
+                console.log(results.addresses);
                 users.findOne(query).populate('addresses').exec(function (err,response) {
                     if(err){
                         res.send(err);
                     }
                     else{
                         console.log("************************"+response.addresses.length)
-                        res.send({data: response.addresses})
+                        var total=response.addresses.length;
+                        res.send(new SuccessResponse("ok",results.addresses,total,"success"));
                     }
                 })
 
             }
+            else
+                return res.json(new ErrorResult('failed', "Address", [{'msg':'no addresss are found '}]))
         });
         /*
          if(req.query.page) {

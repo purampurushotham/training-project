@@ -47,7 +47,7 @@
                 $state.go('Home')
                 uibModalInstance.close('submit');
             }
-            else if(vm.success.status === 'failed'){
+                else if(vm.success.status === 'failed'){
                 console.log(vm.success.messages)
                 vm.exists = false;
             }

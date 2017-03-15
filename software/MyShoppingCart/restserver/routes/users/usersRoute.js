@@ -11,6 +11,8 @@ var addresses=require('../../models/AddressModel')
 var users=require('../../models/userModel');
 var tokenEnumObject=require('../../enums/token_enums');
 var mailService=require("../mail/mailService")
+var SuccessResponse= require('../../models/SuccessResponse');
+var ErrorResult = require('../../models/errorResult/ErrorResult')
 var sendmail = require('sendmail')();
 var usersRoute = {
     getExistedEmail : function(req,res){
@@ -23,8 +25,12 @@ var usersRoute = {
             if (err) {
                 res.send(err);
             }
-            else {
-                res.send({data : emailsSet.email});
+            else if(emailsSet!= null){
+                res.send(new SuccessResponse('ok',emailsSet.email,'',"email exists"));
+                res.end();
+            }
+            else{
+                res.send(new SuccessResponse('ok','','',"new Email address"));
                 res.end();
             }
         });
@@ -50,7 +56,7 @@ var usersRoute = {
             }
             else {
                 generateToken(query.firstName,query.lastName);
-                res.send("Success");
+                res.send(new SuccessResponse("ok",'','',"success"));
                 res.end();
             }
         });
@@ -78,11 +84,14 @@ var usersRoute = {
                         sendQuery.serverAddress=serverAddress;
                         console.log("**************** berfore mail service")
                         console.log(sendQuery)
-                        mailService.sendMail(sendQuery).then(function (success){    
+                        mailService.sendMail(sendQuery).then(function (success){
                                 console.log("************************ after mail service in success")
                                 console.log(success)
+                                return success;
                             },function (failed){
+
                                 console.log(failed)
+                                return failed;
                             }
                         );
                     }

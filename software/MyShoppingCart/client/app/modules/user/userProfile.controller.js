@@ -29,7 +29,7 @@
             console.log("In load table")
             vm.tableParams = new NgTableParams({
                 page:1,
-                count: 4
+                count: 2
 
             },{
 
@@ -46,12 +46,11 @@
                     return userService.getAddress(query).then(function (response) {
                         /*//params.total(data.inlineCount); // recal. page nav controls*/
                         vm.userTable = response.data;
-                        console.log(vm.userTable.length)
-                        params.total(vm.userTable.length);
-                        console.log("***************************** in get address");
+                        console.log(vm.userTable)
+                        params.total(response.total);
                         var filterObj = params.filter(),filteredData = $filter('filter')(vm.userTable, filterObj);
                         var sortObj = params.sorting(), orderedData = $filter('orderBy')(filteredData, filterObj);
-                        var data= orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count());
+                        var data= orderedData;
                         console.log(data)
                         return data;
                     });
