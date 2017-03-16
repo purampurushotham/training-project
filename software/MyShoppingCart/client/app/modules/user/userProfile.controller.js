@@ -47,7 +47,10 @@
                     return userService.getAddress(query).then(function (response) {
                         /*//params.total(data.inlineCount); // recal. page nav controls*/
                         vm.userTable = response.data;
-                        console.log(response)
+                        console.log(response);
+                        if(response.status == "ok"){
+                        vm.message=response.messages;}
+                        else
                         params.total(response.pagination.total);
                         var filterObj = params.filter(),filteredData = $filter('filter')(vm.userTable, filterObj);
                         var sortObj = params.sorting(), orderedData = $filter('orderBy')(filteredData, filterObj);

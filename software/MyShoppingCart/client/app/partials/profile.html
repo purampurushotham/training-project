@@ -3,7 +3,7 @@
         <div class="col-6 col-md-4"></div>
         <div class="col-6 col-md-4 panel panel-success">
             <div class="panel-heading">
-                <h3 class="panel-title">User Profile</h3>
+                <h3 class="panel-title">User Profile<span class="pull-right"><i class="fa fa-pencil-square fa-lg" ng-click="editProfile(pc.profile)" aria-hidden="true"></i></span></h3>
             </div>
             <form class="form-horizontal panel-body" >
                 <div class="form-group">
@@ -43,7 +43,7 @@
     <div ng-show ="!pc.tableExists">table doesm't exists </div>
     <div ng-show =pc.tableExists class="row panel panel-info">
         <div class="panel-heading">
-            <h3  class="panel-title">Address <span class=><i class="fa fa-plus-square" aria-hidden="true" ng-click ="pc.addRows()"></i></span></h3>
+            <h3  class="panel-title">Address <span class=pull-right><i class="fa fa-plus-square fa-lg " aria-hidden="true" ng-click ="pc.addRows()"></i></span></h3>
             </div>
         <div class="col-md-12 panel-body">
             <table ng-table="pc.tableParams" class="table table-condensed table-bordered table-striped">
@@ -57,8 +57,8 @@
                     <td data-title="'Country'" filter="{country: 'text'}" sortable="'country'"ng-bind="row.country"></td>
                     <td data-title="'Zipcode'" filter="{zipcode: 'number'}" sortable="'zipcode'"ng-bind="row.zipcode"></td>
                     <td data-title="'Actions'">
-                        <i class="fa fa-pencil-square-o" aria-hidden="true" ng-click="pc.editRow(row)"></i>
-                        <i class="fa fa-trash-o" aria-hidden="true" ng-click="pc.deleteRow(row)"></i>
+                        <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true" ng-click="pc.editRow(row)"></i>
+                        <i class="fa fa-trash-o fa-lg" aria-hidden="true" ng-click="pc.deleteRow(row)"></i>
                     </td>
                 </tr>
             </table>

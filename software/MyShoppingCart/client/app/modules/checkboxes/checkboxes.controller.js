@@ -22,6 +22,7 @@
     function checkBoxCtrl(ProductsListService) {
         var vm = this;
         vm.$onInit = function () {
+
             //defalut list of products
             vm.collection=vm.allProducts
             vm.eachProduct = vm.productsList;
@@ -73,10 +74,10 @@
                     maxValue: 80000,
                     options: {
                         floor: 1000,
-                        ceil: 90000,
+                        ceil: 80000,
                         step: 1000,
                         minRange: 1000,
-                        maxRange: 90000,
+                        maxRange: 80000,
                         translate: function (value, sliderId, label) {
                             switch (label) {
                                 case 'model':
@@ -99,7 +100,20 @@
                 vm.copySimilarProds = angular.copy(vm.products);
 
             }
+            if(vm.eachProduct.type == 'book' ){
+                some();
+            }
         };
+        function some(){
+            vm.filteredObjects.slider.minValue=100;
+            vm.filteredObjects.slider.maxValue=100000;
+            vm.filteredObjects.slider.options.step=100;
+            vm.filteredObjects.slider.options.ceil=100000;
+            vm.filteredObjects.slider.options.floor=100;
+            vm.filteredObjects.slider.options.minRange=5000;
+            vm.filteredObjects.slider.options.maxRange=100000;
+            console.log(vm.filteredObjects.slider)
+        }
         //calling service method when ever changes in any checkboxes orr slider
         vm.checkBrand=function () {
             vm.min=vm.filteredObjects.slider.minValue;
