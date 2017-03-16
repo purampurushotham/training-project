@@ -7,6 +7,7 @@
         .run(appRun);
     appRun.$inject = ['samData','$rootScope'];
     function appRun(samData,$rootScope) {
+        console.log("in app.run")
         samData.getData().then(function (data) {
                 $rootScope.products={};
                 $rootScope.products=data;

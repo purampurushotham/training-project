@@ -14,10 +14,12 @@ var tokenSchema = new Schema({
         type:String
     },
     startDate:{
-        type : Date
+        type : Date,
+        default : Date.now()
     },
     updatedDate : {
-        type : Date
+        type : Date,
+        default : Date.now()
     },
     email: {
         type : String,

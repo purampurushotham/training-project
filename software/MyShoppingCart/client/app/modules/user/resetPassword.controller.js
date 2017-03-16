@@ -23,15 +23,13 @@
         function resetPassword(){
             userService.resetPassword(vm.user,vm.token).then(
                 function success(response){
-                    if(response.data == null){
-                        $state.go('Login')
+                    console.log(response);
+                    if(response.status == 'ok'){
+                        $state.go('Home')
                     }
                 },
-                function failed(error) {
+                function failed(error)   {
                     console.log(error)
-                    console.log(error);
-                    if(error.data === "null"){
-                    }
                 }
             );
 

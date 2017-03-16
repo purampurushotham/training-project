@@ -14,7 +14,7 @@
             <label for="password">Password</label>
             <input type="password" name="password" id="password" class="form-control" ng-model="lc.user.password" required />
             <span ng-show="lc.loginForm.password.$dirty && lc.loginForm.password.$error.required" >Password is required</span>
-            <span ng-show="!lc.exists"> invalid email or password </span>
+            <span ng-show="!lc.exists" ng-bind = "lc.success.errors[0].msg"></span>
         </div>
         <div class="form-actions">
             <button type="submit"  ng-disabled="lc.loginForm.$invalid" class="btn btn-primary" ng-click ="lc.submit()">Login</button>

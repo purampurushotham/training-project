@@ -32,14 +32,17 @@ var UserSchema = new Schema({
         },
         startDate : {
             type : Date,
+            default : Date.now(),
             trim :true
         },
         updatedDate : {
             type : Date,
+            default : Date.now(),
             trim : true
         },
         isActive : {
             type : Boolean,
+            default : false,
             trim : true
         },
         addresses :[{

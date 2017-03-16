@@ -3,9 +3,8 @@
  */
 var passwordHash = require('password-hash');
 var nodemailer = require("nodemailer");
-var smtpTransport=require('nodemailer-smtp-transport')
+var apiUtils =require('../../utils/apiUtils')
 var mongoose=require('mongoose');
-var mongoosePaginate = require('mongoose-paginate');
 var jwt = require('jwt-simple');
 var tokens=require('../../models/TokenModel');
 var users=require('../../models/userModel');
@@ -13,6 +12,11 @@ var addresses=require('../../models/AddressModel')
 var tokenEnumObject=require('../../enums/token_enums');
 var SuccessResponse= require('../../models/SuccessResponse');
 var ErrorResult = require('../../models/errorResult/ErrorResult')
+var path=require('path');
+var extConfigLoc =path.join(__dirname,'../../config/config.json');
+var config = require(extConfigLoc);
+var appConfig = JSON.parse(JSON.stringify(config));
+var mailService=require("../mail/mailService");
 var sendmail = require('sendmail')();
 var authenticateRoute = {
     validateUser: function (req, res) {
@@ -23,23 +27,20 @@ var authenticateRoute = {
                 res.send(err);
             }
             else if (resultSet != null) {
-                var validatePassword = passwordHash.verify(queryParam.password, resultSet.password);
+                var validatePassword = apiUtils.verifyPassword(queryParam.password, resultSet.password);
                 if (validatePassword) {
                     var newToken = new tokens();
-                    newToken.token = jwt.encode(query.email, 'xxx');
-                    console.log(newToken.token);
+                    newToken.token = apiUtils.generateToken(query.email);
                     if (newToken.token) {
-                        newToken.type = tokenEnumObject.AUTH.code
+                        newToken.type = tokenEnumObject.AUTH.code;
                         newToken.email = query.email;
-                        newToken.startDate = new Date();
-                        newToken.updatedDate = new Date();
                         newToken.save(function (err) {
                             if (err) {
-                                console.log(err)
+                                console.log(err);
                                 res.send(err);
                             }
                             else {
-                                var data = {}
+                                var data = {};
                                 data.firstName = resultSet.firstName;
                                 data.lastName = resultSet.lastName;
                                 data.id = resultSet._id;
@@ -88,46 +89,39 @@ var authenticateRoute = {
             }
             else if (resultSet != null) {
                 var newToken = new tokens();
-                var serverAddress = req.protocol + '://' + req.get('host');
-                newToken.token = jwt.encode(query.email, 'xxx');
+                newToken.token = apiUtils.generateToken(query.email)
                 if (newToken.token) {
-                    newToken.type = tokenEnumObject.OTP.code
+                    newToken.type = tokenEnumObject.OTP.code;
                     newToken.email = query.email;
-                    newToken.startDate = new Date();
-                    newToken.updatedDate = new Date();
                     newToken.save(function (err) {
                         if (err) {
-                            console.log(err)
+                            console.log(err);
                             res.send(err);
                         }
                         else {
-                            var transport = nodemailer.createTransport(smtpTransport({
-                                service: "gmail ",  // sets automatically host, port and connection security settings
-                                auth: {
-                                    user: "purams225@gmail.com",
-                                    pass: "Bujji143Bunny$"
-                                }
-                            }));
+                            var sendQuery={};
+                            sendQuery.firstName=resultSet.firstName
+                            sendQuery.lastName=resultSet.lastName
+                            sendQuery.email=queryParam.email;
+                            sendQuery.token=newToken.token;
+                            sendQuery.serverAddress=apiUtils.getServerUrl(req);
+                            sendQuery.url= sendQuery.serverAddress + "/#!/forgotpassword/" + sendQuery.token;
+                            sendQuery.subject=appConfig.mail.forgotPassworSubject
+                            sendQuery.fullName=sendQuery.firstName+ " "+sendQuery.lastName
+                            mailService.sendMail('forgotPassword',sendQuery).then(function (success){
+                                    console.log("************************ after mail service in success");
+                                    console.log(success);
+                                    res.send(new SuccessResponse('ok','','','Mail send successfully'))
+                                },function (failed){
 
-                            transport.sendMail({  //email options
-                                from: "purams225@gmail.com", // sender address.  Must be the same as authenticated user if using Gmail.
-                                to: "puram.purushotham@india.semanticbits.com", // receiver
-                                subject: "Emailing with nodemailer", // subject
-                                text: "A request has been received to change the password. Clink on below link to set a new password." +
-                                serverAddress + "/#!/forgotpassword/" + newToken.token//body
-                            }, function (error, response) {  //callback
-                                if (error) {
-                                    console.log(error);
-                                } else {
-                                    console.log("Message sent: " + response.message);
+                                    return res.json(new ErrorResult('failed', "invalid email address", [{'msg':'maiing error'}]));
                                 }
-                                transport.close(); // shut down the connection pool, no more messages.  Comment this line out to continue sending emails.
-                            });
+                            );
 
                         }
                     });
                 }
-                res.send(new SuccessResponse("ok",response,'',"message delivered successfully"))
+                res.send(new SuccessResponse("ok",'','',"message delivered successfully"))
             }
             else {
                 return res.json(new ErrorResult('failed', "Invalid credentials", [{'msg':'email is incorrect'}]))
@@ -162,14 +156,14 @@ var authenticateRoute = {
                                     res.send(err);
                                 }
                                 else {
-                                    res.send(new SuccessResponse("ok",result,'',"password rpdated successfully"));
+                                    res.send(new SuccessResponse("ok",result.email,'',"password updated successfully"));
                                     res.end();
                                 }
 
                             });
                         }
                         else{
-                          return res.json(new ErrorResult('failed', "Invalid Token ", [{'msg':'email is incorrect'}]))
+                            return res.json(new ErrorResult('failed', "Invalid Token ", [{'msg':'email is incorrect'}]))
                         }
                     });
                 }
@@ -215,8 +209,9 @@ var authenticateRoute = {
                     }
                     else{
                         console.log("************************"+response.addresses.length)
-                        var total=response.addresses.length;
-                        res.send(new SuccessResponse("ok",results.addresses,total,"success"));
+                        var pagination={};
+                        pagination.total=response.addresses.length;
+                        res.send(new SuccessResponse("ok",results.addresses,pagination,"success"));
                     }
                 })
 
@@ -224,53 +219,6 @@ var authenticateRoute = {
             else
                 return res.json(new ErrorResult('failed', "Address", [{'msg':'no addresss are found '}]))
         });
-        /*
-         if(req.query.page) {
-         var page_number =req.query.page ? req.query.page:1;
-         var page_size = req.query.page_size ? req.query.page_size : 5 ;
-         var regExp;
-         if(req.query.firstName){
-         var str = req.query.firstName;
-         var tokens = str.split(' ');
-         var andQuery = [];
-
-         if(tokens.length===1){
-         andQuery.push({firstName:new RegExp(tokens[0], "i")},{lastName:new RegExp(tokens[0], "i")});
-         query['$or'] = andQuery;
-         }
-         else{
-         ['firstName','lastName'].forEach(function(attr, ind){
-         var orQuery = [];
-         tokens.forEach(function(token,tokenInd) {
-         var ele = {};
-         ele[attr]= new RegExp(token, "i");
-         orQuery.push(ele)
-         });
-         andQuery.push({'$or':orQuery})
-         });
-         query['$and'] = andQuery;
-         }
-         }if(req.query.email){
-         regExp= new RegExp(req.query.email, "i");
-         query.email=regExp;
-         }if(req.query.phoneNumber){
-         regExp= new RegExp(req.query.phoneNumber, "i");
-         query.phoneNumber=regExp;
-         } if(req.query.isPayeeNotAllowed) {
-         query.roles = {'$ne':'ROLE_PAYEE'};
-         }
-
-
-         // Refer for paginate https://www.npmjs.com/package/mongoose-paginate
-         UserModel.paginate(query, { page: Number(page_number), limit: Number(page_size) }, function(err, response) {
-         if (err) {
-         res.send(new errorResult('ERROR', "failed",err));
-         } else {
-         res.send(new SuccessResponse('OK', response.docs, response, "success") );
-         res.end();
-         }
-         });
-         */
     },
     deleteAddress : function(req,res){
         var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
@@ -282,7 +230,6 @@ var authenticateRoute = {
             }
             else {
                 for(var i=0;i< results.addresses.length;i++){
-                    //    console.log(addr +"***********"+  address._id)
                     if(results.addresses.includes(address._id))
                         results.addresses.pop(addr);
                     console.log(results.addresses)
@@ -300,9 +247,9 @@ var authenticateRoute = {
                                 res.send(errad);
                             }
                             else {
-                                //  console.log(response)
+                                console.log(response)
                                 console.log(results);
-                                res.send(response)
+                                res.send(new SuccessResponse('ok','','','address is deleted'))
                             }
                         });
                     }

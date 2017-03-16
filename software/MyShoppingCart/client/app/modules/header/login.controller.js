@@ -19,12 +19,12 @@
         console.log(vm.user);
         vm.validateUser = validateUser;
         function validateUser(){
-            console.log("user loigin");
+            console.log("user login");
             userService.validateUser(vm.user).then(
                 function success(response) {
                     console.log(response);
                     vm.success = response;
-                    //console.log(vm.success);
+                    console.log(vm.success);
                     console.log("**************************success");
                     checkResult();
                 },
@@ -47,8 +47,8 @@
                 $state.go('Home')
                 uibModalInstance.close('submit');
             }
-                else if(vm.success.status === 'failed'){
-                console.log(vm.success.messages)
+            else if(angular.equals(vm.success.status,'failed')){
+                console.log(vm.success.errors[0].msg)
                 vm.exists = false;
             }
         }

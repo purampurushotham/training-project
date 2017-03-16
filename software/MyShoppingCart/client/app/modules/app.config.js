@@ -9,6 +9,7 @@
 
     appConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
     function appConfig($stateProvider,$urlRouterProvider,$locationProvider){
+        console.log("in app.config")
         $urlRouterProvider.otherwise("Home");
         $stateProvider
             .state("Home", {

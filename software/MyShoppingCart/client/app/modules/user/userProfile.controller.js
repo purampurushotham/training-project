@@ -17,7 +17,8 @@
         vm.profile={}
         userService.getProfile(vm.id).then(
             function success(response) {
-                vm.profile = response.data.profile;
+                console.log(response)
+                vm.profile = response.data      ;
                 vm.tableExists=true;
             },
             function failed(error) {
@@ -29,11 +30,11 @@
             console.log("In load table")
             vm.tableParams = new NgTableParams({
                 page:1,
-                count: 2
+                count: 4
 
             },{
 
-                //counts : [2,5,10,25,50,100],
+                counts : [2,5,10,25,50,100],
                 getData: function (params) {
                     console.log(params.page(),params.count())
                     var query={
@@ -46,8 +47,8 @@
                     return userService.getAddress(query).then(function (response) {
                         /*//params.total(data.inlineCount); // recal. page nav controls*/
                         vm.userTable = response.data;
-                        console.log(vm.userTable)
-                        params.total(response.total);
+                        console.log(response)
+                        params.total(response.pagination.total);
                         var filterObj = params.filter(),filteredData = $filter('filter')(vm.userTable, filterObj);
                         var sortObj = params.sorting(), orderedData = $filter('orderBy')(filteredData, filterObj);
                         var data= orderedData;

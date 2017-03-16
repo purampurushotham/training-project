@@ -1,6 +1,7 @@
-/**
+/*
+/!**
  * Created by purushotham on 15/3/17.
- */
+ *!/
 var nodemailer = require('nodemailer');
 var emailTemplates = require('email-templates');
 var path = require('path');
@@ -39,4 +40,4 @@ function mailDelivery(templateName, locals) {
         });
     });
 };
-exports.mailDelivery = mailDelivery;
+exports.mailDelivery = mailDelivery;*/

@@ -21,21 +21,21 @@
                 }
             );
         }
-
         vm.submit = function () {
             if(vm.forgotForm.$valid){
                 forgotPassword();
-                // uibModalInstance.close('submit');
-            };
-        }
+                //uibModalInstance.close('submit');
+            }
+        };
         function checkEmail() {
-            if(vm.success.data.status=404){
-                vm.message=vm.success.data.message;
+            if(vm.success.data){
+                vm.message=vm.success.message;
+                vm.exists=true;
+            }
+            else if(angular.equals(vm.success.status,"failed")){
                 vm.exists=false;
             }
-            else
-                vm.exists=true;
         }
     }
 
-}())
+}());

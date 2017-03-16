@@ -3,6 +3,7 @@
  */
 var passwordHash = require('password-hash');
 var nodemailer = require("nodemailer");
+var emailTemplates = require('email-templates');
 var smtpTransport=require('nodemailer-smtp-transport');
 var mongoose=require('mongoose');
 var jwt = require('jwt-simple');
@@ -14,6 +15,10 @@ var mailService=require("../mail/mailService");
 var SuccessResponse= require('../../models/SuccessResponse');
 var ErrorResult = require('../../models/errorResult/ErrorResult');
 var apiUtils=require('../../utils/apiUtils');
+var path=require('path')
+var extConfigLoc =path.join(__dirname,'../../config/config.json');
+var config = require(extConfigLoc);
+var appConfig = JSON.parse(JSON.stringify(config));
 var sendmail = require('sendmail')();
 var usersRoute = {
     getExistedEmail : function(req,res){
@@ -41,13 +46,7 @@ var usersRoute = {
         console.log(queryParam);
         var query ={};
         query=queryParam;
-        query.password=hashingPassword(query.password);
-        function hashingPassword(password){
-            var hashedPassword =passwordHash.generate(password);
-            return hashedPassword;
-        }
-        query.startDate = new Date();
-        query.updatedDate = new Date();
+        query.password=apiUtils.generatePassword(query.password);
         query.isActive = false;
         var newUser=new users(query);
         newUser.save(function (err) {
@@ -62,37 +61,35 @@ var usersRoute = {
             }
         });
         function generateToken(firstName,lastName){
-            var serverAddress = apiUtils.getServerUrl(req)
             var newToken=new tokens();
-            newToken.token=jwt.encode(query.email,'xxx');
+            newToken.token=apiUtils.generateToken(query.email);
             console.log(newToken.token);
             if(newToken.token) {
-                newToken.type=tokenEnumObject.REGISTRATION.code
+                newToken.type=tokenEnumObject.REGISTRATION.code;
                 newToken.email = query.email;
-                newToken.startDate=new Date();
-                newToken.updatedDate=new Date();
                 newToken.save(function (err) {
                     if (err) {
-                        console.log(err)
+                        console.log(err);
                         res.send(err);
                     }
                     else {
-                        var sendQuery={}
-                        sendQuery.firstName=queryParam.firstName
-                        sendQuery.lastName=queryParam.lastName
+                        var sendQuery={};
+                        sendQuery.firstName=queryParam.firstName;
+                        sendQuery.lastName=queryParam.lastName;
                         sendQuery.email=queryParam.email;
                         sendQuery.token=newToken.token;
-                        sendQuery.serverAddress=serverAddress;
-                        console.log("**************** berfore mail service")
+                        sendQuery.serverAddress= apiUtils.getServerUrl(req);
+                        sendQuery.subject=appConfig.mail.addUserSubject;
+                        sendQuery.url =sendQuery.serverAddress+"/#!/confirmregistration/"+sendQuery.token;
+                        sendQuery.fullName = sendQuery.firstName+ " "+sendQuery.lastName;
                         console.log(sendQuery)
-                        mailService.sendMail(sendQuery).then(function (success){
-                                console.log("************************ after mail service in success")
+                        mailService.sendMail('userRegistration',sendQuery).then(function (success){
+                                console.log("************************ after mail service in success");
                                 console.log(success)
-                                return success;
+                                res.send(new SuccessResponse('ok','','','Mail send successfully'))
                             },function (failed){
 
-                                console.log(failed)
-                                return failed;
+                                return res.json(new ErrorResult('failed', "invalid email address", [{'msg':'maiing error'}]));
                             }
                         );
                     }
@@ -127,7 +124,7 @@ var usersRoute = {
                                     res.send(err);
                                 }
                                 else {
-                                    res.send({status : 200});
+                                    res.send(new SuccessResponse('ok','','','User is activated'))
                                     res.end();
                                 }
 
@@ -138,7 +135,6 @@ var usersRoute = {
             }
         });
     },
-    //still implementing
     createAddress : function (req,res) {
         var qp = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
         var queryParam=qp.address;
@@ -147,12 +143,10 @@ var usersRoute = {
         console.log("************************* in create address")
         var newAddress=new addresses(queryParam);
         if(queryParam._id){
-            console.log("*********** has id")
             newAddress.isNew=false
 
         }
         else{
-            console.log("*********** no id")
             newAddress.isNew=true
         }
         newAddress.save(function (err,address) {
@@ -161,16 +155,12 @@ var usersRoute = {
                 res.send(err);
             }
             else if(!queryParam._id ){
-                console.log("**************************8");
                 console.log(address)
-                console.log("**************************************************************************************************************8")
                 users.findOne({_id : query_id }).exec(function (err, result) {
                     if (err) {
                         res.send(err);
                     }
                     else {
-                        console.log({data : result});
-                        console.log("************************************")
                         if(result != null ){
                             if(typeof result.addresses === 'undefined' || result.addresses.length ==0 ){
                                 result.addresses.push(address._id);
@@ -189,7 +179,7 @@ var usersRoute = {
                                 }
                             });
                         }
-                        res.send({status : 200});
+                        res.send(new SuccessResponse('ok','','','adresss is created'));
                         res.end();
                     }
 

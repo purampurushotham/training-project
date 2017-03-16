@@ -36,6 +36,7 @@
                 userRegistrationFactory.getExistedEmail(email).then(
                     function success(response) {
                         console.log(response);
+                        check(response.messages)
                     },
                     function failed(error) {
                         console.log(error);
@@ -43,8 +44,8 @@
                 );
             }
         };
-        function check(usere,resultE) {
-            if(usere === resultE){
+        function check(message) {
+            if(message == "email exists"){
                 vm.exists=true;
             }
             else

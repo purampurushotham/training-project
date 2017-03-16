@@ -8,6 +8,7 @@ var SuccessResponse = function(status, data, pagination, message ) {
     this.data = data;
     if(pagination) {
         this.pagination = {};
+        console.log(pagination)
         this.pagination.total = pagination.total;
         /*this.pagination.page = pagination.page;
         this.pagination.pages = pagination.pages;

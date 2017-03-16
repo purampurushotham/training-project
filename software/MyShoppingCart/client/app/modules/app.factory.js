@@ -11,7 +11,7 @@ function samData($http,$q) {
         getData:function () {
             var products=[];
             var deffered=$q.defer();
-            $http.get('/products').then(function mySuccess(response) {
+            $http.get('/api/products').then(function mySuccess(response) {
                 deffered.resolve(response.data);
             }).then(function myError(error) {
                 deffered.reject("error in getting data");
