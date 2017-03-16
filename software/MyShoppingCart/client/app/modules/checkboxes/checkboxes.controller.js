@@ -92,10 +92,10 @@
                     }
                 }
             }
-            sliderFeature(vm.productsList,vm.selectedSubType)
+            sliderFeature(vm.productsList,vm.selectedSubType);
             function sliderFeature(productsList,type) {
                 console.log(productsList);
-                vm.products = productsList
+                vm.products = productsList;
                 vm.proType=type;
                 vm.copySimilarProds = angular.copy(vm.products);
 
