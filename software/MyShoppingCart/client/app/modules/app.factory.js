@@ -12,7 +12,7 @@ function samData($http,$q) {
             console.log("**********************88 in htttp get")
             var products=[];
             var deffered=$q.defer();
-            $http.get('/api/products').then(function mySuccess(response) {
+            $http.get('/api/v1.0/products').then(function mySuccess(response) {
                 console.log("**********************88 in htttp get")
                 if(response.data.status == 'ok') {
                     console.log(response.data)

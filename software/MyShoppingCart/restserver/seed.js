@@ -6,9 +6,9 @@ var async = require('async');
 var mongoose = require('mongoose')
 require('mongoose-double')(mongoose);
 var fs = require("fs");
-var ProductModel=require('./models/ProductModel');
-var CommentModel=require('./models/CommentModel');
-var OfferModel=require('./models/OffersModel');
+var ProductModel=require('./models/product/ProductModel');
+var CommentModel=require('./models/comment/CommentModel');
+var OfferModel=require('./models/offers/OffersModel');
 
 var Q = require('q');
 

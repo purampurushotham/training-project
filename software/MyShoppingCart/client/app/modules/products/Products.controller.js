@@ -17,7 +17,9 @@
             vm.electronic_subType=$stateParams.productType;
             viewProductsByBrand(vm.electronic_subType);
             function viewProductsByBrand(subType){
-                ProductsListService.viewProductsByBrand(subType).then(success).catch(failed);
+                var query={}
+                    query.subType=subType
+                ProductsListService.viewProductsByBrand(query).then(success).catch(failed);
                 function success(response){
                     if(response.status == "ok")
                     vm.products=response.data;

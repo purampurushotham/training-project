@@ -30,7 +30,7 @@
             console.log("In load table")
             vm.tableParams = new NgTableParams({
                 page:1,
-                count: 4
+                count: 3
 
             },{
 
@@ -47,11 +47,11 @@
                     return userService.getAddress(query).then(function (response) {
                         /*//params.total(data.inlineCount); // recal. page nav controls*/
                         vm.userTable = response.data;
-                        console.log(response);
+                        console.log(response.pagination.total);
                         if(response.status == "ok"){
                         vm.message=response.messages;}
-                        else
                         params.total(response.pagination.total);
+                        console.log(params.total)
                         var filterObj = params.filter(),filteredData = $filter('filter')(vm.userTable, filterObj);
                         var sortObj = params.sorting(), orderedData = $filter('orderBy')(filteredData, filterObj);
                         var data= orderedData;
@@ -101,7 +101,10 @@
         vm.deleteRow=function(address){
             console.log("in delete row")
             console.log(address)
-            userService.deleteAddress(address,vm.id).then(function success(response) {
+            var query={}
+            query.address=address
+            query.id=vm.id
+            userService.deleteAddress(query).then(function success(response) {
                     if(response){
                         loadTable()
                     }

@@ -55,12 +55,12 @@
             };
             vm.logout= logout;
             function logout(){
-                console.log("****************** logout")
+                console.log("****************** logout");
                 var id=$localStorage.userDetails.id;
                 userService.logout(id).then(function (success){
-                    console.log(success)
+                    console.log(success);
                         if(success){
-                            $localStorage.$reset()
+                            $localStorage.$reset();
                             vm.exists=false;
                             $state.go('Home');
                         }

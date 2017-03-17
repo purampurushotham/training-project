@@ -10,7 +10,9 @@
         vm.token=$stateParams.token;
         resetToken(vm.token);
         function resetToken(token){
-            userService.confirmUser(token).then(
+            var query={}
+            query.token=token;
+            userService.confirmUser(query).then(
                 function success(response){
                     if(response.data == null){
                         $state.go('confirmRegistration')

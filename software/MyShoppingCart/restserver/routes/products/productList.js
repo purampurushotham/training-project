@@ -1,11 +1,11 @@
 /**
  * Created by purushotham on 1/3/17.
  */
-var products=require('../../models/ProductModel');
-var comments =require('../../models/CommentModel');
-var offers = require('../../models/OffersModel');
+var products=require('../../models/product/ProductModel');
+var comments =require('../../models/comment/CommentModel');
+var offers = require('../../models/offers/OffersModel');
 var mongoose=require('mongoose');
-var SuccessResponse= require('../../models/SuccessResponse');
+var SuccessResponse= require('../../models/successResponse/SuccessResponse');
 var ErrorResult = require('../../models/errorResult/ErrorResult');
 var ProductRoute;
 ProductRoute= {
@@ -39,7 +39,7 @@ ProductRoute= {
         var regex = new RegExp(queryParam.keyword,"i");
         console.log(regularExpression)
         console.log(regex);
-        var query={$or: [{name: { $regex: regex }}, {brand: { $regex: regex}}]};
+        var query={$or: [{name: { $regex: regex,}}, {brand: { $regex: regex}}]};
         products.find(query).exec(function (err, oneProduct) {
             if (err) {
                 return res.json(new ErrorResult("failed","found searched products",[{"msg" : "cannot have searched products"}]));
@@ -54,7 +54,7 @@ ProductRoute= {
 
         products.findOne({product_id: req.params.id}).populate('comments').exec(function (err, oneProduct) {
             if (err) {
-              return res.json(new ErrorResult("failed",'error in query',[{"msg" : "error in finding product"}]));
+                return res.json(new ErrorResult("failed",'error in query',[{"msg" : "error in finding product"}]));
             }
             else if(oneProduct != null){
                 res.send(new SuccessResponse("ok",oneProduct,"product is found"));

@@ -21,7 +21,10 @@
         };
         vm.resetPassword=resetPassword;
         function resetPassword(){
-            userService.resetPassword(vm.user,vm.token).then(
+            var query={}
+            query.user=vm.user
+            query.token=vm.token
+            userService.resetPassword(query).then(
                 function success(response){
                     console.log(response);
                     if(response.status == 'ok'){

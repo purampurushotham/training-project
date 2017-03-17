@@ -1,5 +1,5 @@
 <div ng:repeat="type in hc.products" class="row panel panel-primary">
-    <h1 class="lead panel-heading" ng-bind = type._id></h1>
+    <h1 class="lead panel-heading text-center"> Top Rated {{type._id}}</h1>
     <div ng:repeat="prod in type.docs" class ="col-md-3 panel-body">
         <div class="container">
             <a class="search_a" ui-sref="view({id:prod.product_id})">

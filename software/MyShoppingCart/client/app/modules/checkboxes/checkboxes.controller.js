@@ -34,7 +34,12 @@
             console.log(vm.selectedBrand)
             getSelectedBrands(vm.selectedBrand, vm.selectedSubType);
             function getSelectedBrands(selectedBrand, selectedSubType) {
-                ProductsListService.getSelectedBrands(selectedBrand, selectedSubType).then(success).catch(failed);
+                var query={}
+                query.subType=selectedSubType;
+                if(selectedSubType =='comic' || selectedSubType == 'fiction' || selectedSubType === 'bibilography')
+                    query.language = selectedBrand;
+                query.brand=selectedBrand;
+                ProductsListService.getSelectedBrands(query).then(success).catch(failed);
                 function success(response) {
                     console.log(response);
                     if(response.status == "ok")
@@ -109,22 +114,48 @@
             vm.filteredObjects.slider.options.maxRange=6000;
             console.log(vm.filteredObjects.slider)
         }
-        //calling service method when ever changes in any checkboxes orr slider
+        //calling service method when ever changes in any checkboxes or slider
         vm.checkBrand=function () {
             vm.min=vm.filteredObjects.slider.minValue;
             vm.max=vm.filteredObjects.slider.maxValue;
             vm.ProductType=vm.proType;
-            ProductsListService.filteredProducts(vm.filteredObjects,vm.ProductType,vm.min,vm.max).then(
+            //calling for selected brands and selected offers
+            var brandsArray=getselectedBrands(vm.filteredObjects.filteredBrand);
+            var offersArray =getSelectedOffers(vm.filteredObjects.filteredOffer)
+            //saving all filters in one query
+            var query={};
+            query.brandsArray=brandsArray;
+            query.offers=offersArray;
+            query.subtype=vm.ProductType;
+            query.min=vm.min;
+            query.max=vm.max;
+            ProductsListService.filteredProducts(query).then(
                 function success(response) {
                     console.log(response);
                     if(response.status == "ok")
-                    vm.filteredResult = response.data;
+                        vm.filteredResult = response.data;
                     vm.allProducts=angular.copy(vm.filteredResult);
                 },
                 function failed(error) {
                     console.log(error);
                 });
         };
+        function getselectedBrands (filteredBrand){
+            var brandArray=[];
+            for(var i=0;i<filteredBrand.length;i++){
+                console.log("%%%%%%%%%%%%%%%")
+                console.log(filteredBrand[i])
+                brandArray.push(filteredBrand[i]);
+            }
+            return brandArray;
+        }
+        function getSelectedOffers(filteredOffer){
+            var offerArray=[];
+            for(var i=0;i<filteredOffer.length;i++){
+                offerArray.push(filteredOffer[i]);
+            }
+            return offerArray;
+        }
     }
 })();
 

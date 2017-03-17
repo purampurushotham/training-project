@@ -36,7 +36,7 @@ var addressSchema=new Schema({
             type: String,
             trim: true
         },
-        zipcode: {
+        zipCode: {
             type: String,
             trim: true
         }

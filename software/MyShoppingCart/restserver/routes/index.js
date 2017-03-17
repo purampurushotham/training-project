@@ -5,15 +5,13 @@ var products = require("./products/productList");
 /* GET home page. */
 var appRoutes=function(app){
     console.log("********************************** in n=index")
-    app.get('/api/products',products.topRatedProducts);
-    app.get('/api/products/search',products.getSearchedProduct)
-    app.get('/api/products/:id',products.viewEachProduct);
-    app.get('/api/products/viewProduct/similaritems/',products.getSimilarProduct);
-    app.get('/api/products/viewProduct/category/',products.viewBandWiseProducts);
-    app.get('/api/products/category/brands',products.getSelectedBrands);
-    app.get('/api/products/category/offers',products.getOffers);
-    app.get('/api/filteredProducts/',products.filteredProducts);
-
-
+    app.get('/api/v1.0/products',products.topRatedProducts);
+    app.get('/api/v1.0/products/search',products.getSearchedProduct)
+    app.get('/api/v1.0/products/:id',products.viewEachProduct);
+    app.get('/api/v1.0/products/viewProduct/similaritems/',products.getSimilarProduct);
+    app.get('/api/v1.0/products/viewProduct/category/',products.viewBandWiseProducts);
+    app.get('/api/v1.0/products/category/brands',products.getSelectedBrands);
+    app.get('/api/v1.0/products/category/offers',products.getOffers);
+    app.get('/api/v1.0/filteredProducts/',products.filteredProducts);
 }
 module.exports = appRoutes;

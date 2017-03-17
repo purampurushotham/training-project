@@ -7,12 +7,12 @@ var emailTemplates = require('email-templates');
 var smtpTransport=require('nodemailer-smtp-transport');
 var mongoose=require('mongoose');
 var jwt = require('jwt-simple');
-var tokens=require('../../models/TokenModel');
-var addresses=require('../../models/AddressModel');
-var users=require('../../models/userModel');
+var tokens=require('../../models/token/TokenModel');
+var addresses=require('../../models/addressModel/AddressModel');
+var users=require('../../models/user/userModel');
 var tokenEnumObject=require('../../enums/token_enums');
 var mailService=require("../mail/mailService");
-var SuccessResponse= require('../../models/SuccessResponse');
+var SuccessResponse= require('../../models/successResponse/SuccessResponse');
 var ErrorResult = require('../../models/errorResult/ErrorResult');
 var apiUtils=require('../../utils/apiUtils');
 var path=require('path')
@@ -139,7 +139,7 @@ var usersRoute = {
         var qp = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
         var queryParam=qp.address;
         var query_id=qp.id
-        var query={type : queryParam.type ,addressLine_1 : queryParam.addressLine_1,addressLine_2 : queryParam.addressLine_2,street : queryParam.street,city : queryParam.city,state : queryParam.state,country : queryParam.country ,zipcode : queryParam.zipcode}
+        var query={type : queryParam.type ,addressLine_1 : queryParam.addressLine_1,addressLine_2 : queryParam.addressLine_2,street : queryParam.street,city : queryParam.city,state : queryParam.state,country : queryParam.country ,zipCode : queryParam.zipCode}
         console.log("************************* in create address")
         var newAddress=new addresses(queryParam);
         if(queryParam._id){

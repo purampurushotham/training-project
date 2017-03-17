@@ -22,75 +22,75 @@
         return {
             'viewProduct': {
                 method : 'GET',
-                url : '/api/products/:id'
+                url : '/api/v1.0/products/:id'
             },
             "getSearchedProduct": {
                 method : 'GET',
-                url : '/api/products/search'
+                url : '/api/v1.0/products/search'
             },
             "similarProduct":{
                 method : "GET",
-                url : "/api/products/viewProduct/similaritems/"
+                url : "/api/v1.0/products/viewProduct/similaritems/"
             },
             'viewBandWiseProducts': {
                 method : 'GET',
-                url : "/api/products/viewProduct/category/"
+                url : "/api/v1.0/products/viewProduct/category/"
             },
             'getSelectedBrands' : {
                 method : 'GET',
-                url : "/api/products/category/brands"
+                url : "/api/v1.0/products/category/brands"
             },
             'getOffers' :{
                 method : 'GET',
-                url : "/api/products/category/offers/"
+                url : "/api/v1.0/products/category/offers/"
             },
             'filteredProducts':{
                 method :'GET',
-                url : "/api/filteredProducts/"
+                url : "/api/v1.0/filteredProducts/"
             },
             'getExistedEmail' : {
                 method : "GET",
-                url : "/api/users/getExistedEmail/"
+                url : "/api/v1.0/users/getExistedEmail/"
             },
             'createUserNew': {
                 method : 'POST',
-                url : "/api/users/addUser"
+                url : "/api/v1.0/users/addUser"
             },
             'confirmUser':{
                 method : 'PUT',
-                url : "/api/users/confirmUser"
+                url : "/api/v1.0/users/confirmUser"
             },
             'validateUser' : {
                 method : 'GET',
-                url : "/api/user/authenticate"
+                url : "/api/v1.0/user/authenticate"
             },
             'logout' : {
                 method : 'GET',
-                url : "/api/user/logout"
+                url : "/api/v1.0/user/logout"
             },
             'forgotPassword' : {
                 method : "GET",
-                url : "/api/users/forgotPassword"
+                url : "/api/v1.0/users/forgotPassword"
             },
             'resetPassword' : {
                 method : 'PUT',
-                url : "/api/users/resetPassword"
+                url : "/api/v1.0/users/resetPassword"
             },
             'getProfile': {
                 method : "GET",
-                url : "/api/user/profile"
+                url : "/api/v1.0/user/profile"
             },
             'createAddress' : {
                 method  : 'POST',
-                url : "/api/users/address/create"
+                url : "/api/v1.0/users/address/create"
             },
             'getAddress' : {
                 method : "GET",
-                url : "/api/users/profile/address"
+                url : "/api/v1.0/users/profile/address"
             },
             'deleteAddress' : {
                 method : 'DELETE',
-                url : "api/users/profile/dee"
+                url : "api/v1.0/users/profile/deleteAddress"
             }
         }
     }

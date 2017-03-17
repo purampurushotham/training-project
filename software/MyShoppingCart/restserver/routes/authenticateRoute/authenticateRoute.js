@@ -6,11 +6,11 @@ var nodemailer = require("nodemailer");
 var apiUtils =require('../../utils/apiUtils')
 var mongoose=require('mongoose');
 var jwt = require('jwt-simple');
-var tokens=require('../../models/TokenModel');
-var users=require('../../models/userModel');
-var addresses=require('../../models/AddressModel')
+var tokens=require('../../models/token/TokenModel');
+var users=require('../../models/user/userModel');
+var addresses=require('../../models/addressModel/AddressModel')
 var tokenEnumObject=require('../../enums/token_enums');
-var SuccessResponse= require('../../models/SuccessResponse');
+var SuccessResponse= require('../../models/successResponse/SuccessResponse');
 var ErrorResult = require('../../models/errorResult/ErrorResult')
 var path=require('path');
 var extConfigLoc =path.join(__dirname,'../../config/config.json');
@@ -183,7 +183,7 @@ var authenticateRoute = {
                 profile.lastName = result.lastName;
                 profile.email = result.email;
                 profile.phoneNumber = result.phoneNumber;
-                console.log(profile)
+                console.log(profile);
                 res.send(new SuccessResponse("ok",profile,'',"success"));
                 res.end();
             }
@@ -194,7 +194,7 @@ var authenticateRoute = {
     getAddress: function (req, res) {
         var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
         console.log(queryParam);
-        var query = {_id: queryParam.id}
+        var query = {_id: queryParam.id};
         users.findOne(query).populate({
             path: 'addresses',
             options: {sort: queryParam.sortingCriteria,skip : queryParam.page ,limit :queryParam.page_size }}).exec(function (err, results) {
@@ -214,7 +214,7 @@ var authenticateRoute = {
                         pagination.total=response.addresses.length;
                         res.send(new SuccessResponse("ok",results.addresses,pagination,"success"));
                     }
-                })
+                });
 
             }
             else
@@ -231,8 +231,8 @@ var authenticateRoute = {
             }
             else {
                 for(var i=0;i< results.addresses.length;i++){
-                    if(results.addresses.includes(address._id))
-                        results.addresses.pop(addr);
+                    if(results.addresses.includes(address._id));
+                    results.addresses.pop(address._id);
                     console.log(results.addresses)
                 }
 

@@ -9,7 +9,7 @@
         <!--<p class="lead"><span ng-bind="vc.vp.description"></span></p>-->
         <p><ng-rate-it ng-model="vc.vp.rating" class="custom_rating"  read-only="true" ></ng-rate-it></p>
         <h2>Specifications:</h2>
-        <dl class="dl-horizontal">
+        <dl ng-if = "vc.vp.brand" class="dl-horizontal">
             <dt>Brand :</dt>
             <dd ng-bind="vc.vp.brand"></dd>
             <dt >Model :</dt>
@@ -21,7 +21,7 @@
             <dt >Battery :</dt>
             <dd  ng-bind="vc.vp.battery"></dd>
         </dl>
-        <dl  ng-if="vc.vp.language" class=" dl-horizontal">`
+        <dl  ng-if="vc.vp.language" class=" dl-horizontal">
             <dt>subType :</dt>
             <dd  ng-bind="vc.vp.subType"></dd>
             <dt>Author :</dt>

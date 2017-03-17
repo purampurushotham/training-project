@@ -22,7 +22,7 @@ app.set('view engine', 'html');
 var extConfigLoc =path.join(__dirname+'/config/config.json');
 var config = require(extConfigLoc);
 var appConfig = JSON.parse(JSON.stringify(config));
-require('./models/db')(app, appConfig).then(init);
+require('./models/db/db')(app, appConfig).then(init);
 function init() {
     app.use('/users', users);
     app.use(express.static(path.join(__dirname, '../client')));
