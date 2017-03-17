@@ -8,9 +8,11 @@
     appRun.$inject = ['samData','$rootScope'];
     function appRun(samData,$rootScope) {
         console.log("in app.run")
-        samData.getData().then(function (data) {
+        samData.getData().then(function (response) {
                 $rootScope.products={};
-                $rootScope.products=data;
+            console.log("******************* in appRUn")
+            console.log(response.data)
+                $rootScope.products=response.data;
             console.log()
             },
             function (msg) {

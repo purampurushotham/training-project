@@ -33,19 +33,16 @@
                 vm.selectedBrand = vm.eachProduct.brand;
             console.log(vm.selectedBrand)
             getSelectedBrands(vm.selectedBrand, vm.selectedSubType);
-
             function getSelectedBrands(selectedBrand, selectedSubType) {
                 ProductsListService.getSelectedBrands(selectedBrand, selectedSubType).then(success).catch(failed);
                 function success(response) {
                     console.log(response);
-                    vm.setBrands = response.data;
-
+                    if(response.status == "ok")
+                        vm.setBrands = response.data;
                 }
-
                 function failed(error) {
                     console.log(error);
                 }
-
             }
             offerCtrl(vm.productsList);
             function offerCtrl(productsList) {
@@ -54,10 +51,8 @@
                     ProductsListService.getOffers().then(
                         function success(response) {
                             console.log(response);
-                            vm.setOffers = response.data;
-
-
-                            //    console.log($rootScope.products);
+                            if(response.status == "ok")
+                                vm.setOffers = response.data;
                         },
                         function failed(error) {
                             console.log(error);
@@ -91,7 +86,7 @@
                         onChange : vm.checkBrand
                     }
                 }
-            }
+            };
             sliderFeature(vm.productsList,vm.selectedSubType);
             function sliderFeature(productsList,type) {
                 console.log(productsList);
@@ -106,12 +101,12 @@
         };
         function some(){
             vm.filteredObjects.slider.minValue=100;
-            vm.filteredObjects.slider.maxValue=100000;
-            vm.filteredObjects.slider.options.step=100;
-            vm.filteredObjects.slider.options.ceil=100000;
+            vm.filteredObjects.slider.maxValue=6000;
+            vm.filteredObjects.slider.options.step=10;
+            vm.filteredObjects.slider.options.ceil=6000;
             vm.filteredObjects.slider.options.floor=100;
             vm.filteredObjects.slider.options.minRange=5000;
-            vm.filteredObjects.slider.options.maxRange=100000;
+            vm.filteredObjects.slider.options.maxRange=6000;
             console.log(vm.filteredObjects.slider)
         }
         //calling service method when ever changes in any checkboxes orr slider
@@ -122,6 +117,7 @@
             ProductsListService.filteredProducts(vm.filteredObjects,vm.ProductType,vm.min,vm.max).then(
                 function success(response) {
                     console.log(response);
+                    if(response.status == "ok")
                     vm.filteredResult = response.data;
                     vm.allProducts=angular.copy(vm.filteredResult);
                 },

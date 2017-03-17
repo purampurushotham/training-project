@@ -5,6 +5,8 @@ var products=require('../../models/ProductModel');
 var comments =require('../../models/CommentModel');
 var offers = require('../../models/OffersModel');
 var mongoose=require('mongoose');
+var SuccessResponse= require('../../models/SuccessResponse');
+var ErrorResult = require('../../models/errorResult/ErrorResult');
 var ProductRoute;
 ProductRoute= {
     topRatedProducts: function (req, res) {
@@ -24,9 +26,9 @@ ProductRoute= {
             }
         ]).exec(function (err, prods) {
             if (err) {
-                res.send(err);
+                return res.json(new ErrorResult("failed","cannot find products",[{"msg" : "cannot find products" }]))
             } else {
-                res.send(prods);
+                res.send(new SuccessResponse("ok",prods,"","Success"));
                 res.end();
             }
         });
@@ -37,13 +39,13 @@ ProductRoute= {
         var regex = new RegExp(queryParam.keyword,"i");
         console.log(regularExpression)
         console.log(regex);
-        var query={$or: [{name: { $regex: regex }}, {brand: { $regex: regex   }}]}
+        var query={$or: [{name: { $regex: regex }}, {brand: { $regex: regex}}]};
         products.find(query).exec(function (err, oneProduct) {
             if (err) {
-                res.send(err);
+                return res.json(new ErrorResult("failed","found searched products",[{"msg" : "cannot have searched products"}]));
             }
-            else {
-                res.send({data : oneProduct});
+            else if(oneProduct != null){
+                res.send(new SuccessResponse("ok",oneProduct,"","found searched products"));
                 res.end();
             }
         });
@@ -52,10 +54,10 @@ ProductRoute= {
 
         products.findOne({product_id: req.params.id}).populate('comments').exec(function (err, oneProduct) {
             if (err) {
-                res.send(err);
+              return res.json(new ErrorResult("failed",'error in query',[{"msg" : "error in finding product"}]));
             }
-            else {
-                res.send(oneProduct);
+            else if(oneProduct != null){
+                res.send(new SuccessResponse("ok",oneProduct,"product is found"));
                 res.end();
             }
         });
@@ -63,7 +65,7 @@ ProductRoute= {
     },
     getSimilarProduct: function (req, res) {
         var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
-        var query = {type: queryParam.type,subType :queryParam.subType}
+        var query = {type: queryParam.type,subType :queryParam.subType ,_id : {$ne : queryParam.id}}
         if(queryParam.brand) {
             query.brand = queryParam.brand;
         } else if(queryParam.language){
@@ -71,11 +73,11 @@ ProductRoute= {
         }
         products.find(query).exec(function (err, simialrProds) {
             if (err) {
-                res.send(err);
+                return res.json(new ErrorResult("failed",'error in query',[{"msg" : "error in finding similar product"}]));
             }
             else {
-
-                res.send({data: simialrProds});
+                console.log(simialrProds)
+                res.send(new SuccessResponse("ok",simialrProds,"similar Products are exists"));
                 res.end();
             }
         });
@@ -86,11 +88,11 @@ ProductRoute= {
         var query = { subType: req.params.subType};
         products.find({subType : queryParam.subType}).exec(function (err, simialrProds) {
             if (err) {
-                res.send(err);
+                return res.json(new ErrorResult("failed",'error in query',[{"msg" : "error in finding brand wise product"}]));
             }
             else {
 
-                res.send({data: simialrProds});
+                res.send(new SuccessResponse("ok",simialrProds,"view products brand wise"));
                 res.end();
             }
         });
@@ -107,10 +109,10 @@ ProductRoute= {
         products.distinct(t,query ).exec(function (err, brands) {
             console.log(t);
             if (err) {
-                res.send(err);
+                return res.json(new ErrorResult("failed",'error in query',[{"msg" : "error in finding brand wise product"}]));
             }
             else {
-                res.send({data: brands});
+                res.send(new SuccessResponse("ok",brands,"","Success"));
                 res.end();
             }
         });
@@ -119,10 +121,10 @@ ProductRoute= {
     getOffers : function(req,res) {
         offers.distinct("type").exec(function (err, offers) {
             if (err) {
-                res.send(err);
+                return res.json(new ErrorResult("failed",'error in query',[{"msg" : "error in finding offers"}]));
             }
             else {
-                res.send({data: offers});
+                res.send(new SuccessResponse("ok",offers,"","Success"));
                 res.end();
             }
         });
@@ -157,10 +159,10 @@ ProductRoute= {
         }
         products.aggregate(QArray).exec(function(err, response){
             if(err)
-                console.log(err);
+                return res.json(new ErrorResult("failed",'error in query',[{"msg" : "error in filtering products"}]));
             else
             {
-                res.send({data : response});
+                res.send(new SuccessResponse("ok",response,"","Success"));
             }
 
         });

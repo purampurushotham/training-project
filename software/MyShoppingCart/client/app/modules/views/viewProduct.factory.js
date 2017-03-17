@@ -21,8 +21,9 @@
             var deferred = $q.defer();
             return api.viewProduct({id:id}).$promise;
         }
-        function getSimilarProduct(type,subType,brand){
+        function getSimilarProduct(id,type,subType,brand){
             var query={};
+            query.id=id
             query.type =type;
             query.subType = subType;
             if(type == 'book') {
@@ -30,7 +31,6 @@
             }else
                 query.brand = brand;
             var deferred = $q.defer();
-            //query = ObjToQueryParam(query)
             console.log("iiii"+query)
             console.log(query)
             return api.similarProduct({q:query}).$promise;

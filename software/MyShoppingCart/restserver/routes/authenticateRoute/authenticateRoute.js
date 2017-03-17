@@ -99,6 +99,7 @@ var authenticateRoute = {
                             res.send(err);
                         }
                         else {
+                            //send mail notification
                             var sendQuery={};
                             sendQuery.firstName=resultSet.firstName
                             sendQuery.lastName=resultSet.lastName

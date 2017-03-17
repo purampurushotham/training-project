@@ -19,6 +19,7 @@
             function viewProductsByBrand(subType){
                 ProductsListService.viewProductsByBrand(subType).then(success).catch(failed);
                 function success(response){
+                    if(response.status == "ok")
                     vm.products=response.data;
                 }
                 function failed(error) {
@@ -26,6 +27,5 @@
                 }
             }
         }
-
     }
 })();

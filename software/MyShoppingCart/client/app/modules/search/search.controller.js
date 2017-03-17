@@ -19,14 +19,16 @@
                 //api call for search products
                 searchProductFactory.getSearchedProduct(lettersTyped).then(
                     function success(response){
+                        if(response.status == "ok")
+                            console.log(response)
                         vm.products=response.data;
-                        //    console.log($rootScope.products);
                     },
-                function failed(error) {
-                    console.log(error);
-                }
+                    function failed(error) {
+                        console.log(error);
+                    }
                 );
-                vm.limitNameSearch = 500;            }
+                vm.limitNameSearch = 500;
+            }
             else {
                 vm.limitNameSearch = 0;
             }

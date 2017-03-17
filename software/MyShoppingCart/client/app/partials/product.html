@@ -1,32 +1,33 @@
 <div class="row first_panel" >
     <div class="col-md-4 panel panel-primary">
+        <br>
         <img src="{{vc.vp.pic}}" class="lg_pics ">
     </div>
     <div class="col-md-7 panel panel-info second_panel">
         <h2 class="Display-2"><span ng-bind="vc.vp.name"></span></h2>
-        <p class="lead"><span  ng-bind="vc.vp.price"><span>/-</span></span></p>
+        <p class="lead"><span  ng-bind="vc.vp.price"></span>/-</p>
         <!--<p class="lead"><span ng-bind="vc.vp.description"></span></p>-->
         <p><ng-rate-it ng-model="vc.vp.rating" class="custom_rating"  read-only="true" ></ng-rate-it></p>
         <h2>Specifications:</h2>
-        <dl  ng-if="vc.vp.brand" class="row dl-horizontal">`
-            <dt class="col-sm-3">Brand :</dt>
-            <dd class="col-sm-9" ng-bind="vc.vp.brand"></dd>
-            <dt class="col-sm-3">Model :</dt>
-            <dd class="col-sm-9" ng-bind="vc.vp.model_Name"></dd>
-            <dt class="col-sm-3">RAM :</dt>
-            <dd class="col-sm-9" ng-bind="vc.vp.ram"></dd>
-            <dt class="col-sm-3">color :</dt>
-            <dd class=  "col-sm-9" ng-bind="vc.vp.color"></dd>
-            <dt class="col-sm-3">Battery :</dt>
-            <dd class="col-sm-9" ng-bind="vc.vp.battery"></dd>
+        <dl class="dl-horizontal">
+            <dt>Brand :</dt>
+            <dd ng-bind="vc.vp.brand"></dd>
+            <dt >Model :</dt>
+            <dd ng-bind="vc.vp.model_Name"></dd>
+            <dt >RAM :</dt>
+            <dd ng-bind="vc.vp.ram"></dd>
+            <dt >color :</dt>
+            <dd  ng-bind="vc.vp.color"></dd>
+            <dt >Battery :</dt>
+            <dd  ng-bind="vc.vp.battery"></dd>
         </dl>
         <dl  ng-if="vc.vp.language" class=" dl-horizontal">`
-            <dt class="col-sm-3">subType :</dt>
-            <dd class="col-sm-9" ng-bind="vc.vp.subType"></dd>
-            <dt class="col-sm-3">Author :</dt>
-            <dd class="col-sm-9" ng-bind="vc.vp.author"></dd>
-            <dt class="col-sm-3">language :</dt>
-            <dd class="col-sm-9" ng-bind="vc.vp.language"></dd>
+            <dt>subType :</dt>
+            <dd  ng-bind="vc.vp.subType"></dd>
+            <dt>Author :</dt>
+            <dd ng-bind="vc.vp.author"></dd>
+            <dt>language :</dt>
+            <dd ng-bind="vc.vp.language"></dd>
         </dl>
     </div>
 

@@ -1,12 +1,12 @@
-<div ng:repeat="i in hc.products" class="row">
-    <h1 class="lead" ng-bind = i._id></h1>
-    <div ng:repeat="j in i.docs" class ="col-md-3">
-        <div class="container" >
-            <a class="search_a" ui-sref="view({id:j.product_id})">
-                <img src="{{j.pic}}" class="pics">
-                <p ng-bind="j.name"></p>
-                <p ng-bind="j.price"></p>
-                <p><ng-rate-it ng-model="j.rating" class="custom_rating"  read-only="true" ></ng-rate-it>
+<div ng:repeat="type in hc.products" class="row panel panel-primary">
+    <h1 class="lead panel-heading" ng-bind = type._id></h1>
+    <div ng:repeat="prod in type.docs" class ="col-md-3 panel-body">
+        <div class="container">
+            <a class="search_a" ui-sref="view({id:prod.product_id})">
+                <img src="{{prod.pic}}" class="pics">
+                <p ng-bind="prod.name"></p>
+                <p ng-bind="prod.price"></p>
+                <p><ng-rate-it ng-model="prod.rating" class="custom_rating"  read-only="true" ></ng-rate-it>
                 </p>
             </a>
         </div>

@@ -48,8 +48,8 @@
             viewProductService.viewProduct(id).then(success).catch(failed);
             function success(response){
                     console.log(response);
-                    vm.eachProduct=response;
-
+                if(response.status == "ok")
+                    vm.eachProduct=response.data;
                 }
                 function failed(error) {
                     console.log(error);
@@ -67,15 +67,18 @@
             if(vm.vp.brand == 'undefined'){
                 vm.vp.brand = vm.vp.language;
             }
+            console.log("*************")
             var brand=vm.vp.brand;
             //calling for similar products
-            getSimilarProduct(type,subType,brand);
-            function getSimilarProduct(type,subType,brand){
+            getSimilarProduct(vm.vp._id,type,subType,brand);
+            function getSimilarProduct(id,type,subType,brand){
                 //calling viewProductService tp view products
-                viewProductService.getSimilarProduct(type,subType,brand).then(success).catch(failed);
+                viewProductService.getSimilarProduct(id,type,subType,brand).then(success).catch(failed);
                 function success(response){
+                    console.log(response.data)
                     vm.simialrProds={};
-                    vm.simialrProds=response;
+                    if(response.status =="ok")
+                    vm.simialrProds=response.data;
                 }
                 function failed(error) {
                     console.log(error);
@@ -88,6 +91,7 @@
         var vm = this;
         vm.$onInit = function () {
             vm.similarProducts=vm.similarProds;
+            console.log(vm.similarProducts)
         };
     }
     commentsCtrl.$inject = ['viewProductService']
@@ -126,7 +130,6 @@
      var vm = this;
      console.log("userDefinedPagination");
      vm.$onInit = function () {
-
      console.log("%%%%%%%%%%%%%%%%%%%%%%");
      console.log(vm.pages);
      vm.currentPage = 0;
