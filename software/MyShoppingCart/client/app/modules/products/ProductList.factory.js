@@ -17,7 +17,6 @@
         return getAllProducts;
 
         function viewProductsByBrand(subType) {
-            console.log("in ProductsListService " + " ****************" + "viewProductsByBrand");
             var query=subType;
             return api.viewBandWiseProducts({q: query}).$promise;
         }

@@ -19,10 +19,8 @@
                     }
                 },
                 function failed(error) {
-                    console.log(error.data);
                     if(error.data === "null"){
                     }
-                    console.log("**************************Failed");
                 }
             );
         }

@@ -9,7 +9,7 @@ var jwt = require('jwt-simple');
 var tokens=require('../../models/token/TokenModel');
 var users=require('../../models/user/userModel');
 var addresses=require('../../models/addressModel/AddressModel')
-var tokenEnumObject=require('../../enums/token_enums');
+var tokenEnumObject=require('../../enums/token_enum');
 var SuccessResponse= require('../../models/successResponse/SuccessResponse');
 var ErrorResult = require('../../models/errorResult/ErrorResult')
 var path=require('path');
@@ -36,7 +36,6 @@ var authenticateRoute = {
                         newToken.email = query.email;
                         newToken.save(function (err) {
                             if (err) {
-                                console.log(err);
                                 res.send(err);
                             }
                             else {
@@ -60,8 +59,6 @@ var authenticateRoute = {
     },
     logout : function(req,res){
         var queryParam=req.query.q
-        console.log("***************************");
-        console.log(queryParam);
         users.findOne( {_id :queryParam} ).exec(function (err,result){
             if(err){
                 res.send(err)
@@ -72,7 +69,6 @@ var authenticateRoute = {
                         res.send(new ErrorResult('failed','token not found'))
                     }
                     else {
-                        // console.log(response)
                         res.send(new SuccessResponse('ok',response,'',"logged out successfully"));
                     }
                 });
@@ -95,7 +91,6 @@ var authenticateRoute = {
                     newToken.email = query.email;
                     newToken.save(function (err) {
                         if (err) {
-                            console.log(err);
                             res.send(err);
                         }
                         else {
@@ -110,8 +105,6 @@ var authenticateRoute = {
                             sendQuery.subject=appConfig.mail.forgotPassworSubject
                             sendQuery.fullName=sendQuery.firstName+ " "+sendQuery.lastName
                             mailService.sendMail('forgotPassword',sendQuery).then(function (success){
-                                    console.log("************************ after mail service in success");
-                                    console.log(success);
                                     res.send(new SuccessResponse('ok','','','Mail send successfully'))
                                 },function (failed){
 
@@ -147,7 +140,6 @@ var authenticateRoute = {
                     var newPassword = passwordHash.generate(queryParam.user.password);
                     var quert1 = {email: re}
                     users.findOneAndUpdate({email: re}, {$set: {password: newPassword}}).exec(function (err, confirmed) {
-                        console.log("**************************" + "in user collection")
                         if (err) {
                             res.send(err);
                         }
@@ -183,7 +175,6 @@ var authenticateRoute = {
                 profile.lastName = result.lastName;
                 profile.email = result.email;
                 profile.phoneNumber = result.phoneNumber;
-                console.log(profile);
                 res.send(new SuccessResponse("ok",profile,'',"success"));
                 res.end();
             }
@@ -193,7 +184,6 @@ var authenticateRoute = {
     },
     getAddress: function (req, res) {
         var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
-        console.log(queryParam);
         var query = {_id: queryParam.id};
         users.findOne(query).populate({
             path: 'addresses',
@@ -202,14 +192,11 @@ var authenticateRoute = {
                 res.send(err);
             }
             else if(results != null){
-                console.log("************************ in getAddress")
-                console.log(results.addresses);
                 users.findOne(query).populate('addresses').exec(function (err,response) {
                     if(err){
                         res.send(err);
                     }
                     else{
-                        console.log("************************"+response.addresses.length)
                         var pagination={};
                         pagination.total=response.addresses.length;
                         res.send(new SuccessResponse("ok",results.addresses,pagination,"success"));
@@ -223,7 +210,6 @@ var authenticateRoute = {
     },
     deleteAddress : function(req,res){
         var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
-        console.log(queryParam);
         var address=queryParam.address;
         users.findOne({ _id : queryParam.id}).exec(function (err, results) {
             if (err) {
@@ -233,7 +219,6 @@ var authenticateRoute = {
                 for(var i=0;i< results.addresses.length;i++){
                     if(results.addresses.includes(address._id));
                     results.addresses.pop(address._id);
-                    console.log(results.addresses)
                 }
 
 
@@ -242,14 +227,11 @@ var authenticateRoute = {
                         res.send(err);
                     }
                     else {
-                        console.log("******************** in removing address")
                         addresses.remove({_id : address._id}).exec(function (errad,response) {
                             if (errad) {
                                 res.send(errad);
                             }
                             else {
-                                console.log(response)
-                                console.log(results);
                                 res.send(new SuccessResponse('ok','','','address is deleted'))
                             }
                         });

@@ -15,9 +15,6 @@
             }
         });
     //Price Range feature
-    filterCtrl.$inject=['ProductsListService']
-    function filterCtrl(ProductsListService){
-        console.log("in filter controller");}
     checkBoxCtrl.$inject=['ProductsListService']
     function checkBoxCtrl(ProductsListService) {
         var vm = this;
@@ -31,7 +28,6 @@
                 vm.selectedBrand = vm.eachProduct.language;
             } else
                 vm.selectedBrand = vm.eachProduct.brand;
-            console.log(vm.selectedBrand)
             getSelectedBrands(vm.selectedBrand, vm.selectedSubType);
             function getSelectedBrands(selectedBrand, selectedSubType) {
                 var query={}
@@ -41,12 +37,10 @@
                 query.brand=selectedBrand;
                 ProductsListService.getSelectedBrands(query).then(success).catch(failed);
                 function success(response) {
-                    console.log(response);
                     if(response.status == "ok")
                         vm.setBrands = response.data;
                 }
                 function failed(error) {
-                    console.log(error);
                 }
             }
             offerCtrl(vm.productsList);
@@ -55,12 +49,10 @@
                 function getOffers() {
                     ProductsListService.getOffers().then(
                         function success(response) {
-                            console.log(response);
                             if(response.status == "ok")
                                 vm.setOffers = response.data;
                         },
                         function failed(error) {
-                            console.log(error);
                         });
                 }
             }
@@ -94,7 +86,6 @@
             };
             sliderFeature(vm.productsList,vm.selectedSubType);
             function sliderFeature(productsList,type) {
-                console.log(productsList);
                 vm.products = productsList;
                 vm.proType=type;
                 vm.copySimilarProds = angular.copy(vm.products);
@@ -112,7 +103,6 @@
             vm.filteredObjects.slider.options.floor=100;
             vm.filteredObjects.slider.options.minRange=5000;
             vm.filteredObjects.slider.options.maxRange=6000;
-            console.log(vm.filteredObjects.slider)
         }
         //calling service method when ever changes in any checkboxes or slider
         vm.checkBrand=function () {
@@ -131,20 +121,16 @@
             query.max=vm.max;
             ProductsListService.filteredProducts(query).then(
                 function success(response) {
-                    console.log(response);
                     if(response.status == "ok")
                         vm.filteredResult = response.data;
                     vm.allProducts=angular.copy(vm.filteredResult);
                 },
                 function failed(error) {
-                    console.log(error);
                 });
         };
         function getselectedBrands (filteredBrand){
             var brandArray=[];
             for(var i=0;i<filteredBrand.length;i++){
-                console.log("%%%%%%%%%%%%%%%")
-                console.log(filteredBrand[i])
                 brandArray.push(filteredBrand[i]);
             }
             return brandArray;

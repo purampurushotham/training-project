@@ -15,10 +15,6 @@
         var vm = this;
         //after calling the service in app.run storing  top rated products in rootscope.products for only once
         vm.products=$rootScope.products;
-        angular.forEach(vm.products, function(each,index){
-            console.log(each)
-            
-        });
-    }
+    };
 }());
 

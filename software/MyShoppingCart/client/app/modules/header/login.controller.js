@@ -7,48 +7,35 @@
         .controller("loginCtrl", loginCtrl);
     loginCtrl.$inject=['$uibModalInstance','userService','$localStorage','$uibModal','$state']
     function loginCtrl(uibModalInstance,userService,$localStorage,uibModal,$state){
-        console.log("in login ctrl");
         var vm=this;
         vm.fullName={
             firstName : "",
             lastName : ""
         };
-        console.log(vm.fullName);
         vm.exists=true;
         vm.user={};
-        console.log(vm.user);
         vm.validateUser = validateUser;
         function validateUser(){
-            console.log("user login");
             userService.validateUser(vm.user).then(
                 function success(response) {
-                    console.log(response);
                     vm.success = response;
-                    console.log(vm.success);
-                    console.log("**************************success");
                     checkResult();
                 },
                 function failed(error) {
-                    console.log("invalid userid or password");
-                    console.log("**************************Failed");
                 }
             );
         }
         function checkResult(){
-            console.log("in check Result")
             if (vm.success.data){
                 vm.exists = true;
                 $localStorage.userDetails={};
                 $localStorage.userDetails.firstName = vm.success.data.firstName;
                 $localStorage.userDetails.lastName=vm.success.data.lastName;
                 $localStorage.userDetails.id=vm.success.data.id;
-                console.log($localStorage.userDetails)
-                console.log("**************************success");
                 $state.go('Home')
                 uibModalInstance.close('submit');
             }
             else if(angular.equals(vm.success.status,'failed')){
-                console.log(vm.success.errors[0].msg)
                 vm.exists = false;
             }
         }

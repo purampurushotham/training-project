@@ -9,13 +9,10 @@ function samData($http,$q) {
 
     return {
         getData:function () {
-            console.log("**********************88 in htttp get")
             var products=[];
             var deffered=$q.defer();
             $http.get('/api/v1.0/products').then(function mySuccess(response) {
-                console.log("**********************88 in htttp get")
                 if(response.data.status == 'ok') {
-                    console.log(response.data)
                     deffered.resolve(response.data);
                 }
             }).then(function myError(error) {

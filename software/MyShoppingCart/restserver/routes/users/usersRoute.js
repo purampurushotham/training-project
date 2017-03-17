@@ -10,7 +10,7 @@ var jwt = require('jwt-simple');
 var tokens=require('../../models/token/TokenModel');
 var addresses=require('../../models/addressModel/AddressModel');
 var users=require('../../models/user/userModel');
-var tokenEnumObject=require('../../enums/token_enums');
+var tokenEnumObject=require('../../enums/token_enum');
 var mailService=require("../mail/mailService");
 var SuccessResponse= require('../../models/successResponse/SuccessResponse');
 var ErrorResult = require('../../models/errorResult/ErrorResult');
@@ -140,7 +140,6 @@ var usersRoute = {
         var queryParam=qp.address;
         var query_id=qp.id
         var query={type : queryParam.type ,addressLine_1 : queryParam.addressLine_1,addressLine_2 : queryParam.addressLine_2,street : queryParam.street,city : queryParam.city,state : queryParam.state,country : queryParam.country ,zipCode : queryParam.zipCode}
-        console.log("************************* in create address")
         var newAddress=new addresses(queryParam);
         if(queryParam._id){
             newAddress.isNew=false
@@ -151,11 +150,10 @@ var usersRoute = {
         }
         newAddress.save(function (err,address) {
             if (err) {
-                console.log(err)
+
                 res.send(err);
             }
             else if(!queryParam._id ){
-                console.log(address)
                 users.findOne({_id : query_id }).exec(function (err, result) {
                     if (err) {
                         res.send(err);
@@ -170,12 +168,10 @@ var usersRoute = {
                             }
                             result.save(function (errad,response){
                                 if(errad){
-                                    console.log(errad);
                                     res.send(errad)
                                 }
                                 else {
-                                    console.log("************************* after saving addresses  ");
-                                    console.log(response)
+
                                 }
                             });
                         }

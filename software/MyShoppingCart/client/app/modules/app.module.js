@@ -21,8 +21,7 @@
         "MSC.search",
         "MSC.view",
         "MSC.Products",
-        "MSC.checkBoxes",
+        "MSC.checkBoxes"
 
     ]);
-    console.log("in module");
 }());

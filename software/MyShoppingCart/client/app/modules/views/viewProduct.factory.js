@@ -17,7 +17,6 @@
         return getProduct;
 
         function viewProduct(id) {
-            console.log("in viewProductService")
             var deferred = $q.defer();
             return api.viewProduct({id:id}).$promise;
         }
@@ -31,8 +30,6 @@
             }else
                 query.brand = brand;
             var deferred = $q.defer();
-            console.log("iiii"+query)
-            console.log(query)
             return api.similarProduct({q:query}).$promise;
         }
 

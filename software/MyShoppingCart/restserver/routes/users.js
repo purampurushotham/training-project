@@ -4,7 +4,6 @@ var usersRoute = require("./users/usersRoute");
 var authenticateRoute = require("./authenticateRoute/authenticateRoute");
 
 var userRoutes=function(app) {
-    console.log("*********************user routes")
   app.get('/api/v1.0/users/getExistedEmail', usersRoute.getExistedEmail);
   app.post('/api/v1.0/users/addUser', usersRoute.createUserNew);
   app.put('/api/v1.0/users/confirmUser', usersRoute.confirmUser);
@@ -16,10 +15,6 @@ var userRoutes=function(app) {
   app.post('/api/v1.0/users/address/create', usersRoute.createAddress);
   app.get('/api/v1.0/users/profile/address', authenticateRoute.getAddress);
   app.delete("/api/v1.0/users/profile/deleteAddress", authenticateRoute.deleteAddress)
-
-/* GET users listing. */
-/*router.get('/', function(req, res, next) {
-  res.send('respond with a resource');*/
 };
 
 module.exports = userRoutes;

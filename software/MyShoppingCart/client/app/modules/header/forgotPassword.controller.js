@@ -12,12 +12,10 @@
         vm.forgotPassword = forgotPassword;
         function forgotPassword() {
             userService.forgotPassword(vm.user).then(function success(response) {
-                    console.log(response);
                     vm.success = response;
                     checkEmail();
                 },
                 function failed(error) {
-                    console.log(error);
                 }
             );
         }

@@ -10,6 +10,5 @@ module.exports = {
         },
         addUserSubject: 'Your new  Account',
         forgotPassworSubject:'Reset myshoppingCart Password',
-        //serverIp:"http://localhost:9000"
     }
 };

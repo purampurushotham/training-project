@@ -17,9 +17,6 @@ var moment = require('moment');
 mongoose.connect('mongodb://localhost/myShoppingCart');
 var db = mongoose.connection;
 var dbCollection = db.collections;
-console.log("connected and collections are : "+dbCollection);
-//console.log(dbCollection);
-console.log("\n *STARTING* \n");
 // Get content from file
 var contents = fs.readFileSync("../client/data.json");
 // Define to JSON type
@@ -30,8 +27,6 @@ for(var i = 0; i<jsonContent.length; i++){
 }
 function insertProducts(eachProduct){
     var product ={};
-    //console.log(eachProduct);
-    console.log("prod id "+eachProduct.id);
     product.product_id = eachProduct.id;
     product.name = eachProduct.name;
     product.price = eachProduct.price;
@@ -62,11 +57,9 @@ function insertProducts(eachProduct){
     });
     Q.allSettled( promises ).then(function (resp) {
         var p = ProductModel(product);
-        //console.log(product);
         p.save(function (err) {
             if (err) {
-                console.log(err);
-                //return err;
+
             }
             else {
                 console.log("data Loaded");
@@ -81,9 +74,7 @@ function insertOffers(prod,eachOffer){
     newOffer.percentage = eachOffer.percentage;
     var offer = OfferModel(newOffer);
     offer.save(function (err) {
-        //console.log("dateform = "+dateform);
         if (err) {
-            console.log(err);
             deffered.reject("reject");
             //return err;
         }
@@ -110,9 +101,6 @@ function insertComments(prod,eachComment){
     //p.push(eachProduct);
     comment.save(function (err) {
         if (err) {
-            console.log(err);
-            console.log("errorrr");
-
             deffered.reject("rejected");
         }
         else {

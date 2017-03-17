@@ -26,13 +26,11 @@
             query.token=vm.token
             userService.resetPassword(query).then(
                 function success(response){
-                    console.log(response);
                     if(response.status == 'ok'){
                         $state.go('Home')
                     }
                 },
                 function failed(error)   {
-                    console.log(error)
                 }
             );
 

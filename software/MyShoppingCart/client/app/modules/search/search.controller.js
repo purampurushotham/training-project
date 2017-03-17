@@ -20,11 +20,9 @@
                 searchProductFactory.getSearchedProduct(lettersTyped).then(
                     function success(response){
                         if(response.status == "ok")
-                            console.log(response)
-                        vm.products=response.data;
+                            vm.products=response.data;
                     },
                     function failed(error) {
-                        console.log(error);
                     }
                 );
                 vm.limitNameSearch = 500;

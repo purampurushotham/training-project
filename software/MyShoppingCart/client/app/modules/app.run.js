@@ -10,14 +10,11 @@
         console.log("in app.run")
         samData.getData().then(function (response) {
                 $rootScope.products={};
-            console.log("******************* in appRUn")
-            console.log(response.data)
                 $rootScope.products=response.data;
-            console.log()
             },
             function (msg) {
                 console.log("error");
             });
-        console.log("in Run");
+
     }
 }());

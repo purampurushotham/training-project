@@ -9,7 +9,6 @@ var path=require('path')
 var emailTemplates = require('email-templates');
 var templatesDir =  path.resolve(__dirname, '..', '../emailTemplates');
 var extConfigLoc =path.join(__dirname,'../../config/config.json');
-console.log(extConfigLoc)
 var config = require(extConfigLoc);
 var appConfig = JSON.parse(JSON.stringify(config));
 var sendMail = {
@@ -25,7 +24,6 @@ var sendMail = {
         }));
         emailTemplates(templatesDir, function (err, template) {
             if (err) {
-                console.log("outside template function");
                 console.log(err);
             }
             // Send a single email
@@ -42,10 +40,8 @@ var sendMail = {
                         html : html
                     }, function (error, response) {  //callback
                         if (error) {
-                            console.log(error);
                             deffered.reject(error)
                         } else {
-                            console.log("Message sent: " + response);
                             deffered.resolve();
                         }
                         transport.close(); // shut down the connection pool, no more messages.  Comment this line out to continue sending emails.

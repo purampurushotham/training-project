@@ -18,14 +18,13 @@
             viewProductsByBrand(vm.electronic_subType);
             function viewProductsByBrand(subType){
                 var query={}
-                    query.subType=subType
+                query.subType=subType
                 ProductsListService.viewProductsByBrand(query).then(success).catch(failed);
                 function success(response){
                     if(response.status == "ok")
-                    vm.products=response.data;
+                        vm.products=response.data;
                 }
                 function failed(error) {
-                    console.log(error);
                 }
             }
         }

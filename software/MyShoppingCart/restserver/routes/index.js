@@ -4,7 +4,6 @@ var path = require('path');
 var products = require("./products/productList");
 /* GET home page. */
 var appRoutes=function(app){
-    console.log("********************************** in n=index")
     app.get('/api/v1.0/products',products.topRatedProducts);
     app.get('/api/v1.0/products/search',products.getSearchedProduct)
     app.get('/api/v1.0/products/:id',products.viewEachProduct);

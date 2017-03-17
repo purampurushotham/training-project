@@ -16,8 +16,6 @@
         vm.obj=obj
         vm.address=vm.obj.address
         vm.zipCode_Pattern=Regexes.ZIPCODE_PATTERN
-        console.log(vm.address)
-        console.log(vm.obj)
         function createAddress(obj){
             var query={}
             query.address=vm.address

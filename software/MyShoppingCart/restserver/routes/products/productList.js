@@ -10,7 +10,6 @@ var ErrorResult = require('../../models/errorResult/ErrorResult');
 var ProductRoute;
 ProductRoute= {
     topRatedProducts: function (req, res) {
-        console.log('asd');
         products.aggregate([
             {$match: {"rating": {$gt: 4}}},
             {
@@ -37,8 +36,6 @@ ProductRoute= {
         var queryParam = (req.query && req.query.q) ? JSON.parse(req.query.q) : req.body.q;
         var regularExpression = "/^"+queryParam.keyword+"/i";
         var regex = new RegExp(queryParam.keyword,"i");
-        console.log(regularExpression)
-        console.log(regex);
         var query={$or: [{name: { $regex: regex,}}, {brand: { $regex: regex}}]};
         products.find(query).exec(function (err, oneProduct) {
             if (err) {
@@ -76,7 +73,6 @@ ProductRoute= {
                 return res.json(new ErrorResult("failed",'error in query',[{"msg" : "error in finding similar product"}]));
             }
             else {
-                console.log(simialrProds)
                 res.send(new SuccessResponse("ok",simialrProds,"similar Products are exists"));
                 res.end();
             }
@@ -107,7 +103,6 @@ ProductRoute= {
             t="language";
         }
         products.distinct(t,query ).exec(function (err, brands) {
-            console.log(t);
             if (err) {
                 return res.json(new ErrorResult("failed",'error in query',[{"msg" : "error in finding brand wise product"}]));
             }
@@ -141,8 +136,6 @@ ProductRoute= {
         if(offersQuery != undefined){
             if(offersQuery.length !=0){
                 QArray.push({"$match" : {"resObj.type" : {$in : offersQuery}}});
-                console.log("quertoooo + "+QArray)
-                console.log(QArray)
             }
         }
         if(brandsQuery != undefined){
@@ -166,7 +159,6 @@ ProductRoute= {
             }
 
         });
-        console.log(QArray)
     }
 };
 module.exports=ProductRoute;

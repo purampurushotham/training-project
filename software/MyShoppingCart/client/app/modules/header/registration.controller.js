@@ -9,7 +9,6 @@
     function registrationCtrl($uibModalInstance,userRegistrationFactory,Regexes,validation) {
         var vm = this;
         vm.user={};
-        console.log("registrationCtrl");
         vm.submitUser=submitUser;
         vm.namePattern =Regexes.NAME_PATTERN;
         vm.phonePattern=Regexes.PHONE_NO_PATTERN;
@@ -17,29 +16,23 @@
         vm.maxLength=validation.USER_NAME_MAX_LENGTH;
         vm.passwordPattern=Regexes.PASSWORD_PATTERN;
         function submitUser(){
-            console.log(vm.user);
             userRegistrationFactory.createUserNew(vm.user).then(
                 function success(response){
-                    console.log(response);
+
                 },
                 function failed(error) {
-                    console.log(error);
+
                 }
             );
         }
         vm.checkmail =function() {
-            console.log(vm.user.email);
-            console.log("in checkmail");
             if (typeof vm.user.email != 'undefined') {
                 var email = vm.user.email;
-                console.log("api call");
                 userRegistrationFactory.getExistedEmail(email).then(
                     function success(response) {
-                        console.log(response);
                         check(response.messages)
                     },
                     function failed(error) {
-                        console.log(error);
                     }
                 );
             }

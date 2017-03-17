@@ -39,22 +39,20 @@
         });
     //root controller
     viewCtrl.$inject=['$stateParams','viewProductService'];
-        function viewCtrl($stateParams,viewProductService) {
-            var vm = this;
-            vm.similarProducts = [];
-            vm.id = $stateParams.id;
-            view(vm.id);
+    function viewCtrl($stateParams,viewProductService) {
+        var vm = this;
+        vm.similarProducts = [];
+        vm.id = $stateParams.id;
+        view(vm.id);
         function view(id){
             viewProductService.viewProduct(id).then(success).catch(failed);
             function success(response){
-                    console.log(response);
                 if(response.status == "ok")
                     vm.eachProduct=response.data;
-                }
-                function failed(error) {
-                    console.log(error);
-                }
             }
+            function failed(error) {
+            }
+        }
     }
     //getProduct controller
     ProductController.$inject=['viewProductService'];
@@ -67,7 +65,6 @@
             if(vm.vp.brand == 'undefined'){
                 vm.vp.brand = vm.vp.language;
             }
-            console.log("*************")
             var brand=vm.vp.brand;
             //calling for similar products
             getSimilarProduct(vm.vp._id,type,subType,brand);
@@ -75,13 +72,11 @@
                 //calling viewProductService tp view products
                 viewProductService.getSimilarProduct(id,type,subType,brand).then(success).catch(failed);
                 function success(response){
-                    console.log(response.data)
                     vm.simialrProds={};
                     if(response.status =="ok")
-                    vm.simialrProds=response.data;
+                        vm.simialrProds=response.data;
                 }
                 function failed(error) {
-                    console.log(error);
                 }
             }
         };
@@ -91,7 +86,6 @@
         var vm = this;
         vm.$onInit = function () {
             vm.similarProducts=vm.similarProds;
-            console.log(vm.similarProducts)
         };
     }
     commentsCtrl.$inject = ['viewProductService']
@@ -100,16 +94,12 @@
         var vm = this;
         vm.$onInit = function () {
             vm.comm=vm.comments;
-            console.log(vm.comm)
             vm.sam =vm.comm;
-            console.log(vm.sam);
             vm.commentsSize = 2;
             vm.tempSize = vm.commentsSize;
             vm.viewMore = function () {
-                console.log(vm.sam.length);
                 if (vm.sam.length > vm.commentsSize) {
                     vm.commentsSize = (vm.commentsSize) + ((vm.sam.length - 1) / 2);
-                    console.log(vm.commentsSize);
                 }
                 else if (vm.sam.length < vm.commentsSize) {
                     vm.commentsSize = vm.sam.length;
@@ -126,47 +116,30 @@
         }
     }
 //pagination functionality
-     function userDefinedPagination() {
-     var vm = this;
-     console.log("userDefinedPagination");
-     vm.$onInit = function () {
-     console.log("%%%%%%%%%%%%%%%%%%%%%%");
-     console.log(vm.pages);
-     vm.currentPage = 0;
-     vm.totalPages = 0;
-     vm.pageSize = 3;
-     vm.pagedData = angular.copy(vm.pages);
-     vm.pages = [];
-     console.log(vm.pagedData);
-     vm.pageButtonDisabled = function (data) {
-     if (data == -1) {
-     console.log("in pageButton");
-     return vm.currentPage == 0;
-     }
-     return vm.currentPage >= vm.pagedData.length / vm.pageSize - 1;
-     };
-     /*/*paginate*/
-     vm.paginate = function (nextPrevMultiplier) {
-     vm.currentPage += (nextPrevMultiplier * 1);
-     vm.pages = vm.pagedData.slice(vm.currentPage * vm.pageSize);
-     console.log("in paginate");
-     console.log(vm.pages);
-     };
-     vm.selectedPage=function(){
-     vm.totalPages = Math.ceil(vm.pagedData.length / vm.pageSize);
-     vm.pages = vm.pagedData;
-     };
-     vm.selectedPage();
-     }
-     }
-    //Price Range feature
-
-    /*//calling all methods*!/
-     getId();
-     similarProduct();
-     sliderFeature();
-     userDefinedPagination();
-     */
-    /*end of controller*/
-
+    function userDefinedPagination() {
+        var vm = this;
+        vm.$onInit = function () {
+            vm.currentPage = 0;
+            vm.totalPages = 0;
+            vm.pageSize = 3;
+            vm.pagedData = angular.copy(vm.pages);
+            vm.pages = [];
+            vm.pageButtonDisabled = function (data) {
+                if (data == -1) {
+                    return vm.currentPage == 0;
+                }
+                return vm.currentPage >= vm.pagedData.length / vm.pageSize - 1;
+            };
+            /*/*paginate*/
+            vm.paginate = function (nextPrevMultiplier) {
+                vm.currentPage += (nextPrevMultiplier * 1);
+                vm.pages = vm.pagedData.slice(vm.currentPage * vm.pageSize);
+            };
+            vm.selectedPage=function(){
+                vm.totalPages = Math.ceil(vm.pagedData.length / vm.pageSize);
+                vm.pages = vm.pagedData;
+            };
+            vm.selectedPage();
+        }
+    }
 })();

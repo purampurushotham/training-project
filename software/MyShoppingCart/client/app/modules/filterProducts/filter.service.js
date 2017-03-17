@@ -7,8 +7,6 @@
     angular.module("MSC.checkBoxes")
         .service("filterProductsService",filterProductsService);
     function filterProductsService() {
-
-        console.log("in filterProducts Service");
         this.filterProducts=function(products, filterObj,protype,offer,minval,maxval) {
 
             //for brand
@@ -17,10 +15,8 @@
                     angular.forEach(products, function (multipleObjects, index){
                         if(typeof multipleObjects.brand === 'undefined'){
                             multipleObjects.brand = multipleObjects.language
-                            console.log(multipleObjects.brand)
                         }
                         if(angular.equals(eachBrand,multipleObjects.brand) &&angular.equals(protype,multipleObjects.subType)){
-                            console.log("match found")
                             filteredList.push(multipleObjects);
                         }
                     });
@@ -36,14 +32,11 @@
                     return filteredList;
                 var dummyList=angular.copy(filteredList);
                 filteredList=[];
-                console.log(filteredList)
                 angular.forEach(filterObj.filteredOffer, function (eachOffer, index) {
                     angular.forEach(dummyList, function (multipleObject, index) {
                         angular.forEach(multipleObject.offers, function (multipleOffers, index) {
                             if (multipleOffers.type == eachOffer) {
-                                console.log(multipleObject);
                                 filteredList.push(multipleObject);
-                                console.log(filteredList);
                             }
 
                         });
@@ -60,7 +53,6 @@
                 angular.forEach(copySimilarProds, function (eachProd, index) {
                     if (eachProd.price <= maxval && eachProd.price >= minval) {
                         filteredList.push(eachProd);
-                        console.log(filteredList);
                     }
                 });
                 return isEmpty(filteredList);
