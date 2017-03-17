@@ -3,7 +3,6 @@
 (function() {
     'use strict';
     angular.module('MSC.checkBoxes')
-        .controller('filterCtrl',filterCtrl)
         .component("checkBoxesComponent", {
             templateUrl: "app/partials/checkboxes.html",
             controller: checkBoxCtrl,
