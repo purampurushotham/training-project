@@ -9,7 +9,6 @@
             PHONE_NO_PATTERN : /^\(?(\d{3})\)?[ .-]?(\d{3})[ .-]?(\d{4})$/,
             PASSWORD_PATTERN : /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/,
             ZIPCODE_PATTERN : /^\d{5}(?:[-\s]\d{4})?$/
-
         })
         .constant('validation',{
             USER_NAME_MIN_LENGTH:5,
