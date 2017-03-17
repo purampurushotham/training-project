@@ -6,7 +6,7 @@
     angular
         .module('MSC.Products')
         .component('productsComponent',{
-            templateUrl : "app/partials/productsType.html",
+            templateUrl : "app/partials/category.html",
             controller: ProductsCtrl,
             controllerAs : "pc"
         });

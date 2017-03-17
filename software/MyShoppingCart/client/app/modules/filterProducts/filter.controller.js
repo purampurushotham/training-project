@@ -2,9 +2,9 @@
 /* Created by purushotham on 2/7/2017*/
 (function() {
     'use strict';
-    angular.module('MSC.checkBoxes')
-        .component("checkBoxesComponent", {
-            templateUrl: "app/partials/checkboxes.html",
+    angular.module('MSC.filters')
+        .component("filterComponent", {
+            templateUrl: "app/partials/filterProducts.html",
             controller: checkBoxCtrl,
             controllerAs: "cm",
             bindings: {

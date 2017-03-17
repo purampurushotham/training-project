@@ -1,10 +1,11 @@
-/**
+/*
+/!**
  * Created by Ashoka on 2/14/2017.
- */
+ *!/
 //not using this service  please refer productListFactory.js
 (function(){
     'use strict';
-    angular.module("MSC.checkBoxes")
+    angular.module("MSC.filters")
         .service("filterProductsService",filterProductsService);
     function filterProductsService() {
         this.filterProducts=function(products, filterObj,protype,offer,minval,maxval) {
@@ -73,4 +74,4 @@
         }
 
     }
-}());
+}());*/

@@ -3,5 +3,5 @@
  */
 (function(){
     'use strict';
-    angular.module('MSC.checkBoxes',[]);
+    angular.module('MSC.filters',[]);
 })();
