@@ -1,24 +1,24 @@
 /**
  * Created by purushotham on 7/3/17.
  */
-(function(){
-    'use strict'
-    angular.module('MSC.user')
-        .factory('userService',userService);
-    userService.$inject=['api','$q'];
-    function userService(api,q){
-        var setOfUSerServices={
-            confirmUser:confirmUser,
-            validateUser :validateUser,
-            logout : logout,
-            forgotPassword : forgotPassword,
-            resetPassword : resetPassword,
-            getProfile : getProfile,
-            createAddress: createAddress,
-            getAddress :getAddress,
-            deleteAddress : deleteAddress
-        };
-        return setOfUSerServices;
+    (function(){
+        'use strict'
+        angular.module('MSC.user')
+            .factory('userService',userService);
+        userService.$inject=['api','$q'];
+        function userService(api,q){
+            var setOfUSerServices={
+                confirmUser:confirmUser,
+                validateUser :validateUser,
+                logout : logout,
+                forgotPassword : forgotPassword,
+                resetPassword : resetPassword,
+                getProfile : getProfile,
+                createAddress: createAddress,
+                getAddress :getAddress,
+                deleteAddress : deleteAddress
+            };
+            return setOfUSerServices;
         function confirmUser(token){
             var query=token;
             var deffered=q.defer();

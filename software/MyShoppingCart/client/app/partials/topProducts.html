@@ -6,7 +6,7 @@
     <h1 class="lead panel-heading text-center"> Top Rated {{type._id}}</h1>
     <div ng:repeat="prod in type.docs" class ="col-md-3 panel-body">
         <div class="container">
-            <a class="search_a" ui-sref="view({id:prod.product_id})">
+                <a class="search_a" ui-sref="view({id:prod.product_id})">
                 <img src="{{prod.pic}}" class="pics">
                 <p ng-bind="prod.name"></p>
                 <p ng-bind="prod.price"></p>

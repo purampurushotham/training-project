@@ -39,7 +39,7 @@
         });
     //root controller
     viewCtrl.$inject=['$stateParams','viewProductService'];
-    function viewCtrl($stateParams,viewProductService) {
+        function viewCtrl($stateParams,viewProductService) {
         var vm = this;
         vm.similarProducts = [];
         vm.id = $stateParams.id;
@@ -99,7 +99,7 @@
             vm.tempSize = vm.commentsSize;
             vm.viewMore = function () {
                 if (vm.sam.length > vm.commentsSize) {
-                    vm.commentsSize = (vm.commentsSize) + ((vm.sam.length - 1) / 2);
+                    vm.commentsSize = (vm.commentsSize) + ((vm.sam  .length - 1) / 2);
                 }
                 else if (vm.sam.length < vm.commentsSize) {
                     vm.commentsSize = vm.sam.length;

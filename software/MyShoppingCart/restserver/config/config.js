@@ -1,6 +1,3 @@
-/**
- * Created by purushotham on 14/3/17.
- */
 module.exports = function(){
     console.log(process.env.NODE_ENV);
     switch(process.env.NODE_ENV){

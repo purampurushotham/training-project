@@ -21,7 +21,7 @@
         "MSC.search",
         "MSC.view",
         "MSC.Products",
-        "MSC.filters"
+        "MSC.filte  rs"
 
     ]);
 }());

@@ -97,6 +97,7 @@ function insertComments(prod,eachComment){
     var formatedIso = dateFormat(formatedDate, "isoDateTime");
     newComment.commentedOn = formatedIso;
     var comment = CommentModel(newComment);
+    
     var dateform = comment.commentedOn;
     //p.push(eachProduct);
     comment.save(function (err) {
